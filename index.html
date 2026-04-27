@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DFWA Social Buzz - Your Guide to DFW</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: white; line-height: 1.6; }
+        header { background: #16213e; padding: 1rem 2rem; text-align: center; }
+        header h1 { color: #FF6B35; font-size: 2rem; }
+        .hero { padding: 4rem 2rem; text-align: center; max-width: 800px; margin: 0 auto; }
+        .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; color: #ccc; margin-bottom: 2rem; }
+        .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 2rem; max-width: 1000px; margin: 0 auto; }
+        .city-card { background: #16213e; padding: 2rem; border-radius: 12px; text-align: center; transition: transform 0.2s; }
+        .city-card:hover { transform: translateY(-5px); }
+        .city-card h3 { color: #FF6B35; font-size: 1.5rem; margin-bottom: 1rem; }
+        .city-card p { color: #ccc; margin-bottom: 1.5rem; }
+        .btn { display: inline-block; background: #FF6B35; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; }
+        .newsletter { background: #16213e; padding: 3rem 2rem; text-align: center; margin-top: 3rem; }
+        .newsletter h3 { margin-bottom: 1rem; }
+        .newsletter form { max-width: 400px; margin: 0 auto; display: flex; gap: 10px; }
+        .newsletter input { flex: 1; padding: 12px; border: none; border-radius: 6px; }
+        .newsletter button { background: #FF6B35; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; }
+        footer { text-align: center; padding: 2rem; color: #666; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DFWA Social Buzz</h1>
+    </header>
+    
+    <section class="hero">
+        <h2>DFW's Premier Local Guide</h2>
+        <p>Discover the best local spots, events, and deals in Arlington, Dallas, and Fort Worth. Join 5,000+ locals getting the inside scoop every week.</p>
+    </section>
+    
+    <section class="cities">
+        <div class="city-card">
+            <h3>Arlington Pulse</h3>
+            <p>From UTA to the Entertainment District, get the best of Arlington delivered to your inbox.</p>
+            <a href="/arlington/" class="btn">Explore Arlington</a>
+        </div>
+        <div class="city-card">
+            <h3>Dallas Current</h3>
+            <p>Hidden gems, date nights, and neighborhood guides across Dallas.</p>
+            <a href="/dallas/" class="btn">Explore Dallas</a>
+        </div>
+        <div class="city-card">
+            <h3>Fort Worth Echo</h3>
+            <p>BBQ joints, Stockyards, and West 7th — your Fort Worth insider guide.</p>
+            <a href="/fort-worth/" class="btn">Explore Fort Worth</a>
+        </div>
+    </section>
+    
+    <section class="newsletter">
+        <h3>Get the Best of DFW</h3>
+        <p>One email, three cities, weekly.</p>
+        <form action="https://letterman.ai/subscribe" method="POST">
+            <input type="email" name="email" placeholder="Your email" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 DFWA Social Buzz. Local guides for Arlington, Dallas, and Fort Worth.</p>
+    </footer>
+</body>
+</html>
