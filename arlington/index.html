@@ -3,127 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arlington Pulse - Your Arlington Guide | DFWA Social Buzz</title>
+    <title>Arlington Social Buzz - Local News & Deals | DFWA</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: white; line-height: 1.6; }
-        header { background: #16213e; padding: 1rem 2rem; text-align: center; }
-        header img { height: 60px; }
-        header nav { margin-top: 1rem; }
-        header nav a { color: #ccc; text-decoration: none; margin: 0 1rem; font-size: 0.9rem; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        header { background: #111122; padding: 1rem 2rem; border-bottom: 1px solid #222; }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        header img { height: 50px; }
+        header nav a { color: #aaa; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.2s; }
         header nav a:hover { color: #FF6B35; }
-        .hero { padding: 3rem 2rem; text-align: center; max-width: 800px; margin: 0 auto; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #FF6B35; }
-        .hero p { font-size: 1.2rem; color: #ccc; margin-bottom: 2rem; }
-        .content { max-width: 800px; margin: 0 auto; padding: 2rem; }
-        .section { background: #16213e; padding: 2rem; margin-bottom: 2rem; border-radius: 12px; }
-        .section h2 { color: #FF6B35; margin-bottom: 1rem; }
-        .section p { color: #ccc; margin-bottom: 1.5rem; }
-        .cta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
-        .cta-box { background: #0f1629; padding: 1.5rem; border-radius: 8px; text-align: center; }
-        .cta-box h3 { color: #FF6B35; margin-bottom: 0.5rem; font-size: 1.1rem; }
-        .cta-box p { font-size: 0.9rem; margin-bottom: 1rem; }
-        .btn { display: inline-block; background: #FF6B35; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
-        .btn:hover { background: #e55a2b; }
-        .newsletter-embed { background: #0f1629; padding: 2rem; border-radius: 8px; margin-top: 1.5rem; }
-        .newsletter-embed h3 { margin-bottom: 1rem; color: #FF6B35; }
-        .newsletter-embed input { width: 100%; padding: 12px; margin-bottom: 1rem; border: none; border-radius: 6px; }
-        .newsletter-embed button { width: 100%; background: #FF6B35; color: white; padding: 12px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
-        .article-list { margin-top: 2rem; }
-        .article-card { background: #0f1629; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; border-left: 4px solid #FF6B35; }
-        .article-card h3 { color: #FF6B35; margin-bottom: 0.5rem; font-size: 1.2rem; }
-        .article-card .date { color: #888; font-size: 0.85rem; margin-bottom: 0.5rem; }
-        .article-card p { color: #ccc; margin-bottom: 1rem; font-size: 0.95rem; }
-        .article-card .read-more { color: #FF6B35; text-decoration: none; font-weight: 600; }
-        .article-card .read-more:hover { text-decoration: underline; }
-        footer { text-align: center; padding: 2rem; color: #666; border-top: 1px solid #333; margin-top: 2rem; }
+        
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 4rem 2rem; text-align: center; }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        .hero h1 span { color: #FF6B35; }
+        .hero .tagline { font-size: 1.3rem; color: #ccc; margin-bottom: 1rem; }
+        .hero p { color: #888; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-primary { background: #FF6B35; color: white; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; transition: background 0.2s; }
+        .btn-primary:hover { background: #e55a2b; }
+        .btn-secondary { background: transparent; color: #FF6B35; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; border: 2px solid #FF6B35; transition: all 0.2s; }
+        .btn-secondary:hover { background: #FF6B35; color: white; }
+        
+        /* Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+        
+        /* Section Headers */
+        .section-header { margin-bottom: 2rem; }
+        .section-header h2 { font-size: 1.8rem; color: #FF6B35; margin-bottom: 0.5rem; }
+        .section-header p { color: #888; }
+        
+        /* Featured Issue */
+        .featured-issue { background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); border-radius: 12px; padding: 2.5rem; margin-bottom: 3rem; border: 1px solid #333; }
+        .featured-issue .label { color: #FF6B35; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; display: block; }
+        .featured-issue h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .featured-issue p { color: #aaa; margin-bottom: 1.5rem; line-height: 1.7; }
+        .featured-issue .meta { color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; }
+        
+        /* Archive Grid */
+        .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        .issue-card { background: #111122; border-radius: 8px; padding: 1.5rem; border: 1px solid #222; transition: border-color 0.2s, transform 0.2s; }
+        .issue-card:hover { border-color: #FF6B35; transform: translateY(-2px); }
+        .issue-card h4 { color: #FF6B35; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .issue-card .date { color: #666; font-size: 0.85rem; margin-bottom: 0.75rem; }
+        .issue-card p { color: #999; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem; }
+        .issue-card a { color: #FF6B35; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .issue-card a:hover { text-decoration: underline; }
+        .placeholder-card { background: #0d0d1a; border: 2px dashed #333; border-radius: 8px; padding: 1.5rem; text-align: center; color: #555; }
+        .placeholder-card span { display: block; font-size: 2rem; margin-bottom: 0.5rem; }
+        
+        /* Local Hub */
+        .local-hub { background: #111122; border-radius: 12px; padding: 2rem; margin-bottom: 3rem; }
+        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+        .hub-link { background: #0f1629; padding: 1.25rem; border-radius: 8px; text-decoration: none; color: white; transition: background 0.2s; border: 1px solid #222; }
+        .hub-link:hover { background: #1a1a2e; border-color: #FF6B35; }
+        .hub-link h4 { color: #FF6B35; margin-bottom: 0.25rem; font-size: 1rem; }
+        .hub-link p { color: #888; font-size: 0.85rem; }
+        
+        /* Business CTA */
+        .business-cta { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 3rem 2rem; text-align: center; margin-bottom: 3rem; }
+        .business-cta h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .business-cta p { font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.95; }
+        .business-cta .btn-light { background: white; color: #FF6B35; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        
+        /* Newsletter Section */
+        .newsletter-section { background: #111122; border-radius: 12px; padding: 2.5rem; text-align: center; margin-bottom: 3rem; }
+        .newsletter-section h2 { margin-bottom: 0.5rem; }
+        .newsletter-section > p { color: #888; margin-bottom: 1.5rem; }
+        .newsletter-form { max-width: 500px; margin: 0 auto; display: flex; gap: 10px; }
+        .newsletter-form input { flex: 1; padding: 14px; border: none; border-radius: 6px; background: #0f1629; color: white; border: 1px solid #333; }
+        .newsletter-form button { background: #FF6B35; color: white; padding: 14px 28px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        
+        /* Footer */
+        footer { background: #0a0a14; border-top: 1px solid #222; padding: 2rem; text-align: center; color: #666; }
         footer a { color: #FF6B35; text-decoration: none; }
+        .footer-links { margin-top: 1rem; }
+        .footer-links a { margin: 0 1rem; color: #888; }
     </style>
 </head>
 <body>
     <header>
-        <a href="/"><img src="https://dfwa-site.vercel.app/logo.jpg" alt="DFWA Social Buzz"></a>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/arlington/">Arlington</a>
-            <a href="/dallas/">Dallas</a>
-            <a href="/fort-worth/">Fort Worth</a>
-        </nav>
+        <div class="header-content">
+            <a href="/"><img src="https://dfwa-site.vercel.app/logo.jpg" alt="DFWA Social Buzz"></a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/arlington/">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
     </header>
     
     <section class="hero">
-        <h1>Arlington Pulse</h1>
-        <p>Your insider guide to the best local spots, events, and deals in Arlington. From UTA to the Entertainment District, we've got you covered.</p>
+        <div class="hero-content">
+            <h1>Arlington <span>Social Buzz</span></h1>
+            <p class="tagline">Your local source for Arlington news, events, deals, and community buzz</p>
+            <p>From UTA to the Entertainment District, we cover the stories, openings, and happenings that matter to Arlington locals.</p>
+            <div class="hero-buttons">
+                <a href="#subscribe" class="btn-primary">Subscribe</a>
+                <a href="#deals" class="btn-secondary">See Local Deals</a>
+            </div>
+        </div>
     </section>
     
-    <div class="content">
-        <div class="section">
-            <h2>📰 Latest from Arlington Pulse</h2>
-            <div class="article-list">
-                <div class="article-card">
-                    <h3>FIFA World Cup 2026 in Arlington: Nine Matches at AT&T Stadium</h3>
-                    <div class="date">April 28, 2026</div>
-                    <p>Arlington will host nine matches during the 2026 FIFA World Cup at AT&T Stadium, including matches featuring the US Men's National Team. Here's everything you need to know about the tournament coming to town.</p>
-                    <a href="https://m.letterman.ai/a/fifa-world-cup-2026-in-arlington-nine-matches-at-att-stadium" class="read-more" target="_blank">Read Full Article →</a>
-                </div>
-                <div class="article-card">
-                    <h3>10 Best Breakfast Spots in Arlington</h3>
-                    <div class="date">April 27, 2026</div>
-                    <p>From The Grease Monkey to First Watch, discover where locals start their day. Featuring spots near UTA, downtown, and the Entertainment District.</p>
-                    <a href="#" class="read-more">Read Full Article →</a>
-                </div>
-                <div class="article-card">
-                    <h3>Weekend Guide: What's Happening in Arlington</h3>
-                    <div class="date">April 26, 2026</div>
-                    <p>Friday nights at Texas Live!, Saturday at River Legacy Parks, and Sunday fun at UTA events. Plus parking and timing pro tips.</p>
-                    <a href="#" class="read-more">Read Full Article →</a>
-                </div>
-            </div>
+    <div class="container">
+        <!-- Featured Issue -->
+        <div class="section-header">
+            <h2>Latest Issue</h2>
+            <p>The freshest stories from Arlington</p>
         </div>
         
-        <div class="section">
-            <h2>Get the Arlington Pulse</h2>
-            <p>Join 5,000+ Arlington locals getting the best local spots, events, and deals delivered weekly.</p>
+        <div class="featured-issue">
+            <span class="label">Featured Story</span>
+            <h3>FIFA World Cup 2026 in Arlington: Nine Matches at AT&T Stadium</h3>
+            <p class="meta">April 28, 2026</p>
+            <p>Arlington will host nine matches during the 2026 FIFA World Cup at AT&T Stadium, including matches featuring the US Men's National Team. This is the biggest sporting event to hit Arlington since the Super Bowl, and local businesses are preparing for the influx of international visitors. Here's everything you need to know about tickets, dates, and how to get involved.</p>
+            <a href="https://m.letterman.ai/a/fifa-world-cup-2026-in-arlington-nine-matches-at-att-stadium" class="btn-primary" target="_blank">Read Full Article</a>
+        </div>
+        
+        <!-- Recent Issues Archive -->
+        <div class="section-header">
+            <h2>Recent Issues</h2>
+            <p>Browse our archive of Arlington stories</p>
+        </div>
+        
+        <div class="archive-grid">
+            <div class="issue-card">
+                <h4>10 Best Breakfast Spots in Arlington</h4>
+                <div class="date">April 27, 2026</div>
+                <p>From The Grease Monkey to First Watch, discover where locals start their day near UTA and downtown.</p>
+                <a href="#">Read Issue →</a>
+            </div>
             
-            <div class="newsletter-embed">
-                <h3>📧 Subscribe to Arlington Pulse</h3>
-                <form action="https://letterman.ai/subscribe/69ee9d94a166af267eb5e972" method="POST">
-                    <input type="email" name="email" placeholder="Your email address" required>
-                    <button type="submit">Subscribe Free</button>
-                </form>
-                <p style="font-size: 0.8rem; margin-top: 1rem; color: #888;">No spam. Unsubscribe anytime.</p>
+            <div class="issue-card">
+                <h4>Weekend Guide: What's Happening in Arlington</h4>
+                <div class="date">April 26, 2026</div>
+                <p>Friday nights at Texas Live!, Saturday at River Legacy Parks, and Sunday fun at UTA events.</p>
+                <a href="#">Read Issue →</a>
+            </div>
+            
+            <div class="issue-card">
+                <h4>New Restaurant Openings: Spring 2026</h4>
+                <div class="date">April 25, 2026</div>
+                <p>The hottest new spots to check out in Arlington this season, from BBQ to vegan options.</p>
+                <a href="#">Read Issue →</a>
+            </div>
+            
+            <div class="issue-card">
+                <h4>UTA Student Guide: Off-Campus Eats</h4>
+                <div class="date">April 24, 2026</div>
+                <p>Best budget-friendly spots within walking distance of campus for broke college students.</p>
+                <a href="#">Read Issue →</a>
+            </div>
+            
+            <div class="issue-card">
+                <h4>Entertainment District Parking Guide</h4>
+                <div class="date">April 23, 2026</div>
+                <p>Where to park for Cowboys games, Rangers games, and concerts without breaking the bank.</p>
+                <a href="#">Read Issue →</a>
+            </div>
+            
+            <div class="issue-card">
+                <h4>Local Business Spotlight: Downtown Gems</h4>
+                <div class="date">April 22, 2026</div>
+                <p>Meet the owners keeping Arlington's downtown vibrant with unique shops and restaurants.</p>
+                <a href="#">Read Issue →</a>
             </div>
         </div>
         
-        <div class="section">
-            <h2>Explore Arlington</h2>
-            <div class="cta-grid">
-                <div class="cta-box">
-                    <h3>🍽️ Local Deals</h3>
-                    <p>Exclusive discounts at Arlington's best spots</p>
-                    <a href="#deals" class="btn">View Deals</a>
-                </div>
-                <div class="cta-box">
-                    <h3>⭐ Get Featured</h3>
-                    <p>Own a business? Reach 5,000+ locals</p>
-                    <a href="mailto:feature@dfwasocialbuzz.com?subject=Feature My Arlington Business" class="btn">Apply Now</a>
-                </div>
-                <div class="cta-box">
-                    <h3>📱 Follow Us</h3>
-                    <p>Daily updates on Instagram & TikTok</p>
-                    <a href="#social" class="btn">@ArlingtonPulse</a>
-                </div>
+        <!-- Local Hub Links -->
+        <div class="section-header">
+            <h2>Arlington Hub</h2>
+            <p>Quick links to what matters</p>
+        </div>
+        
+        <div class="local-hub">
+            <div class="hub-grid">
+                <a href="#deals" class="hub-link">
+                    <h4>💰 Local Deals</h4>
+                    <p>Exclusive discounts at Arlington businesses</p>
+                </a>
+                <a href="#subscribe" class="hub-link">
+                    <h4>📧 Newsletter</h4>
+                    <p>Get weekly updates in your inbox</p>
+                </a>
+                <a href="https://instagram.com/arlingtonpulse" class="hub-link" target="_blank">
+                    <h4>📱 Instagram</h4>
+                    <p>Daily stories and local updates</p>
+                </a>
+                <a href="mailto:submit@dfwasocialbuzz.com" class="hub-link">
+                    <h4>✉️ Submit a Story</h4>
+                    <p>Tell us about something happening</p>
+                </a>
             </div>
+        </div>
+        
+        <!-- Business CTA -->
+        <div class="business-cta">
+            <h2>Own a Business in Arlington?</h2>
+            <p>Get featured in Arlington Social Buzz and reach 5,000+ engaged local readers who care about supporting Arlington businesses.</p>
+            <a href="mailto:feature@dfwasocialbuzz.com?subject=Feature My Arlington Business" class="btn-light">Get Featured</a>
+        </div>
+        
+        <!-- Newsletter -->
+        <div id="subscribe" class="newsletter-section">
+            <h2>Get Arlington Social Buzz</h2>
+            <p>Weekly local news, events, and deals delivered to your inbox. Free forever.</p>
+            <form class="newsletter-form" action="https://letterman.ai/subscribe/69ee9d94a166af267eb5e972" method="POST">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
         </div>
     </div>
     
     <footer>
-        <p>Arlington Pulse is part of <a href="/">DFWA Social Buzz</a></p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-            <a href="/dallas/">Dallas</a> | 
-            <a href="/fort-worth/">Fort Worth</a> | 
+        <p>&copy; 2026 Arlington Social Buzz. Part of <a href="/">DFWA Social Buzz</a>.</p>
+        <div class="footer-links">
+            <a href="/dallas/">Dallas</a>
+            <a href="/fort-worth/">Fort Worth</a>
             <a href="/">Home</a>
-        </p>
+        </div>
     </footer>
 </body>
 </html>
