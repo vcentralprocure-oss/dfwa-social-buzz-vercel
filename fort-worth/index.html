@@ -3,67 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fort Worth Echo - Your Fort Worth Guide</title>
+    <title>Fort Worth Echo - Your Fort Worth Guide | DFWA Social Buzz</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: white; line-height: 1.6; }
         header { background: #16213e; padding: 1rem 2rem; text-align: center; }
-        header h1 { color: #FF6B35; }
-        header a { color: #ccc; text-decoration: none; }
+        header img { height: 60px; }
+        header nav { margin-top: 1rem; }
+        header nav a { color: #ccc; text-decoration: none; margin: 0 1rem; font-size: 0.9rem; }
+        header nav a:hover { color: #FF6B35; }
         .hero { padding: 3rem 2rem; text-align: center; max-width: 800px; margin: 0 auto; }
-        .hero h2 { font-size: 2rem; margin-bottom: 1rem; color: #FF6B35; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #FF6B35; }
+        .hero p { font-size: 1.2rem; color: #ccc; margin-bottom: 2rem; }
         .content { max-width: 800px; margin: 0 auto; padding: 2rem; }
-        .article { background: #16213e; padding: 1.5rem; margin-bottom: 1.5rem; border-radius: 8px; }
-        .article h3 { color: #FF6B35; margin-bottom: 0.5rem; }
-        .article p { color: #ccc; }
-        .newsletter { background: #16213e; padding: 2rem; text-align: center; margin: 2rem 0; border-radius: 8px; }
-        .newsletter form { max-width: 400px; margin: 1rem auto; display: flex; gap: 10px; }
-        .newsletter input { flex: 1; padding: 12px; border: none; border-radius: 6px; }
-        .newsletter button { background: #FF6B35; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; }
-        .featured { text-align: center; padding: 2rem; background: #0f1629; margin: 2rem 0; border-radius: 8px; }
-        .btn { display: inline-block; background: #FF6B35; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; margin-top: 1rem; }
-        footer { text-align: center; padding: 2rem; color: #666; }
+        .section { background: #16213e; padding: 2rem; margin-bottom: 2rem; border-radius: 12px; }
+        .section h2 { color: #FF6B35; margin-bottom: 1rem; }
+        .section p { color: #ccc; margin-bottom: 1.5rem; }
+        .cta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+        .cta-box { background: #0f1629; padding: 1.5rem; border-radius: 8px; text-align: center; }
+        .cta-box h3 { color: #FF6B35; margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .cta-box p { font-size: 0.9rem; margin-bottom: 1rem; }
+        .btn { display: inline-block; background: #FF6B35; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
+        .btn:hover { background: #e55a2b; }
+        .newsletter-embed { background: #0f1629; padding: 2rem; border-radius: 8px; margin-top: 1.5rem; }
+        .newsletter-embed h3 { margin-bottom: 1rem; color: #FF6B35; }
+        .newsletter-embed input { width: 100%; padding: 12px; margin-bottom: 1rem; border: none; border-radius: 6px; }
+        .newsletter-embed button { width: 100%; background: #FF6B35; color: white; padding: 12px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        footer { text-align: center; padding: 2rem; color: #666; border-top: 1px solid #333; margin-top: 2rem; }
+        footer a { color: #FF6B35; text-decoration: none; }
     </style>
 </head>
 <body>
     <header>
-        <h1>Fort Worth Echo</h1>
-        <a href="/">← Back to DFWA Social Buzz</a>
+        <a href="/"><img src="https://dfwa-site.vercel.app/logo.jpg" alt="DFWA Social Buzz"></a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/arlington/">Arlington</a>
+            <a href="/dallas/">Dallas</a>
+            <a href="/fort-worth/">Fort Worth</a>
+        </nav>
     </header>
     
     <section class="hero">
-        <h2>Your Fort Worth Guide</h2>
-        <p>BBQ joints, Stockyards, and West 7th — your Fort Worth insider guide.</p>
+        <h1>Fort Worth Echo</h1>
+        <p>BBQ joints, Stockyards, and West 7th — your authentic Fort Worth insider guide. Where cowboy culture meets modern energy.</p>
     </section>
     
-    <section class="content">
-        <div class="article">
-            <h3>Fort Worth's Best BBQ Joints</h3>
+    <div class="content">
+        <div class="section">
+            <h2>🍖 Best BBQ in Fort Worth</h2>
             <p>Cooper's, Angelo's, Riscky's, Heim Barbecue, Goldee's, and The Slow Bone — what makes each spot special.</p>
+            <a href="#" class="btn">Read Guide</a>
         </div>
-        <div class="article">
-            <h3>Stockyards vs. West 7th: Where to Spend Your Weekend</h3>
+        
+        <div class="section">
+            <h2>🤠 Stockyards vs. West 7th</h2>
             <p>Historic cowboy charm of the Stockyards (cattle drives, Billy Bob's) vs. modern nightlife energy of West 7th.</p>
+            <a href="#" class="btn">Compare</a>
         </div>
-    </section>
-    
-    <section class="newsletter">
-        <h3>Get Fort Worth in Your Inbox</h3>
-        <p>Weekly local guides, events, and deals.</p>
-        <form action="#" method="POST">
-            <input type="email" name="email" placeholder="Your email" required>
-            <button type="submit">Subscribe</button>
-        </form>
-    </section>
-    
-    <section class="featured">
-        <h3>Own a Business in Fort Worth?</h3>
-        <p>Get featured in Fort Worth Echo and reach 5,000+ local readers.</p>
-        <a href="mailto:feature@dfwasocialbuzz.com" class="btn">Get Featured</a>
-    </section>
+        
+        <div class="section">
+            <h2>Get the Fort Worth Echo</h2>
+            <p>Join 5,000+ Fort Worth locals getting the best local spots, events, and deals delivered weekly.</p>
+            
+            <div class="newsletter-embed">
+                <h3>📧 Subscribe to Fort Worth Echo</h3>
+                <form action="https://letterman.ai/subscribe/69ee9da6a166af267eb5e99e" method="POST">
+                    <input type="email" name="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe Free</button>
+                </form>
+                <p style="font-size: 0.8rem; margin-top: 1rem; color: #888;">No spam. Unsubscribe anytime.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Explore Fort Worth</h2>
+            <div class="cta-grid">
+                <div class="cta-box">
+                    <h3>🍽️ Local Deals</h3>
+                    <p>Exclusive discounts at Fort Worth's best spots</p>
+                    <a href="#deals" class="btn">View Deals</a>
+                </div>
+                <div class="cta-box">
+                    <h3>⭐ Get Featured</h3>
+                    <p>Own a business? Reach 5,000+ locals</p>
+                    <a href="mailto:feature@dfwasocialbuzz.com?subject=Feature My Fort Worth Business" class="btn">Apply Now</a>
+                </div>
+                <div class="cta-box">
+                    <h3>📱 Follow Us</h3>
+                    <p>Daily updates on Instagram & TikTok</p>
+                    <a href="#social" class="btn">@FortWorthEcho</a>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <footer>
-        <p>&copy; 2026 Fort Worth Echo. Part of DFWA Social Buzz.</p>
+        <p>Fort Worth Echo is part of <a href="/">DFWA Social Buzz</a></p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+            <a href="/arlington/">Arlington</a> | 
+            <a href="/dallas/">Dallas</a> | 
+            <a href="/">Home</a>
+        </p>
     </footer>
 </body>
 </html>

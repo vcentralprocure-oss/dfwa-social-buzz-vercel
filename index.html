@@ -7,23 +7,37 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: white; line-height: 1.6; }
-        header { background: #16213e; padding: 1rem 2rem; text-align: center; }
+        header { background: #16213e; padding: 1.5rem 2rem; text-align: center; }
         header img { height: 80px; max-width: 100%; }
-        .hero { padding: 4rem 2rem; text-align: center; max-width: 800px; margin: 0 auto; }
-        .hero h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; color: #ccc; margin-bottom: 2rem; }
-        .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; padding: 2rem; max-width: 1000px; margin: 0 auto; }
-        .city-card { background: #16213e; padding: 2rem; border-radius: 12px; text-align: center; transition: transform 0.2s; }
-        .city-card:hover { transform: translateY(-5px); }
-        .city-card h3 { color: #FF6B35; font-size: 1.5rem; margin-bottom: 1rem; }
-        .city-card p { color: #ccc; margin-bottom: 1.5rem; }
-        .btn { display: inline-block; background: #FF6B35; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; }
+        .hero { padding: 4rem 2rem; text-align: center; max-width: 900px; margin: 0 auto; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero h1 span { color: #FF6B35; }
+        .hero p { font-size: 1.2rem; color: #ccc; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; padding: 2rem; max-width: 1000px; margin: 0 auto; }
+        .city-card { background: #16213e; padding: 2.5rem 2rem; border-radius: 12px; text-align: center; transition: transform 0.2s, box-shadow 0.2s; border: 2px solid transparent; }
+        .city-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255,107,53,0.2); border-color: #FF6B35; }
+        .city-card h2 { color: #FF6B35; font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .city-card .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .city-card p { color: #ccc; margin-bottom: 1.5rem; line-height: 1.5; }
+        .btn { display: inline-block; background: #FF6B35; color: white; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; transition: background 0.2s; }
+        .btn:hover { background: #e55a2b; }
+        .features { max-width: 800px; margin: 3rem auto; padding: 0 2rem; text-align: center; }
+        .features h2 { color: #FF6B35; margin-bottom: 1.5rem; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .feature { background: #16213e; padding: 1.5rem; border-radius: 8px; }
+        .feature h3 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .feature p { color: #ccc; font-size: 0.95rem; }
         .newsletter { background: #16213e; padding: 3rem 2rem; text-align: center; margin-top: 3rem; }
-        .newsletter h3 { margin-bottom: 1rem; }
-        .newsletter form { max-width: 400px; margin: 0 auto; display: flex; gap: 10px; }
-        .newsletter input { flex: 1; padding: 12px; border: none; border-radius: 6px; }
-        .newsletter button { background: #FF6B35; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; }
-        footer { text-align: center; padding: 2rem; color: #666; }
+        .newsletter h2 { margin-bottom: 1rem; }
+        .newsletter p { color: #ccc; margin-bottom: 1.5rem; }
+        .newsletter-form { max-width: 500px; margin: 0 auto; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .newsletter-form input { flex: 1; min-width: 250px; padding: 14px; border: none; border-radius: 6px; font-size: 1rem; }
+        .newsletter-form button { background: #FF6B35; color: white; padding: 14px 28px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 1rem; }
+        .business-cta { background: linear-gradient(135deg, #16213e 0%, #0f1629 100%); padding: 4rem 2rem; text-align: center; margin-top: 3rem; }
+        .business-cta h2 { color: #FF6B35; margin-bottom: 1rem; }
+        .business-cta p { color: #ccc; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+        footer { text-align: center; padding: 2rem; color: #666; border-top: 1px solid #333; }
+        footer a { color: #FF6B35; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -32,39 +46,72 @@
     </header>
     
     <section class="hero">
-        <h2>DFW's Premier Local Guide</h2>
-        <p>Discover the best local spots, events, and deals in Arlington, Dallas, and Fort Worth. Join 5,000+ locals getting the inside scoop every week.</p>
+        <h1>Your Guide to <span>DFW</span></h1>
+        <p>DFWA Social Buzz is the premier local guide for Arlington, Dallas, and Fort Worth. Discover hidden gems, local deals, and the best spots in your city.</p>
     </section>
     
     <section class="cities">
         <div class="city-card">
-            <h3>Arlington Pulse</h3>
-            <p>From UTA to the Entertainment District, get the best of Arlington delivered to your inbox.</p>
+            <h2>Arlington Pulse</h2>
+            <p class="tagline">From UTA to the Entertainment District</p>
+            <p>Get the inside scoop on Arlington's best breakfast spots, weekend events, and local deals.</p>
             <a href="/arlington/" class="btn">Explore Arlington</a>
         </div>
         <div class="city-card">
-            <h3>Dallas Current</h3>
-            <p>Hidden gems, date nights, and neighborhood guides across Dallas.</p>
+            <h2>Dallas Current</h2>
+            <p class="tagline">Hidden gems across the metroplex</p>
+            <p>Discover Dallas neighborhoods you missed, date night ideas under $50, and local favorites.</p>
             <a href="/dallas/" class="btn">Explore Dallas</a>
         </div>
         <div class="city-card">
-            <h3>Fort Worth Echo</h3>
-            <p>BBQ joints, Stockyards, and West 7th — your Fort Worth insider guide.</p>
+            <h2>Fort Worth Echo</h2>
+            <p class="tagline">Where cowboy culture meets modern energy</p>
+            <p>BBQ joints, Stockyards, West 7th — your authentic Fort Worth insider guide.</p>
             <a href="/fort-worth/" class="btn">Explore Fort Worth</a>
         </div>
     </section>
     
+    <section class="features">
+        <h2>What You Get</h2>
+        <div class="feature-grid">
+            <div class="feature">
+                <h3>📧 Weekly Guides</h3>
+                <p>Local spots, events, and deals delivered to your inbox every week.</p>
+            </div>
+            <div class="feature">
+                <h3>💰 Exclusive Deals</h3>
+                <p>Discounts and specials at the best local businesses in your city.</p>
+            </div>
+            <div class="feature">
+                <h3>📱 Daily Updates</h3>
+                <p>Follow us on Instagram and TikTok for real-time local recommendations.</p>
+            </div>
+        </div>
+    </section>
+    
     <section class="newsletter">
-        <h3>Get the Best of DFW</h3>
-        <p>One email, three cities, weekly.</p>
-        <form action="https://letterman.ai/subscribe" method="POST">
-            <input type="email" name="email" placeholder="Your email" required>
-            <button type="submit">Subscribe</button>
+        <h2>Get the Best of DFW</h2>
+        <p>Join 5,000+ locals getting weekly guides to Arlington, Dallas, and Fort Worth.</p>
+        <form class="newsletter-form" action="https://letterman.ai/subscribe" method="POST">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe Free</button>
         </form>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #888;">No spam. Unsubscribe anytime. Free forever.</p>
+    </section>
+    
+    <section class="business-cta">
+        <h2>Own a Local Business?</h2>
+        <p>Get featured in DFWA Social Buzz and reach 15,000+ engaged local readers across Arlington, Dallas, and Fort Worth.</p>
+        <a href="mailto:feature@dfwasocialbuzz.com?subject=Feature My Business" class="btn">Get Featured</a>
     </section>
     
     <footer>
         <p>&copy; 2026 DFWA Social Buzz. Local guides for Arlington, Dallas, and Fort Worth.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="/arlington/">Arlington</a> | 
+            <a href="/dallas/">Dallas</a> | 
+            <a href="/fort-worth/">Fort Worth</a>
+        </p>
     </footer>
 </body>
 </html>
