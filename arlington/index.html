@@ -11,7 +11,8 @@
         /* Header */
         header { background: #111122; padding: 1rem 2rem; border-bottom: 1px solid #222; }
         .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        header img { height: 50px; }
+        header img { width: 240px; max-height: 60px; height: auto; object-fit: contain; }
+        @media (max-width: 768px) { header img { width: 150px; max-height: 44px; } }
         header nav a { color: #aaa; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.2s; }
         header nav a:hover { color: #FF6B35; }
         
