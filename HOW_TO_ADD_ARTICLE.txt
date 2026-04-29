@@ -1,0 +1,72 @@
+<!-- ============================================ -->
+<!-- HOW TO ADD A NEW ARTICLE - TEMPLATE -->
+<!-- ============================================ -->
+
+STEP 1: Create article in Letterman
+- Go to https://app.letterman.ai
+- Select your publication (Arlington Pulse, Dallas Current, or Fort Worth Echo)
+- Click "Create Article"
+- Write and publish
+- Copy the article URL (e.g., https://m.letterman.ai/a/your-article-slug)
+
+STEP 2: Add to Vercel page
+Open the city page HTML file:
+- Arlington: /arlington/index.html
+- Dallas: /dallas/index.html
+- Fort Worth: /fort-worth/index.html
+
+STEP 3: Copy this code block and paste in the archive-grid section:
+
+<div class="issue-card">
+    <h4>ARTICLE HEADLINE HERE</h4>
+    <div class="date">Month Day, Year</div>
+    <p>Short excerpt or summary of the article (2-3 sentences)</p>
+    <a href="https://m.letterman.ai/a/YOUR-ARTICLE-SLUG" target="_blank">Read Issue →</a>
+</div>
+
+STEP 4: Replace the placeholders:
+- ARTICLE HEADLINE HERE → Your actual headline
+- Month Day, Year → Publication date
+- Short excerpt → Brief description
+- YOUR-ARTICLE-SLUG → The slug from Letterman URL
+
+STEP 5: Deploy
+Run these commands:
+    cd /root/.openclaw/workspace/dfwa-vercel
+    git add .
+    git commit -m "Add new article: [headline]"
+    git push origin master
+
+Vercel will auto-deploy in ~30 seconds.
+
+========================================
+EXAMPLE - NEW ARTICLE ADDED:
+========================================
+
+<div class="issue-card">
+    <h4>UTA Spring Festival Guide 2026</h4>
+    <div class="date">April 29, 2026</div>
+    <p>Everything happening at UTA this spring - concerts, food festivals, career fairs, and outdoor movies.</p>
+    <a href="https://m.letterman.ai/a/uta-spring-festival-guide-2026" target="_blank">Read Issue →</a>
+</div>
+
+========================================
+TIPS:
+========================================
+
+1. Add new articles at the TOP of the archive-grid (after the opening <div class="archive-grid">)
+2. Keep excerpts under 150 characters
+3. Always use target="_blank" so Letterman opens in new tab
+4. Use consistent date format: Month Day, Year
+5. Remove oldest article if you have more than 6
+
+========================================
+AUTOMATION (Future):
+========================================
+
+Want this automated? We can build:
+- API script to pull from Letterman
+- Auto-generate HTML
+- Scheduled deployments
+
+Let me know if you want this!
