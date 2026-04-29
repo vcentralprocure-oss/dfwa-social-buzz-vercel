@@ -93,7 +93,11 @@
     <section class="newsletter">
         <h2>Get the Best of DFW</h2>
         <p>Join 5,000+ locals getting weekly guides to <a href="/arlington/" style="color: #FF6B35; text-decoration: none;">Arlington</a>, <a href="/dallas/" style="color: #FF6B35; text-decoration: none;">Dallas</a>, and <a href="/fort-worth/" style="color: #FF6B35; text-decoration: none;">Fort Worth</a>.</p>
-        <form class="newsletter-form" action="https://letterman.ai/subscribe" method="POST">
+        <form class="newsletter-form" action="/api/subscribe" method="POST">
+            <input type="hidden" name="city_interest" value="general">
+            <input type="hidden" name="entry_point" value="homepage">
+            <input type="hidden" name="offer_type" value="newsletter">
+            <input type="hidden" name="source_form_id" value="homepage-main">
             <input type="email" name="email" placeholder="Enter your email" required>
             <button type="submit">Subscribe Free</button>
         </form>
