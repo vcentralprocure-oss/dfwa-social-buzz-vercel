@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arlington Pulse | Local News & Updates</title>
+  <meta name="description" content="Your source for local news, events, and updates in Arlington, Texas. Discover hidden gems, local businesses, and community stories.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a2e;
+      color: white;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      padding: 3rem 2rem;
+      text-align: center;
+      border-bottom: 3px solid #FF6B35;
+    }
+    
+    h1 { 
+      font-size: 2.5rem; 
+      margin-bottom: 0.5rem;
+      color: #FF6B35;
+    }
+    
+    .subtitle {
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 28px;
+      background: #FF6B35;
+      border-radius: 2px;
+    }
+    
+    /* Article Cards */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .article-card {
+      background: #16213e;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    
+    .article-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    
+    .article-image {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .article-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s;
+    }
+    
+    .article-card:hover .article-image img {
+      transform: scale(1.05);
+    }
+    
+    .article-category {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: #FF6B35;
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .article-content {
+      padding: 1.5rem;
+    }
+    
+    .article-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 0.75rem;
+      color: white;
+    }
+    
+    .article-excerpt {
+      font-size: 0.9rem;
+      color: #a0a0a0;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+    
+    .article-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.8rem;
+      color: #666;
+    }
+    
+    /* Newsletter Section */
+    .newsletter-section {
+      background: #16213e;
+      padding: 2.5rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    .newsletter-section h2 {
+      color: #FF6B35;
+      margin-bottom: 1rem;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 1.5rem auto 0;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .newsletter-form input {
+      flex: 1;
+      min-width: 250px;
+      padding: 0.75rem 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    
+    .newsletter-form button {
+      background: #FF6B35;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    
+    .newsletter-form button:hover {
+      background: #e55a2b;
+    }
+    
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      border-top: 1px solid #333;
+      margin-top: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input { min-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🏙️ Arlington Pulse</h1>
+    <p class="subtitle">Your source for local news, events, and updates in Arlington, Texas</p>
+  </header>
+  
+  <div class="container">
+    <h2 class="section-title">Latest Articles</h2>
+    
+    <div class="articles-grid">
+      <!-- Article Card - May 3, 2026 -->
+      <article class="article-card" data-article-id="arlington-hidden-gems-summer-2026">
+        <a href="https://arlington.dfwasocialbuzz.com/arlington-hidden-gems-summer-2026" class="article-link">
+          <div class="article-image">
+            <img src="https://images.unsplash.com/photo-1595872252167-3e1c785c1fc5?w=600&h=400&fit=crop" 
+                 alt="Tacos and beer - Arlington Texas food scene" 
+                 loading="lazy">
+            <span class="article-category">Local Guide</span>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">10 Hidden Gems in Arlington Every Local Needs to Discover This Summer</h3>
+            <p class="article-excerpt">From secret food spots to under-the-radar parks, discover the best hidden gems in Arlington, Texas that locals are raving about.</p>
+            <div class="article-meta">
+              <span class="article-date">May 3, 2026</span>
+              <span class="read-time">5 min read</span>
+            </div>
+          </div>
+        </a>
+      </article>
+      
+      <!-- Article Card - May 2, 2026 -->
+      <article class="article-card" data-article-id="arlington-food-halls-2026">
+        <a href="https://arlington.dfwasocialbuzz.com/arlington-food-halls-2026" class="article-link">
+          <div class="article-image">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=400&fit=crop" 
+                 alt="Food hall interior with multiple vendors" 
+                 loading="lazy">
+            <span class="article-category">Food & Drink</span>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">Why Arlington's Food Hall Scene Is Suddenly the Talk of DFW</h3>
+            <p class="article-excerpt">The city's culinary landscape is transforming with innovative food halls bringing diverse flavors under one roof.</p>
+            <div class="article-meta">
+              <span class="article-date">May 2, 2026</span>
+              <span class="read-time">4 min read</span>
+            </div>
+          </div>
+        </a>
+      </article>
+      
+      <!-- Article Card - May 1, 2026 -->
+      <article class="article-card" data-article-id="arlington-patio-season-2026">
+        <a href="https://arlington.dfwasocialbuzz.com/arlington-patio-season-2026" class="article-link">
+          <div class="article-image">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&h=400&fit=crop" 
+                 alt="Outdoor patio dining in Texas" 
+                 loading="lazy">
+            <span class="article-category">Dining</span>
+          </div>
+          <div class="article-content">
+            <h3 class="article-title">The Ultimate Guide to Arlington's Best Patios for Spring 2026</h3>
+            <p class="article-excerpt">From rooftop views to garden settings, these outdoor dining spots are perfect for patio season.</p>
+            <div class="article-meta">
+              <span class="article-date">May 1, 2026</span>
+              <span class="read-time">6 min read</span>
+            </div>
+          </div>
+        </a>
+      </article>
+    </div>
+    
+    <section class="newsletter-section">
+      <h2>📧 Stay in the Loop</h2>
+      <p>Get the latest Arlington news, events, and local discoveries delivered to your inbox.</p>
+      <form class="newsletter-form" action="https://api.letterman.ai/api/ai/subscribe" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="hidden" name="publicationId" value="69ee9d94a166af267eb5e972">
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+  </div>
+  
+  <footer>
+    <p>&copy; 2026 Arlington Pulse | Part of the DFWA Social Buzz Network</p>
+  </footer>
+</body>
+</html>
