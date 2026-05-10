@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTICLE_TITLE | Arlington Pulse</title>
+    <meta name="description" content="ARTICLE_META_DESCRIPTION">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        header { background: #0a0a0a; padding: 1rem 2rem; border-bottom: 1px solid #222; }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        header img { width: 200px; height: auto; }
+        header nav a { color: #aaa; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; }
+        header nav a:hover { color: #FF6B35; }
+        
+        /* Article */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .article-header { margin-bottom: 2rem; }
+        .article-header h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #FF6B35; }
+        .article-meta { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+        .article-image { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; }
+        
+        .article-content { font-size: 1.1rem; line-height: 1.8; color: #ccc; }
+        .article-content h2 { color: #FF6B35; margin: 2rem 0 1rem; font-size: 1.5rem; }
+        .article-content h3 { color: #fff; margin: 1.5rem 0 0.75rem; font-size: 1.2rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content ul { margin: 1rem 0 1.5rem 2rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        
+        /* Business listing */
+        .business-listing { background: #111122; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 3px solid #FF6B35; }
+        .business-listing h3 { margin-top: 0; }
+        .business-listing .rating { color: #FFD700; }
+        
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 1px solid #333; text-align: center; }
+        .cta-box h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .cta-box p { margin-bottom: 1.5rem; color: #aaa; }
+        .btn-primary { background: #FF6B35; color: white; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        .btn-primary:hover { background: #e55a2b; }
+        
+        /* Related articles */
+        .related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #333; }
+        .related h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+        .related-card { background: #111122; padding: 1rem; border-radius: 8px; text-decoration: none; color: white; }
+        .related-card:hover { border: 1px solid #FF6B35; }
+        
+        /* Footer */
+        footer { background: #0a0a0a; border-top: 1px solid #222; padding: 2rem; text-align: center; color: #666; margin-top: 3rem; }
+        footer a { color: #FF6B35; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/"><img src="/logo.jpg" alt="Arlington Pulse"></a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/articles/">Articles</a>
+                <a href="/business">Advertise</a>
+                <a href="/#subscribe">Subscribe</a>
+            </nav>
+        </div>
+    </header>
+    
+    <article class="article-container">
+        <div class="article-header">
+            <h1>ARTICLE_TITLE</h1>
+            <div class="article-meta">By Arlington Pulse | PUBLISH_DATE | CATEGORY</div>
+        </div>
+        
+        <img src="FEATURED_IMAGE_URL" alt="ARTICLE_TITLE" class="article-image">
+        
+        <div class="article-content">
+            <!-- INTRODUCTION -->
+            <p>INTRO_PARAGRAPH</p>
+            
+            <!-- SUBSCRIBE CTA -->
+            <div class="cta-box">
+                <h3>Get Weekly Arlington Guides</h3>
+                <p>Local news, events, and hidden gems delivered to your inbox every Friday.</p>
+                <a href="/#subscribe?utm_source=article&utm_medium=web&utm_campaign=ARTICLE_SLUG" class="btn-primary">Subscribe Free →</a>
+            </div>
+            
+            <!-- BUSINESS LISTINGS -->
+            <h2>BUSINESS_CATEGORY</h2>
+            
+            <div class="business-listing">
+                <h3><a href="BUSINESS_WEBSITE" target="_blank">BUSINESS_NAME</a> <span class="rating">⭐ RATING</span></h3>
+                <p>BUSINESS_DESCRIPTION</p>
+                <p><a href="BUSINESS_WEBSITE" target="_blank">Visit Website →</a></p>
+            </div>
+            
+            <!-- MORE CONTENT -->
+            <h2>More to Explore</h2>
+            <p>CONTENT_PARAGRAPH</p>
+            
+            <!-- RELATED ARTICLES -->
+            <div class="related">
+                <h3>More Arlington Guides</h3>
+                <div class="related-grid">
+                    <a href="RELATED_ARTICLE_1_URL" class="related-card">
+                        <strong>RELATED_ARTICLE_1_TITLE</strong>
+                        <p style="color: #888; font-size: 0.9rem; margin-top: 0.5rem;">RELATED_ARTICLE_1_DESC</p>
+                    </a>
+                    <a href="RELATED_ARTICLE_2_URL" class="related-card">
+                        <strong>RELATED_ARTICLE_2_TITLE</strong>
+                        <p style="color: #888; font-size: 0.9rem; margin-top: 0.5rem;">RELATED_ARTICLE_2_DESC</p>
+                    </a>
+                    <a href="RELATED_ARTICLE_3_URL" class="related-card">
+                        <strong>RELATED_ARTICLE_3_TITLE</strong>
+                        <p style="color: #888; font-size: 0.9rem; margin-top: 0.5rem;">RELATED_ARTICLE_3_DESC</p>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- BUSINESS CTA -->
+            <div class="cta-box" style="margin-top: 3rem;">
+                <h3>Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach 5,000+ engaged local readers.</p>
+                <a href="/business?utm_source=article&utm_medium=web&utm_campaign=ARTICLE_SLUG" class="btn-primary">Get Featured →</a>
+            </div>
+        </div>
+    </article>
+    
+    <footer>
+        <p>&copy; 2026 Arlington Pulse. Part of <a href="/">DFWA Social Buzz</a>.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="/privacy">Privacy</a> | 
+            <a href="/terms">Terms</a> | 
+            <a href="/#subscribe">Subscribe</a>
+        </p>
+    </footer>
+</body>
+</html>

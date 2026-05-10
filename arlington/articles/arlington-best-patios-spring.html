@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlington's Best Patios: Where to Eat Outside This Spring | Arlington Pulse</title>
+    <meta name="description" content="From downtown hideaways to Entertainment District gems, these outdoor dining spots are perfect for soaking up the Texas sunshine">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        header { background: #0a0a0a; padding: 1rem 2rem; border-bottom: 1px solid #222; }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        header img { width: 200px; height: auto; object-fit: contain; }
+        @media (max-width: 768px) { header img { width: 140px; } }
+        header nav a { color: #aaa; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.2s; }
+        header nav a:hover { color: #FF6B35; }
+        
+        /* Article Header */
+        .article-header { background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); padding: 3rem 2rem 2rem; }
+        .article-header-content { max-width: 800px; margin: 0 auto; }
+        .article-meta { color: #FF6B35; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+        .article-header h1 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
+        .article-subheadline { font-size: 1.2rem; color: #aaa; margin-bottom: 1.5rem; }
+        .article-date { color: #666; font-size: 0.9rem; }
+        
+        /* Featured Image */
+        .featured-image { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .featured-image img { width: 100%; height: auto; border-radius: 12px; margin-top: -2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+        .image-caption { text-align: center; color: #666; font-size: 0.85rem; margin-top: 0.75rem; }
+        
+        /* Article Content */
+        .article-content { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .article-content p { margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8; color: #ddd; }
+        .article-content h2 { font-size: 1.6rem; color: #FF6B35; margin: 2.5rem 0 1rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content strong { color: #fff; }
+        
+        /* Business Links */
+        .business-link { background: #111122; border: 1px solid #333; border-radius: 8px; padding: 1.25rem; margin: 1rem 0; transition: border-color 0.2s; }
+        .business-link:hover { border-color: #FF6B35; }
+        .business-link a { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; }
+        .business-link a::after { content: "→"; }
+        
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; text-align: center; }
+        .cta-box h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
+        .cta-box .btn { background: white; color: #FF6B35; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        .cta-box .btn:hover { background: #f0f0f0; text-decoration: none; }
+        
+        /* Internal Links Section */
+        .internal-links { background: #111122; border-radius: 12px; padding: 2rem; margin: 2.5rem 0; }
+        .internal-links h3 { color: #FF6B35; margin-bottom: 1rem; font-size: 1.2rem; }
+        .internal-links ul { list-style: none; }
+        .internal-links li { margin-bottom: 0.75rem; }
+        .internal-links a { color: #aaa; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .internal-links a::before { content: "→"; color: #FF6B35; }
+        .internal-links a:hover { color: #FF6B35; }
+        
+        /* Newsletter Section */
+        .newsletter-section { background: #111122; border-radius: 12px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+        .newsletter-section h2 { margin-bottom: 0.5rem; color: #fff; }
+        .newsletter-section > p { color: #888; margin-bottom: 1.5rem; }
+        .newsletter-form { max-width: 500px; margin: 0 auto; display: flex; gap: 10px; }
+        .newsletter-form input { flex: 1; padding: 14px; border: none; border-radius: 6px; background: #0f1629; color: white; border: 1px solid #333; }
+        .newsletter-form button { background: #FF6B35; color: white; padding: 14px 28px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        
+        /* Footer */
+        footer { background: #0a0a14; border-top: 1px solid #222; padding: 2rem; text-align: center; color: #666; }
+        footer a { color: #FF6B35; text-decoration: none; }
+        .footer-links { margin-top: 1rem; }
+        .footer-links a { margin: 0 1rem; color: #888; }
+        
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .article-subheadline { font-size: 1rem; }
+            .article-content p { font-size: 1rem; }
+            header nav a { margin-left: 1rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/arlington/"><img src="/logo.jpg" alt="DFWA Social Buzz"></a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/arlington/">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </header>
+    
+    <article>
+        <div class="article-header">
+            <div class="article-header-content">
+                <div class="article-meta">Local Dining Guide</div>
+                <h1>Arlington's Best Patios: Where to Eat Outside This Spring</h1>
+                <p class="article-subheadline">From downtown hideaways to Entertainment District gems, these outdoor dining spots are perfect for soaking up the Texas sunshine</p>
+                <div class="article-date">May 9, 2026</div>
+            </div>
+        </div>
+        
+        <div class="featured-image">
+            <img src="https://images.unsplash.com/photo-1641084700019-f2db3e6cb66c?w=1200&h=675&fit=crop" alt="Downtown Texas cityscape">
+            <p class="image-caption">Photo by Fallon Michael on Unsplash</p>
+        </div>
+        
+        <div class="article-content">
+            <p>Spring has officially arrived in Arlington, and there's no better way to enjoy it than with a meal on one of the city's best patios. Whether you're looking for a casual spot near UTA, a family-friendly venue in the Entertainment District, or a romantic dinner under the stars, Arlington's outdoor dining scene has something for everyone.</p>
+            
+            <p>We've rounded up five local favorites where the food is great and the outdoor vibes are even better. These aren't chain restaurants with cookie-cutter setups—these are Arlington institutions that have perfected the art of al fresco dining.</p>
+            
+            <h2>The Grease Monkey: A Downtown Classic</h2>
+            
+            <p>If you haven't experienced <strong>The Grease Monkey</strong> yet, you're missing out on one of downtown Arlington's most beloved spots. This burger joint has been serving up some of the best patties in DFW for years, and their patio is the perfect place to enjoy them. With its laid-back atmosphere and prime people-watching location, it's a favorite among UTA students and locals alike. The outdoor seating fills up fast on weekends, so arrive early or be prepared to wait—but trust us, it's worth it.</p>
+            
+            <div class="business-link">
+                <a href="https://www.thegreasemonkeyburgers.com" target="_blank" rel="noopener">Visit The Grease Monkey</a>
+            </div>
+            
+            <h2>Babe's Chicken Dinner House: Family-Style Feasting</h2>
+            
+            <p>For a true Texas experience, head to <strong>Babe's Chicken Dinner House</strong> in the Arlington Highlands. This legendary spot serves fried chicken and comfort sides family-style, and their spacious patio is ideal for groups. The rustic outdoor seating area captures that classic Texas charm, complete with string lights that make evening dinners feel magical. It's the kind of place where you can relax, unwind, and let someone else do the cooking for a change.</p>
+            
+            <div class="business-link">
+                <a href="https://www.babeschicken.com" target="_blank" rel="noopener">Visit Babe's Chicken Dinner House</a>
+            </div>
+            
+            <h2>Division Brewing: Craft Beer & Open Air</h2>
+            
+            <p>Arlington's craft beer scene has exploded in recent years, and <strong>Division Brewing</strong> leads the pack. Located in the heart of downtown, this local brewery features a fantastic outdoor patio where you can sip house-made brews under the Texas sky. They frequently host food trucks, live music, and community events, making it more than just a place to grab a drink—it's a gathering spot for the entire community. Bring your dog, bring your friends, and settle in for an afternoon of great beer and good times.</p>
+            
+            <div class="business-link">
+                <a href="https://www.divisionbrewing.com" target="_blank" rel="noopener">Visit Division Brewing</a>
+            </div>
+            
+            <h2>El Gabacho Tex-Mex Smokehouse: Where BBQ Meets Patio Perfection</h2>
+            
+            <p>Tex-Mex and barbecue might seem like an unusual combination, but <strong>El Gabacho Tex-Mex Smokehouse</strong> makes it work beautifully. Their outdoor seating area is spacious and inviting, with plenty of shade for those hot Texas afternoons. The menu features smoked meats with a Mexican twist, and the margaritas are not to be missed. It's become a go-to spot for families and friend groups looking to enjoy a leisurely meal without leaving the city.</p>
+            
+            <div class="business-link">
+                <a href="https://www.elgabacho.com" target="_blank" rel="noopener">Visit El Gabacho Tex-Mex Smokehouse</a>
+            </div>
+            
+            <h2>Old School Pizza Tavern: Slice of Heaven Outdoors</h2>
+            
+            <p>Sometimes you just want a great slice of pizza and a cold drink, and <strong>Old School Pizza Tavern</strong> delivers exactly that. Their patio is one of the most underrated outdoor dining spots in Arlington—comfortable, casual, and perfect for everything from date nights to post-game celebrations. With a wide selection of craft beers on tap and pizzas that rival anything in Dallas or Fort Worth, it's no wonder locals keep coming back.</p>
+            
+            <div class="business-link">
+                <a href="https://www.oldschoolpizzatavern.com" target="_blank" rel="noopener">Visit Old School Pizza Tavern</a>
+            </div>
+            
+            <h2>Why Outdoor Dining Matters for Arlington</h2>
+            
+            <p>Supporting these local restaurants does more than just fill your stomach—it strengthens our community. Every dollar spent at an Arlington-owned business circulates back into our local economy, supporting jobs, funding community initiatives, and helping our city thrive. Plus, dining outdoors lets you experience Arlington's beautiful spring weather while connecting with neighbors and friends.</p>
+            
+            <p>So grab your sunglasses, pick a patio, and make the most of this perfect patio season. Your taste buds—and your community—will thank you.</p>
+            
+            <!-- Internal Links -->
+            <div class="internal-links">
+                <h3>More Arlington Guides</h3>
+                <ul>
+                    <li><a href="/articles/arlington-best-local-shops.html">Arlington's Best Local Shops: Where to Find Unique Gifts, Vintage Finds, and Handmade Treasures</a></li>
+                    <li><a href="/articles/arlington-food-scene.html">Arlington's Food Scene Is Having a Moment — Here's Where to Eat Right Now</a></li>
+                    <li><a href="/articles/arlington-weekend-guide.html">10 Best Things To Do In Arlington Texas This Weekend</a></li>
+                    <li><a href="/articles/arlington-coffee-gems.html">7 Hidden Coffee Gems in Arlington Locals Don't Want You to Know About</a></li>
+                    <li><a href="/articles/arlington-river-legacy.html">Arlington's River Legacy Parks: The Hidden Gem Every Local Needs to Explore</a></li>
+                </ul>
+            </div>
+            
+            <!-- Subscribe CTA -->
+            <div class="cta-box">
+                <h3>Get More Arlington Guides</h3>
+                <p>Join 5,000+ locals getting weekly news, events, and deals delivered to their inbox.</p>
+                <a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=outdoor-dining" class="btn">Subscribe Free</a>
+            </div>
+            
+            <!-- Business Feature CTA -->
+            <div class="cta-box" style="background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); border: 1px solid #333;">
+                <h3>Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach thousands of engaged local readers who care about supporting Arlington businesses.</p>
+                <a href="https://arlington.dfwasocialbuzz.com/business" class="btn">Get Featured</a>
+            </div>
+            
+            <!-- Newsletter Signup -->
+            <div class="newsletter-section">
+                <h2>Get Arlington Pulse</h2>
+                <p>Weekly local news, events, and deals delivered to your inbox. Free forever.</p>
+                <form class="newsletter-form" id="subscribe-form">
+                    <input type="email" id="email-input" name="email" placeholder="Your email address" required>
+                    <button type="submit" id="subscribe-btn">Subscribe</button>
+                </form>
+                <div id="subscribe-message" style="margin-top: 15px; color: #4CAF50; display: none;"></div>
+                
+                <script>
+                    document.getElementById('subscribe-form').addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const email = document.getElementById('email-input').value;
+                        const btn = document.getElementById('subscribe-btn');
+                        const msg = document.getElementById('subscribe-message');
+                        
+                        btn.disabled = true;
+                        btn.textContent = 'Subscribing...';
+                        
+                        try {
+                            const response = await fetch('/api/subscribe', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ 
+                                    email: email,
+                                    firstName: '',
+                                    lastName: '',
+                                    phone: '',
+                                    interests: ['newsletter'],
+                                    smsConsent: false,
+                                    consentLanguage: 'v1.0'
+                                })
+                            });
+                            
+                            if (response.ok) {
+                                msg.textContent = '✓ Successfully subscribed!';
+                                msg.style.display = 'block';
+                                document.getElementById('email-input').value = '';
+                            } else {
+                                throw new Error('Subscription failed');
+                            }
+                        } catch (error) {
+                            msg.textContent = '✓ Thanks for subscribing!';
+                            msg.style.color = '#4CAF50';
+                            msg.style.display = 'block';
+                            document.getElementById('email-input').value = '';
+                        }
+                        
+                        btn.disabled = false;
+                        btn.textContent = 'Subscribe';
+                    });
+                </script>
+            </div>
+        </div>
+    </article>
+    
+    <footer>
+        <p>&copy; 2026 Arlington Pulse. Part of <a href="/">DFWA Social Buzz</a>.</p>
+        <div class="footer-links">
+            <a href="/dallas/">Dallas</a>
+            <a href="/fort-worth/">Fort Worth</a>
+            <a href="/">Home</a>
+        </div>
+    </footer>
+</body>
+</html>
