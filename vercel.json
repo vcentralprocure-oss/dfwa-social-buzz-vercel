@@ -2,6 +2,18 @@
   "outputDirectory": ".",
   "rewrites": [
     {
+      "source": "/arlington/articles/:slug",
+      "destination": "/arlington/articles/:slug.html"
+    },
+    {
+      "source": "/dallas/articles/:slug",
+      "destination": "/dallas/articles/:slug.html"
+    },
+    {
+      "source": "/fortworth/articles/:slug",
+      "destination": "/fortworth/articles/:slug.html"
+    },
+    {
       "source": "/arlington/:path*",
       "destination": "/arlington/:path*"
     },
