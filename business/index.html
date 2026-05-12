@@ -23,7 +23,7 @@
         .form-section { background: linear-gradient(135deg, #16213e 0%, #0f1629 100%); padding: 4rem 2rem; text-align: center; }
         .form-section h2 { color: #FF6B35; margin-bottom: 1rem; }
         .form-section p { color: #ccc; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
-        .business-form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+        .business-form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; text-align: left; }
         .business-form input, .business-form select, .business-form textarea { 
             padding: 14px; 
             border-radius: 6px; 
@@ -33,25 +33,131 @@
             font-size: 1rem;
         }
         .business-form input::placeholder, .business-form textarea::placeholder { color: #666; }
+        
+        /* Checkbox styling */
+        .checkbox-group {
+            background: rgba(255, 107, 53, 0.05);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: #ccc;
+        }
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            accent-color: #FF6B35;
+            cursor: pointer;
+        }
+        .checkbox-group .checkbox-text {
+            flex: 1;
+        }
+        .checkbox-group .checkbox-label {
+            font-weight: 600;
+            color: white;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        .checkbox-group .checkbox-description {
+            font-size: 0.85rem;
+            color: #888;
+            display: block;
+        }
+        .checkbox-group.required {
+            border-color: #FF6B35;
+        }
+        
+        /* Interest checkboxes */
+        .interests-group {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+        .interest-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 6px;
+        }
+        .interest-checkbox input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+        }
+        
+        /* Consent section */
+        .consent-section {
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        .consent-section h3 {
+            color: #FF6B35;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .consent-links {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .consent-links a {
+            color: #FF6B35;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        .consent-links a:hover {
+            text-decoration: underline;
+        }
+        
         .business-form button { 
             background: #FF6B35; 
             color: white; 
-            padding: 14px 28px; 
+            padding: 16px 32px; 
             border: none; 
             border-radius: 6px; 
             cursor: pointer; 
             font-weight: 600; 
-            font-size: 1rem; 
+            font-size: 1.1rem; 
             transition: background 0.2s;
+            margin-top: 1rem;
         }
         .business-form button:hover { background: #e55a2b; }
+        .business-form button:disabled {
+            background: #666;
+            cursor: not-allowed;
+        }
+        
+        .field-label {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: -0.5rem;
+            margin-top: 0.5rem;
+        }
+        .required-field::after {
+            content: " *";
+            color: #FF6B35;
+        }
+        
         .success-message { 
             display: none; 
             background: #1a472a; 
             color: #4ade80; 
-            padding: 1rem; 
+            padding: 1.5rem; 
             border-radius: 6px; 
             margin-top: 1rem; 
+            text-align: center;
         }
         .back-link { 
             display: inline-block; 
@@ -103,71 +209,219 @@
         <h2>Apply to Get Featured</h2>
         <p>Fill out the form below and we'll get back to you within 24 hours.</p>
         
-        <form class="business-form" action="/api/subscribe" method="POST" id="business-form">
-            <!-- Visible Fields -->
-            <input type="text" name="business_name" placeholder="Business Name" required>
-            <input type="text" name="contact_name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Business Email" required>
-            <input type="tel" name="phone" placeholder="Phone Number">
+        <form class="business-form" id="business-form">
+            <!-- Business Contact Fields -->
+            <label class="field-label required-field">First Name</label>
+            <input type="text" name="first_name" placeholder="Your first name" required>
+            
+            <label class="field-label required-field">Last Name</label>
+            <input type="text" name="last_name" placeholder="Your last name" required>
+            
+            <label class="field-label required-field">Business Name</label>
+            <input type="text" name="business_name" placeholder="Your business name" required>
+            
+            <label class="field-label">Mobile Phone</label>
+            <input type="tel" name="phone" placeholder="(555) 123-4567" id="phone-input">
+            
+            <label class="field-label required-field">Business Email</label>
+            <input type="email" name="email" placeholder="you@yourbusiness.com" required>
+            
+            <label class="field-label">Website or Social Page</label>
+            <input type="text" name="website" placeholder="https://yourbusiness.com or @yourhandle">
+            
+            <label class="field-label">Business Location</label>
             <select name="city_interest" required>
-                <option value="">Business Location</option>
+                <option value="">Select your city...</option>
                 <option value="arlington">Arlington</option>
                 <option value="dallas">Dallas</option>
                 <option value="fort-worth">Fort Worth</option>
                 <option value="other-dfw">Other DFW Area</option>
             </select>
-            <textarea name="message" placeholder="Tell us about your business and what you're looking for..." rows="4"></textarea>
-            <button type="submit">Get Featured</button>
             
-            <!-- Hidden Fields for Tracking & Routing -->
+            <!-- Interest Checkboxes -->
+            <label class="field-label">I'm interested in: (check all that apply)</label>
+            <div class="interests-group">
+                <label class="interest-checkbox">
+                    <input type="checkbox" name="interests" value="local-deal">
+                    <span>I have a local deal to add</span>
+                </label>
+                <label class="interest-checkbox">
+                    <input type="checkbox" name="interests" value="sponsored-post">
+                    <span>I'm interested in a sponsored post</span>
+                </label>
+                <label class="interest-checkbox">
+                    <input type="checkbox" name="interests" value="visibility-updates">
+                    <span>I'd like updates about future visibility opportunities</span>
+                </label>
+            </div>
+            
+            <label class="field-label">Additional Details</label>
+            <textarea name="message" placeholder="Tell us about your business and what you're looking for..." rows="4"></textarea>
+            
+            <!-- Consent Section -->
+            <div class="consent-section">
+                <h3>Consent & Privacy</h3>
+                
+                <!-- Required Contact Consent -->
+                <div class="checkbox-group required">
+                    <label>
+                        <input type="checkbox" name="contact_consent" required id="contact-consent">
+                        <span class="checkbox-text">
+                            <span class="checkbox-label">I agree to be contacted about this request*</span>
+                            <span class="checkbox-description">I confirm I have read and agree to the <a href="/privacy-policy/" target="_blank" style="color: #FF6B35;">Privacy Policy</a> and <a href="/terms-and-conditions/" target="_blank" style="color: #FF6B35;">Terms & Conditions</a>.</span>
+                        </span>
+                    </label>
+                </div>
+                
+                <!-- Optional SMS Consent (A2P/TCPA Compliant) -->
+                <div class="checkbox-group">
+                    <label>
+                        <input type="checkbox" name="sms_consent" id="sms-consent">
+                        <span class="checkbox-text">
+                            <span class="checkbox-label">Yes, I agree to receive text messages</span>
+                            <span class="checkbox-description">
+                                I agree to receive text messages from DFWA Social Buzz about business promotions, visibility opportunities, and related updates. 
+                                Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. 
+                                Consent is not a condition of purchase. This consent is optional and not required to submit this form.
+                            </span>
+                        </span>
+                    </label>
+                </div>
+                
+                <div class="consent-links">
+                    <a href="/privacy-policy/" target="_blank">Privacy Policy</a> | 
+                    <a href="/terms-and-conditions/" target="_blank">Terms & Conditions</a>
+                </div>
+            </div>
+            
+            <button type="submit" id="submit-btn">Get Featured</button>
+            
+            <!-- Hidden Fields for Attribution -->
+            <input type="hidden" name="city" value="" id="attribution-city">
+            <input type="hidden" name="intent" value="" id="attribution-intent">
+            <input type="hidden" name="source_host" value="" id="attribution-source-host">
+            <input type="hidden" name="source_page" value="" id="attribution-source-page">
+            <input type="hidden" name="source_path" value="" id="attribution-source-path">
+            <input type="hidden" name="button_location" value="" id="attribution-button-location">
+            <input type="hidden" name="referrer" value="" id="attribution-referrer">
+            <input type="hidden" name="submission_timestamp" value="" id="submission-timestamp">
+            <input type="hidden" name="consent_timestamp" value="" id="consent-timestamp">
+            <input type="hidden" name="consent_language_version" value="v1.0-tcpa-a2p">
+            <input type="hidden" name="ip_address" value="" id="ip-address">
+            <input type="hidden" name="user_agent" value="" id="user-agent">
+            
+            <!-- Legacy Fields -->
             <input type="hidden" name="entry_point" value="business_page">
             <input type="hidden" name="offer_type" value="business">
-            <input type="hidden" name="subscriber_type" value="business">
             <input type="hidden" name="source_form_id" value="form_business">
-            <input type="hidden" name="source_url" value="" id="business-source-url">
             <input type="hidden" name="source_campaign" value="organic">
         </form>
         
         <div class="success-message" id="success-message">
-            ✅ Thank you! We'll be in touch within 24 hours.
+            <strong>✅ Thank you!</strong><br>
+            We've received your request and will be in touch within 24 hours.<br>
+            <span id="sms-confirmation" style="display: none; margin-top: 0.5rem; font-size: 0.9rem;">
+                You've opted in to receive SMS updates. Reply STOP at any time to opt out.
+            </span>
         </div>
         
         <a href="/" class="back-link">← Back to Home</a>
     </section>
     
     <footer>
-        <p>&copy; 2026 DFWA Social Buzz. All rights reserved.</p>
+        <p>&copy; 2026 Vida Hub Products LLC. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="/" style="color: #FF6B35;">Home</a> | 
+            <a href="/privacy-policy/" style="color: #FF6B35;">Privacy Policy</a> | 
+            <a href="/terms-and-conditions/" style="color: #FF6B35;">Terms & Conditions</a>
+        </p>
     </footer>
     
     <script>
-        // Auto-populate source URL
-        document.getElementById('business-source-url').value = window.location.href;
+        // Read query parameters from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Populate attribution hidden fields
+        document.getElementById('attribution-city').value = urlParams.get('city') || 'unknown';
+        document.getElementById('attribution-intent').value = urlParams.get('intent') || 'get_featured';
+        document.getElementById('attribution-source-host').value = urlParams.get('source_host') || window.location.hostname;
+        document.getElementById('attribution-source-page').value = urlParams.get('source_page') || document.referrer || window.location.href;
+        document.getElementById('attribution-source-path').value = urlParams.get('source_path') || '/';
+        document.getElementById('attribution-button-location').value = urlParams.get('button_location') || 'unknown';
+        document.getElementById('attribution-referrer').value = document.referrer || '';
+        document.getElementById('user-agent').value = navigator.userAgent;
+        
+        // Pre-select city dropdown if provided
+        const cityParam = urlParams.get('city');
+        if (cityParam) {
+            const citySelect = document.querySelector('select[name="city_interest"]');
+            if (citySelect) {
+                const options = citySelect.options;
+                for (let i = 0; i < options.length; i++) {
+                    if (options[i].value === cityParam || options[i].value === cityParam.replace('-', ' ')) {
+                        citySelect.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+        }
         
         // Handle form submission
-        document.getElementById('business-form').addEventListener('submit', function(e) {
+        document.getElementById('business-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const form = this;
+            const submitBtn = document.getElementById('submit-btn');
+            
+            // Disable button during submission
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            
+            // Capture timestamps at submission moment
+            const now = new Date().toISOString();
+            document.getElementById('submission-timestamp').value = now;
+            document.getElementById('consent-timestamp').value = now;
+            
+            // Capture IP (will be captured server-side, but we try client-side for redundancy)
+            try {
+                const ipResponse = await fetch('https://api.ipify.org?format=json');
+                const ipData = await ipResponse.json();
+                document.getElementById('ip-address').value = ipData.ip;
+            } catch (e) {
+                document.getElementById('ip-address').value = 'client-side-capture-failed';
+            }
+            
+            // Check SMS consent for success message
+            const smsConsented = document.getElementById('sms-consent').checked;
+            
             const formData = new FormData(form);
             
-            fetch('/api/subscribe', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(Object.fromEntries(formData))
-            })
-            .then(response => response.json())
-            .then(data => {
+            try {
+                const response = await fetch('/api/business-form', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(Object.fromEntries(formData))
+                });
+                
+                const data = await response.json();
+                
                 if (data.success) {
                     form.style.display = 'none';
                     document.getElementById('success-message').style.display = 'block';
+                    if (smsConsented) {
+                        document.getElementById('sms-confirmation').style.display = 'block';
+                    }
                 } else {
-                    alert('Error: ' + data.message);
+                    alert('Error: ' + (data.message || 'Something went wrong'));
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Get Featured';
                 }
-            })
-            .catch(error => {
+            } catch (error) {
                 console.error('Error:', error);
                 alert('Something went wrong. Please try again.');
-            });
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Get Featured';
+            }
         });
     </script>
 </body>

@@ -22,6 +22,8 @@
         .main-nav .nav-links { display: flex; gap: 1.5rem; }
         .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
         .main-nav .nav-links a:hover { color: #FF6B35; }
+        .main-nav .nav-links button { color: #aaa; font-size: 0.9rem; transition: color 0.2s; padding: 0; }
+        .main-nav .nav-links button:hover { color: #FF6B35; }
         
         .city-nav { display: flex; gap: 0.5rem; }
         .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
@@ -169,9 +171,9 @@
                 <div class="nav-links">
                     <a href="/">Home</a>
                     <a href="#news">News</a>
-                    <a href="#deals">Deals</a>
-                    <a href="#business">Business</a>
-                    <a href="#subscribe">Subscribe</a>
+                    <a href="https://dfwasocialbuzz.com/deals/?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business/">Business</a>
+                    <button class="nav-subscribe-btn" onclick="toggleSubscribe()" style="background:none;border:none;color:#aaa;cursor:pointer;font-size:0.9rem;">Subscribe</button>
                 </div>
             </div>
             
@@ -244,20 +246,34 @@
         <!-- Featured Issue -->
         <div class="featured-issue">
             <span class="label">Featured Issue</span>
-            <h3>Arlington Farmers Market: Your Guide to Fresh Local Finds Every Weekend</h3>
-            <p>From farm-fresh produce to handmade crafts, discover why Arlington's farmers markets are becoming the heart of our local community. From Downtown Arlington Farmers Market to hidden gems along Cooper Street, here's your complete guide to shopping local and supporting the small businesses that make Arlington special.</p>
-            <div class="meta">May 10, 2026 • Local Shopping Guide</div>
-            <a href="/articles/arlington-farmers-market-guide.html" class="btn-primary">Read Full Issue</a>
-            <a href="/articles/arlington-farmers-market-guide.html" class="btn-secondary" style="margin-left: 1rem;">View Online</a>
+            <h3>Arlington's Coffee Scene Is Having a Moment — Here's Where to Get Your Fix</h3>
+            <p>From downtown roasteries to community-focused cafés, discover why Arlington's independent coffee shops are becoming the heart of our local culture. Featuring Inclusion Coffee, Arlington Coffee Roasters, Grounds & Gold, and Nehemiah Coffee Co.</p>
+            <div class="meta">May 12, 2026 • Arlington Coffee Guide</div>
+            <a href="/articles/arlington-coffee-scene-guide.html" class="btn-primary">Read Full Issue</a>
+            <a href="https://dfwasocialbuzz.com/deals/?cities=arlington" class="btn-secondary" style="margin-left: 1rem;">View Local Deals</a>
         </div>
-        
-        <!-- Recent Issues - Moved up directly under sponsored -->
+
+        <!-- Recent Issues -->
         <div class="section-header" id="news">
             <h2>Recent Issues</h2>
             <p>The freshest stories from Arlington</p>
         </div>
         
         <div class="archive-grid">
+            <div class="issue-card">
+                <h4>Arlington's Coffee Scene Is Having a Moment — Here's Where to Get Your Fix</h4>
+                <div class="date">May 12, 2026</div>
+                <p>From downtown roasteries to community-focused cafés, discover why Arlington's independent coffee shops are becoming the heart of our local culture.</p>
+                <a href="/articles/arlington-coffee-scene-guide.html">Read Issue →</a>
+            </div>
+
+            <div class="issue-card">
+                <h4>Arlington's Entertainment District: Your Ultimate Summer Guide to Dining, Games & Fun</h4>
+                <div class="date">May 11, 2026</div>
+                <p>From Rangers baseball to rooftop cocktails, discover why locals and visitors alike flock to Arlington's most exciting neighborhood.</p>
+                <a href="/articles/arlington-entertainment-district-summer-guide.html">Read Issue →</a>
+            </div>
+
             <div class="issue-card">
                 <h4>Arlington Farmers Market: Your Guide to Fresh Local Finds Every Weekend</h4>
                 <div class="date">May 10, 2026</div>
@@ -333,7 +349,7 @@
         <!-- Repeated action buttons at bottom -->
         <section class="action-bar" style="margin-top: 2rem; margin-bottom: 2rem;">
             <div class="action-buttons">
-                <a href="#subscribe" class="action-btn subscribe">📧 Subscribe</a>
+                <button class="action-btn subscribe" onclick="toggleSubscribe()">📧 Subscribe</button>
                 <a href="https://dfwasocialbuzz.com/deals/?cities=arlington" class="action-btn deals">💰 Local Deals</a>
                 <a href="https://dfwasocialbuzz.com/business/" class="action-btn business">🏢 Get Featured</a>
             </div>
@@ -496,6 +512,7 @@
                 btn.disabled = false;
             }
         });
+    }
     </script>
 </body>
 </html>

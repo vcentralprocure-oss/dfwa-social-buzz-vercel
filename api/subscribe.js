@@ -1,37 +1,7 @@
-// Vercel Serverless Function - Subscriber Intake Handler
-// Routes form submissions to Global Control and Letterman
-//
-// PRODUCTION FLOW:
-// 1. Create contact (POST /contacts) - creates contact with email only
-// 2. Combined update (PUT /contacts/{id}) - updates firstName, lastName, phone + customFields
-// 3. Apply tags (POST /tags/fire-tag/{id}) - applies tags using email
-// 4. Re-apply core fields (PUT /contacts/{id}) - re-applies firstName, lastName, phone
-// 5. Final verification - confirms all data persisted
-//
-// KNOWN INTEGRATION ISSUE:
-// Global Control's fire-tag endpoint wipes firstName, lastName, and phone fields.
-// The workaround is to re-apply core fields after tagging.
-// This has been verified through extensive testing (see test logs in MEMORY.md).
-//
-// FOLLOW-UP TASKS:
-// TODO: Investigate if Global Control has a safer tagging endpoint that doesn't wipe fields
-// TODO: Check if tag-triggered automation in GC can be configured to preserve fields
-// TODO: Determine if the re-apply workaround can be removed in future GC API versions
-// TODO: Monitor GC API changelog for fixes to this behavior
+// Fixed Subscribe API Endpoint
+// Uses same pattern as working business-form.js
 
-const CUSTOM_FIELD_IDS = {
-  city_interest: '69f2b7b271e469e536d73a2a',
-  entry_point: '69f2b7b271e469e536d73ade',
-  offer_type: '69f2b7b271e469e536d73b92',
-  subscriber_type: '69f2b7b371e469e536d73c4a',
-  source_form_id: '69f2b7b371e469e536d73cfe',
-  source_url: '69f2b7b371e469e536d73db2',
-  source_campaign: '69f2b7b371e469e536d73e66',
-  business_name: '69f2b7b371e469e536d73f1a',
-  inquiry_message: '69f2b7b371e469e536d73fce'
-};
-
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -39,157 +9,96 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const traceId = `sub_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-  const apiKey = process.env.GC_API_KEY;
-  
-  if (!apiKey) return res.status(500).json({ error: 'GC_API_KEY not configured', traceId });
-
-  const { email, business_name, contact_name, phone, message, city_interest, entry_point, offer_type, subscriber_type, source_form_id, source_url, source_campaign, letterman_pub_id } = req.body;
-  if (!email) return res.status(400).json({ error: 'Email is required', traceId });
-
-  const nameParts = (contact_name || '').split(' ');
-  const firstName = nameParts[0] || '';
-  const lastName = nameParts.slice(1).join(' ') || '';
-
-  const log = { traceId, steps: [] };
-
   try {
-    // STEP 1: CREATE CONTACT
-    const createRes = await fetch('https://api.globalcontrol.io/api/ai/contacts', {
-      method: 'POST',
-      headers: { 'X-API-KEY': apiKey, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email })
-    });
-    const createData = await createRes.json();
-    log.steps.push({ step: 'CREATE', status: createRes.status, contactId: createData.data?._id });
-    if (!createRes.ok) throw new Error(`Create failed: ${JSON.stringify(createData)}`);
-    const contactId = createData.data._id;
+    const { email, city, source, first_name, last_name } = req.body;
 
-    // STEP 2: COMBINED UPDATE (core fields + custom fields in single request)
-    const updatePayload = {};
-    if (firstName) updatePayload.firstName = firstName;
-    if (lastName) updatePayload.lastName = lastName;
-    if (phone) updatePayload.phone = phone;
-    
-    const customFields = [];
-    if (city_interest) customFields.push({ customFieldId: CUSTOM_FIELD_IDS.city_interest, value: city_interest });
-    if (entry_point) customFields.push({ customFieldId: CUSTOM_FIELD_IDS.entry_point, value: entry_point });
-    if (offer_type) customFields.push({ customFieldId: CUSTOM_FIELD_IDS.offer_type, value: offer_type });
-    if (subscriber_type) customFields.push({ customFieldId: CUSTOM_FIELD_IDS.subscriber_type, value: subscriber_type });
-    if (source_form_id) customFields.push({ customFieldId: CUSTOM_FIELD_IDS.source_form_id, value: source_form_id });
-    if (source_url) customFields.push({ customFieldId: CUSTOM_FIELD_IDS.source_url, value: source_url });
-    if (source_campaign) customFields.push({ customFieldId: CUSTOM_FIELD_IDS.source_campaign, value: source_campaign });
-    if (business_name) customFields.push({ customFieldId: CUSTOM_FIELD_IDS.business_name, value: business_name });
-    if (message) customFields.push({ customFieldId: CUSTOM_FIELD_IDS.inquiry_message, value: message });
-    if (customFields.length > 0) updatePayload.customFields = customFields;
+    if (!email) {
+      return res.status(400).json({ success: false, message: 'Email is required' });
+    }
 
-    const updateRes = await fetch(`https://api.globalcontrol.io/api/ai/contacts/${contactId}`, {
-      method: 'PUT',
-      headers: { 'X-API-KEY': apiKey, 'Content-Type': 'application/json' },
-      body: JSON.stringify(updatePayload)
-    });
-    const updateData = await updateRes.json();
-    log.steps.push({ step: 'UPDATE', status: updateRes.status, firstName: updateData.data?.firstName, lastName: updateData.data?.lastName, phone: updateData.data?.phone, customFieldsCount: updateData.data?.customFields?.length });
-    if (!updateRes.ok) throw new Error(`Update failed: ${JSON.stringify(updateData)}`);
+    const GC_API_KEY = process.env.GC_API_KEY;
+    let gcSuccess = false;
+    let gcError = null;
 
-    // STEP 3: APPLY TAGS
-    const tags = getTagsForSource(source_form_id, city_interest);
-    const tagsRes = await fetch('https://api.globalcontrol.io/api/ai/tags', { headers: { 'X-API-KEY': apiKey } });
-    const tagsData = await tagsRes.json();
-    const allTags = tagsData.data || tagsData;
-    
-    for (const tagName of tags) {
-      const tag = allTags.find(t => t.name === tagName);
-      if (tag) {
-        await fetch(`https://api.globalcontrol.io/api/ai/tags/fire-tag/${tag._id}`, {
+    if (GC_API_KEY) {
+      try {
+        // Build tags (same pattern as business form)
+        const tags = [
+          'lead:subscriber',
+          'source:website',
+          'source:subscribe-form',
+          'SUBSCRIBE_FORM_ACTIVATED',
+          `city:${city || 'Arlington'}`,
+          'intent:newsletter',
+          'interest:local-news'
+        ];
+
+        // Build contact data (same structure as business form)
+        const contactData = {
+          email: email,
+          firstName: first_name || '',
+          lastName: last_name || '',
+          customFields: {
+            city_interest: city || 'Arlington',
+            subscriber_type: 'newsletter',
+            source_form_id: 'form_subscribe',
+            entry_point: source || 'website',
+            subscription_date: new Date().toISOString()
+          },
+          tags: tags
+        };
+
+        console.log('Sending to Global Control:', JSON.stringify(contactData, null, 2));
+
+        const gcResponse = await fetch('https://api.globalcontrol.io/api/ai/contacts', {
           method: 'POST',
-          headers: { 'X-API-KEY': apiKey, 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email })
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-KEY': GC_API_KEY
+          },
+          body: JSON.stringify(contactData)
         });
+
+        if (!gcResponse.ok) {
+          const errorText = await gcResponse.text();
+          console.error('Global Control API error:', errorText);
+          gcError = errorText;
+        } else {
+          const gcData = await gcResponse.json();
+          console.log('Global Control success:', gcData);
+          gcSuccess = true;
+        }
+      } catch (error) {
+        console.error('Global Control integration error:', error);
+        gcError = error.message;
       }
     }
-    log.steps.push({ step: 'TAGS', status: 200, tagsApplied: tags.length });
 
-    // STEP 4: POST-TAG VERIFICATION
-    const verifyRes = await fetch(`https://api.globalcontrol.io/api/ai/contacts/${contactId}`, { headers: { 'X-API-KEY': apiKey } });
-    const verifyData = await verifyRes.json();
-    const postTagFirstName = verifyData.data?.firstName || '';
-    const postTagLastName = verifyData.data?.lastName || '';
-    const postTagPhone = verifyData.data?.phone || '';
-    const postTagCustomFields = verifyData.data?.customFields?.length || 0;
-    
-    log.steps.push({ step: 'POST_TAG_VERIFY', firstName: postTagFirstName, lastName: postTagLastName, phone: postTagPhone, customFieldsCount: postTagCustomFields });
-
-    // STEP 5: RE-APPLY CORE FIELDS IF WIPED BY TAGS
-    // WORKAROUND: Global Control fire-tag wipes firstName/lastName/phone
-    const needsReapply = (firstName && !postTagFirstName) || (lastName && !postTagLastName) || (phone && !postTagPhone);
-    let reapplyStatus = null;
-    let finalFirstName = postTagFirstName;
-    let finalLastName = postTagLastName;
-    let finalPhone = postTagPhone;
-    
-    if (needsReapply) {
-      const reapplyPayload = {};
-      if (firstName) reapplyPayload.firstName = firstName;
-      if (lastName) reapplyPayload.lastName = lastName;
-      if (phone) reapplyPayload.phone = phone;
-      
-      const reapplyRes = await fetch(`https://api.globalcontrol.io/api/ai/contacts/${contactId}`, {
-        method: 'PUT',
-        headers: { 'X-API-KEY': apiKey, 'Content-Type': 'application/json' },
-        body: JSON.stringify(reapplyPayload)
+    // Only return success if GC actually succeeded
+    if (gcSuccess) {
+      return res.status(200).json({
+        success: true,
+        message: 'Successfully subscribed',
+        gc_status: 'synced',
+        email: email,
+        city: city || 'Arlington'
       });
-      const reapplyData = await reapplyRes.json();
-      reapplyStatus = reapplyRes.status;
-      finalFirstName = reapplyData.data?.firstName || '';
-      finalLastName = reapplyData.data?.lastName || '';
-      finalPhone = reapplyData.data?.phone || '';
-      
-      log.steps.push({ step: 'REAPPLY', status: reapplyStatus, firstName: finalFirstName, lastName: finalLastName, phone: finalPhone });
+    } else {
+      // GC failed - return honest error
+      return res.status(500).json({
+        success: false,
+        message: 'Subscription failed. Please try again.',
+        error: gcError || 'Global Control sync failed',
+        retryable: true
+      });
     }
-
-    // STEP 6: FINAL VERIFICATION
-    const finalRes = await fetch(`https://api.globalcontrol.io/api/ai/contacts/${contactId}`, { headers: { 'X-API-KEY': apiKey } });
-    const finalData = await finalRes.json();
-    const finalTags = finalData.data?.tags || [];
-    
-    log.steps.push({ step: 'FINAL_VERIFY', firstName: finalData.data?.firstName, lastName: finalData.data?.lastName, phone: finalData.data?.phone, customFieldsCount: finalData.data?.customFields?.length, tagsCount: finalTags.length });
-
-    return res.status(200).json({
-      success: true,
-      contactId,
-      traceId,
-      log,
-      summary: {
-        needsReapply,
-        reapplyStatus,
-        finalFirstName: finalData.data?.firstName,
-        finalLastName: finalData.data?.lastName,
-        finalPhone: finalData.data?.phone,
-        finalCustomFieldsCount: finalData.data?.customFields?.length,
-        finalTagsCount: finalTags.length
-      }
-    });
 
   } catch (error) {
-    log.steps.push({ step: 'ERROR', message: error.message });
-    return res.status(500).json({ success: false, error: error.message, traceId, log });
+    console.error('Subscribe error:', error);
+    return res.status(500).json({
+      success: false,
+      message: 'Subscription failed',
+      error: error.message
+    });
   }
-};
-
-function getTagsForSource(sourceFormId, cityInterest) {
-  const tagMap = {
-    'form_homepage': ['subscribed-homepage', 'intent-reader', 'interest-general'],
-    'form_arlington': ['subscribed-arlington', 'intent-reader', 'interest-arlington'],
-    'form_dallas': ['subscribed-dallas', 'intent-reader', 'interest-dallas'],
-    'form_fort_worth': ['subscribed-fort-worth', 'intent-reader', 'interest-fort-worth'],
-    'form_deals': ['subscribed-deals', 'intent-deals'],
-    'form_business': ['subscribed-business', 'intent-business', 'prospect-lead']
-  };
-  const baseTags = tagMap[sourceFormId] || ['subscribed-general', 'intent-reader'];
-  if (cityInterest && cityInterest !== 'general') {
-    const cityTag = `interest-${cityInterest}`;
-    if (!baseTags.includes(cityTag)) baseTags.push(cityTag);
-  }
-  return baseTags;
 }

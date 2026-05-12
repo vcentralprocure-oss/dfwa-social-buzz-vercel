@@ -1,0 +1,17 @@
+{
+  "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/articles",
+      "destination": "/articles/index.html"
+    },
+    {
+      "source": "/articles/",
+      "destination": "/articles/index.html"
+    },
+    {
+      "source": "/articles/:slug",
+      "destination": "/articles/:slug.html"
+    }
+  ]
+}

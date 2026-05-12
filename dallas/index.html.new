@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dallas Current - Local News & Deals | DFWA</title>
+    <title>Arlington Pulse - Local News & Deals | DFWA</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
@@ -176,8 +176,8 @@
             </div>
             
             <nav class="city-nav">
-                <a href="/">Arlington</a>
-                <a href="/dallas/" class="active">Dallas</a>
+                <a href="/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
                 <a href="/fort-worth/">Fort Worth</a>
             </nav>
         </div>
@@ -185,8 +185,8 @@
     
     <!-- PHASE 1: Centered Site Title -->
     <section class="site-title-section">
-        <h1>Dallas Current</h1>
-        <p class="tagline">Your local guide to Dallas, TX</p>
+        <h1>Arlington Pulse</h1>
+        <p class="tagline">Your local guide to Arlington, TX</p>
     </section>
 
     <!-- PHASE 1: Sponsored Content Section (from approved draft) -->
@@ -223,13 +223,13 @@
     <section class="action-bar">
         <div class="action-buttons">
             <button class="action-btn subscribe" onclick="toggleSubscribe()">📧 Subscribe</button>
-            <a href="https://dfwasocialbuzz.com/deals/?cities=dallas" class="action-btn deals">💰 Local Deals</a>
+            <a href="https://dfwasocialbuzz.com/deals/?cities=arlington" class="action-btn deals">💰 Local Deals</a>
             <a href="https://dfwasocialbuzz.com/business/" class="action-btn business">🏢 Get Featured</a>
         </div>
         
         <!-- Compact Subscribe Module -->
         <div id="subscribe-module" class="subscribe-module">
-            <h3>Subscribe to Dallas Current</h3>
+            <h3>Subscribe to Arlington Pulse</h3>
             <p>Get local news, deals, and events delivered weekly.</p>
             <form class="subscribe-form-compact" id="subscribe-form" onsubmit="handleSubscribe(event)">
                 <input type="email" name="email" placeholder="Your email address" required>
@@ -249,7 +249,7 @@
         
         <div class="archive-grid">
             <div class="issue-card">
-                <h4>Arlington's Best Patios: HereWhere to Eat Outside This Spring#39;s Where to Eat Right Now</h4>
+                <h4>Arlington's Best Patios: Where to Eat Outside This Spring</h4>
                 <div class="date">May 9, 2026</div>
                 <p>From downtown hideaways to Entertainment District gems, these outdoor dining spots are perfect for soaking up the Texas sunshine.</p>
                 <a href="/articles/arlington-best-patios-spring.html">Read Issue →</a>
@@ -317,7 +317,7 @@
         <section class="action-bar" style="margin-top: 2rem; margin-bottom: 2rem;">
             <div class="action-buttons">
                 <a href="#subscribe" class="action-btn subscribe">📧 Subscribe</a>
-                <a href="https://dfwasocialbuzz.com/deals/?cities=dallas" class="action-btn deals">💰 Local Deals</a>
+                <a href="https://dfwasocialbuzz.com/deals/?cities=arlington" class="action-btn deals">💰 Local Deals</a>
                 <a href="https://dfwasocialbuzz.com/business/" class="action-btn business">🏢 Get Featured</a>
             </div>
         </section>
@@ -328,8 +328,8 @@
     <footer class="main-footer">
         <div class="footer-content">
             <div class="footer-brand">
-                <div class="logo-text">Dallas Current</div>
-                <div class="tagline">Your local guide to Dallas, TX</div>
+                <div class="logo-text">Arlington Pulse</div>
+                <div class="tagline">Your local guide to Arlington, TX</div>
                 <div class="powered-by">Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></div>
                 <div class="social-icons">
                     <a href="#" class="social-icon" title="YouTube">▶</a>
@@ -368,7 +368,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2026 Dallas Current. All rights reserved.</p>
+            <p>&copy; 2026 Arlington Pulse. All rights reserved.</p>
             <p style="margin-top: 0.5rem;">
                 <a href="https://dfwasocialbuzz.com/privacy-policy/">Privacy Policy</a> | 
                 <a href="https://dfwasocialbuzz.com/terms-and-conditions/">Terms & Conditions</a>
@@ -416,7 +416,7 @@
                     body: JSON.stringify({
                         email: email,
                         city: 'Arlington',
-                        source: 'dallas_homepage'
+                        source: 'arlington_homepage'
                     })
                 });
                 

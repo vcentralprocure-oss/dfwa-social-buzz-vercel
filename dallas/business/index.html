@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Featured | Dallas Current - Business Contact</title>
+  <meta name="description" content="Get your Dallas business featured. Sponsored articles, newsletter placements, and visibility opportunities.">
+  <style>
+    :root {
+      --primary: #FF6B35;
+      --primary-dark: #e55a2b;
+      --bg-dark: #1a1a2e;
+      --bg-card: #16213e;
+      --text: #ffffff;
+      --text-muted: #a0a0a0;
+      --border: #333;
+      --success: #10b981;
+      --error: #ef4444;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #0f1629 0%, #1a1a2e 100%);
+      padding: 1rem 0;
+      border-bottom: 3px solid var(--primary);
+    }
+    
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    .logo span {
+      color: var(--text);
+      font-weight: 400;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--primary) 0%, #ff8c5a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .subtitle {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+    
+    .form-card {
+      background: var(--bg-card);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid var(--border);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    
+    label .required {
+      color: var(--primary);
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 0.875rem 1rem;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-dark);
+      color: var(--text);
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+    
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--text-muted);
+    }
+    
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.75rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 8px;
+      border: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    
+    .checkbox-item:hover {
+      border-color: var(--border);
+    }
+    
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+    
+    .checkbox-label {
+      flex: 1;
+      margin: 0;
+      font-weight: 400;
+      cursor: pointer;
+    }
+    
+    .checkbox-label strong {
+      color: var(--primary);
+    }
+    
+    .consent-section {
+      background: rgba(255,107,53,0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+    
+    .consent-section h3 {
+      font-size: 1.125rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .consent-text {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    .consent-text a {
+      color: var(--primary);
+      text-decoration: underline;
+    }
+    
+    .required-consent {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .sms-consent {
+      background: rgba(16,185,129,0.05);
+      border: 1px solid rgba(16,185,129,0.2);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    
+    .sms-consent-label {
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+    
+    .sms-disclaimer {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      padding-left: 2rem;
+    }
+    
+    .submit-button {
+      width: 100%;
+      padding: 1rem 2rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.125rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    
+    .submit-button:hover {
+      background: var(--primary-dark);
+    }
+    
+    .submit-button:disabled {
+      background: var(--border);
+      cursor: not-allowed;
+    }
+    
+    .success-message {
+      background: rgba(16,185,129,0.1);
+      border: 1px solid var(--success);
+      color: var(--success);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      display: none;
+    }
+    
+    .error-message {
+      background: rgba(239,68,68,0.1);
+      border: 1px solid var(--error);
+      color: var(--error);
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      display: none;
+    }
+    
+    .privacy-links {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    
+    .privacy-links a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    @media (max-width: 640px) {
+      h1 { font-size: 1.5rem; }
+      .form-card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <a href="/" class="logo">Dallas<span>Pulse</span></a>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Get Your Business Featured</h1>
+    <p class="subtitle">Join hundreds of local Dallas businesses reaching engaged local customers.</p>
+
+    <div class="form-card">
+      <form id="business-form">
+        <!-- Contact Information -->
+        <div class="form-group">
+          <label for="firstName">First Name <span class="required">*</span></label>
+          <input type="text" id="firstName" name="firstName" required placeholder="Your first name">
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Last Name <span class="required">*</span></label>
+          <input type="text" id="lastName" name="lastName" required placeholder="Your last name">
+        </div>
+
+        <div class="form-group">
+          <label for="businessName">Business Name <span class="required">*</span></label>
+          <input type="text" id="businessName" name="businessName" required placeholder="Your business name">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Mobile Phone <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567" pattern="[0-9\s\-\(\)\+]{10,}">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Business Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="you@business.com">
+        </div>
+
+        <div class="form-group">
+          <label for="website">Website or Social Page</label>
+          <input type="text" id="website" name="website" placeholder="yoursite.com or instagram.com/yourbusiness">
+          <small style="color: var(--text-muted); font-size: 0.875rem;">Example: yoursite.com, www.vidahub.com, or instagram.com/yourbusiness</small>
+        </div>
+
+        <!-- Interest Checkboxes -->
+        <div class="form-group">
+          <label>I'm interested in: <span class="required">*</span></label>
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input type="checkbox" id="interest-deal" name="interests" value="local-deal">
+              <label for="interest-deal" class="checkbox-label">I have a local deal to add</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="interest-sponsored" name="interests" value="sponsored-post">
+              <label for="interest-sponsored" class="checkbox-label">I'm interested in a sponsored post</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="interest-visibility" name="interests" value="visibility-opportunities">
+              <label for="interest-visibility" class="checkbox-label">I'd like updates about future visibility opportunities</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="details">Additional Details</label>
+          <textarea id="details" name="details" rows="4" placeholder="Tell us more about your business and what you're looking for..."></textarea>
+        </div>
+
+        <!-- Consent Section -->
+        <div class="consent-section">
+          <h3>Consent & Privacy</h3>
+          
+          <!-- Required Contact Consent -->
+          <div class="required-consent">
+            <div class="checkbox-item">
+              <input type="checkbox" id="contact-consent" name="contactConsent" required>
+              <label for="contact-consent" class="checkbox-label">
+                <strong>I agree to be contacted about this request</strong> and confirm I have read the 
+                <a href="/privacy" target="_blank">Privacy Policy</a> and 
+                <a href="/terms" target="_blank">Terms & Conditions</a>. <span class="required">*</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Optional SMS Consent (A2P/TCPA Compliant) -->
+          <div class="sms-consent">
+            <div class="checkbox-item">
+              <input type="checkbox" id="sms-consent" name="smsConsent">
+              <label for="sms-consent" class="checkbox-label sms-consent-label">
+                <strong>Yes, I agree to receive text messages</strong> from Dallas Current about business promotions, visibility opportunities, and related updates. Message frequency varies. Message and data rates may apply. Reply STOP to opt out, HELP for help. Consent is not a condition of purchase.
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-button" id="submit-btn">Submit Request</button>
+        
+        <div class="privacy-links">
+          By submitting, you agree to our <a href="/privacy">Privacy Policy</a> and <a href="/terms">Terms & Conditions</a>
+        </div>
+
+        <div class="success-message" id="success-message">
+          <strong>Thank you!</strong> Your request has been submitted. We'll be in touch soon.
+          <span id="sms-confirmation" style="display:block;margin-top:0.5rem;font-size:0.875rem;"></span>
+        </div>
+        
+        <div class="error-message" id="error-message"></div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('business-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submit-btn');
+      const successMsg = document.getElementById('success-message');
+      const errorMsg = document.getElementById('error-message');
+      const smsConfirmation = document.getElementById('sms-confirmation');
+      
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+      
+      // Normalize website URL
+      let website = document.getElementById('website').value.trim();
+      if (website && !website.match(/^https?:\/\//i)) {
+        // Add https:// if no protocol present
+        website = 'https://' + website;
+      }
+
+      // Collect form data
+      const formData = {
+        firstName: document.getElementById('firstName').value.trim(),
+        lastName: document.getElementById('lastName').value.trim(),
+        businessName: document.getElementById('businessName').value.trim(),
+        phone: document.getElementById('phone').value.trim(),
+        email: document.getElementById('email').value.trim().toLowerCase(),
+        website: website,
+        interests: Array.from(document.querySelectorAll('input[name="interests"]:checked')).map(cb => cb.value),
+        details: document.getElementById('details').value.trim(),
+        
+        // Consent data (A2P/TCPA compliant)
+        contactConsent: document.getElementById('contact-consent').checked,
+        smsConsent: document.getElementById('sms-consent').checked,
+        consentTimestamp: new Date().toISOString(),
+        consentLanguage: 'v1.0',
+        
+        // Metadata
+        source: window.location.href,
+        userAgent: navigator.userAgent,
+        submittedAt: new Date().toISOString()
+      };
+      
+      // Validation
+      if (formData.interests.length === 0) {
+        errorMsg.textContent = 'Please select at least one interest.';
+        errorMsg.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Request';
+        return;
+      }
+      
+      try {
+        // Submit to API
+        const response = await fetch('/api/business-contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          successMsg.style.display = 'block';
+          
+          // Show SMS confirmation if opted in
+          if (formData.smsConsent) {
+            smsConfirmation.textContent = '✓ You have opted in to receive SMS updates. Reply STOP anytime to opt out.';
+            smsConfirmation.style.display = 'block';
+          } else {
+            smsConfirmation.style.display = 'none';
+          }
+          
+          document.getElementById('business-form').reset();
+        } else {
+          errorMsg.textContent = data.error || 'Something went wrong. Please try again.';
+          errorMsg.style.display = 'block';
+        }
+      } catch (error) {
+        errorMsg.textContent = 'Network error. Please check your connection and try again.';
+        errorMsg.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Request';
+      }
+    });
+  </script>
+</body>
+</html>

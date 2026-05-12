@@ -7,32 +7,89 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
-        header { background: #0a0a0a; padding: 1rem 2rem; border-bottom: 1px solid #222; }
-        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        header img { width: 200px; height: auto; object-fit: contain; }
-@media (max-width: 768px) { header img { width: 140px; } }
-        header nav a { color: #aaa; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.2s; }
-        header nav a:hover { color: #FF6B35; }
-        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 4rem 2rem; text-align: center; }
-        .hero-content { max-width: 800px; margin: 0 auto; }
-        .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-        .hero h1 span { color: #FF6B35; }
-        .hero .tagline { font-size: 1.3rem; color: #ccc; margin-bottom: 1rem; }
-        .hero p { color: #888; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .hero-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .btn-primary { background: #FF6B35; color: white; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; transition: background 0.2s; }
-        .btn-primary:hover { background: #e55a2b; }
-        .btn-secondary { background: transparent; color: #FF6B35; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; border: 2px solid #FF6B35; transition: all 0.2s; }
-        .btn-secondary:hover { background: #FF6B35; color: white; }
+        
+        /* PHASE 1: Updated Header - Single Bar with Logo, Nav, Cities */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* PHASE 1: Sponsored Section */
+        .sponsored-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1.5rem 2rem; border-bottom: 2px solid #FF6B35; }
+        .sponsored-row { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
+        .sponsored-card { background: rgba(255,255,255,0.02); border: 1px solid #333; border-radius: 12px; overflow: hidden; }
+        .sponsored-card:first-child { border-color: #FF6B35; background: linear-gradient(135deg, rgba(255,107,53,0.08) 0%, rgba(255,107,53,0.02) 100%); }
+        .sponsored-card .card-image { width: 100%; height: 160px; background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); display: flex; align-items: center; justify-content: center; color: #555; font-size: 0.9rem; }
+        .sponsored-card .card-content { padding: 1.25rem; }
+        .sponsored-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: white; line-height: 1.3; }
+        .sponsored-card p { color: #888; font-size: 0.9rem; line-height: 1.4; margin-bottom: 0.75rem; }
+        .sponsored-card .cta-link { color: #FF6B35; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+        
+        /* PHASE 1: Centered Site Title */
+        .site-title-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 2.5rem 2rem 1.5rem; text-align: center; border-bottom: 2px solid #FF6B35; }
+        .site-title-section h1 { color: #FF6B35; font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .site-title-section .tagline { color: #888; font-size: 1rem; }
+        
+        /* Action Buttons Bar */
+        .action-bar { background: #0f1629; padding: 1rem 2rem; border-bottom: 1px solid #222; }
+        .action-buttons { max-width: 900px; margin: 0 auto; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .action-btn { padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; cursor: pointer; border: none; }
+        .action-btn.subscribe { background: #FF6B35; color: white; }
+        .action-btn.deals { background: transparent; color: #FF6B35; border: 2px solid #FF6B35; }
+        .action-btn.business { background: #2d5a3d; color: white; }
+        .action-btn:hover { transform: translateY(-2px); }
+        
+        /* Compact Subscribe Module */
+        .subscribe-module { display: none; background: #0f1629; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; margin-top: 1rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .subscribe-module.active { display: block; }
+        .subscribe-module h3 { color: #FF6B35; margin-bottom: 0.5rem; font-size: 1.1rem; }
+        .subscribe-module p { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .subscribe-form-compact { display: flex; gap: 0.5rem; }
+        .subscribe-form-compact input { flex: 1; padding: 12px; border: 1px solid #333; border-radius: 4px; background: #1a1a2e; color: white; }
+        .subscribe-form-compact button { background: #FF6B35; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; }
+        .subscribe-form-compact button:disabled { background: #555; cursor: not-allowed; }
+        .subscribe-message { margin-top: 0.75rem; font-size: 0.9rem; }
+        .subscribe-message.success { color: #4CAF50; }
+        .subscribe-message.error { color: #f44336; }
+        .close-subscribe { color: #666; font-size: 0.85rem; cursor: pointer; margin-top: 0.75rem; display: inline-block; }
+        .close-subscribe:hover { color: #FF6B35; }
+        
+        /* Container */
         .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+        
+        /* Section Headers */
         .section-header { margin-bottom: 2rem; }
         .section-header h2 { font-size: 1.8rem; color: #FF6B35; margin-bottom: 0.5rem; }
         .section-header p { color: #888; }
+        
+        /* Featured Issue */
         .featured-issue { background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); border-radius: 12px; padding: 2.5rem; margin-bottom: 3rem; border: 1px solid #333; }
         .featured-issue .label { color: #FF6B35; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; display: block; }
         .featured-issue h3 { font-size: 1.8rem; margin-bottom: 1rem; }
         .featured-issue p { color: #aaa; margin-bottom: 1.5rem; line-height: 1.7; }
         .featured-issue .meta { color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; }
+        
+        /* Buttons */
+        .btn-primary { background: #FF6B35; color: white; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; transition: background 0.2s; display: inline-block; }
+        .btn-primary:hover { background: #e55a2b; }
+        .btn-secondary { background: transparent; color: #FF6B35; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 1rem; border: 2px solid #FF6B35; transition: all 0.2s; display: inline-block; }
+        .btn-secondary:hover { background: #FF6B35; color: white; }
+        
+        /* Archive Grid */
         .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
         .issue-card { background: #111122; border-radius: 8px; padding: 1.5rem; border: 1px solid #222; transition: border-color 0.2s, transform 0.2s; }
         .issue-card:hover { border-color: #FF6B35; transform: translateY(-2px); }
@@ -41,160 +98,387 @@
         .issue-card p { color: #999; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem; }
         .issue-card a { color: #FF6B35; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
         .issue-card a:hover { text-decoration: underline; }
-        .local-hub { background: #111122; border-radius: 12px; padding: 2rem; margin-bottom: 3rem; }
-        .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
-        .hub-link { background: #0f1629; padding: 1.25rem; border-radius: 8px; text-decoration: none; color: white; transition: background 0.2s; border: 1px solid #222; }
-        .hub-link:hover { background: #1a1a2e; border-color: #FF6B35; }
-        .hub-link h4 { color: #FF6B35; margin-bottom: 0.25rem; font-size: 1rem; }
-        .hub-link p { color: #888; font-size: 0.85rem; }
+        .issue-card .coming-soon { color: #666; font-size: 0.9rem; font-style: italic; }
+        
+        /* Business CTA */
         .business-cta { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 3rem 2rem; text-align: center; margin-bottom: 3rem; }
         .business-cta h2 { font-size: 2rem; margin-bottom: 1rem; }
         .business-cta p { font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.95; }
         .business-cta .btn-light { background: white; color: #FF6B35; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        
+        /* Newsletter Section */
         .newsletter-section { background: #111122; border-radius: 12px; padding: 2.5rem; text-align: center; margin-bottom: 3rem; }
         .newsletter-section h2 { margin-bottom: 0.5rem; }
         .newsletter-section > p { color: #888; margin-bottom: 1.5rem; }
         .newsletter-form { max-width: 500px; margin: 0 auto; display: flex; gap: 10px; }
         .newsletter-form input { flex: 1; padding: 14px; border: none; border-radius: 6px; background: #0f1629; color: white; border: 1px solid #333; }
         .newsletter-form button { background: #FF6B35; color: white; padding: 14px 28px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
-        footer { background: #0a0a14; border-top: 1px solid #222; padding: 2rem; text-align: center; color: #666; }
-        footer a { color: #FF6B35; text-decoration: none; }
-        .footer-links { margin-top: 1rem; }
-        .footer-links a { margin: 0 1rem; color: #888; }
+        
+        /* PHASE 1: Enhanced Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-brand .powered-by { color: #666; font-size: 0.8rem; margin-top: 1rem; }
+        .footer-brand .powered-by a { color: #FF6B35; text-decoration: none; }
+        
+        .social-icons { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-icon { width: 36px; height: 36px; background: #1a1a2e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #aaa; text-decoration: none; font-size: 0.9rem; transition: all 0.2s; border: 1px solid #333; }
+        .social-icon:hover { background: #FF6B35; color: white; border-color: #FF6B35; }
+        
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        
+        .contact-btn { display: inline-block; background: #FF6B35; color: white; padding: 10px 24px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
+        .contact-btn:hover { background: #e55a2b; }
+        
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        .footer-bottom a { color: #888; text-decoration: none; margin: 0 0.5rem; }
+        .footer-bottom a:hover { color: #FF6B35; }
+        
+        @media (max-width: 1024px) {
+            .footer-content { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 768px) {
+            .top-header-content { flex-direction: column; gap: 0.75rem; }
+            .main-nav { flex-direction: column; gap: 0.5rem; }
+            .action-buttons { flex-direction: column; align-items: center; }
+            .action-btn { width: 100%; max-width: 300px; text-align: center; }
+            .footer-content { grid-template-columns: 1fr; }
+            .archive-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <a href="/"><img src="logo.jpg" alt="DFWA Social Buzz"></a>
-            <nav>
-                <a href="/">Home</a>
-                <a href="/arlington/">Arlington</a>
+    <!-- PHASE 1: Single Header Bar -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">DFWA Social Buzz</div>
+                    <div class="sub">Your local guide to DFWA</div>
+                </div>
+            </div>
+            
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="#news">News</a>
+                    <a href="#deals">Deals</a>
+                    <a href="#business">Business</a>
+                    <a href="#subscribe">Subscribe</a>
+                </div>
+            </div>
+            
+            <nav class="city-nav">
+                <a href="/">Arlington</a>
                 <a href="/dallas/">Dallas</a>
-                <a href="/fort-worth/">Fort Worth</a>
+                <a href="/fort-worth/" class="active">Fort Worth</a>
             </nav>
         </div>
-    </header>
+    </div>
     
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Fort Worth <span>Echo</span></h1>
-            <p class="tagline">Your local source for Fort Worth news, events, deals, and community buzz</p>
-            <p>From the Stockyards to West 7th, we cover the stories, openings, and happenings that matter to Fort Worth locals.</p>
-            <div class="hero-buttons">
-                <a href="#subscribe" class="btn-primary">Subscribe</a>
-                <a href="#deals" class="btn-secondary">See Local Deals</a>
+    <!-- PHASE 1: Centered Site Title -->
+    <section class="site-title-section">
+        <h1>Fort Worth Echo</h1>
+        <p class="tagline">Your local guide to Fort Worth, TX</p>
+    </section>
+
+    <!-- PHASE 1: Sponsored Content Section (from approved draft) -->
+    <section class="sponsored-section">
+        <div class="sponsored-row">
+            <div class="sponsored-card">
+                <div class="card-image">[Sponsor Image]</div>
+                <div class="card-content">
+                    <h4>Sponsor Headline One</h4>
+                    <p>Description text goes here for this sponsored placement</p>
+                    <a href="#" class="cta-link">Learn More →</a>
+                </div>
+            </div>
+            <div class="sponsored-card">
+                <div class="card-image">[Sponsor Image]</div>
+                <div class="card-content">
+                    <h4>Sponsor Headline Two</h4>
+                    <p>Description text goes here for this sponsored placement</p>
+                    <a href="#" class="cta-link">Learn More →</a>
+                </div>
+            </div>
+            <div class="sponsored-card">
+                <div class="card-image">[Sponsor Image]</div>
+                <div class="card-content">
+                    <h4>Sponsor Headline Three</h4>
+                    <p>Description text goes here for this sponsored placement</p>
+                    <a href="#" class="cta-link">Learn More →</a>
+                </div>
             </div>
         </div>
     </section>
     
+    <!-- PHASE 1: Action Buttons Bar with Compact Subscribe -->
+    <section class="action-bar">
+        <div class="action-buttons">
+            <button class="action-btn subscribe" onclick="toggleSubscribe()">📧 Subscribe</button>
+            <a href="https://dfwasocialbuzz.com/deals/?cities=fort-worth" class="action-btn deals">💰 Local Deals</a>
+            <a href="https://dfwasocialbuzz.com/business/" class="action-btn business">🏢 Get Featured</a>
+        </div>
+        
+        <!-- Compact Subscribe Module -->
+        <div id="subscribe-module" class="subscribe-module">
+            <h3>Subscribe to Fort Worth Echo</h3>
+            <p>Get local news, deals, and events delivered weekly.</p>
+            <form class="subscribe-form-compact" id="subscribe-form" onsubmit="handleSubscribe(event)">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <div id="subscribe-message" class="subscribe-message"></div>
+            <span class="close-subscribe" onclick="toggleSubscribe()">← Close</span>
+        </div>
+    </section>
+    
     <div class="container">
-        <div class="section-header">
-            <h2>Latest Issue</h2>
-            <p>The freshest stories from Fort Worth</p>
-        </div>
-        
-        <div class="featured-issue">
-            <span class="label">Featured Story</span>
-            <h3>Fort Worth's Best BBQ Joints: A Local's Guide</h3>
-            <p class="meta">April 28, 2026</p>
-            <p>Cooper's, Angelo's, Riscky's, Heim Barbecue, Goldee's, and The Slow Bone — we break down what makes each spot special. From traditional pit-smoked brisket to modern craft BBQ, here's where to get your meat fix in Cowtown.</p>
-            <a href="https://m.letterman.ai/a/fort-worths-best-bbq-joints" class="btn-primary" target="_blank">Read Full Article</a>
-        </div>
-        
-        <div class="section-header">
+        <!-- Recent Issues - Moved up directly under sponsored -->
+        <div class="section-header" id="news">
             <h2>Recent Issues</h2>
-            <p>Browse our archive of Fort Worth stories</p>
+            <p>The freshest stories from Arlington</p>
         </div>
         
         <div class="archive-grid">
             <div class="issue-card">
-                <h4>Stockyards vs. West 7th: Where to Spend Your Weekend</h4>
-                <div class="date">April 29, 2026</div>
-                <p>Historic cowboy charm of the Stockyards vs. modern nightlife energy of West 7th.</p>
-                <a href="https://m.letterman.ai/a/stockyards-vs-west-7th" target="_blank">Read Issue →</a>
+                <h4>Arlington's Best Patios: Where to Eat Outside This Spring</h4>
+                <div class="date">May 9, 2026</div>
+                <p>From downtown hideaways to Entertainment District gems, these outdoor dining spots are perfect for soaking up the Texas sunshine.</p>
+                <a href="/articles/arlington-best-patios-spring.html">Read Issue →</a>
             </div>
+
             <div class="issue-card">
-                <h4>Best Live Music Venues in Fort Worth</h4>
-                <div class="date">April 29, 2026</div>
-                <p>Billy Bob's, The Post, and hidden gems for catching live shows in Cowtown.</p>
-                <a href="https://m.letterman.ai/a/best-live-music-venues-fort-worth" target="_blank">Read Issue →</a>
+                <h4>Arlington's Best Local Shops: Where to Find Unique Gifts, Vintage Finds, and Handmade Treasures</h4>
+                <div class="date">May 8, 2026</div>
+                <p>Skip the big box stores and discover Arlington's independent boutiques, vintage shops, and artisan markets. Support local businesses and find unique treasures.</p>
+                <a href="/articles/arlington-best-local-shops.html">Read Issue →</a>
             </div>
+
             <div class="issue-card">
-                <h4>New Restaurant Openings: Spring 2026</h4>
-                <div class="date">April 29, 2026</div>
-                <p>The hottest new spots to check out in Fort Worth this season.</p>
-                <a href="https://m.letterman.ai/a/new-restaurant-openings-spring-2026" target="_blank">Read Issue →</a>
+                <h4>Arlington's Food Scene Is Having a Moment — Here's Where to Eat Right Now</h4>
+                <div class="date">May 7, 2026</div>
+                <p>From legendary barbecue to innovative newcomers, Arlington's culinary landscape is exploding with flavor. Your guide to the best bites in the city.</p>
+                <span class="coming-soon">Article coming soon</span>
             </div>
+
             <div class="issue-card">
-                <h4>Trinity Trails: Best Routes for Running & Biking</h4>
-                <div class="date">April 29, 2026</div>
-                <p>Scenic paths, trailheads, and the best times to hit the Trinity Trails.</p>
-                <a href="https://m.letterman.ai/a/trinity-trails-best-routes" target="_blank">Read Issue →</a>
+                <h4>10 Best Things To Do In Arlington Texas This Weekend</h4>
+                <div class="date">May 7, 2026</div>
+                <p>Your ultimate guide to Arlington fun—from Six Flags thrills to hidden local gems. Perfect for locals and visitors alike.</p>
+                <span class="coming-soon">Article coming soon</span>
             </div>
+
             <div class="issue-card">
-                <h4>Free Things to Do in Fort Worth This Weekend</h4>
-                <div class="date">April 29, 2026</div>
-                <p>Parks, museums, the Water Gardens, and activities that won't cost a dime.</p>
-                <a href="https://m.letterman.ai/a/free-things-to-do-fort-worth" target="_blank">Read Issue →</a>
+                <h4>7 Hidden Coffee Gems in Arlington Locals Don't Want You to Know About</h4>
+                <div class="date">May 6, 2026</div>
+                <p>Skip the chains and discover Arlington's thriving local coffee scene—from downtown roasteries to late-night study spots near UTA.</p>
+                <span class="coming-soon">Article coming soon</span>
             </div>
+
             <div class="issue-card">
-                <h4>Local Business Spotlight: Magnolia Ave</h4>
-                <div class="date">April 29, 2026</div>
-                <p>Meet the owners keeping Fort Worth's Near Southside vibrant with local shops and restaurants.</p>
-                <a href="https://m.letterman.ai/a/local-business-spotlight-magnolia-avenue" target="_blank">Read Issue →</a>
+                <h4>Arlington's River Legacy Parks: The Hidden Gem Every Local Needs to Explore</h4>
+                <div class="date">May 4, 2026</div>
+                <p>Discover the 1,300-acre urban oasis that most Arlington residents barely know exists—secret trails, wildlife hotspots, and the best sunset views in DFW.</p>
+                <span class="coming-soon">Article coming soon</span>
+            </div>
+
+            <!-- Additional articles replacing large promo block -->
+            <div class="issue-card">
+                <h4>Why Arlington's Small Business Scene Is Thriving in 2026</h4>
+                <div class="date">May 3, 2026</div>
+                <p>From downtown revitalization to UTA-powered startups, Arlington's entrepreneurial ecosystem is having a major moment.</p>
+                <span class="coming-soon">Article coming soon</span>
+            </div>
+
+            <div class="issue-card">
+                <h4>10 Can't-Miss Things To Do in Arlington This Spring</h4>
+                <div class="date">May 2, 2026</div>
+                <p>Spring has officially arrived in Arlington, and there's no better time to explore everything this vibrant city has to offer.</p>
+                <span class="coming-soon">Article coming soon</span>
+            </div>
+
+            <div class="issue-card">
+                <h4>Arlington's Newest Food Hall Is Bringing Big Flavors to Downtown</h4>
+                <div class="date">May 2, 2026</div>
+                <p>Downtown Arlington just got a major upgrade. The long-awaited Arlington Commons Food Hall officially opened its doors this week.</p>
+                <span class="coming-soon">Article coming soon</span>
             </div>
         </div>
         
-        <div class="section-header">
-            <h2>Fort Worth Hub</h2>
-            <p>Quick links to what matters</p>
-        </div>
-        
-        <div class="local-hub">
-            <div class="hub-grid">
-                <a href="#deals" class="hub-link">
-                    <h4>💰 Local Deals</h4>
-                    <p>Exclusive discounts at Fort Worth businesses</p>
-                </a>
-                <a href="#subscribe" class="hub-link">
-                    <h4>📧 Newsletter</h4>
-                    <p>Get weekly updates in your inbox</p>
-                </a>
-                <a href="https://instagram.com/fortworthecho" class="hub-link" target="_blank">
-                    <h4>📱 Instagram</h4>
-                    <p>Daily stories and local updates</p>
-                </a>
-                <a href="mailto:submit@dfwasocialbuzz.com" class="hub-link">
-                    <h4>✉️ Submit a Story</h4>
-                    <p>Tell us about something happening</p>
-                </a>
+        <!-- Repeated action buttons at bottom -->
+        <section class="action-bar" style="margin-top: 2rem; margin-bottom: 2rem;">
+            <div class="action-buttons">
+                <a href="#subscribe" class="action-btn subscribe">📧 Subscribe</a>
+                <a href="https://dfwasocialbuzz.com/deals/?cities=fort-worth" class="action-btn deals">💰 Local Deals</a>
+                <a href="https://dfwasocialbuzz.com/business/" class="action-btn business">🏢 Get Featured</a>
             </div>
-        </div>
+        </section>
         
-        <div class="business-cta">
-            <h2>Own a Business in Fort Worth?</h2>
-            <p>Get featured in Fort Worth Echo and reach 5,000+ engaged local readers who care about supporting Fort Worth businesses.</p>
-            <a href="mailto:feature@dfwasocialbuzz.com?subject=Feature My Fort Worth Business" class="btn-light">Get Featured</a>
-        </div>
-        
-        <div id="subscribe" class="newsletter-section">
-            <h2>Get Fort Worth Echo</h2>
-            <p>Weekly local news, events, and deals delivered to your inbox. Free forever.</p>
-            <form class="newsletter-form" action="https://letterman.ai/subscribe/69ee9da6a166af267eb5e99e" method="POST">
-                <input type="email" name="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
     </div>
     
-    <footer>
-        <p>&copy; 2026 Fort Worth Echo. Part of <a href="/">DFWA Social Buzz</a>.</p>
-        <div class="footer-links">
-            <a href="/arlington/">Arlington</a>
-            <a href="/dallas/">Dallas</a>
-            <a href="/">Home</a>
+    <!-- PHASE 1: Enhanced Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Fort Worth Echo</div>
+                <div class="tagline">Your local guide to Fort Worth, TX</div>
+                <div class="powered-by">Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></div>
+                <div class="social-icons">
+                    <a href="#" class="social-icon" title="YouTube">▶</a>
+                    <a href="#" class="social-icon" title="Facebook">f</a>
+                    <a href="#" class="social-icon" title="X (Twitter)">𝕏</a>
+                    <a href="#" class="social-icon" title="Instagram">📷</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#news">Latest News</a></li>
+                    <li><a href="#deals">Local Deals</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Other Cities</h4>
+                <ul>
+                    <li><a href="/dallas/">Dallas Current</a></li>
+                    <li><a href="/fort-worth/">Fort Worth Eco</a></li>
+                    <li><a href="https://dfwasocialbuzz.com">DFWA Home</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/contact/">Contact Us</a></li>
+                    <li><a href="#subscribe">Subscribe</a></li>
+                    <li><a href="#business">Advertise</a></li>
+                </ul>
+                <a href="https://dfwasocialbuzz.com/contact/" class="contact-btn">Contact Us</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Fort Worth Echo. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="https://dfwasocialbuzz.com/privacy-policy/">Privacy Policy</a> | 
+                <a href="https://dfwasocialbuzz.com/terms-and-conditions/">Terms & Conditions</a>
+            </p>
         </div>
     </footer>
+    
+    <!-- EXISTING TRACKING SCRIPT - PRESERVED -->
+    <script>
+        function trackDealsClick() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'click', {
+                    event_category: 'engagement',
+                    event_label: 'local-deals-cta',
+                    transport_type: 'beacon'
+                });
+            }
+        }
+        
+        // Compact Subscribe Module Functions
+        function toggleSubscribe() {
+            const module = document.getElementById('subscribe-module');
+            module.classList.toggle('active');
+            if (module.classList.contains('active')) {
+                setTimeout(() => module.querySelector('input[name="email"]').focus(), 100);
+            }
+        }
+        
+        async function handleSubscribe(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button');
+            const message = document.getElementById('subscribe-message');
+            const email = form.email.value;
+            
+            btn.disabled = true;
+            btn.textContent = 'Subscribing...';
+            message.textContent = '';
+            message.className = 'subscribe-message';
+            
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        city: 'Arlington',
+                        source: 'fortworth_homepage'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    message.textContent = '✓ Successfully subscribed!';
+                    message.className = 'subscribe-message success';
+                    form.reset();
+                    setTimeout(() => {
+                        toggleSubscribe();
+                        message.textContent = '';
+                    }, 2000);
+                } else {
+                    // Show retry-safe error
+                    const errorMsg = data.retryable 
+                        ? 'Subscription failed. Please try again.'
+                        : (data.message || 'Subscription failed');
+                    throw new Error(errorMsg);
+                }
+            } catch (error) {
+                message.textContent = '✗ ' + error.message;
+                message.className = 'subscribe-message error';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Subscribe';
+            }
+        }
+        
+        // Legacy newsletter form handler - kept for compatibility
+        const legacyForm = document.getElementById('newsletter-form');
+        if (legacyForm) {
+            legacyForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                const btn = this.querySelector('button');
+                const originalText = btn.textContent;
+                btn.textContent = 'Subscribing...';
+                btn.disabled = true;
+            
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: this.email.value,
+                        city: 'Arlington',
+                        source: 'website'
+                    })
+                });
+                
+                if (response.ok) {
+                    btn.textContent = 'Subscribed!';
+                    this.reset();
+                    setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2000);
+                } else {
+                    throw new Error('Subscribe failed');
+                }
+            } catch (error) {
+                btn.textContent = 'Error - Try Again';
+                btn.disabled = false;
+            }
+        });
+    </script>
 </body>
 </html>

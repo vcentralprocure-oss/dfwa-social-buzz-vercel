@@ -1,4 +1,7 @@
 {
   "name": "dfwa-vercel",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "scripts": {
+    "build": "echo 'Static build - no compilation needed'"
+  }
 }

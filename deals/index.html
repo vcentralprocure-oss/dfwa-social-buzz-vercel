@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Deals - DFWA Social Buzz</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #1a1a2e; color: white; line-height: 1.6; }
+        header { background: #0a0a0a; padding: 1rem 2rem; text-align: center; }
+        header img { width: 200px; height: auto; object-fit: contain; }
+        @media (max-width: 768px) { header img { width: 140px; } }
+        .hero { padding: 4rem 2rem; text-align: center; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero h1 span { color: #FF6B35; }
+        .hero p { font-size: 1.2rem; color: #ccc; margin-bottom: 2rem; }
+        .form-section { background: linear-gradient(135deg, #16213e 0%, #0f1629 100%); padding: 4rem 2rem; text-align: center; }
+        .form-section h2 { color: #FF6B35; margin-bottom: 1rem; }
+        .form-section p { color: #ccc; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .deals-form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; text-align: left; }
+        .deals-form input { padding: 14px; border-radius: 6px; border: 1px solid #333; background: #0f1629; color: white; font-size: 1rem; }
+        .deals-form input::placeholder { color: #666; }
+        
+        .city-selection { background: rgba(255, 107, 53, 0.05); border: 1px solid #333; border-radius: 8px; padding: 1.5rem; }
+        .city-selection h3 { color: #FF6B35; margin-bottom: 1rem; font-size: 1rem; }
+        .city-checkbox { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; margin: 0.5rem 0; background: rgba(255,255,255,0.03); border-radius: 6px; cursor: pointer; transition: background 0.2s; }
+        .city-checkbox:hover { background: rgba(255,255,255,0.05); }
+        .city-checkbox input[type="checkbox"] { width: 20px; height: 20px; accent-color: #FF6B35; cursor: pointer; }
+        .city-checkbox label { cursor: pointer; flex: 1; font-size: 1rem; }
+        
+        .consent-box { background: rgba(0,0,0,0.2); border-radius: 8px; padding: 1rem; font-size: 0.9rem; }
+        .consent-box label { display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; }
+        .consent-box input[type="checkbox"] { width: 18px; height: 18px; margin-top: 2px; accent-color: #FF6B35; }
+        .consent-box .consent-text { flex: 1; color: #aaa; }
+        .consent-box a { color: #FF6B35; }
+        
+        .deals-form button { background: #FF6B35; color: white; padding: 16px 32px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 1.1rem; transition: background 0.2s; margin-top: 1rem; }
+        .deals-form button:hover { background: #e55a2b; }
+        .deals-form button:disabled { background: #666; cursor: not-allowed; }
+        
+        .success-message { display: none; background: #1a472a; color: #4ade80; padding: 2rem; border-radius: 6px; margin-top: 1rem; text-align: center; }
+        .back-link { display: inline-block; margin-top: 2rem; color: #FF6B35; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 2rem; color: #666; border-top: 1px solid #333; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/"><img src="/logo.jpg" alt="DFWA Social Buzz Logo"></a>
+    </header>
+    
+    <section class="hero">
+        <h1>Get <span>Local Deals</span></h1>
+        <p>Subscribe to receive exclusive deals and discounts from the best local businesses in DFWA. Save money while supporting your community.</p>
+    </section>
+    
+    <section class="form-section">
+        <h2>Subscribe to Local Deals</h2>
+        <p>Tell us which cities you're interested in and we'll send you the best local deals weekly.</p>
+        
+        <form class="deals-form" id="deals-form">
+            <input type="text" name="first_name" placeholder="Your first name" required>
+            <input type="email" name="email" placeholder="Your email address" required>
+            
+            <div class="city-selection">
+                <h3>I'm interested in local deals in:</h3>
+                <label class="city-checkbox">
+                    <input type="checkbox" name="cities" value="arlington" id="city-arlington">
+                    <span>Arlington</span>
+                </label>
+                <label class="city-checkbox">
+                    <input type="checkbox" name="cities" value="dallas" id="city-dallas">
+                    <span>Dallas</span>
+                </label>
+                <label class="city-checkbox">
+                    <input type="checkbox" name="cities" value="fort-worth" id="city-fort-worth">
+                    <span>Fort Worth</span>
+                </label>
+            </div>
+            
+            <div class="consent-box">
+                <label>
+                    <input type="checkbox" name="consent" required id="consent-checkbox">
+                    <span class="consent-text">
+                        I agree to receive emails about local deals and confirm I have read the 
+                        <a href="/privacy-policy/" target="_blank">Privacy Policy</a>.
+                    </span>
+                </label>
+            </div>
+            
+            <button type="submit" id="submit-btn">Get Deals</button>
+            
+            <!-- Hidden attribution fields -->
+            <input type="hidden" name="source_host" id="source-host">
+            <input type="hidden" name="source_page" id="source-page">
+            <input type="hidden" name="source_path" id="source-path">
+            <input type="hidden" name="intent" value="local_deals">
+            <input type="hidden" name="button_location" id="button-location">
+            <input type="hidden" name="referrer" id="referrer">
+            <input type="hidden" name="submission_timestamp" id="timestamp">
+        </form>
+        
+        <div class="success-message" id="success-message">
+            <strong>🎉 You're subscribed!</strong><br>
+            Check your email for exclusive local deals.<br>
+            <span id="cities-confirmation" style="display: block; margin-top: 0.5rem; font-size: 0.9rem;"></span>
+        </div>
+        
+        <a href="/" class="back-link">← Back to Home</a>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 Vida Hub Products LLC. All rights reserved.</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="/" style="color: #FF6B35;">Home</a> | 
+            <a href="/privacy-policy/" style="color: #FF6B35;">Privacy Policy</a>
+        </p>
+    </footer>
+    
+    <script>
+        // Capture attribution from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('source-host').value = urlParams.get('source_host') || window.location.hostname;
+        document.getElementById('source-page').value = urlParams.get('source_page') || document.referrer || window.location.href;
+        document.getElementById('source-path').value = urlParams.get('source_path') || '/';
+        document.getElementById('button-location').value = urlParams.get('button_location') || 'local-deals-cta';
+        document.getElementById('referrer').value = document.referrer || '';
+        document.getElementById('timestamp').value = new Date().toISOString();
+        
+        // Pre-check cities from URL if provided
+        const citiesParam = urlParams.get('cities');
+        if (citiesParam) {
+            const cities = citiesParam.split(',');
+            cities.forEach(city => {
+                const checkbox = document.getElementById(`city-${city}`);
+                if (checkbox) checkbox.checked = true;
+            });
+        }
+        
+        // Form submission
+        document.getElementById('deals-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Subscribing...';
+            
+            // Get selected cities
+            const cityCheckboxes = document.querySelectorAll('input[name="cities"]:checked');
+            const selectedCities = Array.from(cityCheckboxes).map(cb => cb.value);
+            
+            if (selectedCities.length === 0) {
+                alert('Please select at least one city.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Get Deals';
+                return;
+            }
+            
+            // Update timestamp
+            document.getElementById('timestamp').value = new Date().toISOString();
+            
+            const formData = new FormData(this);
+            
+            try {
+                const response = await fetch('/api/deals-interest', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        first_name: formData.get('first_name'),
+                        email: formData.get('email'),
+                        cities: selectedCities,
+                        consent: formData.get('consent') === 'on',
+                        source_host: formData.get('source_host'),
+                        source_page: formData.get('source_page'),
+                        source_path: formData.get('source_path'),
+                        intent: formData.get('intent'),
+                        button_location: formData.get('button_location'),
+                        referrer: formData.get('referrer'),
+                        submission_timestamp: formData.get('submission_timestamp')
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('deals-form').style.display = 'none';
+                    document.getElementById('success-message').style.display = 'block';
+                    
+                    const cityNames = selectedCities.map(c => c.charAt(0).toUpperCase() + c.slice(1).replace('-', ' ')).join(', ');
+                    document.getElementById('cities-confirmation').textContent = `You'll receive deals for: ${cityNames}`;
+                } else {
+                    alert('Error: ' + (data.message || 'Something went wrong'));
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Get Deals';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Something went wrong. Please try again.');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Get Deals';
+            }
+        });
+    </script>
+</body>
+</html>
