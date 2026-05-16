@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlington's Barbecue Renaissance: Where to Find the Best Smoked Meats in Town | Arlington Pulse</title>
+    <meta name="description" content="From award-winning brisket to underground smoke pits, discover why Arlington has become a destination for Texas barbecue lovers">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: #e0e0e0; line-height: 1.8; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article Header */
+        .article-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 3rem 2rem; text-align: center; border-bottom: 2px solid #FF6B35; }
+        .article-header h1 { color: #FF6B35; font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .article-header .subheadline { color: #888; font-size: 1.2rem; max-width: 700px; margin: 0 auto; }
+        .article-header .meta { color: #666; font-size: 0.9rem; margin-top: 1.5rem; }
+        
+        /* Featured Image */
+        .featured-image { width: 100%; max-width: 1200px; margin: 0 auto; display: block; }
+        .featured-image img { width: 100%; height: auto; display: block; }
+        .image-caption { text-align: center; color: #666; font-size: 0.85rem; padding: 0.75rem; background: #0f1629; }
+        
+        /* Article Content */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .article-content p { margin-bottom: 1.5rem; font-size: 1.1rem; }
+        .article-content h2 { color: #FF6B35; font-size: 1.8rem; margin: 2.5rem 0 1.5rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content strong { color: #fff; }
+        .article-content hr { border: none; border-top: 1px solid #333; margin: 2rem 0; }
+        
+        /* Business Links Section */
+        .business-links { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+        .business-links h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .business-links ul { list-style: none; }
+        .business-links li { margin-bottom: 0.75rem; }
+        .business-links a { color: #FF6B35; text-decoration: none; }
+        .business-links a:hover { text-decoration: underline; }
+        
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 8px; padding: 2rem; text-align: center; margin: 2rem 0; }
+        .cta-box h3 { color: white; margin-bottom: 0.75rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1rem; }
+        .cta-box a { background: white; color: #FF6B35; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        
+        /* Related Articles */
+        .related-articles { background: #0f1629; padding: 3rem 2rem; border-top: 1px solid #222; }
+        .related-articles h2 { color: #FF6B35; text-align: center; margin-bottom: 2rem; }
+        .related-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+        .related-card { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 1.5rem; transition: border-color 0.2s; }
+        .related-card:hover { border-color: #FF6B35; }
+        .related-card h4 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .related-card p { color: #888; font-size: 0.95rem; margin-bottom: 1rem; }
+        .related-card a { color: #FF6B35; text-decoration: none; font-weight: 600; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-brand .powered-by { color: #666; font-size: 0.8rem; margin-top: 1rem; }
+        .footer-brand .powered-by a { color: #FF6B35; text-decoration: none; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .article-container { padding: 2rem 1.5rem; }
+            .footer-content { grid-template-columns: 1fr; }
+            .related-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">DFWA Social Buzz</div>
+                    <div class="sub">Your local guide to DFWA</div>
+                </div>
+            </div>
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/#news">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals/?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business/">Business</a>
+                </div>
+            </div>
+            <nav class="city-nav">
+                <a href="/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Article Header -->
+    <header class="article-header">
+        <h1>Arlington's Barbecue Renaissance: Where to Find the Best Smoked Meats in Town</h1>
+        <p class="subheadline">From award-winning brisket to underground smoke pits, discover why Arlington has become a destination for Texas barbecue lovers</p>
+        <div class="meta">May 13, 2026 • Arlington Food Guide</div>
+    </header>
+    
+    <!-- Featured Image -->
+    <div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1708388465047-5309a18c4c5d?w=1200&h=675&fit=crop" alt="Texas barbecue grill with smoked meats">
+        <div class="image-caption">Photo by Daniel on Unsplash</div>
+    </div>
+    
+    <!-- Article Content -->
+    <article class="article-container">
+        <div class="article-content">
+            <p>Arlington has quietly transformed into one of the most exciting barbecue destinations in North Texas. While Dallas and Fort Worth often steal the spotlight, local pitmasters in Arlington have been perfecting their craft, earning national recognition and drawing smoke-seeking foodies from across the state.</p>
+            
+            <p>Whether you're a lifelong Texan who knows their brisket from their burnt ends, or a newcomer eager to experience authentic Lone Star State barbecue, Arlington's smoking scene delivers flavors that rival any pit in the state.</p>
+            
+            <h2>The Heavy Hitters</h2>
+            
+            <p><a href="https://hurtadobbq.com/" target="_blank"><strong>Hurtado Barbecue</strong></a> has become the crown jewel of Arlington's barbecue renaissance. Located in the heart of the Urban Union District, this award-winning joint has earned accolades from Texas Monthly and drawn comparisons to the legendary Franklin Barbecue in Austin. Their brisket—smoked low and slow for up to 16 hours—features a perfect bark and that signature jiggle that signals properly rendered fat. The house-made sausages, stuffed with jalapeño and cheese, have developed a cult following among locals.</p>
+            
+            <p>What sets Hurtado apart isn't just the quality of the meat—it's the entire experience. The outdoor seating area buzzes with energy, craft beer flows from local breweries, and the smell of post oak smoke hangs heavy in the air. On weekends, expect a line, but consider it part of the ritual. Good barbecue takes time, and Hurtado refuses to rush perfection.</p>
+            
+            <h2>Hidden Gems Worth the Hunt</h2>
+            
+            <p>For those willing to venture off the beaten path, <a href="https://www.facebook.com/profile.php?id=100057089379689" target="_blank"><strong>Smoke Sessions Barbecue</strong></a> delivers some of the most authentic Central Texas-style barbecue in the region. Operating from a food truck setup with limited hours, this spot has earned a reputation among barbecue purists for their no-frills approach and uncompromising quality.</p>
+            
+            <p>Their beef ribs—massive dinosaur bones of smoky perfection—sell out quickly, so arriving early isn't just recommended, it's essential. The simple menu focuses on meat, bread, and pickles, letting the smoke speak for itself. It's the kind of place where the pitmaster might emerge from the smoke to chat about wood selection and fire management with anyone who shows genuine interest.</p>
+            
+            <h2>New School Meets Old School</h2>
+            
+            <p><a href="https://www.thepitbbqarlington.com/" target="_blank"><strong>The Pit Barbecue &amp; Bar</strong></a> represents Arlington's evolving food scene—traditional techniques meeting modern hospitality. Located near the Entertainment District, this spot has become a pre-game favorite for Rangers and Cowboys fans looking to fuel up before the first pitch or kickoff.</p>
+            
+            <p>Their loaded baked potatoes topped with chopped brisket have become legendary among locals, offering a hearty meal that doesn't require a napkin (though you'll probably want one anyway). The full bar means you can pair your plate with a local craft beer or a Texas whiskey that complements the smoky flavors perfectly.</p>
+            
+            <h2>More Than Just Meat</h2>
+            
+            <p>Arlington's barbecue scene extends beyond traditional joints. <a href="https://www.cidercade.com/" target="_blank"><strong>Cidercade</strong></a>, the massive arcade and cider bar in the Urban Union District, regularly hosts barbecue pop-ups and smoked meat events that pair perfectly with their extensive cider selection. It's become a gathering place where food culture meets entertainment culture.</p>
+            
+            <p>Meanwhile, <a href="https://www.thetipsyoak.com/" target="_blank"><strong>The Tipsy Oak</strong></a> brings craft cocktails and elevated pub fare to the barbecue conversation, offering smoked wings and brisket tacos that bridge the gap between traditional pit barbecue and contemporary dining.</p>
+            
+            <h2>The World Cup Effect</h2>
+            
+            <p>With the 2026 FIFA World Cup coming to AT&amp;T Stadium, Arlington's food scene is preparing for its close-up. Local pitmasters are already seeing increased interest from international visitors eager to experience authentic Texas barbecue. The city's unique position—hosting games in the world's biggest sporting event—means Arlington's barbecue culture will be showcased on a global stage.</p>
+            
+            <p>For local businesses, this represents both opportunity and pressure. The world is watching, and Arlington's pitmasters are determined to show that their smoke stacks up against anyone's.</p>
+            
+            <h2>Your Arlington Barbecue Bucket List</h2>
+            
+            <p>Start your tour at Hurtado Barbecue for the full experience—brisket, sausage, and all the atmosphere. Track down Smoke Sessions for the underground, purist approach. Hit The Pit before your next game at Globe Life Field. And don't forget to explore the surrounding Urban Union District, where barbecue is just the beginning of Arlington's culinary story.</p>
+            
+            <p>Each spot offers something different, but they all share the same DNA: Texas pride, patience, and an understanding that great barbecue isn't cooked—it's coaxed into existence through fire, smoke, and time.</p>
+            
+            <!-- Business Links Section -->
+            <div class="business-links">
+                <h3>🍖 Featured Barbecue Spots</h3>
+                <ul>
+                    <li>→ <a href="https://hurtadobbq.com/" target="_blank">Hurtado Barbecue</a> - Award-winning brisket in Urban Union District</li>
+                    <li>→ <a href="https://www.facebook.com/profile.php?id=100057089379689" target="_blank">Smoke Sessions Barbecue</a> - Authentic Central Texas-style BBQ</li>
+                    <li>→ <a href="https://www.thepitbbqarlington.com/" target="_blank">The Pit Barbecue &amp; Bar</a> - Pre-game favorite near Entertainment District</li>
+                    <li>→ <a href="https://www.cidercade.com/" target="_blank">Cidercade</a> - Arcade, cider &amp; BBQ events</li>
+                    <li>→ <a href="https://www.thetipsyoak.com/" target="_blank">The Tipsy Oak</a> - Craft cocktails &amp; smoked specialties</li>
+                </ul>
+            </div>
+            
+            <hr>
+            
+            <!-- Subscribe CTA -->
+            <div class="cta-box">
+                <h3>📧 Get More Arlington Guides</h3>
+                <p>Subscribe to Arlington Pulse for weekly local news, deals, and hidden gems delivered to your inbox.</p>
+                <a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=arlington-barbecue-guide">Subscribe Now</a>
+            </div>
+            
+            <!-- Business Feature CTA -->
+            <div class="cta-box" style="background: linear-gradient(135deg, #2d5a3d 0%, #1e3d2a 100%);">
+                <h3>🏢 Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach thousands of local readers looking for their next favorite spot.</p>
+                <a href="https://arlington.dfwasocialbuzz.com/business" style="color: #2d5a3d;">Get Featured</a>
+            </div>
+        </div>
+    </article>
+    
+    <!-- Related Articles -->
+    <section class="related-articles">
+        <h2>More Arlington Stories</h2>
+        <div class="related-grid">
+            <div class="related-card">
+                <h4>Arlington's Coffee Scene Is Having a Moment — Here's Where to Get Your Fix</h4>
+                <p>From downtown roasteries to community-focused cafés, discover why Arlington's independent coffee shops are the heart of our local culture.</p>
+                <a href="/articles/arlington-coffee-scene-guide.html">Read More →</a>
+            </div>
+            <div class="related-card">
+                <h4>Arlington's Entertainment District: Your Ultimate Summer Guide</h4>
+                <p>From Rangers baseball to rooftop cocktails, discover why locals flock to Arlington's most exciting neighborhood.</p>
+                <a href="/articles/arlington-entertainment-district-summer-guide.html">Read More →</a>
+            </div>
+            <div class="related-card">
+                <h4>Arlington Farmers Market: Your Guide to Fresh Local Finds</h4>
+                <p>From farm-fresh produce to handmade crafts, discover why Arlington's farmers markets are the heart of our community.</p>
+                <a href="/articles/arlington-farmers-market-guide.html">Read More →</a>
+            </div>
+            <div class="related-card">
+                <h4>Arlington's Best Patios: Where to Eat Outside This Spring</h4>
+                <p>From downtown hideaways to Entertainment District gems, these outdoor dining spots are perfect for Texas sunshine.</p>
+                <a href="/articles/arlington-best-patios-spring.html">Read More →</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <div class="tagline">Your local guide to Arlington, TX</div>
+                <div class="powered-by">Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></div>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/">Latest News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals/?cities=arlington">Local Deals</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Other Cities</h4>
+                <ul>
+                    <li><a href="/dallas/">Dallas Current</a></li>
+                    <li><a href="/fort-worth/">Fort Worth Eco</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/contact/">Contact Us</a></li>
+                    <li><a href="https://arlington.dfwasocialbuzz.com">Subscribe</a></li>
+                    <li><a href="https://arlington.dfwasocialbuzz.com/business">Advertise</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arlington Pulse. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

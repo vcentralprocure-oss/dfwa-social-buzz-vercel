@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlington's Craft Beer Scene: Where to Find the Best Local Brews | Arlington Pulse</title>
+    <meta name="description" content="Discover Arlington's thriving craft beer scene. From Division Brewing to Hooligan's Pub, find the best local breweries and beer bars in Arlington, TX.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: #e0e0e0; line-height: 1.7; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article Header */
+        .article-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 3rem 2rem 2rem; text-align: center; border-bottom: 2px solid #FF6B35; }
+        .article-header h1 { color: #FF6B35; font-size: 2.2rem; font-weight: 700; margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .article-meta { color: #888; font-size: 0.9rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        
+        /* Featured Image */
+        .featured-image { width: 100%; max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+        .featured-image img { width: 100%; height: auto; border-radius: 12px; }
+        .image-caption { color: #666; font-size: 0.85rem; text-align: center; margin-top: 0.5rem; }
+        
+        /* Article Content */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 0 2rem 3rem; }
+        .article-content { font-size: 1.1rem; line-height: 1.8; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { color: #FF6B35; font-size: 1.6rem; margin: 2.5rem 0 1rem; }
+        .article-content h3 { color: #FF6B35; font-size: 1.3rem; margin: 2rem 0 1rem; }
+        .article-content a { color: #FF6B35; text-decoration: underline; }
+        .article-content a:hover { color: #e55a2b; }
+        .article-content ul { margin: 1rem 0 1.5rem 2rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        
+        /* Business Listings */
+        .business-card { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+        .business-card h4 { color: #FF6B35; font-size: 1.2rem; margin-bottom: 0.5rem; }
+        .business-card p { margin-bottom: 0.75rem; color: #ccc; }
+        .business-card .address { color: #888; font-size: 0.9rem; }
+        .business-card a { color: #FF6B35; font-weight: 600; }
+        
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; text-align: center; margin: 2.5rem 0; }
+        .cta-box h3 { color: white; font-size: 1.4rem; margin-bottom: 0.75rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
+        .cta-box .btn { background: white; color: #FF6B35; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        .cta-box .btn:hover { background: #f0f0f0; }
+        
+        .subscribe-cta { background: #111122; border: 2px solid #FF6B35; border-radius: 12px; padding: 2rem; text-align: center; margin: 2.5rem 0; }
+        .subscribe-cta h3 { color: #FF6B35; font-size: 1.3rem; margin-bottom: 0.75rem; }
+        .subscribe-cta p { color: #aaa; margin-bottom: 1.25rem; }
+        .subscribe-cta .btn { background: #FF6B35; color: white; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        
+        /* Internal Links */
+        .related-articles { background: #0f1629; border-radius: 12px; padding: 2rem; margin: 2.5rem 0; }
+        .related-articles h3 { color: #FF6B35; font-size: 1.2rem; margin-bottom: 1rem; }
+        .related-articles ul { list-style: none; margin: 0; padding: 0; }
+        .related-articles li { margin-bottom: 0.75rem; padding-left: 1rem; border-left: 3px solid #FF6B35; }
+        .related-articles a { color: #ccc; text-decoration: none; }
+        .related-articles a:hover { color: #FF6B35; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; margin-top: 3rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            .top-header-content { flex-direction: column; gap: 0.75rem; }
+            .article-header h1 { font-size: 1.6rem; }
+            .article-container { padding: 0 1rem 2rem; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">DFWA Social Buzz</div>
+                    <div class="sub">Your local guide to DFWA</div>
+                </div>
+            </div>
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/#news">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals/?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business/">Business</a>
+                </div>
+            </div>
+            <nav class="city-nav">
+                <a href="/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Article Header -->
+    <header class="article-header">
+        <h1>Arlington's Craft Beer Scene: Where to Find the Best Local Brews</h1>
+        <div class="article-meta">
+            <span>May 14, 2026</span>
+            <span>•</span>
+            <span>Arlington Food & Drink Guide</span>
+            <span>•</span>
+            <span>By Arlington Pulse</span>
+        </div>
+    </header>
+    
+    <!-- Featured Image -->
+    <div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1627627045944-a6171e94783a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDIyMDR8MHwxfHNlYXJjaHwxfHxjcmFmdCUyMGJlZXIlMjBicmV3ZXJ5JTIwYmFyfGVufDB8fHx8MTc3ODc2NzI1OHww&ixlib=rb-4.1.0&q=80&w=1200" alt="Craft beer being poured into a glass">
+        <p class="image-caption">Photo by Phillip Goldsberry on Unsplash</p>
+    </div>
+    
+    <!-- Article Content -->
+    <div class="article-container">
+        <article class="article-content">
+            <p>Arlington's craft beer scene has exploded in recent years, transforming the city into a destination for beer enthusiasts across DFW. What started with a single locally-owned brewery has blossomed into a vibrant community of brewers, pubs, and beer bars that rival anything you'll find in Dallas or Fort Worth.</p>
+            
+            <p>Whether you're hunting for a hazy IPA, a rich stout, or something completely experimental, Arlington's breweries and craft beer spots deliver. Here's your guide to the best places to grab a pint in the city.</p>
+            
+            <h2>🍺 Division Brewing</h2>
+            <div class="business-card">
+                <h4><a href="https://divisionbrewing.com/" target="_blank">Division Brewing</a></h4>
+                <p>Arlington's first locally-owned and operated craft brewery, Division Brewing has been the cornerstone of the city's beer scene since opening. With over 20 years of combined homebrewing experience, the team here knows how to craft exceptional beer.</p>
+                <p>Each week, they rotate around 18 freshly-batched craft beers on tap, including innovative flavors like Brut IPA and Imperial Stout with chocolate. The laid-back vibe and knowledgeable staff make this a must-visit for any beer lover.</p>
+                <p class="address">📍 506 E. Main St, Arlington, TX 76010 | 📞 682-259-7011</p>
+            </div>
+            
+            <h2>🍻 Hooligan's Pub</h2>
+            <div class="business-card">
+                <h4><a href="https://downtownarlington.org/go/hooligans-pub" target="_blank">Hooligan's Pub</a></h4>
+                <p>Located in the heart of downtown Arlington, Hooligan's Pub has built a stellar reputation as the go-to spot for craft beer aficionados. With over 25 beers on tap that rotate regularly and more than 80 bottle varieties, there's always something new to discover.</p>
+                <p>The bartenders here are true beer experts who take the time to learn your preferences and recommend the perfect pint. The atmosphere strikes that perfect balance between cool and relaxed—you'll feel like a regular from your very first visit.</p>
+                <p class="address">📍 310 E Abram St Suite 150, Arlington, TX 76010 | 📞 (817) 274-1232</p>
+            </div>
+            
+            <h2>🍺 Legal Draft Beer Company</h2>
+            <div class="business-card">
+                <h4><a href="https://legaldraftbeer.com/" target="_blank">Legal Draft Beer Company</a></h4>
+                <p>Founded on friendship, family, and hard work, Legal Draft Beer Company opened in July 2016 as Arlington's first production brewery. What started when a lawyer and a medical logistics professional quit their day jobs has become a beloved local institution.</p>
+                <p>Their "Beeranda Rights" philosophy means everyone has the right to drink great beer—and they deliver on that promise. Visit their downtown taproom Thursday through Sunday to sample their latest creations, or find their beers at retailers throughout Texas.</p>
+                <p class="address">📍 500 E Division St, Arlington, TX 76011 | 📞 (682) 251-8599</p>
+            </div>
+            
+            <h2>🍻 Kool Keg Beer & Margaritas</h2>
+            <div class="business-card">
+                <h4><a href="https://www.kool-keg.net/" target="_blank">Kool Keg Beer & Margaritas</a></h4>
+                <p>A downtown Arlington institution since 1982, Kool Keg has evolved from a keg supplier to a full-service craft beer destination. They offer the largest selection of beer kegs in the DFW Metroplex, plus margarita machines and full-service alcohol catering.</p>
+                <p>Whether you're planning a party or just want to explore their impressive selection, Kool Keg is a unique Arlington experience that combines old-school charm with modern craft beer culture.</p>
+                <p class="address">📍 207 S East St, Arlington, TX 76010 | 📞 (817) 461-6949</p>
+            </div>
+            
+            <h2>🌟 Why Arlington's Beer Scene Matters</h2>
+            <p>What makes Arlington's craft beer community special isn't just the quality of the brews—it's the sense of community. These aren't just places to grab a drink; they're gathering spots where neighbors become friends and local culture thrives.</p>
+            
+            <p>From Division Brewing's neighborhood following to Hooligan's personalized recommendations, Arlington's beer spots prioritize connection over transactions. That's something you can't fake, and it's why locals keep coming back.</p>
+            
+            <h2>🗺️ Plan Your Arlington Beer Crawl</h2>
+            <p>All four of these spots are conveniently located in or near downtown Arlington, making them perfect for a walking beer tour. Start at Division Brewing for a flight of their latest creations, walk over to Hooligan's for a rotating tap selection, then finish at Legal Draft or Kool Keg to discover something new.</p>
+            
+            <p>Just remember to drink responsibly and designate a driver—or use a rideshare service to get home safely.</p>
+            
+            <!-- Subscribe CTA -->
+            <div class="subscribe-cta">
+                <h3>📧 Get More Arlington Guides</h3>
+                <p>Subscribe to Arlington Pulse for weekly local news, events, and business spotlights delivered straight to your inbox.</p>
+                <a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=craft-beer-guide" class="btn">Subscribe Now</a>
+            </div>
+            
+            <!-- Business Feature CTA -->
+            <div class="cta-box">
+                <h3>🏢 Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach thousands of local readers. Join our growing community of spotlighted businesses.</p>
+                <a href="https://dfwasocialbuzz.com/business/" class="btn">Get Featured</a>
+            </div>
+            
+            <!-- Related Articles -->
+            <div class="related-articles">
+                <h3>📖 More Arlington Guides</h3>
+                <ul>
+                    <li><a href="/articles/arlington-barbecue-renaissance.html">→ Arlington's Barbecue Renaissance: Where to Find the Best Smoked Meats</a></li>
+                    <li><a href="/articles/arlington-coffee-scene-guide.html">→ Arlington's Coffee Scene Is Having a Moment — Here's Where to Get Your Fix</a></li>
+                    <li><a href="/articles/arlington-entertainment-district-summer-guide.html">→ Arlington's Entertainment District: Your Ultimate Summer Guide</a></li>
+                    <li><a href="/articles/arlington-best-patios-spring.html">→ Arlington's Best Patios: Where to Eat Outside This Spring</a></li>
+                    <li><a href="/articles/arlington-farmers-market-guide.html">→ Arlington Farmers Market: Your Guide to Fresh Local Finds</a></li>
+                </ul>
+            </div>
+        </article>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <div class="tagline">Your local guide to Arlington, TX</div>
+                <div style="color: #666; font-size: 0.8rem; margin-top: 1rem;">Powered by <a href="https://dfwasocialbuzz.com" style="color: #FF6B35;">DFWA Social Buzz</a></div>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/">Latest News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals/?cities=arlington">Local Deals</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Other Cities</h4>
+                <ul>
+                    <li><a href="/dallas/">Dallas Current</a></li>
+                    <li><a href="/fort-worth/">Fort Worth Eco</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/contact/">Contact Us</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/business/">Advertise</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arlington Pulse. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
