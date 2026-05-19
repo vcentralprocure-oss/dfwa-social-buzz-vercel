@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlington's Brunch Scene: Where to Find the Best Weekend Mimosas & Pancakes | Arlington Pulse</title>
+    <meta name="description" content="Discover Arlington's best brunch spots this weekend. From bottomless mimosas to fluffy pancakes, explore where locals go for the perfect weekend brunch.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header - Matching Arlington Pulse design */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .article-header { margin-bottom: 2rem; }
+        .article-header h1 { font-size: 2.5rem; margin-bottom: 1rem; color: #FF6B35; line-height: 1.2; }
+        .article-meta { color: #666; font-size: 0.9rem; margin-bottom: 2rem; }
+        .article-image { width: 100%; height: 450px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; }
+        
+        .article-content { font-size: 1.1rem; line-height: 1.8; color: #ccc; }
+        .article-content h2 { color: #FF6B35; margin: 2.5rem 0 1rem; font-size: 1.6rem; }
+        .article-content h3 { color: #fff; margin: 1.5rem 0 0.75rem; font-size: 1.3rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content ul { margin: 1rem 0 1.5rem 2rem; }
+        .article-content li { margin-bottom: 0.75rem; }
+        
+        /* Business listing */
+        .business-listing { background: #111122; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; border-left: 3px solid #FF6B35; }
+        .business-listing h3 { margin-top: 0; color: #fff; }
+        .business-listing .rating { color: #FFD700; }
+        .business-listing p { margin-bottom: 0.75rem; }
+        .business-listing p:last-child { margin-bottom: 0; }
+        
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); padding: 2rem; border-radius: 12px; margin: 2rem 0; border: 1px solid #333; text-align: center; }
+        .cta-box h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .cta-box p { margin-bottom: 1.5rem; color: #aaa; }
+        .btn-primary { background: #FF6B35; color: white; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; transition: background 0.2s; }
+        .btn-primary:hover { background: #e55a2b; }
+        
+        /* Related articles */
+        .related { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #333; }
+        .related h3 { color: #FF6B35; margin-bottom: 1rem; font-size: 1.3rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+        .related-card { background: #111122; padding: 1rem; border-radius: 8px; text-decoration: none; color: white; border: 1px solid transparent; transition: all 0.2s; }
+        .related-card:hover { border: 1px solid #FF6B35; }
+        .related-card strong { color: #FF6B35; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; margin-top: 3rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-brand .powered-by { color: #666; font-size: 0.8rem; margin-top: 1rem; }
+        .footer-brand .powered-by a { color: #FF6B35; text-decoration: none; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        .footer-bottom a { color: #888; text-decoration: none; margin: 0 0.5rem; }
+        .footer-bottom a:hover { color: #FF6B35; }
+        
+        @media (max-width: 768px) {
+            .top-header-content { flex-direction: column; gap: 0.75rem; }
+            .article-header h1 { font-size: 1.8rem; }
+            .article-image { height: 250px; }
+            .footer-content { grid-template-columns: 1fr; }
+            .related-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <a href="/arlington/" class="logo-section" style="text-decoration: none;">
+                <div class="logo-img">A</div>
+                <div class="logo-text">
+                    <div class="main">Arlington Pulse</div>
+                    <div class="sub">Your local guide to Arlington, TX</div>
+                </div>
+            </a>
+            
+            <nav class="city-nav">
+                <a href="/arlington/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+    
+    <article class="article-container">
+        <div class="article-header">
+            <h1>Arlington's Brunch Scene: Where to Find the Best Weekend Mimosas & Pancakes</h1>
+            <div class="article-meta">By Arlington Pulse | May 17, 2026 | Dining & Food Guide</div>
+        </div>
+        
+        <img src="https://images.unsplash.com/photo-1493770348161-369560ae357d?w=1200&h=675&fit=crop" alt="Delicious brunch spread with pancakes and mimosas" class="article-image">
+        
+        <div class="article-content">
+            <p>There's a reason brunch has become the most important meal of the weekend in Arlington. Maybe it's the way the Texas sun streams through downtown windows on a Sunday morning. Maybe it's the satisfaction of sleeping in and still getting breakfast. Or maybe it's just that Arlington's restaurants have elevated the mid-morning meal into an art form.</p>
+            
+            <p>From bottomless mimosa deals to pancake stacks that could feed a family, Arlington's brunch scene has something for every appetite and budget. Whether you're recovering from a late night at Texas Live!, catching up with friends, or treating the family to something special, these local spots are serving up the best brunch in DFW.</p>
+            
+            <!-- SUBSCRIBE CTA -->
+            <div class="cta-box">
+                <h3>Get Weekly Arlington Guides</h3>
+                <p>Local news, events, and hidden gems delivered to your inbox every Friday.</p>
+                <a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=brunch-guide" class="btn-primary">Subscribe Free →</a>
+            </div>
+            
+            <h2>The Best Brunch Spots in Arlington</h2>
+            
+            <div class="business-listing">
+                <h3><a href="https://www.firstwatch.com" target="_blank">First Watch</a> <span class="rating">⭐⭐⭐⭐⭐</span></h3>
+                <p>This daytime café has become a breakfast institution for good reason. First Watch takes the most important meal of the day seriously, using fresh, seasonal ingredients to create dishes that are both healthy and indulgent. Their Million Dollar Bacon—thick-cut, sweet and savory, and utterly addictive—lives up to the name.</p>
+                <p><strong>Must-try:</strong> The Chickichanga, a flour tortilla stuffed with chicken, chorizo, and green chiles, topped with avocado and served with house-made salsa. Pair it with their fresh-squeezed orange juice or a craft coffee.</p>
+                <p><strong>Locations in Arlington:</strong> <a href="https://www.firstwatch.com/locations/tx/arlington/collins-st/" target="_blank">Collins Street</a> and <a href="https://www.firstwatch.com/locations/tx/arlington/lincoln-square/" target="_blank">Lincoln Square</a></p>
+            </div>
+            
+            <div class="business-listing">
+                <h3><a href="https://www.snoozeameatery.com" target="_blank">Snooze, an A.M. Eatery</a> <span class="rating">⭐⭐⭐⭐⭐</span></h3>
+                <p>With its retro-futuristic décor and creative menu, Snooze has redefined what breakfast can be. This Colorado-born chain brings serious culinary chops to the morning meal, offering everything from classic eggs Benedict to pancake flights featuring flavors like pineapple upside down and sweet potato.</p>
+                <p><strong>Pro tip:</strong> Download the Snooze app and join the waitlist before you leave home—their Arlington location fills up fast on weekends, but the wait is always worth it.</p>
+                <p><a href="https://www.snoozeameatery.com/locations/arlington-tx/" target="_blank">Check wait times and menu →</a></p>
+            </div>
+            
+            <div class="business-listing">
+                <h3><a href="https://www.bbbopbop.com" target="_blank">Bbbop Seoul Kitchen</a> <span class="rating">⭐⭐⭐⭐</span></h3>
+                <p>For brunch with a twist, head to this Korean-inspired spot where breakfast meets bibimbap. Their weekend brunch menu features Korean fried chicken and waffles, kimchi fried rice bowls, and unique takes on morning classics. It's the perfect spot when you want something different from the usual pancake house.</p>
+                <p><strong>Don't miss:</strong> The Seoul Bowl with a fried egg on top—comfort food with Korean soul.</p>
+                <p><a href="https://www.bbbopbop.com/menu" target="_blank">View brunch menu →</a></p>
+            </div>
+            
+            <div class="business-listing">
+                <h3><a href="https://www.eltexanocafe.com" target="_blank">El Texano Cafe</a> <span class="rating">⭐⭐⭐⭐⭐</span></h3>
+                <p>Sometimes you want brunch with a side of authenticity. This family-owned gem serves up Tex-Mex breakfast that locals have been raving about for years. Their breakfast tacos are the real deal—handmade tortillas, perfectly scrambled eggs, and your choice of fillings from chorizo to barbacoa.</p>
+                <p><strong>Local secret:</strong> Order the migas with a side of their homemade salsa verde. It's the kind of breakfast that will ruin you for chain restaurants forever.</p>
+                <p><a href="https://www.eltexanocafe.com" target="_blank">Visit El Texano →</a></p>
+            </div>
+            
+            <div class="business-listing">
+                <h3><a href="https://www.mashd.com" target="_blank">MASH'D</a> <span class="rating">⭐⭐⭐⭐</span></h3>
+                <p>Located in the heart of the Entertainment District, MASH'D takes a different approach to brunch—think comfort food with a craft cocktail program. Their weekend brunch features chicken and waffles, breakfast flatbreads, and a full bar including their famous moonshine cocktails and build-your-own mimosas.</p>
+                <p><strong>Perfect for:</strong> Groups who can't decide between breakfast and lunch, or anyone looking to extend the weekend party vibe with a boozy brunch.</p>
+                <p><a href="https://www.mashd.com/menu" target="_blank">See brunch offerings →</a></p>
+            </div>
+            
+            <h2>Brunch Pro Tips for Arlington</h2>
+            
+            <p><strong>Timing is everything:</strong> The sweet spot for weekend brunch is 10:30-11:30 AM—late enough to feel leisurely, early enough to beat the post-church rush. If you're not an early riser, consider a 1:00 PM brunch to avoid the crowds entirely.</p>
+            
+            <p><strong>Make reservations:</strong> Popular spots like Snooze and First Watch can have hour-long waits on Sunday mornings. Call ahead or use apps like Yelp or OpenTable to save your spot.</p>
+            
+            <p><strong>Explore the neighborhoods:</strong> Downtown Arlington has emerged as a brunch destination with walkable options and a charming atmosphere. The Entertainment District offers more casual, sports-bar vibes. And don't sleep on the hidden gems along Collins Street and Matlock Road.</p>
+            
+            <!-- RELATED ARTICLES -->
+            <div class="related">
+                <h3>More Arlington Guides</h3>
+                <div class="related-grid">
+                    <a href="/arlington/articles/arlington-coffee-scene-guide.html" class="related-card">
+                        <strong>Arlington's Coffee Scene Is Having a Moment — Here's Where to Get Your Fix</strong>
+                        <p style="color: #888; font-size: 0.9rem; margin-top: 0.5rem;">From downtown roasteries to community-focused cafés, discover why Arlington's independent coffee shops are becoming the heart of our local culture.</p>
+                    </a>
+                    <a href="/arlington/articles/arlington-live-music-dining-weekend.html" class="related-card">
+                        <strong>Arlington's Live Music & Dining Scene: Your Weekend Guide to the Best Venues</strong>
+                        <p style="color: #888; font-size: 0.9rem; margin-top: 0.5rem;">From intimate acoustic sets at downtown gastropubs to high-energy performances at Texas Live!, discover where great food meets even better tunes.</p>
+                    </a>
+                    <a href="/arlington/articles/arlington-best-patios-spring.html" class="related-card">
+                        <strong>Arlington's Best Patios: Where to Eat Outside This Spring</strong>
+                        <p style="color: #888; font-size: 0.9rem; margin-top: 0.5rem;">From downtown hideaways to Entertainment District gems, these outdoor dining spots are perfect for soaking up the Texas sunshine.</p>
+                    </a>
+                    <a href="/arlington/articles/arlington-craft-beer-guide.html" class="related-card">
+                        <strong>Arlington's Craft Beer Scene: Where to Find the Best Local Brews</strong>
+                        <p style="color: #888; font-size: 0.9rem; margin-top: 0.5rem;">From Division Brewing to Hooligan's Pub, discover why Arlington has become a destination for craft beer lovers across DFW.</p>
+                    </a>
+                    <a href="/arlington/articles/arlington-barbecue-renaissance.html" class="related-card">
+                        <strong>Arlington's Barbecue Renaissance: Where to Find the Best Smoked Meats</strong>
+                        <p style="color: #888; font-size: 0.9rem; margin-top: 0.5rem;">From award-winning brisket to underground smoke pits, discover why Arlington has become a destination for Texas barbecue lovers.</p>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- BUSINESS CTA -->
+            <div class="cta-box" style="margin-top: 3rem;">
+                <h3>Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach 5,000+ engaged local readers every week.</p>
+                <a href="https://arlington.dfwasocialbuzz.com/business?utm_source=article&utm_medium=web&utm_campaign=brunch-guide" class="btn-primary">Get Featured →</a>
+            </div>
+        </div>
+    </article>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <div class="tagline">Your local guide to Arlington, TX</div>
+                <div class="powered-by">Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/arlington/">Latest News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals/?cities=arlington">Local Deals</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Other Cities</h4>
+                <ul>
+                    <li><a href="/dallas/">Dallas Current</a></li>
+                    <li><a href="/fort-worth/">Fort Worth Eco</a></li>
+                    <li><a href="https://dfwasocialbuzz.com">DFWA Home</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/contact/">Contact Us</a></li>
+                    <li><a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=brunch-guide">Subscribe</a></li>
+                    <li><a href="https://arlington.dfwasocialbuzz.com/business">Advertise</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arlington Pulse. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="https://dfwasocialbuzz.com/privacy-policy/">Privacy Policy</a> | 
+                <a href="https://dfwasocialbuzz.com/terms-and-conditions/">Terms & Conditions</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
