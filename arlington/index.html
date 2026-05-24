@@ -173,7 +173,7 @@
                     <a href="#news">News</a>
                     <a href="https://dfwasocialbuzz.com/deals/?cities=arlington">Deals</a>
                     <a href="https://dfwasocialbuzz.com/business/">Business</a>
-                    <button class="nav-subscribe-btn" onclick="toggleSubscribe()" style="background:none;border:none;color:#aaa;cursor:pointer;font-size:0.9rem;">Subscribe</button>
+                    <a href="#subscribe-section" onclick="navToSubscribe(event)" style="color:#aaa;text-decoration:none;font-size:0.9rem;">Subscribe</a>
                 </div>
             </div>
             
@@ -242,14 +242,18 @@
         </div>
     </section>
     
+    <!-- Subscribe Section Anchor -->
+    <div id="subscribe-section" style="scroll-margin-top: 20px;"></div>
+    
     <div class="container">
         <!-- Featured Issue -->
         <div class="featured-issue">
             <span class="label">Featured Issue</span>
-            <h3>Your Ultimate Guide to Memorial Day Weekend in Arlington 2026</h3>
-            <p class="meta">May 23, 2026</p>
-            <p>DreamFest 2026, patio dining, Rangers baseball, and more—your complete guide to Memorial Day Weekend in Arlington. Discover free live music at the Levitt Pavilion, the best outdoor dining spots, and meaningful ways to honor our heroes in The American Dream City.</p>
-            <a href="/articles/memorial-day-weekend-arlington-2026.html" class="btn-primary">Read Full Issue</a>
+            <h3>Your Ultimate Guide to Arlington's Best Local Restaurants This Summer</h3>
+            <p>From award-winning barbecue to craft brewery bites, discover Arlington's thriving food scene featuring Hurtado Barbecue, Division Brewing, The Tipsy Oak, Babe's Chicken Dinner House, and Restaurant506. Your complete guide to eating local in The American Dream City.</p>
+            <p class="meta">May 24, 2026 • 5 min read</p>
+            <a href="/articles/arlington-best-restaurants-summer-2026.html" class="btn-primary">Read Full Issue</a>
+            <a href="/articles/" class="btn-secondary" style="margin-left: 1rem;">View Archive</a>
         </div>
         
         <!-- Recent Issues -->
@@ -259,6 +263,13 @@
         </div>
         
         <div class="archive-grid">
+            <div class="issue-card">
+                <h4>Your Ultimate Guide to Arlington's Best Local Restaurants This Summer</h4>
+                <div class="date">May 24, 2026</div>
+                <p>From award-winning barbecue to craft brewery bites, discover Arlington's thriving food scene featuring Hurtado Barbecue, Division Brewing, The Tipsy Oak, and more.</p>
+                <a href="/articles/arlington-best-restaurants-summer-2026.html">Read Issue →</a>
+            </div>
+
             <div class="issue-card">
                 <h4>Your Ultimate Guide to Memorial Day Weekend in Arlington 2026</h4>
                 <div class="date">May 23, 2026</div>
@@ -496,6 +507,22 @@
             if (module.classList.contains('active')) {
                 setTimeout(() => module.querySelector('input[name="email"]').focus(), 100);
             }
+        }
+        
+        // Navigation Subscribe - jump to section and show module
+        function navToSubscribe(event) {
+            event.preventDefault();
+            const module = document.getElementById('subscribe-module');
+            const section = document.getElementById('subscribe-section');
+            
+            // Show the module
+            module.classList.add('active');
+            
+            // Jump to the section
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            
+            // Focus the email input after scroll
+            setTimeout(() => module.querySelector('input[name="email"]').focus(), 300);
         }
         
         async function handleSubscribe(event) {
