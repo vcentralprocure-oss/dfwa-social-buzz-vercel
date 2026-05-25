@@ -171,8 +171,8 @@
                 <div class="nav-links">
                     <a href="/">Home</a>
                     <a href="#news">News</a>
-                    <a href="https://dfwasocialbuzz.com/deals/?cities=arlington">Deals</a>
-                    <a href="https://dfwasocialbuzz.com/business/">Business</a>
+                    <a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business">Business</a>
                     <a href="#subscribe-section" onclick="navToSubscribe(event)" style="color:#aaa;text-decoration:none;font-size:0.9rem;">Subscribe</a>
                 </div>
             </div>
@@ -195,27 +195,27 @@
     <section class="sponsored-section">
         <div class="sponsored-row">
             <div class="sponsored-card">
-                <div class="card-image">[Sponsor Image]</div>
+                <div class="card-image">🍽️</div>
                 <div class="card-content">
-                    <h4>Sponsor Headline One</h4>
-                    <p>Description text goes here for this sponsored placement</p>
-                    <a href="#" class="cta-link">Learn More →</a>
+                    <h4>Arlington's Best Patios: Where to Eat Outside This Spring</h4>
+                    <p>From downtown hideaways to Entertainment District gems, these outdoor dining spots are perfect for soaking up the Texas sunshine.</p>
+                    <a href="/articles/arlington-best-patios-spring.html" class="cta-link">Read Guide →</a>
                 </div>
             </div>
             <div class="sponsored-card">
-                <div class="card-image">[Sponsor Image]</div>
+                <div class="card-image">🛍️</div>
                 <div class="card-content">
-                    <h4>Sponsor Headline Two</h4>
-                    <p>Description text goes here for this sponsored placement</p>
-                    <a href="#" class="cta-link">Learn More →</a>
+                    <h4>Arlington's Best Local Shops: Unique Gifts & Vintage Finds</h4>
+                    <p>Skip the big box stores and discover Arlington's independent boutiques, vintage shops, and artisan markets.</p>
+                    <a href="/articles/arlington-best-local-shops.html" class="cta-link">Discover Shops →</a>
                 </div>
             </div>
             <div class="sponsored-card">
-                <div class="card-image">[Sponsor Image]</div>
+                <div class="card-image">🎉</div>
                 <div class="card-content">
-                    <h4>Sponsor Headline Three</h4>
-                    <p>Description text goes here for this sponsored placement</p>
-                    <a href="#" class="cta-link">Learn More →</a>
+                    <h4>Your Ultimate Guide to Arlington's Entertainment District</h4>
+                    <p>From Globe Life Field to Texas Live!, discover the best dining, entertainment, and summer events.</p>
+                    <a href="/articles/arlington-entertainment-district-summer-2026.html" class="cta-link">Explore District →</a>
                 </div>
             </div>
         </div>
@@ -224,9 +224,9 @@
     <!-- PHASE 1: Action Buttons Bar with Compact Subscribe -->
     <section class="action-bar">
         <div class="action-buttons">
-            <button class="action-btn subscribe" onclick="toggleSubscribe()">📧 Subscribe</button>
-            <a href="https://dfwasocialbuzz.com/deals/?cities=arlington" class="action-btn deals">💰 Local Deals</a>
-            <a href="https://dfwasocialbuzz.com/business/" class="action-btn business">🏢 Get Featured</a>
+            <button class="action-btn subscribe" onclick="navToSubscribe(event)">📧 Subscribe</button>
+            <a href="https://dfwasocialbuzz.com/deals?cities=arlington" class="action-btn deals">💰 Local Deals</a>
+            <a href="https://dfwasocialbuzz.com/business" class="action-btn business">🏢 Get Featured</a>
         </div>
         
         <!-- Compact Subscribe Module -->
@@ -436,9 +436,9 @@
         <!-- Repeated action buttons at bottom -->
         <section class="action-bar" style="margin-top: 2rem; margin-bottom: 2rem;">
             <div class="action-buttons">
-                <button class="action-btn subscribe" onclick="toggleSubscribe()">📧 Subscribe</button>
-                <a href="https://dfwasocialbuzz.com/deals/?cities=arlington" class="action-btn deals">💰 Local Deals</a>
-                <a href="https://dfwasocialbuzz.com/business/" class="action-btn business">🏢 Get Featured</a>
+                <button class="action-btn subscribe" onclick="navToSubscribe(event)">📧 Subscribe</button>
+                <a href="https://dfwasocialbuzz.com/deals?cities=arlington" class="action-btn deals">💰 Local Deals</a>
+                <a href="https://dfwasocialbuzz.com/business" class="action-btn business">🏢 Get Featured</a>
             </div>
         </section>
         
@@ -452,7 +452,7 @@
                 <div class="tagline">Your local guide to Arlington, TX</div>
                 <div class="powered-by">Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></div>
                 <div class="social-icons">
-                    <a href="#" class="social-icon" title="YouTube">▶</a>
+                    <a href="https://www.youtube.com/@dfwasocialbuzz" class="social-icon" title="YouTube">▶</a>
                     <a href="#" class="social-icon" title="Facebook">f</a>
                     <a href="#" class="social-icon" title="X (Twitter)">𝕏</a>
                     <a href="#" class="social-icon" title="Instagram">📷</a>
@@ -479,18 +479,18 @@
             <div class="footer-links">
                 <h4>Get In Touch</h4>
                 <ul>
-                    <li><a href="https://dfwasocialbuzz.com/contact/">Contact Us</a></li>
-                    <li><a href="#" onclick="toggleSubscribe(); return false;">Subscribe</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/contact">Contact Us</a></li>
+                    <li><a href="#subscribe-section" onclick="navToSubscribe(event); return false;">Subscribe</a></li>
                 </ul>
-                <a href="https://dfwasocialbuzz.com/contact/" class="contact-btn">Contact Us</a>
+                <a href="https://dfwasocialbuzz.com/contact" class="contact-btn">Contact Us</a>
             </div>
         </div>
         
         <div class="footer-bottom">
             <p>&copy; 2026 Arlington Pulse. All rights reserved.</p>
             <p style="margin-top: 0.5rem;">
-                <a href="https://dfwasocialbuzz.com/privacy-policy/">Privacy Policy</a> | 
-                <a href="https://dfwasocialbuzz.com/terms-and-conditions/">Terms & Conditions</a>
+                <a href="https://dfwasocialbuzz.com/privacy-policy">Privacy Policy</a> | 
+                <a href="https://dfwasocialbuzz.com/terms-and-conditions">Terms & Conditions</a>
             </p>
         </div>
     </footer>
