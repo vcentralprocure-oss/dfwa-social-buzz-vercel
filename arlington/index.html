@@ -35,7 +35,8 @@
         .sponsored-row { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
         .sponsored-card { background: rgba(255,255,255,0.02); border: 1px solid #333; border-radius: 12px; overflow: hidden; }
         .sponsored-card:first-child { border-color: #FF6B35; background: linear-gradient(135deg, rgba(255,107,53,0.08) 0%, rgba(255,107,53,0.02) 100%); }
-        .sponsored-card .card-image { width: 100%; height: 160px; background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); display: flex; align-items: center; justify-content: center; color: #555; font-size: 0.9rem; }
+        .sponsored-card .card-image { width: 100%; height: 160px; background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); display: flex; align-items: center; justify-content: center; color: #555; font-size: 0.9rem; overflow: hidden; }
+        .sponsored-card .card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
         .sponsored-card .card-content { padding: 1.25rem; }
         .sponsored-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: white; line-height: 1.3; }
         .sponsored-card p { color: #888; font-size: 0.9rem; line-height: 1.4; margin-bottom: 0.75rem; }
@@ -188,7 +189,9 @@
     <section class="sponsored-section">
         <div class="sponsored-row">
             <div class="sponsored-card">
-                <div class="card-image">🏪</div>
+                <div class="card-image">
+                    <img src="/arlington/images/sponsored/arlington-businesses.jpg" alt="Local Arlington businesses and restaurants" loading="lazy">
+                </div>
                 <div class="card-content">
                     <h4>5 Arlington Local Businesses You Need to Know This Summer</h4>
                     <p>From craft breweries to creative studios, discover the local gems that make Arlington special. Featuring The Tipsy Oak, Division Brewing, and more.</p>
@@ -196,7 +199,9 @@
                 </div>
             </div>
             <div class="sponsored-card">
-                <div class="card-image">☕</div>
+                <div class="card-image">
+                    <img src="/arlington/images/sponsored/coffee-culture.jpg" alt="Coffee shop interior in Arlington" loading="lazy">
+                </div>
                 <div class="card-content">
                     <h4>Arlington's Coffee Culture Is Exploding: 5 Downtown Cafés You Need to Try</h4>
                     <p>From Salter Bros. Coffee Roasters to Daydream Book & Coffee Bar, discover Arlington's thriving downtown coffee scene.</p>
@@ -204,7 +209,9 @@
                 </div>
             </div>
             <div class="sponsored-card">
-                <div class="card-image">🍽️</div>
+                <div class="card-image">
+                    <img src="/arlington/images/sponsored/patio-dining.jpg" alt="Outdoor patio dining in Arlington" loading="lazy">
+                </div>
                 <div class="card-content">
                     <h4>Arlington's Best Patios: Where to Eat Outside This Spring</h4>
                     <p>From downtown hideaways to Entertainment District gems, these outdoor dining spots are perfect for soaking up the Texas sunshine.</p>
@@ -212,7 +219,9 @@
                 </div>
             </div>
             <div class="sponsored-card">
-                <div class="card-image">🛍️</div>
+                <div class="card-image">
+                    <img src="/arlington/images/sponsored/local-shops.jpg" alt="Local boutiques and shops in Arlington" loading="lazy">
+                </div>
                 <div class="card-content">
                     <h4>Arlington's Best Local Shops: Unique Gifts & Vintage Finds</h4>
                     <p>Skip the big box stores and discover Arlington's independent boutiques, vintage shops, and artisan markets.</p>
