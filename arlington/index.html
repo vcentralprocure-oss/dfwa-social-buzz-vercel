@@ -595,6 +595,20 @@
             }
         }
         
+        // Check for subscribe query param on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('subscribe') === 'open') {
+                const module = document.getElementById('subscribe-module');
+                const section = document.getElementById('subscribe-section');
+                if (module && section) {
+                    module.classList.add('active');
+                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    setTimeout(() => module.querySelector('input[name="email"]')?.focus(), 300);
+                }
+            }
+        });
+        
         // Legacy newsletter form handler - kept for compatibility
         const legacyForm = document.getElementById('newsletter-form');
         if (legacyForm) {
