@@ -190,12 +190,16 @@
         </div>
     </section>
     
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h3>Stay in the Loop</h3>
-        <p>Get the latest Arlington news, events, and local deals delivered to your inbox.</p>
-        <a href="https://dfwasocialbuzz.com/arlington/" class="btn-light">Subscribe Now</a>
-        <a href="https://dfwasocialbuzz.com/business/" class="btn-dark">Get Your Business Featured</a>
+    <!-- Inline Subscribe Form -->
+    <section class="subscribe-inline" style="background: #111122; border: 1px solid #333; border-radius: 12px; padding: 2rem; margin: 2.5rem auto; max-width: 800px;">
+        <h3 style="color: #FF6B35; margin-bottom: 0.75rem;">📧 Stay in the Loop</h3>
+        <p style="color: #888; margin-bottom: 1rem;">Get the latest Arlington news, events, and local deals delivered to your inbox.</p>
+        <form class="subscribe-form-inline" onsubmit="handleArticleSubscribe(event)" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <input type="email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #333; border-radius: 6px; background: #0f1629; color: white;">
+            <button type="submit" style="background: #FF6B35; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Subscribe</button>
+        </form>
+        <div class="subscribe-message-inline" style="margin-top: 0.75rem; font-size: 0.9rem; display: none;"></div>
+        <p style="margin-top: 1rem;"><a href="https://dfwasocialbuzz.com/business/" style="color: #FF6B35;">Get Your Business Featured →</a></p>
     </section>
     
     <!-- Footer -->
@@ -228,7 +232,7 @@
                 <h4>Get In Touch</h4>
                 <ul>
                     <li><a href="https://dfwasocialbuzz.com/contact/">Contact Us</a></li>
-                    <li><a href="https://dfwasocialbuzz.com/arlington/">Subscribe</a></li>
+                    <li><a href="/#subscribe-section" onclick="event.preventDefault(); document.querySelector('.subscribe-inline').scrollIntoView({behavior: 'smooth'});">Subscribe</a></li>
                 </ul>
             </div>
         </div>
@@ -237,5 +241,48 @@
             <p>&copy; 2026 Arlington Pulse. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        async function handleArticleSubscribe(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button');
+            const messageDiv = form.parentElement.querySelector('.subscribe-message-inline');
+            const email = form.email.value;
+            
+            btn.disabled = true;
+            btn.textContent = 'Subscribing...';
+            messageDiv.style.display = 'none';
+            
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        city: 'Arlington',
+                        source: 'article_page'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    messageDiv.textContent = '✓ Successfully subscribed!';
+                    messageDiv.style.color = '#4CAF50';
+                    messageDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error(data.message || 'Subscription failed');
+                }
+            } catch (error) {
+                messageDiv.textContent = '✗ ' + error.message;
+                messageDiv.style.color = '#f44336';
+                messageDiv.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Subscribe';
+            }
+        }
+    </script>
 </body>
 </html>

@@ -197,10 +197,15 @@
             <p>The best part? Many of these events are free or low-cost, making Arlington an affordable destination for holiday weekend fun. Just remember to hydrate (it's already getting hot out there), wear comfortable shoes for walking Downtown, and bring your appetite.</p>
             
             <!-- Subscribe CTA -->
-            <div class="subscribe-cta">
-                <h3>Get More Arlington Guides</h3>
-                <p>Subscribe to Arlington Pulse for weekly local news, business spotlights, and event guides delivered to your inbox.</p>
-                <a href="https://dfwasocialbuzz.com/arlington/?utm_source=article&utm_medium=web&utm_campaign=memorial-day-weekend" class="btn-light">Subscribe Now</a>
+            <!-- Inline Subscribe Form -->
+            <div class="subscribe-inline" style="background: #111122; border: 1px solid #333; border-radius: 12px; padding: 2rem; margin: 2.5rem 0;">
+                <h3 style="color: #FF6B35; margin-bottom: 0.75rem;">📧 Get More Arlington Guides</h3>
+                <p style="color: #888; margin-bottom: 1rem;">Subscribe to Arlington Pulse for weekly local news, events, and business spotlights.</p>
+                <form class="subscribe-form-inline" onsubmit="handleArticleSubscribe(event)" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <input type="email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #333; border-radius: 6px; background: #0f1629; color: white;">
+                    <button type="submit" style="background: #FF6B35; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Subscribe</button>
+                </form>
+                <div class="subscribe-message-inline" style="margin-top: 0.75rem; font-size: 0.9rem; display: none;"></div>
             </div>
             
             <!-- Business Feature CTA -->
@@ -228,5 +233,49 @@
     <footer class="main-footer">
         <p>&copy; 2026 Arlington Pulse. Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></p>
     </footer>
+
+    <script>
+        async function handleArticleSubscribe(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button');
+            const messageDiv = form.parentElement.querySelector('.subscribe-message-inline');
+            const email = form.email.value;
+            
+            btn.disabled = true;
+            btn.textContent = 'Subscribing...';
+            messageDiv.style.display = 'none';
+            
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        city: 'Arlington',
+                        source: 'article_page'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    messageDiv.textContent = '✓ Successfully subscribed!';
+                    messageDiv.style.color = '#4CAF50';
+                    messageDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error(data.message || 'Subscription failed');
+                }
+            } catch (error) {
+                messageDiv.textContent = '✗ ' + error.message;
+                messageDiv.style.color = '#f44336';
+                messageDiv.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Subscribe';
+            }
+        }
+    </script>
 </body>
 </html>

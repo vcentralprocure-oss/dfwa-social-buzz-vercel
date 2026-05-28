@@ -178,16 +178,18 @@
                     <li><a href="/articles/arlington-farmers-market-guide.html">Arlington Farmers Market: Your Guide to Fresh Local Finds Every Weekend</a></li>
                     <li><a href="/articles/arlington-best-patios-spring.html">Arlington's Best Patios: Where to Eat Outside This Spring</a></li>
                     <li><a href="/articles/arlington-best-local-shops.html">Arlington's Best Local Shops: Where to Find Unique Gifts, Vintage Finds, and Handmade Treasures</a></li>
-                    <li><a href="/articles/arlington-food-scene.html">Arlington's Food Scene Is Having a Moment — Here's Where to Eat Right Now</a></li>
-                    <li><a href="/articles/arlington-weekend-guide.html">10 Best Things To Do In Arlington Texas This Weekend</a></li>
                 </ul>
             </div>
             
-            <!-- Subscribe CTA -->
-            <div class="cta-box">
-                <h3>Get More Arlington Guides</h3>
-                <p>Join 5,000+ locals getting weekly news, events, and deals delivered to their inbox.</p>
-                <a href="https://dfwasocialbuzz.com/arlington/" class="btn">Subscribe Free</a>
+                        <!-- Inline Subscribe Form -->
+            <div class="subscribe-inline" style="background: #111122; border: 1px solid #333; border-radius: 12px; padding: 2rem; margin: 2.5rem 0;">
+                <h3 style="color: #FF6B35; margin-bottom: 0.75rem;">☕ Get More Arlington Guides</h3>
+                <p style="color: #888; margin-bottom: 1rem;">Subscribe to Arlington Pulse for weekly local news, events, and business spotlights.</p>
+                <form class="subscribe-form-inline" onsubmit="handleArticleSubscribe(event)" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <input type="email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #333; border-radius: 6px; background: #0f1629; color: white;">
+                    <button type="submit" style="background: #FF6B35; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Subscribe</button>
+                </form>
+                <div class="subscribe-message-inline" style="margin-top: 0.75rem; font-size: 0.9rem; display: none;"></div>
             </div>
             
             <!-- Business Feature CTA -->
@@ -262,5 +264,50 @@
             <a href="/">Home</a>
         </div>
     </footer>
+
+    <script>
+        async function handleArticleSubscribe(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button');
+            const messageDiv = form.parentElement.querySelector('.subscribe-message-inline');
+            const email = form.email.value;
+            
+            btn.disabled = true;
+            btn.textContent = 'Subscribing...';
+            messageDiv.style.display = 'none';
+            messageDiv.className = 'subscribe-message-inline';
+            
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        city: 'Arlington',
+                        source: 'article_page'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    messageDiv.textContent = '✓ Successfully subscribed!';
+                    messageDiv.style.color = '#4CAF50';
+                    messageDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error(data.message || 'Subscription failed');
+                }
+            } catch (error) {
+                messageDiv.textContent = '✗ ' + error.message;
+                messageDiv.style.color = '#f44336';
+                messageDiv.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Subscribe';
+            }
+        }
+    </script>
 </body>
 </html>
