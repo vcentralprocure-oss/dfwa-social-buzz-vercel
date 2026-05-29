@@ -17,5 +17,11 @@
       "source": "/articles/:slug",
       "destination": "/articles/:slug.html"
     }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/api/home-render"
+    }
   ]
 }
