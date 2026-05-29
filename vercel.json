@@ -2,6 +2,10 @@
   "version": 2,
   "routes": [
     {
+      "src": "/",
+      "dest": "/api/home-render"
+    },
+    {
       "src": "/articles/(.*)",
       "dest": "/articles/$1.html"
     },
