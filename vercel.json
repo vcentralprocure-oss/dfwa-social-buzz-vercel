@@ -1,20 +1,21 @@
 {
+  "outputDirectory": ".",
   "rewrites": [
     {
       "source": "/",
-      "destination": "/index.html"
+      "destination": "/api/home-render"
     },
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
+      "source": "/articles",
+      "destination": "/articles/index.html"
     },
     {
-      "source": "/a/:slug",
-      "destination": "https://letterman.ai/a/:slug"
+      "source": "/articles/",
+      "destination": "/articles/index.html"
     },
     {
-      "source": "/:slug",
-      "destination": "https://letterman.ai/a/:slug"
+      "source": "/articles/:slug",
+      "destination": "/articles/:slug.html"
     }
   ]
 }
