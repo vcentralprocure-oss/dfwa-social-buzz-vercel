@@ -6,15 +6,98 @@ const DEALS_HUB_URL = '#'; // Currently set to Coming Soon (no broken links)
 // const DEALS_HUB_URL = '/dealhub'; // Use this when internal dealhub is ready
 // const DEALS_HUB_URL = 'https://deals.arlington.dfwasocialbuzz.com'; // Use this for subdomain
 
+// Fallback articles data
+const fallbackArticles = [
+  {
+    _id: 'arlington-att-stadium-2026-05-04',
+    title: "The Ultimate Guide to AT&T Stadium: Tours, Events & Texas-Sized Entertainment",
+    slug: "att-stadium-guide-arlington",
+    excerpt: "Everything you need to know about AT&T Stadium in Arlington, TX. From Cowboys games to stadium tours, concerts, and special events at this world-class venue.",
+    heroImage: "https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=1200",
+    publishDate: "2026-05-04T02:30:00.000Z",
+    isSponsored: false,
+    sponsorName: "",
+    category: "Arlington"
+  },
+  {
+    _id: 'arlington-river-legacy-2026-05-04',
+    title: "River Legacy Parks: Arlington's 1,300-Acre Nature Paradise",
+    slug: "river-legacy-parks-arlington-guide",
+    excerpt: "Discover River Legacy Parks and the River Legacy Nature Center in Arlington, TX. Miles of trails, wildlife viewing, educational programs, and outdoor recreation along the Trinity River.",
+    heroImage: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200",
+    publishDate: "2026-05-04T02:35:00.000Z",
+    isSponsored: false,
+    sponsorName: "",
+    category: "Arlington"
+  },
+  {
+    _id: 'arlington-shopping-guide-2026-05-04',
+    title: "Arlington Shopping Guide: From Local Boutiques to Major Retail Centers",
+    slug: "arlington-shopping-guide-retail-therapy",
+    excerpt: "The ultimate guide to shopping in Arlington, TX. Discover local boutiques, major retail centers, unique finds in Downtown Arlington, and the best spots for retail therapy.",
+    heroImage: "https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200",
+    publishDate: "2026-05-04T02:40:00.000Z",
+    isSponsored: false,
+    sponsorName: "",
+    category: "Arlington"
+  },
+  {
+    _id: 'arlington-police-2026-05-03',
+    title: "Behind the Badge: Arlington Police Department's Commitment to Community Safety",
+    slug: "arlington-police-community-safety",
+    excerpt: "Meet the local public servants dedicated to keeping Arlington safe. Learn about community programs and the officers who serve our city.",
+    heroImage: "https://images.unsplash.com/photo-1555848962-6e79363ec58f?w=1200",
+    publishDate: "2026-05-03T20:56:00.000Z",
+    isSponsored: false,
+    sponsorName: "",
+    category: "Arlington"
+  },
+  {
+    _id: 'arlington-food-2026-05-02',
+    title: "12 Best Restaurants in Arlington (4.2+ Stars) You Need to Try",
+    slug: "top-5-local-eats-arlington",
+    excerpt: "Discover Arlington's highest-rated restaurants with 4.2+ stars. From authentic Mexican to fresh seafood and Mediterranean flavors.",
+    heroImage: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200",
+    publishDate: "2026-05-02T15:30:00.000Z",
+    isSponsored: false,
+    sponsorName: "",
+    category: "Arlington"
+  },
+  {
+    _id: 'arlington-events-2026-05-01',
+    title: "Weekend Events: What's Happening in Arlington This Weekend",
+    slug: "arlington-weekend-events",
+    excerpt: "Your guide to the best events, festivals, and activities happening in Arlington this weekend.",
+    heroImage: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1200",
+    publishDate: "2026-05-01T10:00:00.000Z",
+    isSponsored: false,
+    sponsorName: "",
+    category: "Arlington"
+  }
+];
+
+// Sample sponsored articles for demonstration (max 3)
+const sampleSponsoredArticles = [
+  {
+    _id: 'sponsored-1',
+    title: "Get Your Business Featured in Arlington Pulse",
+    slug: "business-featured",
+    excerpt: "Join hundreds of Arlington businesses reaching thousands of engaged local customers. Sponsored articles, featured placements, and newsletter features available.",
+    heroImage: "",
+    publishDate: "2026-05-29T01:00:00.000Z",
+    isSponsored: true,
+    sponsorName: "Arlington Pulse",
+    category: "Sponsored"
+  }
+];
+
 export default async function handler(req, res) {
   try {
-    // Fetch articles from API
-    const apiRes = await fetch('https://arlington.dfwasocialbuzz.com/api/articles?list=true');
-    const data = await apiRes.json();
-    const articles = data.success && data.articles ? data.articles : [];
+    // Use fallback data for now (avoids recursive API call)
+    const articles = fallbackArticles;
     
     // Separate sponsored articles (max 3) and regular articles
-    const sponsoredArticles = articles.filter(a => a.isSponsored).slice(0, 3); // Hard cap: max 3 sponsored
+    const sponsoredArticles = sampleSponsoredArticles.slice(0, 3); // Hard cap: max 3 sponsored
     const regularArticles = articles.filter(a => !a.isSponsored);
     const recentArticles = regularArticles.slice(0, 6); // Show up to 6 regular articles
     
