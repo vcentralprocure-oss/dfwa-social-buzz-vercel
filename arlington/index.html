@@ -50,6 +50,21 @@
         /* Action Buttons Bar */
         .action-bar { background: #0f1629; padding: 1rem 2rem; border-bottom: 1px solid #222; }
         .action-buttons { max-width: 900px; margin: 0 auto; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        
+        /* Gas Price Section */
+        .gas-price-section { background: #0a0a14; padding: 1rem 2rem; border-bottom: 1px solid #222; }
+        .gas-price-container { max-width: 1200px; margin: 0 auto; }
+        .gas-price-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem; }
+        .gas-price-icon { font-size: 1.2rem; }
+        .gas-price-label { color: #FF6B35; font-weight: 600; font-size: 0.95rem; }
+        .gas-price-intro { color: #888; font-size: 0.85rem; margin-bottom: 0.75rem; }
+        .gas-price-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 0.5rem; }
+        .gas-price-item { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 0.75rem; text-align: center; }
+        .gas-grade { display: block; color: #888; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; }
+        .gas-price { display: block; color: #aaa; font-size: 1.1rem; font-weight: 600; }
+        .gas-price-note { color: #666; font-size: 0.75rem; margin-bottom: 0.5rem; }
+        .gas-price-cta { display: inline-block; color: #FF6B35; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+        .gas-price-cta:hover { text-decoration: underline; }
         .action-btn { padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; cursor: pointer; border: none; }
         .action-btn.subscribe { background: #FF6B35; color: white; }
         .action-btn.deals { background: transparent; color: #FF6B35; border: 2px solid #FF6B35; }
@@ -144,6 +159,8 @@
             .main-nav { flex-direction: column; gap: 0.5rem; }
             .action-buttons { flex-direction: column; align-items: center; }
             .action-btn { width: 100%; max-width: 300px; text-align: center; }
+            .gas-price-grid { grid-template-columns: repeat(2, 1fr); }
+            .gas-price-updated { margin-left: 0; width: 100%; }
             .footer-content { grid-template-columns: 1fr; }
             .archive-grid { grid-template-columns: 1fr; }
         }
@@ -239,6 +256,37 @@
             </form>
             <div id="subscribe-message" class="subscribe-message"></div>
             <span class="close-subscribe" onclick="toggleSubscribe()">← Close</span>
+        </div>
+    </section>
+    
+    <!-- Arlington Gas Watch -->
+    <section class="gas-price-section">
+        <div class="gas-price-container">
+            <div class="gas-price-header">
+                <span class="gas-price-icon">⛽</span>
+                <span class="gas-price-label">Arlington Gas Watch</span>
+            </div>
+            <p class="gas-price-intro">Local fuel snapshot for Arlington, TX</p>
+            <div class="gas-price-grid">
+                <div class="gas-price-item">
+                    <span class="gas-grade">Regular</span>
+                    <span class="gas-price">~$2.85</span>
+                </div>
+                <div class="gas-price-item">
+                    <span class="gas-grade">Midgrade</span>
+                    <span class="gas-price">~$3.15</span>
+                </div>
+                <div class="gas-price-item">
+                    <span class="gas-grade">Premium</span>
+                    <span class="gas-price">~$3.45</span>
+                </div>
+                <div class="gas-price-item">
+                    <span class="gas-grade">Diesel</span>
+                    <span class="gas-price">~$2.95</span>
+                </div>
+            </div>
+            <p class="gas-price-note">Snapshot as of May 31, 2026 · For live station-by-station pricing, view current local listings.</p>
+            <a href="https://www.gasbuddy.com/home?search=Arlington%2C+TX" target="_blank" rel="noopener" class="gas-price-cta">Find Cheap Gas Near You →</a>
         </div>
     </section>
     
