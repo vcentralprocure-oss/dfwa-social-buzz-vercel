@@ -230,12 +230,11 @@
         <!-- Compact Subscribe Module -->
         <div id="subscribe-module" class="subscribe-module">
             <h3>Subscribe to Dallas Current</h3>
-            <p>Get local news, deals, and events delivered weekly.</p>
-            <form class="subscribe-form-compact" id="subscribe-form" onsubmit="handleSubscribe(event)">
-                <input type="email" name="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-            <div id="subscribe-message" class="subscribe-message"></div>
+            <div class="subscribe-hold-message" style="background: rgba(255,107,53,0.1); border: 1px solid #FF6B35; border-radius: 6px; padding: 1rem; margin: 1rem 0; text-align: center;">
+                <p style="color: #FF6B35; font-weight: 600; margin-bottom: 0.5rem;">Dallas Current newsletter is coming soon.</p>
+                <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 0.5rem;">We're finishing setup for Dallas subscriptions.</p>
+                <p style="color: #888; font-size: 0.85rem;">Please check back shortly.</p>
+            </div>
             <span class="close-subscribe" onclick="toggleSubscribe()">← Close</span>
         </div>
     </section>
