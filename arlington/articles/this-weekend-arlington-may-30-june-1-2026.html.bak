@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This Weekend in Arlington: Your Guide to May 30-June 1, 2026 | Arlington Pulse</title>
+    <meta name="description" content="From Taste Community Restaurant's summer menu launch to Texas Rangers Barbie Night, discover the best events and activities happening in Arlington this weekend.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article Styles */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .article-header { margin-bottom: 2rem; }
+        .article-category { color: #FF6B35; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .article-title { font-size: 2.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+        .article-meta { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .article-meta span { margin-right: 1.5rem; }
+        
+        .featured-image { width: 100%; height: 450px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; }
+        .image-caption { color: #666; font-size: 0.85rem; text-align: center; margin-top: -1.5rem; margin-bottom: 2rem; }
+        
+        .article-content { font-size: 1.1rem; line-height: 1.8; color: #ddd; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { font-size: 1.5rem; color: #FF6B35; margin: 2.5rem 0 1rem; }
+        .article-content h3 { font-size: 1.2rem; color: #fff; margin: 2rem 0 0.75rem; }
+        .article-content ul { margin-bottom: 1.5rem; padding-left: 1.5rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        
+        .business-highlight { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border: 1px solid #333; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .business-highlight h4 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .business-highlight p { margin-bottom: 0.75rem; font-size: 1rem; }
+        .business-highlight a { color: #FF6B35; font-weight: 600; }
+        
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; text-align: center; margin: 2.5rem 0; }
+        .cta-box h3 { color: white; font-size: 1.5rem; margin-bottom: 0.75rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
+        .cta-box .btn { background: white; color: #FF6B35; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        .cta-box .btn:hover { background: #f0f0f0; }
+        
+        .subscribe-box { background: #111122; border: 2px solid #FF6B35; border-radius: 12px; padding: 2rem; text-align: center; margin: 2.5rem 0; }
+        .subscribe-box h3 { color: #FF6B35; margin-bottom: 0.75rem; }
+        .subscribe-box p { color: #888; margin-bottom: 1.25rem; }
+        .subscribe-box .btn { background: #FF6B35; color: white; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        
+        /* Internal Links Section */
+        .related-articles { background: #111122; border-radius: 12px; padding: 2rem; margin: 3rem 0; }
+        .related-articles h3 { color: #FF6B35; margin-bottom: 1.5rem; font-size: 1.3rem; }
+        .related-articles ul { list-style: none; padding: 0; }
+        .related-articles li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; }
+        .related-articles li::before { content: "→"; position: absolute; left: 0; color: #FF6B35; }
+        .related-articles a { color: #ddd; text-decoration: none; }
+        .related-articles a:hover { color: #FF6B35; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; margin-top: 4rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.8rem; }
+            .featured-image { height: 250px; }
+            .footer-content { grid-template-columns: 1fr; }
+            .top-header-content { flex-direction: column; gap: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">DFWA Social Buzz</div>
+                    <div class="sub">Your local guide to DFWA</div>
+                </div>
+            </div>
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/arlington/">Home</a>
+                    <a href="/arlington/#news">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business">Business</a>
+                </div>
+            </div>
+            <nav class="city-nav">
+                <a href="/arlington/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-category">Weekend Guide</div>
+            <h1 class="article-title">This Weekend in Arlington: Your Guide to May 30-June 1, 2026</h1>
+            <div class="article-meta">
+                <span>📅 May 29, 2026</span>
+                <span>⏱️ 4 min read</span>
+                <span>✍️ Arlington Pulse</span>
+            </div>
+        </header>
+
+        <img src="https://images.unsplash.com/photo-1628630470691-4a53e09fceec?w=1200&h=675&fit=crop" alt="Downtown Arlington cityscape" class="featured-image">
+        <p class="image-caption">Photo by Trac Vu on Unsplash</p>
+
+        <div class="article-content">
+            <p>TGIF, Arlington! With Memorial Day behind us and summer officially here, this weekend is packed with events that showcase why The American Dream City is the place to be. From downtown dining experiences to ballpark celebrations, here's your complete guide to making the most of May 30-June 1.</p>
+
+            <h2>Friday: Summer Menu Launch at Taste Community Restaurant</h2>
+            <p>Kick off your weekend with dinner reservations in downtown Arlington as <a href="https://tasteproject.org/taste-community-restaurant/" target="_blank">Taste Community Restaurant</a> launches its new summer menu. This unique pay-what-you-can eatery has become a cornerstone of Arlington's culinary scene, serving up chef-crafted dishes that bring the community together. The summer menu promises fresh, seasonal ingredients and innovative flavors that highlight local Texas produce.</p>
+
+            <div class="business-highlight">
+                <h4>🍽️ Taste Community Restaurant</h4>
+                <p>A pay-what-you-can restaurant serving chef-crafted meals in downtown Arlington. Perfect for date night or family dinner.</p>
+                <a href="https://tasteproject.org/taste-community-restaurant/" target="_blank">Visit Website →</a>
+            </div>
+
+            <h2>Saturday: Texas Rangers Barbie Night at Globe Life Field</h2>
+            <p>Saturday night at <a href="https://www.mlb.com/rangers" target="_blank">Globe Life Field</a> is going full Barbie-mode! The Texas Rangers are celebrating the iconic doll with a special themed night that includes exclusive hot pink Rangers Barbie-themed Hawaiian shirts for ticket holders. Whether you're a lifelong Barbie fan or just love a good theme night, this is your chance to show off your inner Barbie or Ken while enjoying America's favorite pastime.</p>
+
+            <p>Arrive early to explore the ballpark, grab some classic ballpark food, and take photos with the Barbie-themed decorations throughout the stadium. It's the perfect way to spend a Saturday evening with family or friends.</p>
+
+            <div class="business-highlight">
+                <h4>⚾ Globe Life Field</h4>
+                <p>Home of the Texas Rangers and host to unforgettable themed nights all season long. Check their schedule for upcoming events.</p>
+                <a href="https://www.mlb.com/rangers" target="_blank">Get Tickets →</a>
+            </div>
+
+            <h2>Sunday: Explore Downtown Arlington's Urban Union District</h2>
+            <p>Sunday is perfect for a leisurely stroll through downtown Arlington's expanding <a href="https://www.downtownarlington.org/" target="_blank">Urban Union District</a>. This revitalized area has become the heart of Arlington's cultural renaissance, featuring local boutiques, craft breweries, and some of the best dining in the city.</p>
+
+            <p>Stop by <a href="https://divisionbrewing.com/" target="_blank">Division Brewing</a> for a locally-crafted beer, browse the unique finds at <a href="https://www.mosaicmarketarlington.com/" target="_blank">Mosaic Market</a>, or grab brunch at one of the district's acclaimed restaurants. The Urban Union District perfectly captures Arlington's blend of small-town charm and big-city amenities.</p>
+
+            <div class="business-highlight">
+                <h4>🍺 Division Brewing</h4>
+                <p>Arlington's first craft brewery, serving locally-brewed beers in a welcoming downtown taproom. Try their seasonal summer releases!</p>
+                <a href="https://divisionbrewing.com/" target="_blank">Visit Website →</a>
+            </div>
+
+            <div class="business-highlight">
+                <h4>🛍️ Mosaic Market</h4>
+                <p>A curated marketplace featuring local artisans, vintage finds, and unique gifts in the heart of downtown Arlington.</p>
+                <a href="https://www.mosaicmarketarlington.com/" target="_blank">Shop Local →</a>
+            </div>
+
+            <h2>More Weekend Activities</h2>
+            <p>Looking for more ways to fill your weekend? Here are a few additional suggestions:</p>
+            <ul>
+                <li>Take the family to <a href="https://www.sixflags.com/overtexas" target="_blank">Six Flags Over Texas</a> for thrilling rides and summer fun</li>
+                <li>Explore the trails at <a href="https://www.riverlegacy.org/" target="_blank">River Legacy Parks</a>, Arlington's 1,300-acre urban oasis</li>
+                <li>Catch a movie and dinner at <a href="https://www.studiomoviegrill.com/" target="_blank">Studio Movie Grill</a> for the perfect date night</li>
+                <li>Browse the Arlington Farmers Market for fresh local produce and handmade goods</li>
+            </ul>
+
+            <div class="subscribe-box">
+                <h3>📧 Never Miss a Weekend Guide</h3>
+                <p>Get Arlington's best events, deals, and local news delivered straight to your inbox every week.</p>
+                <a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=weekend-guide-may-30" class="btn">Subscribe to Arlington Pulse</a>
+            </div>
+
+            <div class="cta-box">
+                <h3>🏢 Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach thousands of local readers who love supporting Arlington businesses.</p>
+                <a href="https://dfwasocialbuzz.com/business" class="btn">Get Featured</a>
+            </div>
+
+            <div class="related-articles">
+                <h3>📚 More Arlington Guides</h3>
+                <ul>
+                    <li><a href="/arlington/articles/5-hidden-foodie-gems-arlington.html">5 Hidden Foodie Gems in Arlington That Locals Don't Want You to Know About</a></li>
+                    <li><a href="/arlington/articles/arlington-coffee-culture-downtown-2026.html">Arlington's Coffee Culture Is Exploding: 5 Downtown Cafés You Need to Try</a></li>
+                    <li><a href="/arlington/articles/arlington-entertainment-district-summer-2026.html">Your Ultimate Guide to Arlington's Entertainment District This Summer</a></li>
+                    <li><a href="/arlington/articles/arlington-best-patios-spring.html">Arlington's Best Patios: Where to Eat Outside This Spring</a></li>
+                    <li><a href="/arlington/articles/arlington-best-local-shops.html">Arlington's Best Local Shops: Unique Gifts & Vintage Finds</a></li>
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <div class="tagline">Your local guide to Arlington, TX</div>
+                <div style="color: #666; font-size: 0.8rem; margin-top: 1rem;">Powered by <a href="https://dfwasocialbuzz.com" style="color: #FF6B35;">DFWA Social Buzz</a></div>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/arlington/#news">Latest News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals?cities=arlington">Local Deals</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Other Cities</h4>
+                <ul>
+                    <li><a href="/dallas/">Dallas Current</a></li>
+                    <li><a href="/fort-worth/">Fort Worth Eco</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/contact">Contact Us</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/business">Get Featured</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arlington Pulse. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

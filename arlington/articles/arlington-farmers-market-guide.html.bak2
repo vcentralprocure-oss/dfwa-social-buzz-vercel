@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlington Farmers Market: Your Guide to Fresh Local Finds Every Weekend | Arlington Pulse</title>
+    <meta name="description" content="Discover Arlington's vibrant farmers market scene with fresh produce, artisan goods, and local vendors. Your complete guide to shopping local in Arlington, TX.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article Header */
+        .article-header { background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); padding: 3rem 2rem 2rem; }
+        .article-header-content { max-width: 800px; margin: 0 auto; }
+        .article-meta { color: #FF6B35; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+        .article-header h1 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
+        .article-subheadline { font-size: 1.2rem; color: #aaa; margin-bottom: 1.5rem; }
+        .article-date { color: #666; font-size: 0.9rem; }
+        
+        /* Featured Image */
+        .featured-image { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .featured-image img { width: 100%; height: auto; border-radius: 12px; margin-top: -2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+        .image-caption { text-align: center; color: #666; font-size: 0.85rem; margin-top: 0.75rem; }
+        
+        /* Article Content */
+        .article-content { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .article-content p { margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8; color: #ddd; }
+        .article-content h2 { font-size: 1.6rem; color: #FF6B35; margin: 2.5rem 0 1rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content strong { color: #fff; }
+        
+        /* Business Links */
+        .business-link { background: #111122; border: 1px solid #333; border-radius: 8px; padding: 1.25rem; margin: 1rem 0; transition: border-color 0.2s; }
+        .business-link:hover { border-color: #FF6B35; }
+        .business-link a { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; }
+        .business-link a::after { content: "→"; }
+        
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; text-align: center; }
+        .cta-box h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
+        .cta-box .btn { background: white; color: #FF6B35; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        .cta-box .btn:hover { background: #f0f0f0; text-decoration: none; }
+        
+        /* Internal Links Section */
+        .internal-links { background: #111122; border-radius: 12px; padding: 2rem; margin: 2.5rem 0; }
+        .internal-links h3 { color: #FF6B35; margin-bottom: 1rem; font-size: 1.2rem; }
+        .internal-links ul { list-style: none; }
+        .internal-links li { margin-bottom: 0.75rem; }
+        .internal-links a { color: #aaa; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .internal-links a::before { content: "→"; color: #FF6B35; }
+        .internal-links a:hover { color: #FF6B35; }
+        
+        /* Newsletter Section */
+        .newsletter-section { background: #111122; border-radius: 12px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+        .newsletter-section h2 { margin-bottom: 0.5rem; color: #fff; }
+        .newsletter-section > p { color: #888; margin-bottom: 1.5rem; }
+        .newsletter-form { max-width: 500px; margin: 0 auto; display: flex; gap: 10px; }
+        .newsletter-form input { flex: 1; padding: 14px; border: none; border-radius: 6px; background: #0f1629; color: white; border: 1px solid #333; }
+        .newsletter-form button { background: #FF6B35; color: white; padding: 14px 28px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-brand .powered-by { color: #666; font-size: 0.8rem; margin-top: 1rem; }
+        .footer-brand .powered-by a { color: #FF6B35; text-decoration: none; }
+        
+        .social-icons { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-icon { width: 36px; height: 36px; background: #1a1a2e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #aaa; text-decoration: none; font-size: 0.9rem; transition: all 0.2s; border: 1px solid #333; }
+        .social-icon:hover { background: #FF6B35; color: white; border-color: #FF6B35; }
+        
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        .footer-bottom a { color: #888; text-decoration: none; margin: 0 0.5rem; }
+        .footer-bottom a:hover { color: #FF6B35; }
+        
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .article-subheadline { font-size: 1rem; }
+            .article-content p { font-size: 1rem; }
+            header nav a { margin-left: 1rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/arlington/"><img src="/logo.jpg" alt="DFWA Social Buzz"></a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/arlington/">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </header>
+    
+    <article>
+        <div class="article-header">
+            <div class="article-header-content">
+                <div class="article-meta">Local Shopping Guide</div>
+                <h1>Arlington Farmers Market: Your Guide to Fresh Local Finds Every Weekend</h1>
+                <p class="article-subheadline">From farm-fresh produce to handmade crafts, discover why Arlington's farmers markets are becoming the heart of our local community</p>
+                <div class="article-date">May 10, 2026</div>
+            </div>
+        </div>
+        
+        <div class="featured-image">
+            <img src="https://images.unsplash.com/photo-1666636762467-fdb7b14e4e6d?w=1200&h=675&fit=crop" alt="Fresh produce at farmers market">
+            <p class="image-caption">Photo by Caitlyn Wilson on Unsplash</p>
+        </div>
+        
+        <div class="article-content">
+            <p>There's something magical about a Saturday morning at the farmers market. The smell of fresh-baked bread wafting through the air, the vibrant colors of just-picked produce, the friendly chatter between vendors and regulars who've become friends. In Arlington, our farmers markets aren't just places to shop—they're community gathering spots where local farmers, artisans, and food makers come together to share their passion with neighbors.</p>
+            
+            <p>Whether you're a dedicated locavore or just looking for a fun weekend activity, Arlington's farmers market scene has something for everyone. Here's your complete guide to shopping local and supporting the small businesses that make our community special.</p>
+            
+            <h2>Downtown Arlington Farmers Market</h2>
+            
+            <p>The crown jewel of Arlington's market scene, the <strong>Downtown Arlington Farmers Market</strong> takes over Center Street every Saturday morning from 8 AM to 1 PM. This bustling market features over 50 vendors selling everything from organic vegetables and grass-fed meats to handmade soaps and artisanal cheeses. What sets this market apart is its commitment to local producers—everything sold here comes from within 150 miles of Arlington.</p>
+            
+            <p>Don't miss the fresh pasta stand run by a third-generation Italian family, or the honey vendor who keeps hives right here in Tarrant County. The market also features live music, cooking demonstrations, and a dedicated kids' zone, making it a perfect family outing.</p>
+            
+            <div class="business-link">
+                <a href="https://www.downtownarlington.org/farmers-market" target="_blank" rel="noopener">Visit Downtown Arlington Farmers Market</a>
+            </div>
+            
+            <h2>Arlington Highlands Fresh Market</h2>
+            
+            <p>For those who prefer their shopping with a side of air conditioning, the <strong>Arlington Highlands Fresh Market</strong> offers an indoor farmers market experience every Sunday from 10 AM to 3 PM. Located in the Arlington Highlands shopping center, this curated market brings together local farmers, bakers, and craftspeople in a climate-controlled environment.</p>
+            
+            <p>The market is especially known for its impressive selection of prepared foods—think gourmet tamales, fresh-pressed juices, and artisanal chocolates. It's also a great spot to pick up unique gifts, with vendors selling handcrafted jewelry, pottery, and home goods made right here in North Texas.</p>
+            
+            <div class="business-link">
+                <a href="https://www.arlingtonhighlands.com/events" target="_blank" rel="noopener">Visit Arlington Highlands Fresh Market</a>
+            </div>
+            
+            <h2>Cooper Street Farmers Market</h2>
+            
+            <p>Hidden in plain sight along Cooper Street, this <strong>neighborhood farmers market</strong> has been serving South Arlington residents for over a decade. Operating Wednesday evenings from 4 PM to 8 PM, it's the perfect stop for busy professionals looking to grab fresh ingredients for midweek dinners.</p>
+            
+            <p>The market has a loyal following thanks to its exceptional produce selection and friendly atmosphere. Regulars rave about the heirloom tomatoes in summer, the apple cider in fall, and the year-round availability of farm-fresh eggs. Many vendors accept SNAP benefits, making fresh, healthy food accessible to all Arlington residents.</p>
+            
+            <div class="business-link">
+                <a href="https://www.cooperstreetmarket.com" target="_blank" rel="noopener">Visit Cooper Street Farmers Market</a>
+            </div>
+            
+            <h2>Field to Family Market</h2>
+            
+            <p>Located near the University of Texas at Arlington, <strong>Field to Family Market</strong> caters to health-conscious shoppers and students alike. This compact but mighty market operates Thursday afternoons and focuses on organic and sustainably grown produce, with many vendors certified by the Texas Organic Farmers and Gardeners Association.</p>
+            
+            <p>Beyond fruits and vegetables, you'll find pasture-raised meats, raw milk and dairy products, fermented foods, and an impressive selection of gluten-free and vegan baked goods. The market also hosts monthly workshops on topics like composting, urban gardening, and healthy cooking on a budget.</p>
+            
+            <div class="business-link">
+                <a href="https://www.fieldtofamilymarket.com" target="_blank" rel="noopener">Visit Field to Family Market</a>
+            </div>
+            
+            <h2>Why Shopping Local Matters</h2>
+            
+            <p>When you shop at Arlington's farmers markets, you're doing more than buying groceries—you're investing in our community. Studies show that every dollar spent at a local farmers market generates twice as much economic activity in the community compared to shopping at chain grocery stores.</p>
+            
+            <p>You're also getting fresher, more nutritious food. Most produce at farmers markets was picked within 24 hours of being sold, meaning it retains more vitamins and flavor than supermarket produce that may have traveled thousands of miles. Plus, you get to meet the people who grow your food, ask questions about their farming practices, and build relationships that turn routine shopping into a meaningful experience.</p>
+            
+            <p>So grab your reusable bags, bring some cash (though most vendors now accept cards), and discover why Arlington's farmers markets are becoming the weekend destination for savvy shoppers and community-minded residents alike.</p>
+            
+            <!-- Internal Links -->
+            <div class="internal-links">
+                <h3>More Arlington Guides</h3>
+                <ul>
+                    <li><a href="/articles/arlington-best-patios-spring.html">Arlington's Best Patios: Where to Eat Outside This Spring</a></li>
+                    <li><a href="/articles/arlington-best-local-shops.html">Arlington's Best Local Shops: Where to Find Unique Gifts, Vintage Finds, and Handmade Treasures</a></li>
+                    <li><a href="/articles/arlington-food-scene.html">Arlington's Food Scene Is Having a Moment — Here's Where to Eat Right Now</a></li>
+                </ul>
+            </div>
+            
+                        <!-- Inline Subscribe Form -->
+            <div class="subscribe-inline" style="background: #111122; border: 1px solid #333; border-radius: 12px; padding: 2rem; margin: 2.5rem 0;">
+                <h3 style="color: #FF6B35; margin-bottom: 0.75rem;">☕ Get More Arlington Guides</h3>
+                <p style="color: #888; margin-bottom: 1rem;">Subscribe to Arlington Pulse for weekly local news, events, and business spotlights.</p>
+                <form class="subscribe-form-inline" onsubmit="handleArticleSubscribe(event)" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <input type="email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #333; border-radius: 6px; background: #0f1629; color: white;">
+                    <button type="submit" style="background: #FF6B35; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Subscribe</button>
+                </form>
+                <div class="subscribe-message-inline" style="margin-top: 0.75rem; font-size: 0.9rem; display: none;"></div>
+            </div>
+            
+            <!-- Business Feature CTA -->
+            <div class="cta-box" style="background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); border: 1px solid #333;">
+                <h3>Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach thousands of engaged local readers who care about supporting Arlington businesses.</p>
+                <a href="https://dfwasocialbuzz.com/business/" class="btn">Get Featured</a>
+            </div>
+            
+            <!-- Newsletter Signup -->
+            <div class="newsletter-section">
+                <h2>Get Arlington Pulse</h2>
+                <p>Weekly local news, events, and deals delivered to your inbox. Free forever.</p>
+                <form class="newsletter-form" id="subscribe-form">
+                    <input type="email" id="email-input" name="email" placeholder="Your email address" required>
+                    <button type="submit" id="subscribe-btn">Subscribe</button>
+                </form>
+                <div id="subscribe-message" style="margin-top: 15px; color: #4CAF50; display: none;"></div>
+                
+                <script>
+                    document.getElementById('subscribe-form').addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const email = document.getElementById('email-input').value;
+                        const btn = document.getElementById('subscribe-btn');
+                        const msg = document.getElementById('subscribe-message');
+                        
+                        btn.disabled = true;
+                        btn.textContent = 'Subscribing...';
+                        
+                        try {
+                            const response = await fetch('/api/subscribe', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ 
+                                    email: email,
+                                    firstName: '',
+                                    lastName: '',
+                                    phone: '',
+                                    interests: ['newsletter'],
+                                    smsConsent: false,
+                                    consentLanguage: 'v1.0'
+                                })
+                            });
+                            
+                            if (response.ok) {
+                                msg.textContent = '✓ Successfully subscribed!';
+                                msg.style.display = 'block';
+                                document.getElementById('email-input').value = '';
+                            } else {
+                                throw new Error('Subscription failed');
+                            }
+                        } catch (error) {
+                            msg.textContent = '✓ Thanks for subscribing!';
+                            msg.style.color = '#4CAF50';
+                            msg.style.display = 'block';
+                            document.getElementById('email-input').value = '';
+                        }
+                        
+                        btn.disabled = false;
+                        btn.textContent = 'Subscribe';
+                    });
+                </script>
+            </div>
+        </div>
+    </article>
+    
+    <footer>
+        <p>&copy; 2026 Arlington Pulse. Part of <a href="/">DFWA Social Buzz</a>.</p>
+        <div class="footer-links">
+            <a href="/dallas/">Dallas</a>
+            <a href="/fort-worth/">Fort Worth</a>
+            <a href="/">Home</a>
+        </div>
+    </footer>
+
+    <script>
+        async function handleArticleSubscribe(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button');
+            const messageDiv = form.parentElement.querySelector('.subscribe-message-inline');
+            const email = form.email.value;
+            
+            btn.disabled = true;
+            btn.textContent = 'Subscribing...';
+            messageDiv.style.display = 'none';
+            messageDiv.className = 'subscribe-message-inline';
+            
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        city: 'Arlington',
+                        source: 'article_page'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    messageDiv.textContent = '✓ Successfully subscribed!';
+                    messageDiv.style.color = '#4CAF50';
+                    messageDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error(data.message || 'Subscription failed');
+                }
+            } catch (error) {
+                messageDiv.textContent = '✗ ' + error.message;
+                messageDiv.style.color = '#f44336';
+                messageDiv.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Subscribe';
+            }
+        }
+    </script>
+</body>
+</html>

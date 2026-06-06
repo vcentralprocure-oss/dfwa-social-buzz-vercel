@@ -50,21 +50,6 @@
         /* Action Buttons Bar */
         .action-bar { background: #0f1629; padding: 1rem 2rem; border-bottom: 1px solid #222; }
         .action-buttons { max-width: 900px; margin: 0 auto; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-        
-        /* Gas Price Section */
-        .gas-price-section { background: #0a0a14; padding: 1rem 2rem; border-bottom: 1px solid #222; }
-        .gas-price-container { max-width: 1200px; margin: 0 auto; }
-        .gas-price-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem; }
-        .gas-price-icon { font-size: 1.2rem; }
-        .gas-price-label { color: #FF6B35; font-weight: 600; font-size: 0.95rem; }
-        .gas-price-intro { color: #888; font-size: 0.85rem; margin-bottom: 0.75rem; }
-        .gas-price-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 0.5rem; }
-        .gas-price-item { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 0.75rem; text-align: center; }
-        .gas-grade { display: block; color: #888; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; }
-        .gas-price { display: block; color: #aaa; font-size: 1.1rem; font-weight: 600; }
-        .gas-price-note { color: #666; font-size: 0.75rem; margin-bottom: 0.5rem; }
-        .gas-price-cta { display: inline-block; color: #FF6B35; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
-        .gas-price-cta:hover { text-decoration: underline; }
         .action-btn { padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; cursor: pointer; border: none; }
         .action-btn.subscribe { background: #FF6B35; color: white; }
         .action-btn.deals { background: transparent; color: #FF6B35; border: 2px solid #FF6B35; }
@@ -159,8 +144,6 @@
             .main-nav { flex-direction: column; gap: 0.5rem; }
             .action-buttons { flex-direction: column; align-items: center; }
             .action-btn { width: 100%; max-width: 300px; text-align: center; }
-            .gas-price-grid { grid-template-columns: repeat(2, 1fr); }
-            .gas-price-updated { margin-left: 0; width: 100%; }
             .footer-content { grid-template-columns: 1fr; }
             .archive-grid { grid-template-columns: 1fr; }
         }
@@ -173,8 +156,8 @@
             <div class="logo-section">
                 <div class="logo-img">D</div>
                 <div class="logo-text">
-                    <div class="main">Arlington Pulse</div>
-                    <div class="sub">Powered by DFWA Social Buzz</div>
+                    <div class="main">DFWA Social Buzz</div>
+                    <div class="sub">Your local guide to DFWA</div>
                 </div>
             </div>
             
@@ -207,22 +190,12 @@
         <div class="sponsored-row">
             <div class="sponsored-card">
                 <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&h=400&fit=crop" alt="Outdoor patio dining at Arlington restaurant" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=600&h=400&fit=crop" alt="AT&T Stadium in Arlington during FIFA World Cup 2026" loading="lazy">
                 </div>
                 <div class="card-content">
-                    <h4>Beat the Heat: Arlington's Best Summer Patios for Outdoor Dining & Drinks</h4>
-                    <p>From craft breweries to rooftop hideaways, discover where locals go to soak up the sun (and the vibes) this summer. Featuring The Tipsy Oak, Division Brewing, Hurtado BBQ & more.</p>
-                    <a href="/arlington/articles/beat-the-heat-arlington-summer-patios-2026.html" class="cta-link">Read Guide →</a>
-                </div>
-            </div>
-            <div class="sponsored-card">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1599669261427-ed90056fb852?w=600&h=400&fit=crop" alt="Downtown Arlington Texas small business storefront" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h4>5 Arlington Small Businesses Making Waves This Summer</h4>
-                    <p>From craft cocktails to artisan coffee, discover the local gems defining Arlington's vibrant business scene this summer.</p>
-                    <a href="/arlington/articles/5-arlington-small-businesses-summer-2026.html" class="cta-link">Read Guide →</a>
+                    <h4>Your Ultimate Guide to Arlington's June 2026 Events: World Cup Fever Hits The American Dream City</h4>
+                    <p>From FIFA World Cup matches at AT&T Stadium to summer festivals and local happenings, discover everything happening in Arlington this June.</p>
+                    <a href="/arlington/articles/arlington-june-2026-summer-events-guide.html" class="cta-link">Read Guide →</a>
                 </div>
             </div>
             <div class="sponsored-card">
@@ -233,6 +206,16 @@
                     <h4>Arlington's Coffee Culture Is Exploding: 5 Downtown Cafés You Need to Try</h4>
                     <p>From Salter Bros. Coffee Roasters to Daydream Book & Coffee Bar, discover Arlington's thriving downtown coffee scene.</p>
                     <a href="/arlington/articles/arlington-coffee-culture-downtown-2026.html" class="cta-link">Read Guide →</a>
+                </div>
+            </div>
+            <div class="sponsored-card">
+                <div class="card-image">
+                    <img src="/arlington/images/sponsored/patio-dining.jpg" alt="Outdoor patio dining in Arlington" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h4>Arlington's Best Patios: Where to Eat Outside This Spring</h4>
+                    <p>From downtown hideaways to Entertainment District gems, these outdoor dining spots are perfect for soaking up the Texas sunshine.</p>
+                    <a href="/arlington/articles/arlington-best-patios-spring.html" class="cta-link">Read Guide →</a>
                 </div>
             </div>
         </div>
@@ -259,37 +242,6 @@
         </div>
     </section>
     
-    <!-- Arlington Gas Watch -->
-    <section class="gas-price-section">
-        <div class="gas-price-container">
-            <div class="gas-price-header">
-                <span class="gas-price-icon">⛽</span>
-                <span class="gas-price-label">Arlington Gas Watch</span>
-            </div>
-            <p class="gas-price-intro">Local fuel snapshot for Arlington, TX</p>
-            <div class="gas-price-grid">
-                <div class="gas-price-item">
-                    <span class="gas-grade">Regular</span>
-                    <span class="gas-price">~$2.79</span>
-                </div>
-                <div class="gas-price-item">
-                    <span class="gas-grade">Midgrade</span>
-                    <span class="gas-price">~$3.09</span>
-                </div>
-                <div class="gas-price-item">
-                    <span class="gas-grade">Premium</span>
-                    <span class="gas-price">~$3.39</span>
-                </div>
-                <div class="gas-price-item">
-                    <span class="gas-grade">Diesel</span>
-                    <span class="gas-price">~$2.89</span>
-                </div>
-            </div>
-            <p class="gas-price-note">Snapshot as of May 31, 2026 · For live station-by-station pricing, view current local listings.</p>
-            <a href="https://www.gasbuddy.com/home?search=Arlington%2C+TX" target="_blank" rel="noopener" class="gas-price-cta">Find Cheap Gas Near You →</a>
-        </div>
-    </section>
-    
     <!-- Subscribe Section Anchor -->
     <div id="subscribe-section" style="scroll-margin-top: 20px;"></div>
     
@@ -301,34 +253,6 @@
         </div>
         
         <div class="archive-grid">
-            <div class="issue-card">
-                <h4>Beat the Heat: Arlington's Best Summer Patios for Outdoor Dining & Drinks</h4>
-                <div class="date">June 6, 2026</div>
-                <p>From craft breweries to rooftop hideaways, discover where locals go to soak up the sun (and the vibes) this summer. Featuring The Tipsy Oak, Division Brewing, Hurtado Barbecue, Wild Acre, and 4 Kahunas Tiki Lounge.</p>
-                <a href="/arlington/articles/beat-the-heat-arlington-summer-patios-2026.html">Read Issue →</a>
-            </div>
-
-            <div class="issue-card">
-                <h4>This Weekend in Arlington: Free Concerts, Farmers Market & Summer Fun</h4>
-                <div class="date">June 5, 2026</div>
-                <p>Your complete guide to June 6-7, 2026 in Arlington, TX. Free live music at Levitt Pavilion, Downtown Farmers Market, and the best local spots to check out this weekend. Featuring Division Brewing, Hurtado BBQ, The Tipsy Oak, and more.</p>
-                <a href="/arlington/articles/this-weekend-arlington-june-6-7-2026.html">Read Issue →</a>
-            </div>
-
-            <div class="issue-card">
-                <h4>Where to Eat Outside in Arlington This Summer: 5 Patios You Can't Miss</h4>
-                <div class="date">June 3, 2026</div>
-                <p>From downtown hideaways to Entertainment District gems, discover the best outdoor dining spots in Arlington, TX. Featuring The Tipsy Oak, Division Brewing, Hurtado Barbecue, and more.</p>
-                <a href="/arlington/articles/where-to-eat-outside-arlington-summer-2026.html">Read Issue →</a>
-            </div>
-
-            <div class="issue-card">
-                <h4>5 Arlington Small Businesses Making Waves This Summer</h4>
-                <div class="date">June 1, 2026</div>
-                <p>From craft cocktails to artisan coffee, discover the local gems defining Arlington's vibrant business scene this summer. Featuring The Tipsy Oak, Division Brewing, Hurtado Barbecue, and more.</p>
-                <a href="/arlington/articles/5-arlington-small-businesses-summer-2026.html">Read Issue →</a>
-            </div>
-
             <div class="issue-card">
                 <h4>Your Ultimate Guide to Arlington's June 2026 Events: World Cup Fever Hits The American Dream City</h4>
                 <div class="date">May 31, 2026</div>
@@ -595,7 +519,7 @@
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2026 DFWA Social Buzz. Arlington Pulse is part of the DFWA Social Buzz network.</p>
+            <p>&copy; 2026 Arlington Pulse. All rights reserved.</p>
             <p style="margin-top: 0.5rem;">
                 <a href="https://dfwasocialbuzz.com/privacy-policy">Privacy Policy</a> | 
                 <a href="https://dfwasocialbuzz.com/terms-and-conditions">Terms & Conditions</a>

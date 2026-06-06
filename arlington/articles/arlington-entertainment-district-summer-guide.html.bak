@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlington's Entertainment District: Your Ultimate Summer Guide to Dining, Games & Fun | Arlington Pulse</title>
+    <meta name="description" content="Discover the best of Arlington's Entertainment District this summer. From Rangers games to rooftop dining, explore where locals go for food, fun, and unforgettable nights.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        header { background: #0a0a0a; padding: 1rem 2rem; border-bottom: 1px solid #222; }
+        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        header img { width: 200px; height: auto; object-fit: contain; }
+        @media (max-width: 768px) { header img { width: 140px; } }
+        header nav a { color: #aaa; text-decoration: none; margin-left: 1.5rem; font-size: 0.9rem; transition: color 0.2s; }
+        header nav a:hover { color: #FF6B35; }
+        
+        /* Article Header */
+        .article-header { background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); padding: 3rem 2rem 2rem; }
+        .article-header-content { max-width: 800px; margin: 0 auto; }
+        .article-meta { color: #FF6B35; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+        .article-header h1 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.2; }
+        .article-subheadline { font-size: 1.2rem; color: #aaa; margin-bottom: 1.5rem; }
+        .article-date { color: #666; font-size: 0.9rem; }
+        
+        /* Featured Image */
+        .featured-image { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .featured-image img { width: 100%; height: auto; border-radius: 12px; margin-top: -2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+        .image-caption { text-align: center; color: #666; font-size: 0.85rem; margin-top: 0.75rem; }
+        
+        /* Article Content */
+        .article-content { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .article-content p { margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.8; color: #ddd; }
+        .article-content h2 { font-size: 1.6rem; color: #FF6B35; margin: 2.5rem 0 1rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content strong { color: #fff; }
+        
+        /* Business Links */
+        .business-link { background: #111122; border: 1px solid #333; border-radius: 8px; padding: 1.25rem; margin: 1rem 0; transition: border-color 0.2s; }
+        .business-link:hover { border-color: #FF6B35; }
+        .business-link a { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 600; }
+        .business-link a::after { content: "→"; }
+        
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; text-align: center; }
+        .cta-box h3 { font-size: 1.4rem; margin-bottom: 0.75rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
+        .cta-box .btn { background: white; color: #FF6B35; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        .cta-box .btn:hover { background: #f0f0f0; text-decoration: none; }
+        
+        /* Internal Links Section */
+        .internal-links { background: #111122; border-radius: 12px; padding: 2rem; margin: 2.5rem 0; }
+        .internal-links h3 { color: #FF6B35; margin-bottom: 1rem; font-size: 1.2rem; }
+        .internal-links ul { list-style: none; }
+        .internal-links li { margin-bottom: 0.75rem; }
+        .internal-links a { color: #aaa; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+        .internal-links a::before { content: "→"; color: #FF6B35; }
+        .internal-links a:hover { color: #FF6B35; }
+        
+        /* Newsletter Section */
+        .newsletter-section { background: #111122; border-radius: 12px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+        .newsletter-section h2 { margin-bottom: 0.5rem; color: #fff; }
+        .newsletter-section > p { color: #888; margin-bottom: 1.5rem; }
+        .newsletter-form { max-width: 500px; margin: 0 auto; display: flex; gap: 10px; }
+        .newsletter-form input { flex: 1; padding: 14px; border: none; border-radius: 6px; background: #0f1629; color: white; border: 1px solid #333; }
+        .newsletter-form button { background: #FF6B35; color: white; padding: 14px 28px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        
+        /* Footer */
+        footer { background: #0a0a14; border-top: 1px solid #222; padding: 2rem; text-align: center; color: #666; }
+        footer a { color: #FF6B35; text-decoration: none; }
+        .footer-links { margin-top: 1rem; }
+        .footer-links a { margin: 0 1rem; color: #888; }
+        
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .article-subheadline { font-size: 1rem; }
+            .article-content p { font-size: 1rem; }
+            header nav a { margin-left: 1rem; font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/arlington/"><img src="/logo.jpg" alt="DFWA Social Buzz"></a>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/arlington/">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </header>
+    
+    <article>
+        <div class="article-header">
+            <div class="article-header-content">
+                <div class="article-meta">Entertainment District Guide</div>
+                <h1>Arlington's Entertainment District: Your Ultimate Summer Guide to Dining, Games & Fun</h1>
+                <p class="article-subheadline">From Rangers baseball to rooftop cocktails, discover why locals and visitors alike flock to Arlington's most exciting neighborhood</p>
+                <div class="article-date">May 11, 2026</div>
+            </div>
+        </div>
+        
+        <div class="featured-image">
+            <img src="https://images.unsplash.com/photo-1651179853369-c20d476891f8?w=1200&h=675&fit=crop" alt="Globe Life Field in Arlington">
+            <p class="image-caption">Photo by Daniel on Unsplash</p>
+        </div>
+        
+        <div class="article-content">
+            <p>There's a reason they call it the Entertainment Capital of Texas. Arlington's Entertainment District isn't just a collection of attractions—it's a vibrant ecosystem where world-class sports, thrilling theme parks, and an exploding food scene come together to create experiences you simply can't find anywhere else in DFW.</p>
+            
+            <p>Whether you're catching a Rangers game under the retractable roof at Globe Life Field, screaming your way through Six Flags, or discovering your new favorite restaurant on a hidden patio, this neighborhood delivers non-stop energy from morning till late night. Here's your insider guide to making the most of Arlington's Entertainment District this summer.</p>
+            
+            <h2>Where to Eat: The Entertainment District's Best Bites</h2>
+            
+            <p>The food scene around Globe Life Field and AT&T Stadium has evolved far beyond typical stadium fare. Today's Entertainment District is home to chef-driven restaurants, craft breweries, and local institutions that draw crowds even when there's no game in town.</p>
+            
+            <p>Start your culinary tour at <strong>Texas Live!</strong>, the sprawling dining and entertainment complex that anchors the district. With multiple restaurants under one roof, you can go from Texas barbecue at Pudge's Pizza to upscale Southern fare at the Arlington Backyard. The complex really comes alive on game days, when the outdoor plaza fills with fans celebrating pre-game.</p>
+            
+            <div class="business-link">
+                <a href="https://texas-live.com/" target="_blank" rel="noopener">Visit Texas Live!</a>
+            </div>
+            
+            <p>For a more intimate dining experience, head to <strong>Babe's Chicken Dinner House</strong> on Division Street. This local legend has been serving up family-style fried chicken and all the fixings since 1981. The wait can be long on weekends, but that's just proof that Arlington locals know where to find the good stuff. Come hungry—the portions are legendary.</p>
+            
+            <div class="business-link">
+                <a href="https://babeschicken.com/" target="_blank" rel="noopener">Visit Babe's Chicken Dinner House</a>
+            </div>
+            
+            <p>When you're craving something lighter, <strong>Pluckers Wing Bar</strong> near the stadium delivers on their promise of "wings, beer, and sports." Their signature "Dirty Bird" wings have developed a cult following, and the rooftop patio offers surprisingly good views of the surrounding area. It's become a go-to spot for post-game celebrations.</p>
+            
+            <div class="business-link">
+                <a href="https://www.pluckers.com/" target="_blank" rel="noopener">Visit Pluckers Wing Bar</a>
+            </div>
+            
+            <h2>Game Day Experiences: Beyond the Stadium</h2>
+            
+            <p>Sure, catching a Rangers game at <strong>Globe Life Field</strong> is the main event—but the Entertainment District offers plenty of ways to extend the experience. The stadium itself is worth exploring, with its retractable roof, air-conditioned concourses, and impressive collection of Texas baseball memorabilia.</p>
+            
+            <p>Before first pitch, join the crowds at <strong>Luckytown Brewing</strong>, Arlington's first craft brewery located just minutes from the stadium. Their rotating tap list features everything from crisp lagers perfect for Texas heat to bold IPAs that stand up to barbecue. The taproom has a laid-back vibe that welcomes both serious beer enthusiasts and casual fans just looking for a cold one before the game.</p>
+            
+            <div class="business-link">
+                <a href="https://www.luckytownbrewing.com/" target="_blank" rel="noopener">Visit Luckytown Brewing</a>
+            </div>
+            
+            <p>If you're visiting with family, don't miss the opportunity to explore <strong>Six Flags Over Texas</strong> before or after your game. The iconic theme park has been thrilling visitors since 1961, and recent additions like the Harley Quinn Spinsanity coaster keep the experience fresh for repeat visitors. Pro tip: the park offers discounted evening admission that's perfect for catching a few rides after a day game.</p>
+            
+            <div class="business-link">
+                <a href="https://www.sixflags.com/overtexas" target="_blank" rel="noopener">Visit Six Flags Over Texas</a>
+            </div>
+            
+            <h2>Where to Stay: Making It a Weekend</h2>
+            
+            <p>With so much to do in the Entertainment District, many visitors are choosing to make it a multi-day experience. The <strong>Live! by Loews</strong> hotel puts you right in the heart of the action, with rooms overlooking Globe Life Field and direct access to Texas Live! The property has become a destination in itself, with a resort-style pool and multiple dining options.</p>
+            
+            <div class="business-link">
+                <a href="https://www.livebyloews.com/arlington" target="_blank" rel="noopener">Visit Live! by Loews Arlington</a>
+            </div>
+            
+            <p>For a more budget-friendly option, the <strong>Hilton Arlington</strong> offers comfortable accommodations just a short walk from both stadiums. Their shuttle service to local attractions makes it easy to explore without worrying about parking.</p>
+            
+            <h2>Summer Events You Can't Miss</h2>
+            
+            <p>The Entertainment District really shines during the summer months, when extended daylight hours and warm evenings create the perfect backdrop for outdoor events. The <strong>Arlington Backyard</strong> at Texas Live! hosts regular concerts featuring both national acts and local favorites, with the outdoor stage creating an electric atmosphere under the stars.</p>
+            
+            <p>Movie nights at <strong>Levitt Pavilion</strong> in nearby downtown Arlington offer a free, family-friendly alternative to the high-energy stadium scene. Bring a blanket, grab dinner from one of the food trucks, and enjoy classic films on the big screen with the downtown skyline as your backdrop.</p>
+            
+            <p>Whether you're a die-hard sports fan, a thrill-seeker looking for your next adrenaline rush, or a foodie on the hunt for your next favorite meal, Arlington's Entertainment District delivers. This summer, skip the usual DFW haunts and discover why this neighborhood has become the region's premier destination for entertainment.</p>
+            
+            <!-- Internal Links -->
+            <div class="internal-links">
+                <h3>More Arlington Guides</h3>
+                <ul>
+                    <li><a href="/articles/arlington-farmers-market-guide.html">Arlington Farmers Market: Your Guide to Fresh Local Finds Every Weekend</a></li>
+                    <li><a href="/articles/arlington-best-patios-spring.html">Arlington's Best Patios: Where to Eat Outside This Spring</a></li>
+                    <li><a href="/articles/arlington-best-local-shops.html">Arlington's Best Local Shops: Where to Find Unique Gifts, Vintage Finds, and Handmade Treasures</a></li>
+                </ul>
+            </div>
+            
+                        <!-- Inline Subscribe Form -->
+            <div class="subscribe-inline" style="background: #111122; border: 1px solid #333; border-radius: 12px; padding: 2rem; margin: 2.5rem 0;">
+                <h3 style="color: #FF6B35; margin-bottom: 0.75rem;">☕ Get More Arlington Guides</h3>
+                <p style="color: #888; margin-bottom: 1rem;">Subscribe to Arlington Pulse for weekly local news, events, and business spotlights.</p>
+                <form class="subscribe-form-inline" onsubmit="handleArticleSubscribe(event)" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <input type="email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #333; border-radius: 6px; background: #0f1629; color: white;">
+                    <button type="submit" style="background: #FF6B35; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Subscribe</button>
+                </form>
+                <div class="subscribe-message-inline" style="margin-top: 0.75rem; font-size: 0.9rem; display: none;"></div>
+            </div>
+            
+            <!-- Business Feature CTA -->
+            <div class="cta-box" style="background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); border: 1px solid #333;">
+                <h3>Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach thousands of engaged local readers who care about supporting Arlington businesses.</p>
+                <a href="https://dfwasocialbuzz.com/business/" class="btn">Get Featured</a>
+            </div>
+            
+            <!-- Newsletter Signup -->
+            <div class="newsletter-section">
+                <h2>Get Arlington Pulse</h2>
+                <p>Weekly local news, events, and deals delivered to your inbox. Free forever.</p>
+                <form class="newsletter-form" id="subscribe-form">
+                    <input type="email" id="email-input" name="email" placeholder="Your email address" required>
+                    <button type="submit" id="subscribe-btn">Subscribe</button>
+                </form>
+                <div id="subscribe-message" style="margin-top: 15px; color: #4CAF50; display: none;"></div>
+                
+                <script>
+                    document.getElementById('subscribe-form').addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const email = document.getElementById('email-input').value;
+                        const btn = document.getElementById('subscribe-btn');
+                        const msg = document.getElementById('subscribe-message');
+                        
+                        btn.disabled = true;
+                        btn.textContent = 'Subscribing...';
+                        
+                        try {
+                            const response = await fetch('/api/subscribe', {
+                                method: 'POST',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ 
+                                    email: email,
+                                    firstName: '',
+                                    lastName: '',
+                                    phone: '',
+                                    interests: ['newsletter'],
+                                    smsConsent: false,
+                                    consentLanguage: 'v1.0'
+                                })
+                            });
+                            
+                            if (response.ok) {
+                                msg.textContent = '✓ Successfully subscribed!';
+                                msg.style.display = 'block';
+                                document.getElementById('email-input').value = '';
+                            } else {
+                                throw new Error('Subscription failed');
+                            }
+                        } catch (error) {
+                            msg.textContent = '✓ Thanks for subscribing!';
+                            msg.style.color = '#4CAF50';
+                            msg.style.display = 'block';
+                            document.getElementById('email-input').value = '';
+                        }
+                        
+                        btn.disabled = false;
+                        btn.textContent = 'Subscribe';
+                    });
+                </script>
+            </div>
+        </div>
+    </article>
+    
+    <footer>
+        <p>&copy; 2026 Arlington Pulse. Part of <a href="/">DFWA Social Buzz</a>.</p>
+        <div class="footer-links">
+            <a href="/dallas/">Dallas</a>
+            <a href="/fort-worth/">Fort Worth</a>
+            <a href="/">Home</a>
+        </div>
+    </footer>
+
+    <script>
+        async function handleArticleSubscribe(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button');
+            const messageDiv = form.parentElement.querySelector('.subscribe-message-inline');
+            const email = form.email.value;
+            
+            btn.disabled = true;
+            btn.textContent = 'Subscribing...';
+            messageDiv.style.display = 'none';
+            messageDiv.className = 'subscribe-message-inline';
+            
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        city: 'Arlington',
+                        source: 'article_page'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    messageDiv.textContent = '✓ Successfully subscribed!';
+                    messageDiv.style.color = '#4CAF50';
+                    messageDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error(data.message || 'Subscription failed');
+                }
+            } catch (error) {
+                messageDiv.textContent = '✗ ' + error.message;
+                messageDiv.style.color = '#f44336';
+                messageDiv.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Subscribe';
+            }
+        }
+    </script>
+</body>
+</html>

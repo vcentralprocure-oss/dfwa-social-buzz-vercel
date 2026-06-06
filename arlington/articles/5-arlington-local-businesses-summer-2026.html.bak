@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Arlington Local Businesses You Need to Know This Summer | Arlington Pulse</title>
+    <meta name="description" content="From craft breweries to creative studios, discover the local gems that make Arlington special. Featuring The Tipsy Oak, Division Brewing, Hurtado Barbecue, and more.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article Styles */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        
+        .article-header { margin-bottom: 2rem; }
+        .article-header h1 { font-size: 2.5rem; color: #FF6B35; margin-bottom: 1rem; line-height: 1.2; }
+        .article-header .subheadline { font-size: 1.2rem; color: #888; margin-bottom: 1.5rem; }
+        .article-header .meta { color: #666; font-size: 0.9rem; }
+        
+        .featured-image { width: 100%; height: 450px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; }
+        .image-caption { text-align: center; color: #666; font-size: 0.85rem; margin-top: -1.5rem; margin-bottom: 2rem; }
+        
+        .article-content { font-size: 1.1rem; line-height: 1.8; color: #ddd; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { font-size: 1.6rem; color: #FF6B35; margin: 2.5rem 0 1rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; font-weight: 600; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content strong { color: #fff; }
+        
+        /* Business Cards */
+        .business-card { background: #111122; border: 1px solid #222; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .business-card h3 { color: #FF6B35; margin-bottom: 0.75rem; font-size: 1.3rem; }
+        .business-card p { margin-bottom: 1rem; color: #bbb; }
+        .business-card .cta-link { display: inline-block; background: #FF6B35; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+        .business-card .cta-link:hover { background: #e55a2b; text-decoration: none; }
+        
+        /* CTA Sections */
+        .cta-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 12px; padding: 2rem; margin: 3rem 0; text-align: center; border: 1px solid #333; }
+        .cta-section h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .cta-section p { color: #aaa; margin-bottom: 1.5rem; }
+        .cta-button { display: inline-block; background: #FF6B35; color: white; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
+        .cta-button:hover { background: #e55a2b; }
+        
+        /* Internal Links */
+        .related-articles { margin: 3rem 0; padding: 2rem; background: #111122; border-radius: 12px; }
+        .related-articles h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .related-articles ul { list-style: none; }
+        .related-articles li { margin-bottom: 0.75rem; }
+        .related-articles a { color: #ddd; text-decoration: none; }
+        .related-articles a:hover { color: #FF6B35; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; margin-top: 4rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-brand .powered-by { color: #666; font-size: 0.8rem; margin-top: 1rem; }
+        .footer-brand .powered-by a { color: #FF6B35; text-decoration: none; }
+        .social-icons { display: flex; gap: 1rem; margin-top: 1rem; }
+        .social-icon { width: 36px; height: 36px; background: #1a1a2e; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #aaa; text-decoration: none; font-size: 0.9rem; transition: all 0.2s; border: 1px solid #333; }
+        .social-icon:hover { background: #FF6B35; color: white; border-color: #FF6B35; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        .footer-bottom a { color: #888; text-decoration: none; margin: 0 0.5rem; }
+        .footer-bottom a:hover { color: #FF6B35; }
+        
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .featured-image { height: 250px; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">DFWA Social Buzz</div>
+                    <div class="sub">Your local guide to DFWA</div>
+                </div>
+            </div>
+            
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/arlington/">Home</a>
+                    <a href="/arlington/#news">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business">Business</a>
+                    <a href="#subscribe-inline" onclick="event.preventDefault(); document.querySelector('.subscribe-inline').scrollIntoView({behavior: 'smooth'});">Subscribe</a>
+                </div>
+            </div>
+            
+            <nav class="city-nav">
+                <a href="/arlington/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+    
+    <article class="article-container">
+        <header class="article-header">
+            <h1>5 Arlington Local Businesses You Need to Know This Summer</h1>
+            <p class="subheadline">From craft breweries to creative studios, discover the local gems that make Arlington special</p>
+            <p class="meta">Published May 27, 2026 | Arlington Pulse</p>
+        </header>
+        
+        <img src="https://images.unsplash.com/photo-1599669261427-ed90056fb852?ixid=M3w5MDIyMDR8MHwxfHNlYXJjaHwxfHxUZXhhcyUyMHNtYWxsJTIwdG93biUyMGRvd250b3dufGVufDB8fHx8MTc3OTg5MDQ0Mnww&ixlib=rb-4.1.0&q=80&w=1200" alt="Texas downtown street scene" class="featured-image">
+        <p class="image-caption">Photo by Courtney Rose on Unsplash</p>
+        
+        <div class="article-content">
+            <p>Summer has officially arrived in Arlington, and there's never been a better time to explore the local businesses that make our city special. While the big chains get all the attention, it's the independent shops, family-owned restaurants, and creative entrepreneurs that truly define Arlington's character.</p>
+            
+            <p>From downtown's revitalized Urban Union district to the bustling Entertainment District, local business owners are pouring their hearts into creating unique experiences for our community. Here's your guide to five Arlington businesses you need to know about this summer.</p>
+            
+            <h2>The Tipsy Oak: Where Craft Meets Comfort</h2>
+            <p>If you haven't experienced <strong>The Tipsy Oak</strong> yet, you're missing out on one of Arlington's best-kept secrets. Located in the heart of downtown, this gastropub has built a reputation for elevated comfort food and an impressive selection of craft cocktails. Their patio seating is perfect for those warm Texas evenings, and the locally-sourced menu changes with the seasons.</p>
+            
+            <p>What keeps locals coming back? It's the combination of creative dishes like their signature brisket tacos and a welcoming atmosphere that feels like a neighborhood hangout. Whether you're meeting friends for happy hour or bringing the family for dinner, The Tipsy Oak delivers every time.</p>
+            
+            <p><a href="https://www.thetipsyoak.com" target="_blank">Visit The Tipsy Oak →</a></p>
+            
+            <h2>Division Brewing: Arlington's Original Craft Brewery</h2>
+            <p>When <strong>Division Brewing</strong> opened its doors, it changed the game for Arlington's beer scene. As the city's first locally-owned brewery, they've been crafting small-batch beers that reflect the bold spirit of Texas. From hoppy IPAs to smooth stouts, there's something for every palate.</p>
+            
+            <p>The taproom has become a community gathering spot, hosting live music, food trucks, and events that bring people together. On weekends, you'll find locals enjoying flights of experimental brews while catching up with neighbors. It's the kind of place where everybody knows your name—and your favorite beer.</p>
+            
+            <p><a href="https://www.divisionbrewing.com" target="_blank">Visit Division Brewing →</a></p>
+            
+            <h2>Hurtado Barbecue: Texas Tradition Done Right</h2>
+            <p>Texas takes its barbecue seriously, and <strong>Hurtado Barbecue</strong> rises to the occasion. This family-owned joint has earned a loyal following for their slow-smoked meats and no-nonsense approach to traditional Texas BBQ. The brisket is the star of the show—tender, smoky, and worth every minute of the wait.</p>
+            
+            <p>But don't sleep on their house-made sausages and fall-off-the-bone ribs. The sides are just as impressive, with classics like mac and cheese and coleslaw that could stand on their own. Come hungry, leave happy, and plan your next visit before you've even left the parking lot.</p>
+            
+            <p><a href="https://www.hurtadobbq.com" target="_blank">Visit Hurtado Barbecue →</a></p>
+            
+            <h2>Catalyst Creative Arts: Unleash Your Inner Artist</h2>
+            <p>Looking for something different to do this summer? <strong>Catalyst Creative Arts</strong> in the Urban Union district offers workshops and classes that let you explore your creative side. From pottery and painting to DIY crafts and wine nights, there's always something new to try.</p>
+            
+            <p>It's the perfect spot for date nights, girls' nights out, or solo adventures in creativity. The instructors are patient and encouraging, making it easy for beginners to jump in. Plus, you get to take home your creation—a unique souvenir that's way better than anything you'd buy at the mall.</p>
+            
+            <p><a href="https://www.catalystcreativearts.com" target="_blank">Visit Catalyst Creative Arts →</a></p>
+            
+            <h2>Salter Bros. Coffee Roasters: Your New Morning Ritual</h2>
+            <p>Every great city needs a great coffee roaster, and Arlington has <strong>Salter Bros. Coffee Roasters</strong>. This downtown gem takes coffee seriously, roasting their own beans and serving up expertly crafted drinks that rival anything you'll find in Dallas or Fort Worth.</p>
+            
+            <p>The industrial-chic space is perfect for remote work or casual meetings, and the baristas actually know their stuff. Ask about their single-origin offerings or try one of their signature drinks. Once you've tasted their coffee, the chain shops just won't cut it anymore.</p>
+            
+            <p><a href="https://www.salterbroscoffee.com" target="_blank">Visit Salter Bros. Coffee →</a></p>
+            
+            <h2>Why Local Matters</h2>
+            <p>When you spend your dollars at local businesses, you're investing directly in Arlington's future. These entrepreneurs create jobs, support other local vendors, and give our city its unique identity. Plus, you get better service, higher quality products, and experiences you simply can't find anywhere else.</p>
+            
+            <p>This summer, challenge yourself to skip the chains and explore what Arlington's local business community has to offer. Start with these five spots, then branch out and discover your own favorites. The best part? Every visit helps build a stronger, more vibrant Arlington for all of us.</p>
+            
+            <p><em>Know a local business we should feature? Drop us a line—we're always looking for Arlington's hidden gems.</em></p>
+        </div>
+        
+        <!-- Inline Subscribe Form -->
+        <div class="subscribe-inline" style="background: #111122; border: 1px solid #333; border-radius: 12px; padding: 2rem; margin: 2.5rem 0;">
+            <h3 style="color: #FF6B35; margin-bottom: 0.75rem;">📧 Get More Arlington Guides</h3>
+            <p style="color: #888; margin-bottom: 1rem;">Subscribe to Arlington Pulse for weekly local news, events, and business spotlights.</p>
+            <form class="subscribe-form-inline" onsubmit="handleArticleSubscribe(event)" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <input type="email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #333; border-radius: 6px; background: #0f1629; color: white;">
+                <button type="submit" style="background: #FF6B35; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Subscribe</button>
+            </form>
+            <div class="subscribe-message-inline" style="margin-top: 0.75rem; font-size: 0.9rem; display: none;"></div>
+        </div>
+        
+        <!-- Business Feature CTA -->
+        <div class="cta-section" style="background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border: none;">
+            <h3 style="color: white;">🏢 Own a Business in Arlington?</h3>
+            <p style="color: rgba(255,255,255,0.9);">Get featured in Arlington Pulse and reach thousands of local customers. Limited spots available.</p>
+            <a href="https://dfwasocialbuzz.com/business" class="cta-button" style="background: white; color: #FF6B35;">Get Featured</a>
+        </div>
+        
+        <!-- Related Articles -->
+        <div class="related-articles">
+            <h3>More Arlington Stories</h3>
+            <ul>
+                    <li><a href="/arlington/articles/arlington-coffee-culture-downtown-2026.html">→ Arlington's Coffee Culture Is Exploding: 5 Downtown Cafés You Need to Try</a></li>
+                    <li><a href="/arlington/articles/arlington-best-patios-spring.html">→ Arlington's Best Patios: Where to Eat Outside This Spring</a></li>
+                    <li><a href="/arlington/articles/arlington-best-local-shops.html">→ Arlington's Best Local Shops: Unique Gifts & Vintage Finds</a></li>
+                </ul>
+        </div>
+    </article>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <div class="tagline">Your local guide to Arlington, TX</div>
+                <div class="powered-by">Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></div>
+                <div class="social-icons">
+                    <a href="https://www.youtube.com/@dfwasocialbuzz" class="social-icon" title="YouTube">▶</a>
+                    <a href="#" class="social-icon" title="Facebook">f</a>
+                    <a href="#" class="social-icon" title="X (Twitter)">𝕏</a>
+                    <a href="#" class="social-icon" title="Instagram">📷</a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/arlington/#news">Latest News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals?cities=arlington">Local Deals</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Other Cities</h4>
+                <ul>
+                    <li><a href="/dallas/">Dallas Current</a></li>
+                    <li><a href="/fort-worth/">Fort Worth Echo</a></li>
+                    <li><a href="https://dfwasocialbuzz.com">DFWA Home</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/contact">Contact Us</a></li>
+                    <li><a href="#subscribe-inline" onclick="event.preventDefault(); document.querySelector('.subscribe-inline').scrollIntoView({behavior: 'smooth'});">Subscribe</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arlington Pulse. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="https://dfwasocialbuzz.com/privacy-policy">Privacy Policy</a> | 
+                <a href="https://dfwasocialbuzz.com/terms-and-conditions">Terms & Conditions</a>
+            </p>
+        </div>
+    </footer>
+    <script>
+        async function handleArticleSubscribe(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button');
+            const messageDiv = form.parentElement.querySelector('.subscribe-message-inline');
+            const email = form.email.value;
+            
+            btn.disabled = true;
+            btn.textContent = 'Subscribing...';
+            messageDiv.style.display = 'none';
+            
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        city: 'Arlington',
+                        source: 'article_page'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    messageDiv.textContent = '✓ Successfully subscribed!';
+                    messageDiv.style.color = '#4CAF50';
+                    messageDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error(data.message || 'Subscription failed');
+                }
+            } catch (error) {
+                messageDiv.textContent = '✗ ' + error.message;
+                messageDiv.style.color = '#f44336';
+                messageDiv.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Subscribe';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Ultimate Guide to Arlington's Entertainment District This Summer | Arlington Pulse</title>
+    <meta name="description" content="From Globe Life Field to Texas Live!, discover the best dining, entertainment, and summer events in Arlington's vibrant Entertainment District.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article Header */
+        .article-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 3rem 2rem; text-align: center; border-bottom: 2px solid #FF6B35; }
+        .article-header h1 { color: #FF6B35; font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .article-header .meta { color: #888; font-size: 0.9rem; }
+        
+        /* Article Content */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .article-content { font-size: 1.1rem; line-height: 1.8; }
+        .article-content p { margin-bottom: 1.5rem; color: #ddd; }
+        .article-content h2 { color: #FF6B35; font-size: 1.6rem; margin: 2.5rem 0 1rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content img { width: 100%; max-width: 1200px; height: auto; border-radius: 8px; margin: 2rem 0; }
+        .article-content .image-caption { font-size: 0.85rem; color: #666; text-align: center; margin-top: -1.5rem; margin-bottom: 2rem; }
+        .article-content strong { color: #fff; }
+        .article-content hr { border: none; border-top: 1px solid #333; margin: 2.5rem 0; }
+        
+        /* Related Articles */
+        .related-section { background: #111122; padding: 3rem 2rem; margin-top: 3rem; border-top: 1px solid #222; }
+        .related-container { max-width: 800px; margin: 0 auto; }
+        .related-section h3 { color: #FF6B35; font-size: 1.4rem; margin-bottom: 1.5rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .related-card { background: #1a1a2e; border-radius: 8px; padding: 1.25rem; border: 1px solid #222; transition: border-color 0.2s; }
+        .related-card:hover { border-color: #FF6B35; }
+        .related-card a { color: #FF6B35; text-decoration: none; font-weight: 600; }
+        .related-card p { color: #888; font-size: 0.9rem; margin-top: 0.5rem; }
+        
+        /* CTA Section */
+        .cta-section { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); padding: 3rem 2rem; text-align: center; margin-top: 3rem; }
+        .cta-section h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .cta-section p { font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.95; }
+        .cta-section .btn-light { background: white; color: #FF6B35; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; margin: 0.5rem; }
+        .cta-section .btn-dark { background: transparent; color: white; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; border: 2px solid white; display: inline-block; margin: 0.5rem; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-brand .powered-by { color: #666; font-size: 0.8rem; margin-top: 1rem; }
+        .footer-brand .powered-by a { color: #FF6B35; text-decoration: none; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            .top-header-content { flex-direction: column; gap: 0.75rem; }
+            .article-header h1 { font-size: 1.8rem; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">DFWA Social Buzz</div>
+                    <div class="sub">Your local guide to DFWA</div>
+                </div>
+            </div>
+            
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/#news">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals/?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business/">Business</a>
+                </div>
+            </div>
+            
+            <nav class="city-nav">
+                <a href="/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Article Header -->
+    <header class="article-header">
+        <h1>Your Ultimate Guide to Arlington's Entertainment District This Summer</h1>
+        <p class="meta">Published May 20, 2026 | Arlington Pulse</p>
+    </header>
+    
+    <!-- Article Content -->
+    <article class="article-container">
+        <div class="article-content">
+            <p>Summer is here, and there's no better place to be than Arlington's Entertainment District. Whether you're a local looking for weekend plans or visiting for the first time, this vibrant neighborhood offers something for everyone—from world-class sports and live music to incredible dining and nightlife.</p>
+            
+            <img src="https://images.unsplash.com/photo-1631660975301-b2b65e80c98a?w=1200&q=80" alt="Texas city skyline at sunset">
+            <p class="image-caption">Photo by Max Fray on Unsplash</p>
+            
+            <h2>Where the Action Lives</h2>
+            
+            <p>The Entertainment District is home to some of Texas's most iconic venues. <a href="https://globelifefield.com/" target="_blank"><strong>Globe Life Field</strong></a>, the stunning home of the 2023 World Series champion Texas Rangers, hosts baseball games, concerts, and special events year-round. Just steps away, <a href="https://attstadium.com/" target="_blank"><strong>AT&T Stadium</strong></a>—nicknamed "Jerry World"—continues to draw massive crowds for Dallas Cowboys games, concerts, and major events.</p>
+            
+            <p>But the district isn't just about sports. <a href="https://www.texas-live.com/" target="_blank"><strong>Texas Live!</strong></a> has transformed the area into a true entertainment destination. This sprawling complex combines live music venues, restaurants, bars, and outdoor spaces where you can catch everything from local bands to national touring acts.</p>
+            
+            <h2>Eat, Drink & Be Merry</h2>
+            
+            <p>All that entertainment works up an appetite, and the district delivers with an impressive food scene. Here are five spots you need to check out:</p>
+            
+            <p><a href="https://babeschicken.com/locations/arlington/" target="_blank"><strong>Babe's Chicken Dinner House</strong></a> — This Arlington institution has been serving up legendary fried chicken, chicken-fried steak, and all the fixings since 2010. The family-style dining and down-home atmosphere make it perfect for groups.</p>
+            
+            <p><a href="https://www.ponyupdfw.com/" target="_blank"><strong>Pony Up</strong></a> — Located right in the heart of Texas Live!, this upscale sports bar offers craft cocktails, an extensive beer selection, and elevated bar food with views of the action.</p>
+            
+            <p><a href="https://www.lockhartsmokehouse.com/" target="_blank"><strong>Lockhart Smokehouse</strong></a> — When you're craving authentic Texas barbecue, this is the spot. Their brisket and sausage are smoked low and slow, just like they do it in the BBQ capital of Texas.</p>
+            
+            <p><a href="https://www.taverntx.com/" target="_blank"><strong>Tavern</strong></a> — A local favorite with locations throughout DFW, their Arlington outpost serves up great burgers, cold beer, and a laid-back vibe perfect for pre- or post-game gatherings.</p>
+            
+            <p><a href="https://www.hooliganspub.com/" target="_blank"><strong>Hooligan's Pub</strong></a> — Located in nearby downtown Arlington, this craft beer haven offers an ever-rotating selection of local and regional brews, plus a welcoming atmosphere that keeps regulars coming back.</p>
+            
+            <h2>Summer Events You Can't Miss</h2>
+            
+            <p>The Entertainment District really comes alive during summer. From outdoor concerts at Texas Live! to special promotions at Globe Life Field, there's always something happening. Check the <a href="https://www.arlingtontx.gov/Community-Calendar" target="_blank">City of Arlington's community calendar</a> for free family-friendly events throughout the season.</p>
+            
+            <h2>Plan Your Visit</h2>
+            
+            <p>The Entertainment District is easily accessible from I-30 and Highway 360. Parking is plentiful, though it can fill up quickly on game days—consider arriving early or using rideshare options. Many venues offer special packages that combine dining, entertainment, and event tickets, so check their websites before you go.</p>
+            
+            <p>Whether you're catching a Rangers game, dancing to live music, or simply enjoying a cold drink on a patio, Arlington's Entertainment District delivers the kind of summer memories that keep you coming back.</p>
+            
+            <hr>
+            
+            <p><strong>Get more Arlington guides at <a href="https://dfwasocialbuzz.com/arlington/">dfwasocialbuzz.com/arlington/</a></strong></p>
+            
+            <p><em>Own a business? Get featured at <a href="https://dfwasocialbuzz.com/business/">dfwasocialbuzz.com/business/</a></em></p>
+        </div>
+    </article>
+    
+    <!-- Related Articles -->
+    <section class="related-section">
+        <div class="related-container">
+            <h3>More Arlington Stories</h3>
+            <div class="related-grid">
+                <div class="related-card">
+                    <a href="/articles/arlington-live-music-dining-weekend.html">Arlington's Live Music & Dining Scene</a>
+                    <p>Your weekend guide to the best venues for food and tunes.</p>
+                </div>
+                <div class="related-card">
+                    <a href="/articles/arlington-craft-beer-guide.html">Arlington's Craft Beer Scene</a>
+                    <p>Where to find the best local brews in town.</p>
+                </div>
+                <div class="related-card">
+                    <a href="/articles/arlington-brunch-scene-guide.html">Arlington's Brunch Scene</a>
+                    <p>The best weekend mimosas and pancake stacks.</p>
+                </div>
+                <div class="related-card">
+                    <a href="/articles/arlington-hidden-gems-local-shops.html">Arlington's Hidden Gems</a>
+                    <p>5 local shops you need to discover.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Inline Subscribe Form -->
+    <section class="subscribe-inline" style="background: #111122; border: 1px solid #333; border-radius: 12px; padding: 2rem; margin: 2.5rem auto; max-width: 800px;">
+        <h3 style="color: #FF6B35; margin-bottom: 0.75rem;">📧 Stay in the Loop</h3>
+        <p style="color: #888; margin-bottom: 1rem;">Get the latest Arlington news, events, and local deals delivered to your inbox.</p>
+        <form class="subscribe-form-inline" onsubmit="handleArticleSubscribe(event)" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <input type="email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #333; border-radius: 6px; background: #0f1629; color: white;">
+            <button type="submit" style="background: #FF6B35; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Subscribe</button>
+        </form>
+        <div class="subscribe-message-inline" style="margin-top: 0.75rem; font-size: 0.9rem; display: none;"></div>
+        <p style="margin-top: 1rem;"><a href="https://dfwasocialbuzz.com/business/" style="color: #FF6B35;">Get Your Business Featured →</a></p>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <div class="tagline">Your local guide to Arlington, TX</div>
+                <div class="powered-by">Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/">Latest News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals/?cities=arlington">Local Deals</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Other Cities</h4>
+                <ul>
+                    <li><a href="/dallas/">Dallas Current</a></li>
+                    <li><a href="/fort-worth/">Fort Worth Eco</a></li>
+                    <li><a href="https://dfwasocialbuzz.com">DFWA Home</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/contact/">Contact Us</a></li>
+                    <li><a href="/#subscribe-section" onclick="event.preventDefault(); document.querySelector('.subscribe-inline').scrollIntoView({behavior: 'smooth'});">Subscribe</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arlington Pulse. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        async function handleArticleSubscribe(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button');
+            const messageDiv = form.parentElement.querySelector('.subscribe-message-inline');
+            const email = form.email.value;
+            
+            btn.disabled = true;
+            btn.textContent = 'Subscribing...';
+            messageDiv.style.display = 'none';
+            
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        city: 'Arlington',
+                        source: 'article_page'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    messageDiv.textContent = '✓ Successfully subscribed!';
+                    messageDiv.style.color = '#4CAF50';
+                    messageDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error(data.message || 'Subscription failed');
+                }
+            } catch (error) {
+                messageDiv.textContent = '✗ ' + error.message;
+                messageDiv.style.color = '#f44336';
+                messageDiv.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Subscribe';
+            }
+        }
+    </script>
+</body>
+</html>

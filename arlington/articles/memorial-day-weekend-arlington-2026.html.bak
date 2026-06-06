@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Ultimate Guide to Memorial Day Weekend in Arlington 2026 | Arlington Pulse</title>
+    <meta name="description" content="DreamFest 2026, patio dining, Rangers baseball, and more—your complete guide to Memorial Day Weekend in Arlington, Texas.">
+    <meta property="og:title" content="Your Ultimate Guide to Memorial Day Weekend in Arlington 2026">
+    <meta property="og:description" content="DreamFest 2026, patio dining, Rangers baseball, and more—your complete guide to Memorial Day Weekend.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?w=1200">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://dfwasocialbuzz.com/arlington/articles/memorial-day-weekend-arlington-2026.html">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: #e0e0e0; line-height: 1.7; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article Header */
+        .article-header { background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); padding: 3rem 2rem 2rem; text-align: center; border-bottom: 2px solid #FF6B35; }
+        .article-header .label { color: #FF6B35; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; display: block; }
+        .article-header h1 { font-size: 2.5rem; color: white; margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.2; }
+        .article-header .subheadline { color: #888; font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+        .article-header .meta { color: #666; font-size: 0.9rem; margin-top: 1.5rem; }
+        
+        /* Featured Image */
+        .featured-image { width: 100%; max-width: 1200px; margin: 0 auto; }
+        .featured-image img { width: 100%; height: auto; display: block; }
+        .featured-image .caption { text-align: center; padding: 0.75rem; color: #666; font-size: 0.85rem; font-style: italic; }
+        
+        /* Article Content */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .article-content { font-size: 1.1rem; color: #d0d0d0; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { color: #FF6B35; font-size: 1.6rem; margin: 2.5rem 0 1rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        
+        /* Business Listings */
+        .business-listing { background: #111122; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; border-left: 4px solid #FF6B35; }
+        .business-listing h3 { color: #FF6B35; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .business-listing p { margin-bottom: 0.75rem; color: #ccc; }
+        .business-listing a { color: #FF6B35; font-weight: 600; }
+        
+        /* Subscribe CTA */
+        .subscribe-cta { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+        .subscribe-cta h3 { color: white; font-size: 1.5rem; margin-bottom: 1rem; }
+        .subscribe-cta p { color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; }
+        .subscribe-cta .btn-light { background: white; color: #FF6B35; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        
+        /* Business Feature CTA */
+        .business-cta { background: #111122; border-radius: 12px; padding: 2rem; text-align: center; margin: 2rem 0; border: 2px solid #FF6B35; }
+        .business-cta h3 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .business-cta p { color: #888; margin-bottom: 1rem; }
+        .business-cta a { color: #FF6B35; font-weight: 600; }
+        
+        /* Internal Links */
+        .internal-links { background: #0f1629; border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+        .internal-links h4 { color: #FF6B35; margin-bottom: 1rem; }
+        .internal-links ul { list-style: none; }
+        .internal-links li { margin-bottom: 0.5rem; }
+        .internal-links a { color: #aaa; text-decoration: none; }
+        .internal-links a:hover { color: #FF6B35; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 2rem; border-top: 2px solid #FF6B35; text-align: center; }
+        .main-footer p { color: #666; font-size: 0.9rem; }
+        .main-footer a { color: #FF6B35; text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.8rem; }
+            .article-container { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">DFWA Social Buzz</div>
+                    <div class="sub">Your local guide to DFWA</div>
+                </div>
+            </div>
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/#news">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals/?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business/">Business</a>
+                </div>
+            </div>
+            <nav class="city-nav">
+                <a href="/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Article Header -->
+    <header class="article-header">
+        <span class="label">Weekend Guide</span>
+        <h1>Your Ultimate Guide to Memorial Day Weekend in Arlington 2026</h1>
+        <p class="subheadline">DreamFest, patio dining, Rangers baseball, and the best ways to kick off summer in The American Dream City</p>
+        <p class="meta">May 23, 2026 • Arlington Pulse</p>
+    </header>
+    
+    <!-- Featured Image -->
+    <div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1498931299472-f7a63a5a1cfa?w=1200&h=675&fit=crop" alt="Memorial Day fireworks celebration">
+        <p class="caption">Photo by Ray Hennessy on Unsplash</p>
+    </div>
+    
+    <!-- Article Content -->
+    <div class="article-container">
+        <article class="article-content">
+            <p>Memorial Day weekend is here, and Arlington is pulling out all the stops. Whether you're a longtime local or visiting for the first time, this three-day weekend offers the perfect mix of free community events, outdoor dining, baseball action, and meaningful ways to honor those who served. Here's everything you need to know to make the most of it.</p>
+            
+            <h2>DreamFest 2026: Arlington's Biggest Block Party</h2>
+            
+            <p>The centerpiece of Memorial Day weekend is <strong>DreamFest 2026</strong>, returning to the Levitt Pavilion for three nights of free live music, food vendors, and family fun. Billed as "Arlington's biggest block party," this event transforms Downtown Arlington into a lively celebration of community, culture, and the spirit of "The American Dream City."</p>
+            
+            <p>Running Saturday through Monday at the Levitt Pavilion, DreamFest features multiple stages with live performances spanning genres from country to R&B to rock. Local food vendors line the streets, offering everything from Texas barbecue to international cuisine. Best of all? It's completely free.</p>
+            
+            <p><strong>Pro tip:</strong> Bring a blanket or lawn chairs for the pavilion lawn, and arrive early to snag a good spot near the main stage. The event gets crowded as the evening progresses, especially for headline acts.</p>
+            
+            <h2>Where to Eat: Best Patios for Holiday Weekend Dining</h2>
+            
+            <p>Memorial Day weekend unofficially kicks off patio season in Texas, and Arlington's restaurants are ready. Here are five spots with outdoor seating perfect for soaking up the sunshine:</p>
+            
+            <div class="business-listing">
+                <h3><a href="https://www.thetipsyoak.com/" target="_blank">The Tipsy Oak</a></h3>
+                <p>This gastropub in the Urban Union District boasts one of the best patios in Downtown Arlington. With craft beer on tap, elevated bar food, and live music on weekends, it's the perfect spot to unwind after exploring DreamFest. Their outdoor seating puts you right in the heart of the action.</p>
+                <p><strong>Don't miss:</strong> Weekend brunch with bottomless mimosas and their famous Tipsy Burger.</p>
+            </div>
+            
+            <div class="business-listing">
+                <h3><a href="https://divisionbrewing.com/" target="_blank">Division Brewing</a></h3>
+                <p>Arlington's first locally-owned brewery offers a laid-back taproom experience with indoor and outdoor seating. Their dog-friendly patio is ideal for casual afternoon drinking, and the rotating selection of house-brewed beers means there's always something new to try.</p>
+                <p><strong>Don't miss:</strong> Their seasonal summer releases and the opportunity to take a growler to-go.</p>
+            </div>
+            
+            <div class="business-listing">
+                <h3><a href="https://www.wildacrebrewing.com/" target="_blank">Wild Acre Restaurant & Beer Garden</a></h3>
+                <p>Located in the heart of Arlington's entertainment district, Wild Acre combines a full-service restaurant with a sprawling beer garden. The outdoor space features long communal tables, fire pits, and plenty of room for groups. Their menu goes well beyond typical brewery fare.</p>
+                <p><strong>Don't miss:</strong> The beer garden atmosphere on weekend evenings when the string lights come on.</p>
+            </div>
+            
+            <div class="business-listing">
+                <h3><a href="https://www.4kahunas.com/" target="_blank">4 Kahunas Tiki Lounge</a></h3>
+                <p>Transport yourself to a tropical paradise without leaving Arlington. This tiki-themed bar serves up creative cocktails in a festive atmosphere. Their patio area is decorated with Polynesian-inspired decor, making it a unique spot for holiday weekend drinks.</p>
+                <p><strong>Don't miss:</strong> Their signature tiki cocktails served in collectible mugs.</p>
+            </div>
+            
+            <div class="business-listing">
+                <h3><a href="https://www.ponyupdfw.com/" target="_blank">Pony Up</a></h3>
+                <p>This Texas Live! hotspot brings Nashville-style honky-tonk energy to Arlington. With live music, dancing, and a massive outdoor area, Pony Up is where you go when you want to turn your Memorial Day weekend into a full-blown celebration.</p>
+                <p><strong>Don't miss:</strong> The live band performances and mechanical bull riding.</p>
+            </div>
+            
+            <h2>Rangers Baseball: America's Pastime</h2>
+            
+            <p>No Memorial Day weekend in Arlington is complete without baseball. The Texas Rangers are hosting the Houston Astros on Monday, May 25th at Globe Life Field. It's the perfect way to spend the holiday—hot dogs, cold drinks, and the crack of the bat.</p>
+            
+            <p>Even if you can't make the game, the Texas Live! entertainment district surrounding the stadium offers plenty of pre-game and post-game options. Bars and restaurants here stay busy throughout the weekend with sports fans and families alike.</p>
+            
+            <h2>Honoring Our Heroes</h2>
+            
+            <p>While the weekend is packed with fun, it's important to remember what Memorial Day is really about: honoring those who died serving our country. Arlington offers several meaningful ways to pay respects:</p>
+            
+            <p><strong>Arlington Veterans Park:</strong> This serene park features memorials dedicated to veterans from all branches of service. It's a peaceful spot for reflection amid the weekend's festivities.</p>
+            
+            <p><strong>National Medal of Honor Museum:</strong> Opening ceremonies and special programming throughout the weekend honor Medal of Honor recipients and their sacrifices.</p>
+            
+            <p><strong>Field of Memories at Arlington Memorial Gardens:</strong> This touching display features thousands of flags and personalized tributes to fallen service members. All net proceeds benefit Ramp It Up for Veterans, a nonprofit that builds ramps for those with mobility issues.</p>
+            
+            <h2>Plan Your Weekend</h2>
+            
+            <p>Memorial Day weekend in Arlington offers something for everyone—free concerts, great food, baseball, and meaningful ways to honor our military heroes. Whether you're spending the whole weekend here or just passing through, you'll find plenty to keep you entertained.</p>
+            
+            <p>The best part? Many of these events are free or low-cost, making Arlington an affordable destination for holiday weekend fun. Just remember to hydrate (it's already getting hot out there), wear comfortable shoes for walking Downtown, and bring your appetite.</p>
+            
+            <!-- Subscribe CTA -->
+            <!-- Inline Subscribe Form -->
+            <div class="subscribe-inline" style="background: #111122; border: 1px solid #333; border-radius: 12px; padding: 2rem; margin: 2.5rem 0;">
+                <h3 style="color: #FF6B35; margin-bottom: 0.75rem;">📧 Get More Arlington Guides</h3>
+                <p style="color: #888; margin-bottom: 1rem;">Subscribe to Arlington Pulse for weekly local news, events, and business spotlights.</p>
+                <form class="subscribe-form-inline" onsubmit="handleArticleSubscribe(event)" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <input type="email" name="email" placeholder="Your email address" required style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #333; border-radius: 6px; background: #0f1629; color: white;">
+                    <button type="submit" style="background: #FF6B35; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600;">Subscribe</button>
+                </form>
+                <div class="subscribe-message-inline" style="margin-top: 0.75rem; font-size: 0.9rem; display: none;"></div>
+            </div>
+            
+            <!-- Business Feature CTA -->
+            <div class="business-cta">
+                <h3>Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach thousands of local readers.</p>
+                <a href="https://dfwasocialbuzz.com/business/?utm_source=article&utm_medium=web&utm_campaign=memorial-day-weekend">Learn More →</a>
+            </div>
+            
+            <!-- Internal Links -->
+            <div class="internal-links">
+                <h4>More Arlington Stories</h4>
+                <ul>
+                    <li><a href="/articles/arlington-best-patios-spring.html">Arlington's Best Patios: Where to Eat Outside This Spring</a></li>
+                    <li><a href="/articles/arlington-entertainment-district-summer-2026.html">Your Ultimate Guide to Arlington's Entertainment District</a></li>
+                    <li><a href="/articles/arlington-craft-beer-guide.html">Arlington's Craft Beer Scene: Where to Find the Best Local Brews</a></li>
+                </ul>
+            </div>
+        </article>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Arlington Pulse. Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></p>
+    </footer>
+
+    <script>
+        async function handleArticleSubscribe(event) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button');
+            const messageDiv = form.parentElement.querySelector('.subscribe-message-inline');
+            const email = form.email.value;
+            
+            btn.disabled = true;
+            btn.textContent = 'Subscribing...';
+            messageDiv.style.display = 'none';
+            
+            try {
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        city: 'Arlington',
+                        source: 'article_page'
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    messageDiv.textContent = '✓ Successfully subscribed!';
+                    messageDiv.style.color = '#4CAF50';
+                    messageDiv.style.display = 'block';
+                    form.reset();
+                } else {
+                    throw new Error(data.message || 'Subscription failed');
+                }
+            } catch (error) {
+                messageDiv.textContent = '✗ ' + error.message;
+                messageDiv.style.color = '#f44336';
+                messageDiv.style.display = 'block';
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Subscribe';
+            }
+        }
+    </script>
+</body>
+</html>

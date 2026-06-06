@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Article - Arlington Pulse</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        header { background: #0a0a0a; padding: 1rem 2rem; border-bottom: 1px solid #222; }
+        .header-content { max-width: 1200px; margin: 0 auto; }
+        header a { color: #FF6B35; text-decoration: none; font-weight: 600; }
+        article { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        h1 { color: #FF6B35; font-size: 2.5rem; margin-bottom: 1rem; }
+        .meta { color: #666; margin-bottom: 2rem; }
+        p { color: #ccc; margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.7; }
+        .test-notice { background: rgba(255,107,53,0.1); border: 1px solid #FF6B35; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; }
+        .test-notice p { color: #FF6B35; margin: 0; }
+        footer { text-align: center; padding: 2rem; color: #666; border-top: 1px solid #222; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/">← Back to Arlington Pulse</a>
+        </div>
+    </header>
+    
+    <article>
+        <div class="test-notice">
+            <p>🧪 TEST ARTICLE - Publishing Pipeline Validation</p>
+        </div>
+        
+        <h1>Arlington Publishing Test Article</h1>
+        <div class="meta">May 10, 2026 | Test Article</div>
+        
+        <p>This is a test article to validate the Arlington publishing pipeline. If you can see this article at the correct URL, the publishing system is working correctly.</p>
+        
+        <p>The article should be accessible at:<br>
+        <code>https://dfwasocialbuzz.com/arlington/articles/arlington-test-article.html</code></p>
+        
+        <p>This test validates:</p>
+        <ul style="color: #ccc; margin-left: 2rem; margin-bottom: 1.5rem;">
+            <li>Article file creation</li>
+            <li>Correct city path (/arlington/articles/)</li>
+            <li>URL resolution (200 OK)</li>
+            <li>No wrong-domain links</li>
+            <li>Proper rendering</li>
+        </ul>
+        
+        <p>If this article appears in the Recent Issues section and loads correctly, the Arlington publishing pipeline is validated.</p>
+    </article>
+    
+    <footer>
+        <p>Arlington Pulse - Test Article</p>
+    </footer>
+</body>
+</html>
