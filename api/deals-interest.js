@@ -139,16 +139,20 @@ export default async function handler(req, res) {
           isNewContact = true;
         }
 
-        if (!gcResponse.ok) {
-          const errorText = await gcResponse.text();
-          console.error('Global Control API error:', errorText);
+        const gcData = await gcResponse.json();
+        
+        // Check for GC error in response body (GC returns HTTP 200 with error body)
+        if (gcData.type === 'error' || gcData.error || !gcResponse.ok) {
+          const errorMessage = gcData.error?.message || gcData.message || 'Unknown GC error';
+          console.error('Global Control API error:', errorMessage, gcData);
           return res.status(500).json({
             success: false,
             message: 'Failed to save subscription. Please try again.',
-            error: 'Global Control sync failed'
+            error: 'Global Control sync failed',
+            gc_error: errorMessage
           });
         }
-        const gcData = await gcResponse.json();
+        
         console.log(`Successfully ${isNewContact ? 'created' : 'updated'} contact in Global Control:`, gcData.id || contactId);
       } catch (gcError) {
         console.error('Global Control integration error:', gcError);
@@ -173,6 +177,15 @@ export default async function handler(req, res) {
       return res.status(500).json({
         success: false,
         message: 'Configuration error. Please try again later.'
+      });
+    }
+
+    // Final verification: gcData must exist and not be an error
+    if (!gcData || gcData.type === 'error' || gcData.error) {
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to save subscription. Please try again.',
+        error: 'Global Control sync failed'
       });
     }
 
