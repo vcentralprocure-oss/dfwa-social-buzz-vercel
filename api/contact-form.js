@@ -70,8 +70,24 @@ export default async function handler(req, res) {
           body: JSON.stringify(contactData)
         });
 
-        if (!gcResponse.ok) console.error('GC API error:', await gcResponse.text());
+        if (!gcResponse.ok) {
+          const errorText = await gcResponse.text();
+          console.error('GC API error:', errorText);
+          return res.status(500).json({
+            success: false,
+            message: 'Failed to send message. Please try again.',
+            error: 'Global Control sync failed'
+          });
+        }
       } catch (e) { console.error('GC error:', e); }
+    }
+
+    // Only return success if GC_API_KEY is configured and request was attempted
+    if (!GC_API_KEY) {
+      return res.status(500).json({
+        success: false,
+        message: 'Configuration error. Please try again later.'
+      });
     }
 
     return res.status(200).json({ success: true, message: 'Message sent' });

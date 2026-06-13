@@ -140,11 +140,16 @@ export default async function handler(req, res) {
         }
 
         if (!gcResponse.ok) {
-          console.error('Global Control API error:', await gcResponse.text());
-        } else {
-          const gcData = await gcResponse.json();
-          console.log(`Successfully ${isNewContact ? 'created' : 'updated'} contact in Global Control:`, gcData.id || contactId);
+          const errorText = await gcResponse.text();
+          console.error('Global Control API error:', errorText);
+          return res.status(500).json({
+            success: false,
+            message: 'Failed to save subscription. Please try again.',
+            error: 'Global Control sync failed'
+          });
         }
+        const gcData = await gcResponse.json();
+        console.log(`Successfully ${isNewContact ? 'created' : 'updated'} contact in Global Control:`, gcData.id || contactId);
       } catch (gcError) {
         console.error('Global Control integration error:', gcError);
       }
@@ -162,6 +167,14 @@ export default async function handler(req, res) {
     };
     
     console.log('Deals interest submission:', submissionLog);
+
+    // Only return success if we actually created/updated in GC
+    if (!GC_API_KEY) {
+      return res.status(500).json({
+        success: false,
+        message: 'Configuration error. Please try again later.'
+      });
+    }
 
     return res.status(200).json({
       success: true,
