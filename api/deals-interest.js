@@ -49,7 +49,7 @@ export default async function handler(req, res) {
         const searchResponse = await fetch(`https://api.globalcontrol.io/api/ai/contacts/search?email=${encodeURIComponent(email)}`, {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${GC_API_KEY}`,
+            'X-API-KEY': GC_API_KEY,
             'Content-Type': 'application/json'
           }
         });
@@ -120,7 +120,7 @@ export default async function handler(req, res) {
             method: 'PUT',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': `Bearer ${GC_API_KEY}`
+              'X-API-KEY': GC_API_KEY
             },
             body: JSON.stringify(contactData)
           });
@@ -132,7 +132,7 @@ export default async function handler(req, res) {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': `Bearer ${GC_API_KEY}`
+              'X-API-KEY': GC_API_KEY
             },
             body: JSON.stringify(contactData)
           });

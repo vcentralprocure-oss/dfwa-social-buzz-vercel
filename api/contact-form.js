@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     if (GC_API_KEY) {
       try {
         const searchResponse = await fetch(`https://api.globalcontrol.io/api/ai/contacts/search?email=${encodeURIComponent(email)}`, {
-          headers: { 'Authorization': `Bearer ${GC_API_KEY}`, 'Content-Type': 'application/json' }
+          headers: { 'X-API-KEY': GC_API_KEY, 'Content-Type': 'application/json' }
         });
         if (searchResponse.ok) {
           const searchData = await searchResponse.json();
@@ -66,7 +66,7 @@ export default async function handler(req, res) {
         
         const gcResponse = await fetch(url, {
           method: contactId ? 'PUT' : 'POST',
-          headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${GC_API_KEY}` },
+          headers: { 'Content-Type': 'application/json', 'X-API-KEY': GC_API_KEY },
           body: JSON.stringify(contactData)
         });
 
