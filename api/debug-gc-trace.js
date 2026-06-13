@@ -119,6 +119,17 @@ export default async function handler(req, res) {
       ok: createResponse.ok
     });
 
+    // Analyze GC response structure for success indicators
+    const successIndicators = {
+      has_id: !!(createData && (createData.id || createData._id || createData.contactId)),
+      id_field: createData ? (createData.id || createData._id || createData.contactId || 'NONE') : 'NO_DATA',
+      has_data: !!(createData && createData.data),
+      data_id: createData && createData.data ? (createData.data.id || createData.data._id || 'NONE') : 'NO_DATA.data',
+      type_field: createData ? createData.type : 'NO_TYPE',
+      success_field: createData ? createData.success : 'NO_SUCCESS_FIELD',
+      full_response: createData
+    };
+
     // Return full trace
     return res.status(200).json({
       trace,
@@ -127,7 +138,14 @@ export default async function handler(req, res) {
       gc_create_data: createData,
       gc_create_error: createError,
       contact_id_from_search: contactId,
-      contact_exists_before: contactExists
+      contact_exists_before: contactExists,
+      success_indicators: successIndicators,
+      what_code_checks: {
+        checks_for_type_error: "gcData.type === 'error'",
+        checks_for_error_field: "gcData.error",
+        checks_for_response_ok: "gcResponse.ok",
+        logs_this_field: "gcData.id || contactId"
+      }
     });
 
   } catch (error) {
