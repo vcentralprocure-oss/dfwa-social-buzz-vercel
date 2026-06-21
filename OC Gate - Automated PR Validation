@@ -1,0 +1,205 @@
+on:
+pull_request:
+branches:
+- main
+types: [opened, synchronize, reopened]
+
+jobs:
+oc-gate:
+name: OC Gate Validation
+runs-on: ubuntu-latest
+if: startsWith(github.head_ref, 'oc/')
+
+copy
+
+
+steps:
+  - name: Checkout code
+    uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
+
+  - name: Check for backup branch
+    id: check-backup
+    run: |
+      echo "Checking for backup branch..."
+      BACKUP_BRANCHES=$(git branch -r | grep -E 'backup/|backup-' | wc -l)
+      if [ "$BACKUP_BRANCHES" -eq 0 ]; then
+        echo "WARNING: No backup branch found in repository"
+        echo "backup_exists=false" >> $GITHUB_OUTPUT
+      else
+        echo "Backup branch(s) found: $BACKUP_BRANCHES"
+        echo "backup_exists=true" >> $GITHUB_OUTPUT
+      fi
+
+  - name: Pause if no backup branch
+    if: steps.check-backup.outputs.backup_exists == 'false'
+    run: |
+      echo "STANDING RULE VIOLATION: No backup branch exists"
+      echo "Task that modifies main branch cannot proceed without backup"
+      echo "Please create a backup branch before continuing"
+      exit 1
+
+  - name: Wait for Vercel preview deploy
+    run: |
+      echo "Waiting 60 seconds for Vercel preview deploy..."
+      sleep 60
+
+  - name: Get Vercel preview URL
+    id: vercel
+    run: |
+      BRANCH_NAME="${{ github.head_ref }}"
+      REPO_NAME="${{ github.repository }}"
+      
+      PROJECT_NAME=$(echo "$REPO_NAME" | cut -d'/' -f2)
+      OWNER_NAME=$(echo "$REPO_NAME" | cut -d'/' -f1)
+      BRANCH_SLUG=$(echo "$BRANCH_NAME" | sed 's/[^a-zA-Z0-9]/-/g' | tr '[:upper:]' '[:lower:]')
+      
+      PREVIEW_URL="https://${PROJECT_NAME}-git-${BRANCH_SLUG}-${OWNER_NAME}.vercel.app"
+      echo "Preview URL: $PREVIEW_URL"
+      echo "url=$PREVIEW_URL" >> $GITHUB_OUTPUT
+
+  - name: Check routes
+    id: route-checks
+    run: |
+      PREVIEW_URL="${{ steps.vercel.outputs.url }}"
+      
+      ROUTES="/arlington /arlington/north /arlington/south /arlington/central /arlington/east /subscribe"
+      
+      RESULTS="| Route | Status |
+
+|-------|--------|"
+ALL_PASS=true
+
+Bash
+
+
+      for route in $ROUTES; do
+        FULL_URL="${PREVIEW_URL}${route}"
+        echo "Checking: $FULL_URL"
+        
+        HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" --max-time 30 "$FULL_URL" || echo "000")
+        
+        if [ "$HTTP_CODE" = "200" ]; then
+          RESULTS="${RESULTS}
+
+| ${route} | 200 OK |"
+echo "  OK: HTTP 200"
+else
+RESULTS="${RESULTS}
+| ${route} | FAIL: ${HTTP_CODE} |"
+echo "  FAIL: HTTP ${HTTP_CODE}"
+ALL_PASS=false
+fi
+done
+
+copy
+
+
+      echo "results<<EOF" >> $GITHUB_OUTPUT
+      echo -e "$RESULTS" >> $GITHUB_OUTPUT
+      echo "EOF" >> $GITHUB_OUTPUT
+      echo "all_pass=$ALL_PASS" >> $GITHUB_OUTPUT
+
+  - name: Check subscribe form
+    id: form-check
+    run: |
+      PREVIEW_URL="${{ steps.vercel.outputs.url }}"
+      PAGE_URL="${PREVIEW_URL}/arlington"
+      
+      echo "Checking for subscribe form..."
+      PAGE_CONTENT=$(curl -s --max-time 30 "$PAGE_URL" || echo "")
+      
+      # Check for form-related elements
+      if echo "$PAGE_CONTENT" | grep -q "form"; then
+        if echo "$PAGE_CONTENT" | grep -qi "subscribe\|email\|newsletter"; then
+          echo "form_found=true" >> $GITHUB_OUTPUT
+          echo "Subscribe form found"
+        else
+          echo "form_found=false" >> $GITHUB_OUTPUT
+          echo "Form found but no subscribe indicators"
+copy
+
+
+        fi
+      else
+        echo "form_found=false" >> $GITHUB_OUTPUTecho "No form found"
+      fi
+
+  - name: Post PR comment
+    uses: actions/github-script@v7
+    with:
+      script: |
+        const routeResults = `${{ steps.route-checks.outputs.results }}`;
+        const formFound = ${{ steps.form-check.outputs.form_found }};
+        const allPass = ${{ steps.route-checks.outputs.all_pass }};
+        
+        const formStatus = formFound ? 'Found' : 'Not Found';
+        const overallStatus = (allPass && formFound) ? 'PASS' : 'FAIL';
+        
+        const body = `## OC Gate Validation Results
+        
+        **Overall Status:** ${overallStatus}
+        
+        ### Route Checks
+        ${routeResults}
+        
+        ### Subscribe Form Check
+        | Check | Status |
+        |-------|--------|
+        | Subscribe form on /arlington | ${formStatus} |
+        `;
+        
+        github.rest.issues.createComment({
+          issue_number: context.issue.number,
+          owner: context.repo.owner,
+          repo: context.repo.repo,
+          body: body
+        });
+
+  - name: Add label based on result
+    if: always()
+    uses: actions/github-script@v7
+    with:
+      script: |
+        const allPass = ${{ steps.route-checks.outputs.all_pass }};
+        const formFound = ${{ steps.form-check.outputs.form_found }};
+        const label = (allPass && formFound) ? 'oc-approved' : 'oc-blocked';
+        
+        github.rest.issues.addLabels({
+          issue_number: context.issue.number,
+          owner: context.repo.owner,
+          repo: context.repo.repo,
+          labels: [label]
+        });
+
+  - name: Auto-merge if passed
+    if: steps.route-checks.outputs.all_pass == 'true' && steps.form-check.outputs.form_found == 'true'
+    uses: actions/github-script@v7
+    with:
+      script: |
+        github.rest.pulls.merge({
+          pull_number: context.issue.number,
+          owner: context.repo.owner,
+          repo: context.repo.repo,
+          merge_method: 'squash'
+        });
+
+  - name: Send failure email
+    if: failure() || steps.route-checks.outputs.all_pass != 'true' || steps.form-check.outputs.form_found != 'true'
+    uses: dawidd6/action-send-mail@v3
+    with:
+      server_address: ${{ secrets.SMTP_HOST }}
+      server_port: ${{ secrets.SMTP_PORT }}
+      username: ${{ secrets.SMTP_USER }}
+      password: ${{ secrets.SMTP_PASS }}
+      subject: OC Gate FAILED — ${{ github.event.pull_request.title }}
+      to: ${{ secrets.NOTIFY_EMAIL }}
+      from: ${{ secrets.SMTP_USER }}
+      body: |
+        OC Gate validation failed for PR: ${{ github.event.pull_request.title }}
+        
+        PR URL: ${{ github.event.pull_request.html_url }}
+        Branch: ${{ github.head_ref }}
+        
+        Please check the GitHub Actions logs for details.
