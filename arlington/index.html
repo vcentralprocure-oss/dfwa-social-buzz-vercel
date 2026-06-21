@@ -43,12 +43,12 @@
         .sponsored-card .cta-link { color: #FF6B35; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
         
         /* PHASE 1: Centered Site Title */
-        .site-title-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 2.5rem 2rem 1.5rem; text-align: center; border-bottom: 2px solid #FF6B35; }
-        .site-title-section h1 { color: #FF6B35; font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .site-title-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 0.75rem 2rem 0.75rem; text-align: center; border-bottom: 2px solid #FF6B35; }
+        .site-title-section h1 { color: #FF6B35; font-size: 2.5rem; font-weight: 700; margin-top: 0; margin-bottom: 0.5rem; }
         .site-title-section .tagline { color: #888; font-size: 1rem; }
         
         /* Action Buttons Bar */
-        .action-bar { background: #0f1629; padding: 1rem 2rem; border-bottom: 1px solid #222; }
+        .action-bar { background: #0f1629; padding: 0.6rem 2rem; border-bottom: 1px solid #222; }
         .action-buttons { max-width: 900px; margin: 0 auto; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
         
         /* Gas Price Section */
@@ -254,6 +254,27 @@
         <p style="color: #4CAF50; font-size: 0.9rem; margin-top: 0.5rem;">Arlington coverage is live now.</p>
     </section>
 
+    <!-- PHASE 1: Action Buttons Bar with Compact Subscribe -->
+    <section class="action-bar">
+        <div class="action-buttons">
+            <button class="action-btn subscribe" onclick="navToSubscribe(event)">📧 Subscribe</button>
+            <a href="https://dfwasocialbuzz.com/deals?cities=arlington" class="action-btn deals">💰 Local Deals</a>
+            <a href="https://dfwasocialbuzz.com/business" class="action-btn business">🏢 Get Featured</a>
+        </div>
+
+        <!-- Compact Subscribe Module -->
+        <div id="subscribe-module" class="subscribe-module">
+            <h3>Subscribe to Arlington Pulse</h3>
+            <p>Get local news, deals, and events delivered weekly.</p>
+            <form class="subscribe-form-compact" id="subscribe-form" onsubmit="handleSubscribe(event)">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <div id="subscribe-message" class="subscribe-message"></div>
+            <span class="close-subscribe" onclick="toggleSubscribe()">← Close</span>
+        </div>
+    </section>
+
     <!-- FEATURED + SPONSOR 1+1 GRID -->
     <section class="featured-grid-section">
         <div class="featured-grid">
@@ -276,27 +297,6 @@
                 <a href="https://dfwasocialbuzz.com/business" class="sponsor-cta-btn">Get Featured →</a>
                 <p class="sponsor-fine">Starting at $300/month · Arlington Pulse</p>
             </aside>
-        </div>
-    </section>
-    
-    <!-- PHASE 1: Action Buttons Bar with Compact Subscribe -->
-    <section class="action-bar">
-        <div class="action-buttons">
-            <button class="action-btn subscribe" onclick="navToSubscribe(event)">📧 Subscribe</button>
-            <a href="https://dfwasocialbuzz.com/deals?cities=arlington" class="action-btn deals">💰 Local Deals</a>
-            <a href="https://dfwasocialbuzz.com/business" class="action-btn business">🏢 Get Featured</a>
-        </div>
-        
-        <!-- Compact Subscribe Module -->
-        <div id="subscribe-module" class="subscribe-module">
-            <h3>Subscribe to Arlington Pulse</h3>
-            <p>Get local news, deals, and events delivered weekly.</p>
-            <form class="subscribe-form-compact" id="subscribe-form" onsubmit="handleSubscribe(event)">
-                <input type="email" name="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
-            </form>
-            <div id="subscribe-message" class="subscribe-message"></div>
-            <span class="close-subscribe" onclick="toggleSubscribe()">← Close</span>
         </div>
     </section>
     
