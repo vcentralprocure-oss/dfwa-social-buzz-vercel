@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlington's Summer Dining Scene: 5 Local Spots Defining Our Food Culture | Arlington Pulse</title>
+    <meta name="description" content="From rooftop patios to award-winning BBQ, discover where Arlington locals are eating this summer. Featuring The Tipsy Oak, Hurtado Barbecue, Division Brewing, and more.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article Styles */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        
+        .article-header { margin-bottom: 2rem; }
+        .article-header h1 { font-size: 2.5rem; color: #FF6B35; margin-bottom: 1rem; line-height: 1.2; }
+        .article-subtitle { font-size: 1.2rem; color: #888; margin-bottom: 1rem; }
+        .article-meta { color: #666; font-size: 0.9rem; }
+        
+        .featured-image { width: 100%; height: 450px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; }
+        
+        .article-content { font-size: 1.1rem; line-height: 1.8; color: #ddd; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { font-size: 1.8rem; color: #FF6B35; margin: 2.5rem 0 1rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content strong { color: #fff; }
+        .article-content em { color: #aaa; }
+        
+        /* Business Cards */
+        .business-card { background: #111122; border: 1px solid #222; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+        .business-card h3 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .business-card p { margin-bottom: 0.75rem; }
+        .business-card .cta-link { display: inline-block; background: #FF6B35; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 0.5rem; }
+        .business-card .cta-link:hover { background: #e55a2b; text-decoration: none; }
+        
+        /* CTA Sections */
+        .cta-section { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; margin: 3rem 0; text-align: center; }
+        .cta-section h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+        .cta-section p { margin-bottom: 1rem; opacity: 0.95; }
+        .cta-section .btn-light { background: white; color: #FF6B35; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        .cta-section .btn-light:hover { background: #f0f0f0; }
+        
+        /* Related Articles */
+        .related-articles { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #222; }
+        .related-articles h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+        .related-card { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 1rem; }
+        .related-card a { color: #FF6B35; text-decoration: none; font-weight: 600; }
+        .related-card a:hover { text-decoration: underline; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; margin-top: 3rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-brand .powered-by { color: #666; font-size: 0.8rem; margin-top: 1rem; }
+        .footer-brand .powered-by a { color: #FF6B35; text-decoration: none; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            .top-header-content { flex-direction: column; gap: 0.75rem; }
+            .article-header h1 { font-size: 1.8rem; }
+            .featured-image { height: 250px; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">Arlington Pulse</div>
+                    <div class="sub">Powered by DFWA Social Buzz</div>
+                </div>
+            </div>
+            
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/arlington/">Home</a>
+                    <a href="/arlington/articles/">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business">Business</a>
+                </div>
+            </div>
+            
+            <nav class="city-nav">
+                <a href="/arlington/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <h1>Arlington's Summer Dining Scene: 5 Local Spots Defining Our Food Culture</h1>
+            <p class="article-subtitle">From rooftop patios to award-winning BBQ, discover where Arlington locals are eating this summer</p>
+            <p class="article-meta">June 21, 2026 • Arlington Pulse</p>
+        </header>
+        
+        <img src="https://images.unsplash.com/photo-1530089711124-9ca31fb9e863?w=1200&h=675&fit=crop" alt="Arlington Texas cityscape" class="featured-image">
+        <p style="color: #666; font-size: 0.85rem; text-align: center; margin-top: -1.5rem; margin-bottom: 2rem;">Photo by Carlos Delgado on Unsplash</p>
+        
+        <div class="article-content">
+            <p>Summer is in full swing in The American Dream City, and Arlington's dining scene is hotter than ever. While tourists flock to the big chains near AT&T Stadium, savvy locals know the real magic happens in our neighborhood gems.</p>
+            
+            <p>We've rounded up five local spots that are defining Arlington's food culture this summer. These aren't just places to eat—they're community gathering spots where neighbors become friends and every meal feels like a celebration.</p>
+            
+            <h2>The Tipsy Oak: Where Downtown Comes Alive</h2>
+            
+            <p>If you haven't experienced <a href="https://www.thetipsyoak.com/" target="_blank"><strong>The Tipsy Oak</strong></a> yet, you're missing out on the heart of downtown Arlington. This gastropub-icehouse hybrid has become the unofficial town square for locals who want great food without the pretension.</p>
+            
+            <p>Their chef-driven menu changes with the seasons, but the vibe stays consistently welcoming. Grab a seat on the patio, order one of their craft cocktails, and watch downtown Arlington stroll by. With live music on weekends and a full bar that knows how to mix a proper drink, it's no wonder this place has become a local institution.</p>
+            
+            <div class="business-card">
+                <h3>🍽️ Visit The Tipsy Oak</h3>
+                <p>Downtown Arlington's favorite gastropub with craft cocktails, live music, and a welcoming patio.</p>
+                <a href="https://www.thetipsyoak.com/" target="_blank" class="cta-link">Visit Website →</a>
+            </div>
+            
+            <h2>Hurtado Barbecue: Texas Tradition Done Right</h2>
+            
+            <p>When Brandon and Hannah Hurtado started serving barbecue from a food truck at <a href="https://www.arlington.org/listings/division-brewing/1245/" target="_blank">Division Brewing</a> in 2019, they couldn't have known they'd create a local legend. <a href="https://downtownarlington.org/go/hurtado-bbq" target="_blank"><strong>Hurtado Barbecue</strong></a> has since graduated to a permanent spot in the Urban Union district, but the quality hasn't changed.</p>
+            
+            <p>Their brisket has earned accolades from barbecue enthusiasts across Texas, but locals love it because it's consistently excellent. The line might be long on weekends, but trust us—it's worth the wait. Pro tip: get there early before they sell out.</p>
+            
+            <div class="business-card">
+                <h3>🔥 Try Hurtado Barbecue</h3>
+                <p>Award-winning Texas BBQ in the Urban Union district. Get there early before they sell out!</p>
+                <a href="https://downtownarlington.org/go/hurtado-bbq" target="_blank" class="cta-link">Learn More →</a>
+            </div>
+            
+            <h2>Division Brewing: Arlington's First Local Brewery</h2>
+            
+            <p>As Arlington's first locally-owned brewery, <a href="https://www.arlington.org/listings/division-brewing/1245/" target="_blank"><strong>Division Brewing</strong></a> paved the way for the craft beer scene we enjoy today. Their taproom in downtown Arlington feels like a community living room, complete with board games, food trucks, and some of the best people-watching in the city.</p>
+            
+            <p>From clean, refreshing blondes to bold, hoppy IPAs and fruity sours, there's a beer for every palate. The staff knows their stuff and loves helping newcomers find their perfect pint. It's the kind of place where you come for a beer and stay for the conversation.</p>
+            
+            <div class="business-card">
+                <h3>🍺 Visit Division Brewing</h3>
+                <p>Arlington's first local brewery with a rotating selection of craft beers and a welcoming taproom.</p>
+                <a href="https://www.arlington.org/listings/division-brewing/1245/" target="_blank" class="cta-link">Visit Website →</a>
+            </div>
+            
+            <h2>4 Kahunas Tiki Lounge: Your Island Escape</h2>
+            
+            <p>Sometimes you need a vacation without leaving town. That's where <a href="https://www.4kahunas.com/" target="_blank"><strong>4 Kahunas Tiki Lounge</strong></a> comes in. This tropical oasis in the heart of Arlington transports you to a faraway island with every sip of their expertly crafted tiki cocktails.</p>
+            
+            <p>The decor is immersive, the drinks are Instagram-worthy, and the atmosphere is pure fun. Whether you're celebrating a special occasion or just survived another Monday, 4 Kahunas offers the perfect escape. Their rum selection is impressive, and their non-alcoholic options mean everyone can join the party.</p>
+            
+            <div class="business-card">
+                <h3>🍹 Escape to 4 Kahunas</h3>
+                <p>Tropical tiki cocktails and island vibes right here in Arlington. Your vacation starts here.</p>
+                <a href="https://www.4kahunas.com/" target="_blank" class="cta-link">Visit Website →</a>
+            </div>
+            
+            <h2>Nehemiah Coffee Co.: Fueling Arlington's Mornings</h2>
+            
+            <p>Every great food scene needs a great coffee shop, and <strong>Nehemiah Coffee Co.</strong> delivers. This local favorite has become the go-to spot for Arlington's remote workers, students, and anyone who appreciates a perfectly pulled espresso.</p>
+            
+            <p>More than just caffeine, Nehemiah has built a community. The baristas remember your name, the regulars have their spots, and the atmosphere strikes that perfect balance between productive and relaxed. It's the kind of place where business deals are made, friendships are formed, and the coffee is always excellent.</p>
+            
+            <div class="business-card">
+                <h3>☕ Fuel Up at Nehemiah Coffee</h3>
+                <p>Arlington's community coffee shop with expertly crafted espresso and a welcoming atmosphere.</p>
+                <a href="https://www.arlingtontx.com/buylocal/" target="_blank" class="cta-link">Learn More →</a>
+            </div>
+            
+            <h2>Why Local Matters</h2>
+            
+            <p>These five spots represent more than just good food and drinks. They're the backbone of Arlington's local economy, providing jobs, supporting other local businesses, and creating the unique character that makes our city special.</p>
+            
+            <p>When you choose to eat local, you're not just getting a meal—you're investing in your community. You're helping your neighbors pursue their dreams. You're preserving the independent spirit that makes Arlington, well, Arlington.</p>
+            
+            <p>So this summer, skip the chains. Try one of these local gems. Bring a friend, make a memory, and taste what makes The American Dream City truly delicious.</p>
+            
+            <p><em>Have a favorite local spot we missed? Let us know—we're always hungry for new recommendations.</em></p>
+        </div>
+        
+        <!-- Subscribe CTA -->
+        <div class="cta-section">
+            <h3>📧 Get More Arlington Guides</h3>
+            <p>Subscribe to Arlington Pulse for weekly local news, events, and business spotlights delivered to your inbox.</p>
+            <a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=summer-dining" class="btn-light">Subscribe Now</a>
+        </div>
+        
+        <!-- Business Feature CTA -->
+        <div class="cta-section" style="background: linear-gradient(135deg, #2d5a3d 0%, #1e3d2a 100%);">
+            <h3>🏢 Own a Business in Arlington?</h3>
+            <p>Get featured in Arlington Pulse and reach thousands of local readers. Join our community of featured businesses.</p>
+            <a href="https://dfwasocialbuzz.com/business" class="btn-light" style="color: #2d5a3d;">Get Featured</a>
+        </div>
+        
+        <!-- Related Articles -->
+        <div class="related-articles">
+            <h3>More Arlington Stories</h3>
+            <div class="related-grid">
+                <div class="related-card">
+                    <a href="/arlington/articles/arlington-summer-dining-scene-locals-eating-2026.html">Arlington's Summer Dining Scene: Where Locals Are Eating Right Now</a>
+                </div>
+                <div class="related-card">
+                    <a href="/arlington/articles/this-weekend-arlington-june-20-21-2026.html">This Weekend in Arlington: Live Music, World Cup Watch Parties & Summer Fun</a>
+                </div>
+                <div class="related-card">
+                    <a href="/arlington/articles/this-week-arlington-june-18-24-2026.html">This Week in Arlington: Free Concerts, New Coffee Spots & Summer Nights</a>
+                </div>
+                <div class="related-card">
+                    <a href="/arlington/articles/arlington-coffee-renaissance-5-local-cafes.html">Arlington's Coffee Renaissance: 5 Local Cafés Brewing Community</a>
+                </div>
+                <div class="related-card">
+                    <a href="/arlington/articles/arlington-summer-patio-guide-june-8-2026.html">Arlington's Best Summer Patios: Where to Eat Outside This June</a>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <div class="tagline">Your local guide to Arlington, TX</div>
+                <div class="powered-by">Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/arlington/">Latest News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals?cities=arlington">Local Deals</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Other Cities</h4>
+                <ul>
+                    <li><a href="/dallas/">Dallas Current</a></li>
+                    <li><a href="/fort-worth/">Fort Worth Eco</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/contact">Contact Us</a></li>
+                    <li><a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=footer">Subscribe</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 DFWA Social Buzz. Arlington Pulse is part of the DFWA Social Buzz network.</p>
+        </div>
+    </footer>
+</body>
+</html>
