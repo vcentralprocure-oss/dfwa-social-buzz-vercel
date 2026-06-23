@@ -71,13 +71,13 @@
         .action-btn.business { background: #2d5a3d; color: white; }
         .action-btn:hover { transform: translateY(-2px); }
         
-        /* Compact Subscribe Module */
+        /* Compact Subscribe/Get Featured Module */
         .subscribe-module { display: none; background: #0f1629; border: 1px solid #333; border-radius: 8px; padding: 1.5rem; margin-top: 1rem; max-width: 500px; margin-left: auto; margin-right: auto; }
         .subscribe-module.active { display: block; }
         .subscribe-module h3 { color: #FF6B35; margin-bottom: 0.5rem; font-size: 1.1rem; }
         .subscribe-module p { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
-        .subscribe-form-compact { display: flex; gap: 0.5rem; }
-        .subscribe-form-compact input { flex: 1; padding: 12px; border: 1px solid #333; border-radius: 4px; background: #1a1a2e; color: white; }
+        .subscribe-form-compact { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .subscribe-form-compact input { flex: 1; min-width: 140px; padding: 12px; border: 1px solid #333; border-radius: 4px; background: #1a1a2e; color: white; }
         .subscribe-form-compact button { background: #FF6B35; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-weight: 600; }
         .subscribe-form-compact button:disabled { background: #555; cursor: not-allowed; }
         .subscribe-message { margin-top: 0.75rem; font-size: 0.9rem; }
@@ -226,7 +226,7 @@
                     <a href="#news">News</a>
                     <a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a>
                     <a href="https://dfwasocialbuzz.com/business">Business</a>
-                    <a href="#subscribe-section" onclick="navToSubscribe(event)" style="color:#aaa;text-decoration:none;font-size:0.9rem;">Subscribe</a>
+                    <a href="https://app.quizforma.com/q/9sZIVo5jd461ltL" target="_blank" style="color:#aaa;text-decoration:none;font-size:0.9rem;">Subscribe</a>
                 </div>
             </div>
             
@@ -254,24 +254,27 @@
         <p style="color: #4CAF50; font-size: 0.9rem; margin-top: 0.5rem;">Arlington coverage is live now.</p>
     </section>
 
-    <!-- PHASE 1: Action Buttons Bar with Compact Subscribe -->
+    <!-- PHASE 1: Action Buttons Bar with Get Featured Inline Form -->
     <section class="action-bar">
         <div class="action-buttons">
-            <button class="action-btn subscribe" onclick="navToSubscribe(event)">📧 Subscribe</button>
+            <a href="https://app.quizforma.com/q/9sZIVo5jd461ltL" target="_blank" class="action-btn subscribe">📧 Subscribe</a>
             <a href="https://dfwasocialbuzz.com/deals?cities=arlington" class="action-btn deals">💰 Local Deals</a>
-            <a href="https://dfwasocialbuzz.com/business" class="action-btn business">🏢 Get Featured</a>
+            <button class="action-btn business" onclick="toggleFeaturedForm()">🏢 Get Featured</button>
         </div>
 
-        <!-- Compact Subscribe Module -->
-        <div id="subscribe-module" class="subscribe-module">
-            <h3>Subscribe to Arlington Pulse</h3>
-            <p>Get local news, deals, and events delivered weekly.</p>
-            <form class="subscribe-form-compact" id="subscribe-form" onsubmit="handleSubscribe(event)">
-                <input type="email" name="email" placeholder="Your email address" required>
-                <button type="submit">Subscribe</button>
+        <!-- Get Featured Inline Form -->
+        <div id="featured-module" class="subscribe-module">
+            <h3>Get Featured in Arlington Pulse</h3>
+            <p>Reach 2,500+ Arlington readers. Starting at $300/month.</p>
+            <form class="subscribe-form-compact" id="featured-form" onsubmit="handleGetFeatured(event)">
+                <input type="text" name="firstName" placeholder="First name" required>
+                <input type="text" name="businessName" placeholder="Business name" required>
+                <input type="email" name="email" placeholder="Email address" required>
+                <input type="tel" name="phone" placeholder="Phone number">
+                <button type="submit">Send My Info →</button>
             </form>
-            <div id="subscribe-message" class="subscribe-message"></div>
-            <span class="close-subscribe" onclick="toggleSubscribe()">← Close</span>
+            <div id="featured-message" class="subscribe-message"></div>
+            <span class="close-subscribe" onclick="toggleFeaturedForm()">← Close</span>
         </div>
     </section>
 
@@ -715,9 +718,9 @@
         <!-- Repeated action buttons at bottom -->
         <section class="action-bar" style="margin-top: 2rem; margin-bottom: 2rem;">
             <div class="action-buttons">
-                <button class="action-btn subscribe" onclick="navToSubscribe(event)">📧 Subscribe</button>
+                <a href="https://app.quizforma.com/q/9sZIVo5jd461ltL" target="_blank" class="action-btn subscribe">📧 Subscribe</a>
                 <a href="https://dfwasocialbuzz.com/deals?cities=arlington" class="action-btn deals">💰 Local Deals</a>
-                <a href="https://dfwasocialbuzz.com/business" class="action-btn business">🏢 Get Featured</a>
+                <button class="action-btn business" onclick="toggleFeaturedForm()">🏢 Get Featured</button>
             </div>
         </section>
         
@@ -759,7 +762,7 @@
                 <h4>Get In Touch</h4>
                 <ul>
                     <li><a href="https://dfwasocialbuzz.com/contact">Contact Us</a></li>
-                    <li><a href="#subscribe-section" onclick="navToSubscribe(event); return false;">Subscribe</a></li>
+                    <li><a href="https://app.quizforma.com/q/9sZIVo5jd461ltL" target="_blank">Subscribe</a></li>
                 </ul>
                 <a href="https://dfwasocialbuzz.com/contact" class="contact-btn">Contact Us</a>
             </div>
@@ -921,6 +924,48 @@
             });
         });
     });
+
+    // Get Featured Form Functions
+    function toggleFeaturedForm() {
+        const m = document.getElementById('featured-module');
+        m.classList.toggle('active');
+        if (m.classList.contains('active')) {
+            m.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    }
+
+    async function handleGetFeatured(e) {
+        e.preventDefault();
+        const form = e.target;
+        const btn = form.querySelector('button[type="submit"]');
+        const msg = document.getElementById('featured-message');
+        btn.disabled = true;
+        btn.textContent = 'Sending...';
+        try {
+            const r = await fetch('/api/get-featured', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    firstName: form.firstName.value,
+                    businessName: form.businessName.value,
+                    email: form.email.value,
+                    phone: form.phone.value
+                })
+            });
+            if (r.ok) {
+                msg.className = 'subscribe-message success';
+                msg.textContent = '✓ Got it! We will be in touch within 24 hours.';
+                form.reset();
+            } else {
+                throw new Error();
+            }
+        } catch {
+            msg.className = 'subscribe-message error';
+            msg.textContent = 'Something went wrong. Try again.';
+            btn.disabled = false;
+            btn.textContent = 'Send My Info →';
+        }
+    }
     </script>
 </body>
 </html>

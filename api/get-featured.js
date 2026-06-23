@@ -1,5 +1,5 @@
-// Arlington Pulse Subscribe API Endpoint
-// Creates contact in Global Control with quadrant-based tagging
+// Arlington Pulse Get Featured API Endpoint
+// Creates advertiser lead contact in Global Control
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   try {
-    const { firstName, email, quadrants } = req.body;
+    const { firstName, lastName, email, phone, businessName, city } = req.body;
 
     if (!email) {
       return res.status(400).json({ success: false, message: 'Email is required' });
@@ -30,17 +30,20 @@ export default async function handler(req, res) {
     const contactData = {
       email: email,
       firstName: firstName || '',
-      lastName: '',
+      lastName: lastName || '',
+      phone: phone || '',
       customFields: {
-        subscriber_type: 'newsletter',
-        source_form_id: 'arlington_subscribe',
+        business_name: businessName || '',
+        city: city || 'Arlington',
+        lead_type: 'advertiser',
+        source_form_id: 'arlington_get_featured',
         entry_point: 'arlington_pulse_homepage',
-        subscription_date: new Date().toISOString(),
-        city_interest: 'Arlington'
+        submission_date: new Date().toISOString(),
+        interest: 'advertising'
       }
     };
 
-    console.log('Creating contact in Global Control:', JSON.stringify(contactData, null, 2));
+    console.log('Creating advertiser lead in Global Control:', JSON.stringify(contactData, null, 2));
 
     const gcResponse = await fetch('https://api.globalcontrol.io/api/ai/contacts', {
       method: 'POST',
@@ -65,21 +68,10 @@ export default async function handler(req, res) {
     const gcData = await gcResponse.json();
     const contactId = gcData._id || gcData.id;
     
-    console.log('Contact created:', contactId);
+    console.log('Advertiser lead created:', contactId);
 
     // Step 2: Fire tags on the contact
-    // Always apply arlington-subscriber tag
-    const tagsToApply = ['arlington-subscriber'];
-    
-    // Add quadrant tags if quadrants were selected
-    if (Array.isArray(quadrants) && quadrants.length > 0) {
-      quadrants.forEach(quadrant => {
-        const normalizedQuadrant = quadrant.toLowerCase().trim();
-        if (['north', 'south', 'central', 'east'].includes(normalizedQuadrant)) {
-          tagsToApply.push(`arlington-${normalizedQuadrant}`);
-        }
-      });
-    }
+    const tagsToApply = ['arlington-advertiser', 'arlington-get-featured'];
 
     // Fire each tag
     const tagResults = [];
@@ -150,18 +142,19 @@ export default async function handler(req, res) {
 
     return res.status(200).json({
       success: true,
-      message: 'Successfully subscribed',
+      message: 'Successfully submitted',
       contactId: contactId,
       email: email,
+      businessName: businessName,
       tagsApplied: tagsToApply,
       tagResults: tagResults
     });
 
   } catch (error) {
-    console.error('Subscribe error:', error);
+    console.error('Get Featured error:', error);
     return res.status(500).json({
       success: false,
-      message: 'Subscription failed',
+      message: 'Submission failed',
       error: error.message,
       retryable: true
     });
