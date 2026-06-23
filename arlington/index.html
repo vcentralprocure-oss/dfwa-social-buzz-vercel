@@ -206,6 +206,55 @@
         .sponsor-cta-btn:hover { filter:brightness(1.1); transform:translateY(-1px); }
         .sponsor-fine { font-size:0.65rem; color:#5a6d82; margin:0; }
         @media (max-width:768px) { .featured-grid { grid-template-columns:1fr; } .sponsor-card { flex-direction:row; text-align:left; align-items:flex-start; flex-wrap:wrap; } .sponsor-logo-placeholder { max-width:80px; height:48px; } }
+
+        /* ===== QUIZFORMA MODAL OVERLAY ===== */
+        .quiz-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+        .quiz-overlay.active {
+            display: flex;
+        }
+        .quiz-modal-inner {
+            position: relative;
+            width: 90%;
+            max-width: 640px;
+            height: 85vh;
+            background: #0d1b2a;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,107,53,0.3);
+        }
+        .quiz-modal-close {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            z-index: 10;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid #444;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+        .quiz-modal-close:hover { background: #FF6B35; border-color: #FF6B35; }
+        .quiz-modal-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -254,27 +303,12 @@
         <p style="color: #4CAF50; font-size: 0.9rem; margin-top: 0.5rem;">Arlington coverage is live now.</p>
     </section>
 
-    <!-- PHASE 1: Action Buttons Bar with Get Featured Inline Form -->
+    <!-- Action Buttons Bar -->
     <section class="action-bar">
         <div class="action-buttons">
-            <a href="https://app.quizforma.com/q/9sZIVo5jd461ltL" target="_blank" class="action-btn subscribe">📧 Subscribe</a>
+            <button class="action-btn subscribe" onclick="openQuizModal('subscribe-quiz-modal')">📧 Subscribe</button>
             <a href="https://dfwasocialbuzz.com/deals?cities=arlington" class="action-btn deals">💰 Local Deals</a>
-            <button class="action-btn business" onclick="toggleFeaturedForm()">🏢 Get Featured</button>
-        </div>
-
-        <!-- Get Featured Inline Form -->
-        <div id="featured-module" class="subscribe-module">
-            <h3>Get Featured in Arlington Pulse</h3>
-            <p>Reach 2,500+ Arlington readers. Starting at $300/month.</p>
-            <form class="subscribe-form-compact" id="featured-form" onsubmit="handleGetFeatured(event)">
-                <input type="text" name="firstName" placeholder="First name" required>
-                <input type="text" name="businessName" placeholder="Business name" required>
-                <input type="email" name="email" placeholder="Email address" required>
-                <input type="tel" name="phone" placeholder="Phone number">
-                <button type="submit">Send My Info →</button>
-            </form>
-            <div id="featured-message" class="subscribe-message"></div>
-            <span class="close-subscribe" onclick="toggleFeaturedForm()">← Close</span>
+            <button class="action-btn business" onclick="openQuizModal('featured-quiz-modal')">🏢 Get Featured</button>
         </div>
     </section>
 
@@ -718,9 +752,9 @@
         <!-- Repeated action buttons at bottom -->
         <section class="action-bar" style="margin-top: 2rem; margin-bottom: 2rem;">
             <div class="action-buttons">
-                <a href="https://app.quizforma.com/q/9sZIVo5jd461ltL" target="_blank" class="action-btn subscribe">📧 Subscribe</a>
+                <button class="action-btn subscribe" onclick="openQuizModal('subscribe-quiz-modal')">📧 Subscribe</button>
                 <a href="https://dfwasocialbuzz.com/deals?cities=arlington" class="action-btn deals">💰 Local Deals</a>
-                <button class="action-btn business" onclick="toggleFeaturedForm()">🏢 Get Featured</button>
+                <button class="action-btn business" onclick="openQuizModal('featured-quiz-modal')">🏢 Get Featured</button>
             </div>
         </section>
         
@@ -777,6 +811,36 @@
         </div>
     </footer>
     
+    <!-- Subscribe Quiz Modal -->
+    <div id="subscribe-quiz-modal" class="quiz-overlay" onclick="handleModalBackdropClick(event, 'subscribe-quiz-modal')">
+        <div class="quiz-modal-inner">
+            <button class="quiz-modal-close" onclick="closeQuizModal('subscribe-quiz-modal')" aria-label="Close">✕</button>
+            <iframe
+                class="quiz-modal-iframe"
+                id="subscribe-quiz-iframe"
+                src=""
+                data-src="https://app.quizforma.com/q/9sZIVo5jd461ltL"
+                title="Subscribe to Arlington Pulse"
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Get Featured Quiz Modal -->
+    <div id="featured-quiz-modal" class="quiz-overlay" onclick="handleModalBackdropClick(event, 'featured-quiz-modal')">
+        <div class="quiz-modal-inner">
+            <button class="quiz-modal-close" onclick="closeQuizModal('featured-quiz-modal')" aria-label="Close">✕</button>
+            <iframe
+                class="quiz-modal-iframe"
+                id="featured-quiz-iframe"
+                src=""
+                data-src="https://app.quizforma.com/q/9sZIVo5jd461ltL"
+                title="Get Featured in Arlington Pulse"
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
     <!-- EXISTING TRACKING SCRIPT - PRESERVED -->
     <script>
         function trackDealsClick() {
@@ -788,184 +852,51 @@
                 });
             }
         }
-        
-        // Compact Subscribe Module Functions
-        function toggleSubscribe() {
-            const module = document.getElementById('subscribe-module');
-            module.classList.toggle('active');
-            if (module.classList.contains('active')) {
-                setTimeout(() => module.querySelector('input[name="email"]').focus(), 100);
+
+        function openQuizModal(modalId) {
+            const modal = document.getElementById(modalId);
+            const iframe = modal.querySelector('iframe');
+            // Lazy load the iframe src on first open
+            if (!iframe.src || iframe.src === window.location.href) {
+                iframe.src = iframe.dataset.src;
+            }
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeQuizModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function handleModalBackdropClick(event, modalId) {
+            if (event.target === event.currentTarget) {
+                closeQuizModal(modalId);
             }
         }
-        
-        // Navigation Subscribe - jump to section and show module
-        function navToSubscribe(event) {
-            event.preventDefault();
-            const module = document.getElementById('subscribe-module');
-            const section = document.getElementById('subscribe-section');
-            
-            // Show the module
-            module.classList.add('active');
-            
-            // Jump to the section
-            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            
-            // Focus the email input after scroll
-            setTimeout(() => module.querySelector('input[name="email"]').focus(), 300);
-        }
-        
-        async function handleSubscribe(event) {
-            event.preventDefault();
-            const form = event.target;
-            const btn = form.querySelector('button');
-            const message = document.getElementById('subscribe-message');
-            const email = form.email.value;
-            
-            btn.disabled = true;
-            btn.textContent = 'Subscribing...';
-            message.textContent = '';
-            message.className = 'subscribe-message';
-            
-            try {
-                const response = await fetch('/api/subscribe', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        email: email,
-                        city: 'Arlington',
-                        source: 'arlington_homepage'
-                    })
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.quiz-overlay.active').forEach(m => {
+                    closeQuizModal(m.id);
                 });
-                
-                const data = await response.json();
-                
-                if (data.success) {
-                    message.textContent = '✓ Successfully subscribed!';
-                    message.className = 'subscribe-message success';
-                    form.reset();
-                    setTimeout(() => {
-                        toggleSubscribe();
-                        message.textContent = '';
-                    }, 2000);
-                } else {
-                    // Show retry-safe error
-                    const errorMsg = data.retryable 
-                        ? 'Subscription failed. Please try again.'
-                        : (data.message || 'Subscription failed');
-                    throw new Error(errorMsg);
-                }
-            } catch (error) {
-                message.textContent = '✗ ' + error.message;
-                message.className = 'subscribe-message error';
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Subscribe';
-            }
-        }
-        
-        // Check for subscribe query param on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('subscribe') === 'open') {
-                const module = document.getElementById('subscribe-module');
-                const section = document.getElementById('subscribe-section');
-                if (module && section) {
-                    module.classList.add('active');
-                    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    setTimeout(() => module.querySelector('input[name="email"]')?.focus(), 300);
-                }
             }
         });
-        
-        // Legacy newsletter form handler - kept for compatibility
-        const legacyForm = document.getElementById('newsletter-form');
-        if (legacyForm) {
-            legacyForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                const btn = this.querySelector('button');
-                const originalText = btn.textContent;
-                btn.textContent = 'Subscribing...';
-                btn.disabled = true;
-            
-            try {
-                const response = await fetch('/api/subscribe', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        email: this.email.value,
-                        city: 'Arlington',
-                        source: 'website'
-                    })
+
+        // Quadrant filter JS (keep existing filter logic below this line)
+        document.querySelectorAll('.qfilter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.qfilter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.dataset.filter;
+                document.querySelectorAll('.issue-card').forEach(card => {
+                    const q = card.dataset.quadrant || 'all';
+                    card.style.display = (filter === 'all' || q === filter || q === 'all') ? '' : 'none';
                 });
-                
-                if (response.ok) {
-                    btn.textContent = 'Subscribed!';
-                    this.reset();
-                    setTimeout(() => { btn.textContent = originalText; btn.disabled = false; }, 2000);
-                } else {
-                    throw new Error('Subscribe failed');
-                }
-            } catch (error) {
-                btn.textContent = 'Error - Try Again';
-                btn.disabled = false;
-            }
-        });
-    }
-    
-    // Quadrant Filter Functionality
-    document.querySelectorAll('.qfilter-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            document.querySelectorAll('.qfilter-btn').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            const filter = this.dataset.filter;
-            document.querySelectorAll('.issue-card').forEach(card => {
-                const q = card.dataset.quadrant || 'all';
-                card.style.display = (filter === 'all' || q === filter || q === 'all') ? '' : 'none';
             });
         });
-    });
-
-    // Get Featured Form Functions
-    function toggleFeaturedForm() {
-        const m = document.getElementById('featured-module');
-        m.classList.toggle('active');
-        if (m.classList.contains('active')) {
-            m.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-    }
-
-    async function handleGetFeatured(e) {
-        e.preventDefault();
-        const form = e.target;
-        const btn = form.querySelector('button[type="submit"]');
-        const msg = document.getElementById('featured-message');
-        btn.disabled = true;
-        btn.textContent = 'Sending...';
-        try {
-            const r = await fetch('/api/get-featured', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    firstName: form.firstName.value,
-                    businessName: form.businessName.value,
-                    email: form.email.value,
-                    phone: form.phone.value
-                })
-            });
-            if (r.ok) {
-                msg.className = 'subscribe-message success';
-                msg.textContent = '✓ Got it! We will be in touch within 24 hours.';
-                form.reset();
-            } else {
-                throw new Error();
-            }
-        } catch {
-            msg.className = 'subscribe-message error';
-            msg.textContent = 'Something went wrong. Try again.';
-            btn.disabled = false;
-            btn.textContent = 'Send My Info →';
-        }
-    }
     </script>
 </body>
 </html>
