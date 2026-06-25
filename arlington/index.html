@@ -818,10 +818,11 @@
             <iframe
                 class="quiz-modal-iframe"
                 id="subscribe-quiz-iframe"
-                src=""
+                src="about:blank"
                 data-src="https://app.quizforma.com/q/9sZIVo5jd461ltL"
                 title="Subscribe to Arlington Pulse"
-                loading="lazy">
+                allow="fullscreen"
+                style="width:100%;height:100%;border:none;display:block;background:#fff;">
             </iframe>
         </div>
     </div>
@@ -833,10 +834,11 @@
             <iframe
                 class="quiz-modal-iframe"
                 id="featured-quiz-iframe"
-                src=""
+                src="about:blank"
                 data-src="https://app.quizforma.com/q/9sZIVo5jd461ltL"
                 title="Get Featured in Arlington Pulse"
-                loading="lazy">
+                allow="fullscreen"
+                style="width:100%;height:100%;border:none;display:block;background:#fff;">
             </iframe>
         </div>
     </div>
@@ -856,8 +858,8 @@
         function openQuizModal(modalId) {
             const modal = document.getElementById(modalId);
             const iframe = modal.querySelector('iframe');
-            // Lazy load the iframe src on first open
-            if (!iframe.src || iframe.src === window.location.href) {
+            // Load the iframe src on open
+            if (iframe && iframe.dataset.src) {
                 iframe.src = iframe.dataset.src;
             }
             modal.classList.add('active');
