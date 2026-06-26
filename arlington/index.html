@@ -366,12 +366,15 @@
         }
         
         function sendToDFWA(data) {
-            // Placeholder for DFWA analytics endpoint
-            // fetch('https://api.dfwasocialbuzz.com/track', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify(data)
-            // }).catch(err => console.error('DFWA track error:', err));
+            // Send to DFWA tracking endpoint
+            fetch('/api/dfwa-track', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).catch(err => {
+                // Silent fail - don't break user experience
+                if (CONFIG.debug) console.error('DFWA track error:', err);
+            });
         }
         
         // Modal State Management
