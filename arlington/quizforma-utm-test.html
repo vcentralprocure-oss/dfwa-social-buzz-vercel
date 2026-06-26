@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizforma UTM Test - DFWA</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 2rem; max-width: 800px; margin: 0 auto; background: #0a0a14; color: white; }
+        h1 { color: #FF6B35; }
+        .test-section { background: #111122; padding: 1.5rem; margin: 1rem 0; border-radius: 8px; border: 1px solid #333; }
+        .test-url { background: #0a0a0a; padding: 1rem; border-radius: 4px; font-family: monospace; font-size: 0.85rem; word-break: break-all; color: #4CAF50; }
+        button { background: #FF6B35; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-weight: 600; margin: 0.5rem 0; }
+        button:hover { background: #e55a2b; }
+        iframe { width: 100%; height: 500px; border: 1px solid #333; border-radius: 8px; margin-top: 1rem; background: white; }
+        .note { color: #888; font-size: 0.9rem; margin-top: 1rem; }
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid #333; }
+        th { color: #FF6B35; }
+        .status { display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; }
+        .status.pending { background: #f59e0b; color: #000; }
+        .status.pass { background: #22c55e; color: #fff; }
+        .status.fail { background: #ef4444; color: #fff; }
+    </style>
+</head>
+<body>
+    <h1>🧪 Quizforma UTM Parameter Test</h1>
+    <p class="note">This page tests whether Quizforma preserves UTM parameters and includes them in form submissions.</p>
+    
+    <div class="test-section">
+        <h2>Test 1: Direct URL with UTM Parameters</h2>
+        <p>Opening Quizforma with full UTM tracking:</p>
+        <div class="test-url" id="test-url"></div>
+        <button onclick="openTest()">Open Quizforma in New Tab</button>
+        <button onclick="loadInIframe()">Load in Iframe Below</button>
+    </div>
+    
+    <div class="test-section">
+        <h2>UTM Parameter Breakdown</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Value</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>utm_source</td>
+                    <td>dfwa</td>
+                    <td>Traffic source identifier</td>
+                </tr>
+                <tr>
+                    <td>utm_medium</td>
+                    <td>modal</td>
+                    <td>Marketing medium (modal/iframe)</td>
+                </tr>
+                <tr>
+                    <td>utm_campaign</td>
+                    <td>arlington_pulse</td>
+                    <td>Campaign name (city + publication)</td>
+                </tr>
+                <tr>
+                    <td>utm_content</td>
+                    <td>subscribe</td>
+                    <td>CTA type (subscribe/featured/deals)</td>
+                </tr>
+                <tr>
+                    <td>utm_term</td>
+                    <td>test_page</td>
+                    <td>Placement location</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="test-section">
+        <h2>Live Iframe Test</h2>
+        <p class="note">Check if the form loads and whether UTM parameters appear in the submission.</p>
+        <iframe id="test-iframe" src=""></iframe>
+    </div>
+    
+    <div class="test-section">
+        <h2>Expected Behavior</h2>
+        <ul>
+            <li>✅ Quizforma should accept and store all UTM parameters</li>
+            <li>✅ UTM data should appear in submission exports/admin</li>
+            <li>✅ Form should load without errors</li>
+            <li>⚠️ If UTM params are stripped, we need server-side tracking</li>
+        </ul>
+    </div>
+    
+    <div class="test-section">
+        <h2>Verification Steps</h2>
+        <ol>
+            <li>Open the Quizforma link above</li>
+            <li>Complete the form with test data</li>
+            <li>Check Quizforma admin panel for UTM data</li>
+            <li>Export submissions to CSV and verify UTM columns</li>
+        </ol>
+        <p class="note">If UTM parameters are NOT preserved, we'll implement server-side tracking via webhook.</p>
+    </div>
+
+    <script>
+        // Build test URL with UTM parameters
+        const baseUrl = 'https://app.quizforma.com/q/9sZIVo5jd461ltL';
+        const utmParams = new URLSearchParams({
+            utm_source: 'dfwa',
+            utm_medium: 'modal',
+            utm_campaign: 'arlington_pulse',
+            utm_content: 'subscribe',
+            utm_term: 'test_page',
+            test_id: 'utm_verification_' + Date.now()
+        });
+        const testUrl = baseUrl + '?' + utmParams.toString();
+        
+        document.getElementById('test-url').textContent = testUrl;
+        
+        function openTest() {
+            window.open(testUrl, '_blank');
+        }
+        
+        function loadInIframe() {
+            document.getElementById('test-iframe').src = testUrl;
+        }
+        
+        // Auto-load in iframe for immediate testing
+        setTimeout(loadInIframe, 500);
+    </script>
+</body>
+</html>
