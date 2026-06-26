@@ -267,6 +267,32 @@
             font-size: 1rem;
             z-index: 0;
         }
+        .quiz-error {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            z-index: 2;
+            padding: 2rem;
+        }
+        .quiz-error p {
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+        .quiz-fallback-link {
+            display: inline-block;
+            background: #FF6B35;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .quiz-fallback-link:hover {
+            background: #e55a2b;
+        }
     </style>
 </head>
 <body>
@@ -827,7 +853,11 @@
     <div id="subscribe-quiz-modal" class="quiz-overlay" onclick="handleModalBackdropClick(event, 'subscribe-quiz-modal')">
         <div class="quiz-modal-inner">
             <button class="quiz-modal-close" onclick="closeQuizModal('subscribe-quiz-modal')" aria-label="Close">✕</button>
-            <div class="quiz-loading" id="subscribe-quiz-loading">Loading...</div>
+            <div class="quiz-loading" id="subscribe-quiz-loading">Loading quiz...</div>
+            <div class="quiz-error" id="subscribe-quiz-error" style="display:none;">
+                <p>Unable to load the form. Please try the direct link:</p>
+                <a href="https://app.quizforma.com/q/9sZIVo5jd461ltL" target="_blank" class="quiz-fallback-link">Open Subscribe Form →</a>
+            </div>
             <iframe
                 class="quiz-modal-iframe"
                 id="subscribe-quiz-iframe"
@@ -835,7 +865,8 @@
                 data-src="https://app.quizforma.com/q/9sZIVo5jd461ltL"
                 title="Subscribe to Arlington Pulse"
                 allow="fullscreen"
-                onload="document.getElementById('subscribe-quiz-loading').style.display='none'">
+                onload="handleQuizLoad('subscribe-quiz-loading', 'subscribe-quiz-error')"
+                onerror="handleQuizError('subscribe-quiz-loading', 'subscribe-quiz-error')">
             </iframe>
         </div>
     </div>
@@ -844,7 +875,11 @@
     <div id="featured-quiz-modal" class="quiz-overlay" onclick="handleModalBackdropClick(event, 'featured-quiz-modal')">
         <div class="quiz-modal-inner">
             <button class="quiz-modal-close" onclick="closeQuizModal('featured-quiz-modal')" aria-label="Close">✕</button>
-            <div class="quiz-loading" id="featured-quiz-loading">Loading...</div>
+            <div class="quiz-loading" id="featured-quiz-loading">Loading quiz...</div>
+            <div class="quiz-error" id="featured-quiz-error" style="display:none;">
+                <p>Unable to load the form. Please try the direct link:</p>
+                <a href="https://app.quizforma.com/q/9sZIVo5jd461ltL" target="_blank" class="quiz-fallback-link">Open Get Featured Form →</a>
+            </div>
             <iframe
                 class="quiz-modal-iframe"
                 id="featured-quiz-iframe"
@@ -852,7 +887,8 @@
                 data-src="https://app.quizforma.com/q/9sZIVo5jd461ltL"
                 title="Get Featured in Arlington Pulse"
                 allow="fullscreen"
-                onload="document.getElementById('featured-quiz-loading').style.display='none'">
+                onload="handleQuizLoad('featured-quiz-loading', 'featured-quiz-error')"
+                onerror="handleQuizError('featured-quiz-loading', 'featured-quiz-error')">
             </iframe>
         </div>
     </div>
@@ -867,6 +903,22 @@
                     transport_type: 'beacon'
                 });
             }
+        }
+
+        function handleQuizLoad(loadingId, errorId) {
+            const loading = document.getElementById(loadingId);
+            const error = document.getElementById(errorId);
+            if (loading) loading.style.display = 'none';
+            if (error) error.style.display = 'none';
+            console.log('Quiz loaded successfully');
+        }
+
+        function handleQuizError(loadingId, errorId) {
+            const loading = document.getElementById(loadingId);
+            const error = document.getElementById(errorId);
+            if (loading) loading.style.display = 'none';
+            if (error) error.style.display = 'block';
+            console.error('Quiz failed to load');
         }
 
         function openQuizModal(modalId) {
