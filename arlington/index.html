@@ -254,6 +254,18 @@
             height: 100%;
             border: none;
             display: block;
+            background: #fff;
+            position: relative;
+            z-index: 1;
+        }
+        .quiz-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 1rem;
+            z-index: 0;
         }
     </style>
 </head>
@@ -815,14 +827,15 @@
     <div id="subscribe-quiz-modal" class="quiz-overlay" onclick="handleModalBackdropClick(event, 'subscribe-quiz-modal')">
         <div class="quiz-modal-inner">
             <button class="quiz-modal-close" onclick="closeQuizModal('subscribe-quiz-modal')" aria-label="Close">✕</button>
+            <div class="quiz-loading" id="subscribe-quiz-loading">Loading...</div>
             <iframe
                 class="quiz-modal-iframe"
                 id="subscribe-quiz-iframe"
-                src="about:blank"
+                src=""
                 data-src="https://app.quizforma.com/q/9sZIVo5jd461ltL"
                 title="Subscribe to Arlington Pulse"
                 allow="fullscreen"
-                style="width:100%;height:100%;border:none;display:block;background:#fff;">
+                onload="document.getElementById('subscribe-quiz-loading').style.display='none'">
             </iframe>
         </div>
     </div>
@@ -831,14 +844,15 @@
     <div id="featured-quiz-modal" class="quiz-overlay" onclick="handleModalBackdropClick(event, 'featured-quiz-modal')">
         <div class="quiz-modal-inner">
             <button class="quiz-modal-close" onclick="closeQuizModal('featured-quiz-modal')" aria-label="Close">✕</button>
+            <div class="quiz-loading" id="featured-quiz-loading">Loading...</div>
             <iframe
                 class="quiz-modal-iframe"
                 id="featured-quiz-iframe"
-                src="about:blank"
+                src=""
                 data-src="https://app.quizforma.com/q/9sZIVo5jd461ltL"
                 title="Get Featured in Arlington Pulse"
                 allow="fullscreen"
-                style="width:100%;height:100%;border:none;display:block;background:#fff;">
+                onload="document.getElementById('featured-quiz-loading').style.display='none'">
             </iframe>
         </div>
     </div>
@@ -858,18 +872,28 @@
         function openQuizModal(modalId) {
             const modal = document.getElementById(modalId);
             const iframe = modal.querySelector('iframe');
-            // Load the iframe src on open
-            if (iframe && iframe.dataset.src) {
-                iframe.src = iframe.dataset.src;
-            }
+            const loadingDiv = modal.querySelector('.quiz-loading');
+            
+            // Show modal first
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
+            
+            // Load the iframe src
+            if (iframe && iframe.dataset.src && (!iframe.src || iframe.src === '')) {
+                iframe.src = iframe.dataset.src;
+                if (loadingDiv) loadingDiv.style.display = 'block';
+            }
         }
 
         function closeQuizModal(modalId) {
             const modal = document.getElementById(modalId);
+            const iframe = modal.querySelector('iframe');
             modal.classList.remove('active');
             document.body.style.overflow = '';
+            // Clear iframe src to stop loading and allow fresh load next time
+            if (iframe) {
+                iframe.src = '';
+            }
         }
 
         function handleModalBackdropClick(event, modalId) {
