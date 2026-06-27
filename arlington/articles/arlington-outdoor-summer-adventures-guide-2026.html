@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Ultimate Guide to Arlington's Outdoor Summer Adventures | Arlington Pulse</title>
+    <meta name="description" content="Discover the best outdoor adventures in Arlington this summer—from River Legacy Parks to Levitt Pavilion concerts. Plus: local businesses to fuel your adventures.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article Styles */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        
+        .article-header { margin-bottom: 2rem; }
+        .article-header h1 { font-size: 2.5rem; color: #FF6B35; margin-bottom: 1rem; line-height: 1.2; }
+        .article-meta { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .article-meta span { margin-right: 1.5rem; }
+        
+        .featured-image { width: 100%; height: auto; border-radius: 12px; margin-bottom: 2rem; }
+        .image-caption { color: #666; font-size: 0.85rem; text-align: center; margin-top: -1rem; margin-bottom: 2rem; }
+        
+        .article-content { font-size: 1.1rem; line-height: 1.8; color: #ddd; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { color: #FF6B35; font-size: 1.5rem; margin: 2.5rem 0 1rem; }
+        .article-content h3 { color: #fff; font-size: 1.2rem; margin: 2rem 0 0.75rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content strong { color: #fff; }
+        
+        /* Business Cards */
+        .business-card { background: #111122; border: 1px solid #333; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; transition: border-color 0.2s; }
+        .business-card:hover { border-color: #FF6B35; }
+        .business-card h3 { color: #FF6B35; margin: 0 0 0.5rem; font-size: 1.3rem; }
+        .business-card p { color: #aaa; margin-bottom: 0.75rem; font-size: 1rem; }
+        .business-card .cta { display: inline-block; background: #FF6B35; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 0.5rem; }
+        .business-card .cta:hover { background: #e55a2b; text-decoration: none; }
+        
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; text-align: center; margin: 3rem 0; }
+        .cta-box h3 { color: white; font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; }
+        .cta-box .btn { background: white; color: #FF6B35; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        .cta-box .btn:hover { background: #f0f0f0; }
+        
+        .subscribe-box { background: #111122; border: 2px solid #FF6B35; border-radius: 12px; padding: 2rem; text-align: center; margin: 3rem 0; }
+        .subscribe-box h3 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .subscribe-box p { color: #888; margin-bottom: 1.5rem; }
+        .subscribe-box .btn { background: #FF6B35; color: white; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        
+        /* Internal Links */
+        .related-articles { background: #111122; border-radius: 12px; padding: 2rem; margin: 3rem 0; }
+        .related-articles h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .related-articles ul { list-style: none; }
+        .related-articles li { margin-bottom: 0.75rem; }
+        .related-articles a { color: #aaa; text-decoration: none; }
+        .related-articles a:hover { color: #FF6B35; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; margin-top: 4rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-brand .powered-by { color: #666; font-size: 0.8rem; margin-top: 1rem; }
+        .footer-brand .powered-by a { color: #FF6B35; text-decoration: none; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            .top-header-content { flex-direction: column; gap: 0.75rem; }
+            .article-header h1 { font-size: 1.8rem; }
+            .article-container { padding: 1rem; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">Arlington Pulse</div>
+                    <div class="sub">Powered by DFWA Social Buzz</div>
+                </div>
+            </div>
+            
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/arlington/">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business">Business</a>
+                </div>
+            </div>
+            
+            <nav class="city-nav">
+                <a href="/arlington/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <h1>Your Ultimate Guide to Arlington's Outdoor Summer Adventures: Where to Hike, Bike & Explore</h1>
+            <div class="article-meta">
+                <span>📅 June 24, 2026</span>
+                <span>📍 Arlington, TX</span>
+                <span>🏷️ Local Guide</span>
+            </div>
+        </header>
+        
+        <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&h=675&fit=crop" alt="Hiking trail through forest" class="featured-image">
+        <p class="image-caption">Photo by David Marcu on Unsplash</p>
+        
+        <div class="article-content">
+            <p>Summer is in full swing in The American Dream City, and there's no better time to get outside and explore everything Arlington has to offer. From scenic trails to hidden parks, our city is packed with outdoor adventures that won't cost you a dime.</p>
+            
+            <p>Whether you're a longtime resident looking to rediscover your hometown or a newcomer eager to explore, this guide will take you through the best outdoor spots in Arlington—plus the local businesses that make every adventure even better.</p>
+            
+            <h2>🌳 River Legacy Parks: Arlington's Hidden Natural Wonderland</h2>
+            
+            <p>If you haven't explored <a href="https://www.riverlegacy.org/" target="_blank"><strong>River Legacy Parks</strong></a> yet, you're missing out on one of DFW's best-kept secrets. This 1,300-acre urban oasis stretches along the Trinity River and offers over 8 miles of paved trails perfect for biking, jogging, or a leisurely stroll.</p>
+            
+            <p>The park's dense forests are home to wildlife you wouldn't expect to find in a major city—deer, bobcats, and over 200 species of birds. Early morning visitors often spot herons fishing along the riverbank while the mist still hangs over the water. It's the kind of peaceful escape that makes you forget you're minutes from AT&T Stadium.</p>
+            
+            <p>Don't miss the <a href="https://www.riverlegacy.org/visit/living-science-center/" target="_blank"><strong>River Legacy Living Science Center</strong></a> while you're there. The interactive exhibits and nature trails make it perfect for families, and the weekly guided nature walks are led by experts who know every hidden corner of the park.</p>
+            
+            <div class="business-card">
+                <h3>River Legacy Parks</h3>
+                <p>🌲 1,300 acres of nature trails, wildlife viewing, and outdoor recreation along the Trinity River.</p>
+                <p>📍 703 NW Green Oaks Blvd, Arlington, TX</p>
+                <a href="https://www.riverlegacy.org/" target="_blank" class="cta">Visit Website →</a>
+            </div>
+            
+            <h2>🚴 The Arlington Trail Network: Bike Your Way Across the City</h2>
+            
+            <p>Arlington's trail system has exploded in recent years, and the <a href="https://www.arlingtontx.gov/parks_recreation/trails" target="_blank"><strong>Arlington Trail Network</strong></a> now connects neighborhoods, parks, and entertainment districts like never before. The crown jewel is the <strong>Cooper Street Corridor</strong>, a dedicated bike lane that runs from downtown all the way to the Entertainment District.</p>
+            
+            <p>For a perfect Saturday morning, start at <a href="https://www.levittpavilionarlington.org/" target="_blank"><strong>Levitt Pavilion</strong></a> in downtown, grab coffee from a nearby café, and bike the trail south toward the stadiums. The route takes you through some of Arlington's most scenic areas, including the <strong>Village Creek Historical Area</strong> and the <strong>Johnson Creek Greenbelt</strong>.</p>
+            
+            <p>Need a bike? <a href="https://www.velotrials.com/" target="_blank"><strong>Velo Trials</strong></a> in downtown Arlington offers rentals and repairs, plus they host weekly group rides that are perfect for meeting fellow cycling enthusiasts. Their staff knows every trail in the city and can recommend routes based on your skill level.</p>
+            
+            <div class="business-card">
+                <h3>Velo Trials</h3>
+                <p>🚴 Full-service bike shop with rentals, repairs, and weekly group rides in downtown Arlington.</p>
+                <p>📍 Downtown Arlington</p>
+                <a href="https://www.velotrials.com/" target="_blank" class="cta">Visit Website →</a>
+            </div>
+            
+            <h2>🎭 Levitt Pavilion: Free Concerts Under the Stars</h2>
+            
+            <p>No summer in Arlington is complete without catching a show at <a href="https://www.levittpavilionarlington.org/" target="_blank"><strong>Levitt Pavilion</strong></a>. This outdoor amphitheater in the heart of downtown hosts 50+ free concerts every year, featuring everything from local indie bands to nationally touring acts.</p>
+            
+            <p>Bring a blanket, pack a picnic, and settle in on the lawn as the sun sets behind the downtown skyline. The 2026 summer lineup has been incredible—recent shows have drawn thousands of Arlington residents dancing under the stars. Check their calendar for upcoming performances; there's truly something for every musical taste.</p>
+            
+            <p>The pavilion is surrounded by some of Arlington's best local spots. Arrive early and grab dinner at one of the nearby restaurants, then walk over for the show. It's the perfect summer evening ritual.</p>
+            
+            <div class="business-card">
+                <h3>Levitt Pavilion Arlington</h3>
+                <p>🎵 Free outdoor concerts in downtown Arlington. 50+ shows every summer, all genres welcome.</p>
+                <p>📍 100 W Abram St, Arlington, TX</p>
+                <a href="https://www.levittpavilionarlington.org/" target="_blank" class="cta">Visit Website →</a>
+            </div>
+            
+            <h2>🏞️ Veterans Park: The Perfect Family Picnic Spot</h2>
+            
+            <p>For a more relaxed outdoor experience, <a href="https://www.arlingtontx.gov/parks_recreation/parks/veterans_park" target="_blank"><strong>Veterans Park</strong></a> offers 96 acres of green space perfect for family gatherings, casual sports, or just lounging in the shade. The park features a beautiful lake with a walking trail, playgrounds for the kids, and plenty of picnic tables with grills.</p>
+            
+            <p>The <strong>Arlington Veterans Memorial</strong> located within the park is worth a visit on its own. The moving tribute honors local veterans and provides a peaceful space for reflection. Every Memorial Day, the park hosts ceremonies that draw thousands of residents.</p>
+            
+            <p>After your park visit, head over to <a href="https://www.babeschicken.com/" target="_blank"><strong>Babe's Chicken Dinner House</strong></a> on Division Street—it's practically a rite of passage for Arlington families. The all-you-can-eat fried chicken and family-style sides have made it a local institution for decades.</p>
+            
+            <div class="business-card">
+                <h3>Babe's Chicken Dinner House</h3>
+                <p>🍗 Legendary family-style fried chicken restaurant. An Arlington institution since 1981.</p>
+                <p>📍 2300 W Division St, Arlington, TX</p>
+                <a href="https://www.babeschicken.com/" target="_blank" class="cta">Visit Website →</a>
+            </div>
+            
+            <h2>🌊 Lake Arlington: Water Adventures Close to Home</h2>
+            
+            <p>When the Texas heat hits its peak, <a href="https://www.arlingtontx.gov/parks_recreation/lake_arlington" target="_blank"><strong>Lake Arlington</strong></a> is the place to be. This 2,000-acre reservoir offers boating, fishing, and even a public swimming beach. The <strong>Lake Arlington Golf Course</strong> winds along the shoreline, offering some of the most scenic tee shots in DFW.</p>
+            
+            <p>Rent a kayak or paddleboard from the marina and explore the coves and inlets that most people never see. Early mornings on the lake are magical—the water is glassy smooth, and you're likely to spot herons, egrets, and maybe even a bald eagle.</p>
+            
+            <p>The <strong>Arlington Yacht Club</strong> welcomes new members and offers sailing lessons for anyone interested in learning to harness the wind. Even if you're not a boat owner, their social events and community regattas are a great way to meet fellow water enthusiasts.</p>
+            
+            <h2>Make This Summer Count</h2>
+            
+            <p>Arlington's outdoor scene has never been better. From the wild beauty of River Legacy to the urban energy of the Levitt Pavilion, there's an adventure waiting for everyone. The best part? Most of these experiences are completely free.</p>
+            
+            <p>So grab your bike, pack a picnic, and get outside. Summer in The American Dream City is calling—and trust us, you don't want to miss it.</p>
+            
+            <div class="cta-box">
+                <h3>Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach thousands of local readers who support local businesses.</p>
+                <a href="https://dfwasocialbuzz.com/business" class="btn">Get Featured →</a>
+            </div>
+            
+            <div class="subscribe-box">
+                <h3>Get More Arlington Guides</h3>
+                <p>Subscribe to Arlington Pulse for weekly local news, business spotlights, and exclusive deals delivered to your inbox.</p>
+                <a href="https://app.quizforma.com/q/9sZIVo5jd461ltL?utm_source=article&utm_medium=web&utm_campaign=outdoor-summer-adventures" class="btn">Subscribe Now →</a>
+            </div>
+            
+            <div class="related-articles">
+                <h3>More Arlington Stories</h3>
+                <ul>
+                    <li><a href="/arlington/articles/arlington-local-gems-5-businesses-defining-2026.html">→ 5 Arlington Local Gems Defining Our City's Food Scene in 2026</a></li>
+                    <li><a href="/arlington/articles/arlington-summer-dining-5-local-spots-june-22-2026.html">→ Arlington's Summer Dining Scene Heats Up: 5 Local Spots You Need to Try</a></li>
+                    <li><a href="/arlington/articles/this-weekend-arlington-june-20-21-2026.html">→ This Weekend in Arlington: Live Music, World Cup Watch Parties & Summer Fun</a></li>
+                    <li><a href="/arlington/articles/arlington-coffee-renaissance-5-local-cafes.html">→ Arlington's Coffee Renaissance: 5 Local Cafés Brewing Community</a></li>
+                    <li><a href="/arlington/articles/downtown-arlington-urban-union-expansion-2026.html">→ Downtown Arlington's Urban Union District: The Expansion Redefining Our City</a></li>
+                </ul>
+            </div>
+        </div>
+    </article>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <div class="tagline">Your local guide to Arlington, TX</div>
+                <div class="powered-by">Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/arlington/">Latest News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals?cities=arlington">Local Deals</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Other Cities</h4>
+                <ul>
+                    <li><a href="/dallas/">Dallas Current</a></li>
+                    <li><a href="/fort-worth/">Fort Worth Eco</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/contact">Contact Us</a></li>
+                    <li><a href="https://app.quizforma.com/q/9sZIVo5jd461ltL">Subscribe</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 DFWA Social Buzz. Arlington Pulse is part of the DFWA Social Buzz network.</p>
+        </div>
+    </footer>
+</body>
+</html>
