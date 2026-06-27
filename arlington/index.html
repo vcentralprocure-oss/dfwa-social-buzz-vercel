@@ -769,7 +769,9 @@
                     const filter = this.dataset.filter;
                     document.querySelectorAll('.issue-card').forEach(card => {
                         const q = card.dataset.quadrant || 'all';
-                        card.style.display = (filter === 'all' || q === filter || q === 'all') ? '' : 'none';
+                        // Show card if: filter is 'all', OR card's quadrant matches the filter
+                        const shouldShow = (filter === 'all') || (q === filter);
+                        card.style.display = shouldShow ? '' : 'none';
                     });
                 });
             });
