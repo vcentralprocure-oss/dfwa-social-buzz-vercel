@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to Arlington Pulse | DFWA Social Buzz</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        
+        /* Page Header */
+        .page-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 3rem 2rem; text-align: center; border-bottom: 2px solid #FF6B35; }
+        .page-header h1 { color: #FF6B35; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .page-header p { color: #888; font-size: 1rem; max-width: 600px; margin: 0 auto; }
+        
+        /* Embed Container */
+        .embed-container { max-width: 900px; margin: 0 auto; padding: 2rem; min-height: 600px; }
+        .embed-wrapper { background: #111122; border: 1px solid #333; border-radius: 12px; overflow: hidden; min-height: 500px; }
+        .embed-wrapper iframe { width: 100%; min-height: 600px; border: none; display: block; }
+        
+        /* Loading State */
+        .embed-loading { text-align: center; padding: 3rem; color: #888; }
+        .embed-loading::after { content: ""; display: inline-block; width: 20px; height: 20px; border: 2px solid #333; border-top-color: #FF6B35; border-radius: 50%; margin-left: 10px; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        /* Footer */
+        .simple-footer { background: #0a0a0a; padding: 2rem; text-align: center; border-top: 1px solid #222; }
+        .simple-footer a { color: #FF6B35; text-decoration: none; }
+        .simple-footer a:hover { text-decoration: underline; }
+        
+        @media (max-width: 768px) {
+            .page-header { padding: 2rem 1rem; }
+            .page-header h1 { font-size: 1.5rem; }
+            .embed-container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <a href="/arlington/" class="logo-section">
+                <div class="logo-img">AP</div>
+                <div class="logo-text">
+                    <div class="main">Arlington Pulse</div>
+                    <div class="sub">Local News & Deals</div>
+                </div>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Subscribe to Arlington Pulse</h1>
+        <p>Get the best of Arlington delivered to your inbox. Local news, events, and deals — weekly.</p>
+    </section>
+    
+    <!-- QuizForma Embed -->
+    <div class="embed-container">
+        <div class="embed-wrapper">
+            <div class="embed-loading" id="loading">Loading subscription form</div>
+            <iframe 
+                src="https://api.quizforma.com/page/quiz/9sZIVo5jd461ltL" 
+                title="Subscribe to Arlington Pulse"
+                allow="fullscreen"
+                onload="document.getElementById('loading').style.display='none'">
+            </iframe>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="simple-footer">
+        <p><a href="/arlington/">← Back to Arlington Pulse</a></p>
+    </footer>
+</body>
+</html>
