@@ -7,7 +7,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
-        
+
         /* Header */
         .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
         .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
@@ -16,31 +16,143 @@
         .logo-section .logo-text { color: white; }
         .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
         .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
-        
+
         /* Page Header */
         .page-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 3rem 2rem; text-align: center; border-bottom: 2px solid #FF6B35; }
         .page-header h1 { color: #FF6B35; font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
         .page-header p { color: #888; font-size: 1rem; max-width: 600px; margin: 0 auto; }
-        
-        /* Embed Container */
-        .embed-container { max-width: 900px; margin: 0 auto; padding: 2rem; min-height: 600px; }
-        .embed-wrapper { background: #111122; border: 1px solid #333; border-radius: 12px; overflow: hidden; min-height: 500px; }
-        .embed-wrapper iframe { width: 100%; min-height: 600px; border: none; display: block; }
-        
+
+        /* Main Content */
+        .main-content { max-width: 800px; margin: 0 auto; padding: 2rem; }
+
+        /* Dark Card Container */
+        .quiz-card {
+            background: #111122;
+            border: 1px solid rgba(255,107,53,0.2);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+
+        .quiz-card-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .quiz-card-header h2 {
+            color: #FF6B35;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .quiz-card-header p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Embed Wrapper */
+        .embed-wrapper {
+            background: #0a0a14;
+            border: 1px solid #222;
+            border-radius: 12px;
+            overflow: hidden;
+            min-height: 500px;
+            position: relative;
+        }
+
+        .embed-wrapper iframe {
+            width: 100%;
+            min-height: 600px;
+            border: none;
+            display: block;
+            background: #ffffff;
+        }
+
         /* Loading State */
-        .embed-loading { text-align: center; padding: 3rem; color: #888; }
-        .embed-loading::after { content: ""; display: inline-block; width: 20px; height: 20px; border: 2px solid #333; border-top-color: #FF6B35; border-radius: 50%; margin-left: 10px; animation: spin 1s linear infinite; }
+        .embed-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #888;
+            padding: 2rem;
+        }
+
+        .embed-loading::after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid #333;
+            border-top-color: #FF6B35;
+            border-radius: 50%;
+            margin: 1rem auto 0;
+            animation: spin 1s linear infinite;
+        }
+
         @keyframes spin { to { transform: rotate(360deg); } }
-        
+
+        /* Fallback Link */
+        .fallback-notice {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .fallback-notice p {
+            color: #666;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .fallback-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            color: #FF6B35;
+            border: 2px solid #FF6B35;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .fallback-link:hover {
+            background: #FF6B35;
+            color: white;
+        }
+
         /* Footer */
-        .simple-footer { background: #0a0a0a; padding: 2rem; text-align: center; border-top: 1px solid #222; }
-        .simple-footer a { color: #FF6B35; text-decoration: none; }
-        .simple-footer a:hover { text-decoration: underline; }
-        
+        .simple-footer {
+            background: #0a0a0a;
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid #222;
+            margin-top: 2rem;
+        }
+
+        .simple-footer a {
+            color: #FF6B35;
+            text-decoration: none;
+        }
+
+        .simple-footer a:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .page-header { padding: 2rem 1rem; }
             .page-header h1 { font-size: 1.5rem; }
-            .embed-container { padding: 1rem; }
+            .main-content { padding: 1rem; }
+            .quiz-card { padding: 1.5rem; }
+            .embed-wrapper iframe { min-height: 500px; }
         }
     </style>
 </head>
@@ -57,26 +169,40 @@
             </a>
         </div>
     </div>
-    
+
     <!-- Page Header -->
     <section class="page-header">
         <h1>Subscribe to Arlington Pulse</h1>
         <p>Get the best of Arlington delivered to your inbox. Local news, events, and deals — weekly.</p>
     </section>
-    
+
     <!-- QuizForma Embed -->
-    <div class="embed-container">
-        <div class="embed-wrapper">
-            <div class="embed-loading" id="loading">Loading subscription form</div>
-            <iframe 
-                src="https://api.quizforma.com/page/quiz/9sZIVo5jd461ltL" 
-                title="Subscribe to Arlington Pulse"
-                allow="fullscreen"
-                onload="document.getElementById('loading').style.display='none'">
-            </iframe>
+    <main class="main-content">
+        <div class="quiz-card">
+            <div class="quiz-card-header">
+                <h2>📧 Join 2,500+ Arlington Readers</h2>
+                <p>Weekly local news, events, and deals. No spam, unsubscribe anytime.</p>
+            </div>
+
+            <div class="embed-wrapper">
+                <div class="embed-loading" id="loading">Loading subscription form...</div>
+                <iframe
+                    src="https://api.quizforma.com/page/quiz/9sZIVo5jd461ltL"
+                    title="Subscribe to Arlington Pulse"
+                    allow="fullscreen"
+                    onload="document.getElementById('loading').style.display='none'">
+                </iframe>
+            </div>
+
+            <div class="fallback-notice">
+                <p>Having trouble viewing the form?</p>
+                <a href="https://api.quizforma.com/page/quiz/9sZIVo5jd461ltL" target="_blank" rel="noopener" class="fallback-link">
+                    Open in New Tab ↗
+                </a>
+            </div>
         </div>
-    </div>
-    
+    </main>
+
     <!-- Footer -->
     <footer class="simple-footer">
         <p><a href="/arlington/">← Back to Arlington Pulse</a></p>
