@@ -1,6 +1,19 @@
 {
   "outputDirectory": ".",
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 30
+    }
+  },
   "rewrites": [
+    {
+      "source": "/api/quizforma-webhook",
+      "destination": "/api/quizforma-webhook.js"
+    },
+    {
+      "source": "/api/quizforma-test",
+      "destination": "/api/quizforma-test.js"
+    },
     {
       "source": "/arlington/articles/:slug",
       "destination": "/arlington/articles/:slug.html"

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Downtown Arlington Hidden Gems You Need to Discover This Summer | Arlington Pulse</title>
+    <meta name="description" content="Discover 5 hidden gems in Downtown Arlington, Texas — from craft breweries to vintage arcades and local eateries. Your guide to the best local spots.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: #e0e0e0; line-height: 1.7; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article Header */
+        .article-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 3rem 2rem 2rem; text-align: center; border-bottom: 2px solid #FF6B35; }
+        .article-header h1 { color: #fff; font-size: 2.2rem; font-weight: 700; max-width: 800px; margin: 0 auto 1rem; line-height: 1.3; }
+        .article-meta { color: #888; font-size: 0.9rem; }
+        .article-meta span { margin: 0 0.5rem; }
+        
+        /* Featured Image */
+        .featured-image { width: 100%; max-height: 500px; overflow: hidden; }
+        .featured-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .image-caption { text-align: center; color: #666; font-size: 0.8rem; padding: 0.5rem; font-style: italic; }
+        
+        /* Article Content */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .article-content { font-size: 1.1rem; line-height: 1.8; color: #d0d0d0; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { color: #FF6B35; font-size: 1.5rem; margin: 2.5rem 0 1rem; }
+        .article-content h3 { color: #fff; font-size: 1.2rem; margin: 2rem 0 0.75rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content ul { margin: 1rem 0 1.5rem 2rem; }
+        .article-content li { margin-bottom: 0.5rem; }
+        
+        /* Business Highlight Box */
+        .business-highlight { background: #111122; border-left: 4px solid #FF6B35; padding: 1.5rem; margin: 2rem 0; border-radius: 0 8px 8px 0; }
+        .business-highlight h4 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .business-highlight p { margin-bottom: 0.75rem; font-size: 1rem; }
+        .business-link { display: inline-block; background: #FF6B35; color: white; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .business-link:hover { background: #e55a2b; text-decoration: none; }
+        
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; text-align: center; margin: 3rem 0; }
+        .cta-box h3 { color: white; font-size: 1.4rem; margin-bottom: 0.75rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
+        .cta-box .btn { background: white; color: #FF6B35; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        .cta-box .btn:hover { background: #f0f0f0; }
+        
+        /* Related Articles */
+        .related-section { background: #0f1629; padding: 3rem 2rem; border-top: 1px solid #222; }
+        .related-container { max-width: 800px; margin: 0 auto; }
+        .related-section h3 { color: #FF6B35; font-size: 1.3rem; margin-bottom: 1.5rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .related-card { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 1rem; transition: border-color 0.2s; }
+        .related-card:hover { border-color: #FF6B35; }
+        .related-card a { color: #fff; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+        .related-card a:hover { color: #FF6B35; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            .top-header-content { flex-direction: column; gap: 0.75rem; }
+            .article-header h1 { font-size: 1.6rem; }
+            .related-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">AP</div>
+                <div class="logo-text">
+                    <div class="main">Arlington Pulse</div>
+                    <div class="sub">Local News & Deals</div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <div class="nav-links">
+                    <a href="/arlington/">Latest News</a>
+                    <a href="https://dfwasocialbuzz.com/deals?cities=arlington">Local Deals</a>
+                    <a href="/arlington/articles/">Archives</a>
+                </div>
+                <div class="city-nav">
+                    <a href="/arlington/" class="active">Arlington</a>
+                    <a href="/dallas/">Dallas</a>
+                    <a href="/fort-worth/">Fort Worth</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Article Header -->
+    <header class="article-header">
+        <h1>5 Downtown Arlington Hidden Gems You Need to Discover This Summer</h1>
+        <div class="article-meta">
+            <span>📍 Downtown Arlington</span>
+            <span>•</span>
+            <span>June 28, 2026</span>
+            <span>•</span>
+            <span>5 min read</span>
+        </div>
+    </header>
+    
+    <!-- Featured Image -->
+    <div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1599669291971-306c1ed89dc5?w=1200&h=675&fit=crop" alt="Downtown Arlington street scene" loading="eager">
+    </div>
+    <p class="image-caption">Photo by Courtney Rose on Unsplash</p>
+    
+    <!-- Article Content -->
+    <article class="article-container">
+        <div class="article-content">
+            <p><strong>Summer in The American Dream City is heating up,</strong> and there's no better time to explore the vibrant heart of Arlington. While everyone knows about AT&T Stadium and Six Flags, downtown Arlington holds some of the city's best-kept secrets — from craft breweries pouring local pints to vintage arcades where you can relive your childhood.</p>
+            
+            <p>Whether you're a longtime resident or just passing through, these five downtown gems deserve a spot on your summer bucket list.</p>
+            
+            <h2>1. Division Brewing — Craft Beer with Local Soul</h2>
+            <p>Arlington's first locally-owned brewery since Prohibition, <a href="https://divisionbrewing.com/" target="_blank" rel="noopener">Division Brewing</a> has become a cornerstone of downtown's revival. Located on Main Street, this industrial-chic taproom serves up small-batch beers that rotate seasonally. Their outdoor patio is perfect for summer evenings, and they regularly host live music from local artists.</p>
+            
+            <div class="business-highlight">
+                <h4>🍺 Division Brewing</h4>
+                <p>506 E Main St, Arlington, TX<br>Taproom open Tuesday-Sunday with rotating food trucks</p>
+                <a href="https://divisionbrewing.com/" target="_blank" rel="noopener" class="business-link">Visit Website →</a>
+            </div>
+            
+            <h2>2. Free Play Arcade — Retro Gaming Paradise</h2>
+            <p>Step back in time at <a href="https://www.freeplayarcade.com/" target="_blank" rel="noopener">Free Play Arcade</a>, where vintage pinball machines and classic arcade cabinets line the walls. For a flat entry fee, you get unlimited play on hundreds of games from the '80s and '90s. The downtown location also features a full bar with craft cocktails named after gaming classics.</p>
+            
+            <div class="business-highlight">
+                <h4>🎮 Free Play Arcade</h4>
+                <p>408 E Abram St, Arlington, TX<br>Unlimited play with entry • 21+ after 9pm</p>
+                <a href="https://www.freeplayarcade.com/" target="_blank" rel="noopener" class="business-link">Visit Website →</a>
+            </div>
+            
+            <h2>3. Hurtado Barbecue — Texas BBQ Meets Tex-Mex</h2>
+            <p>When it comes to smoked meats, <a href="https://hurtadobbq.com/" target="_blank" rel="noopener">Hurtado Barbecue</a> is putting Arlington on the map. This downtown hotspot combines traditional Texas barbecue techniques with bold Tex-Mex flavors. Their brisket tacos have developed a cult following, and the house-made sausages are not to be missed. Pro tip: arrive early — they often sell out by mid-afternoon.</p>
+            
+            <div class="business-highlight">
+                <h4>🥩 Hurtado Barbecue</h4>
+                <p>205 E Front St, Arlington, TX<br>Open Wednesday-Sunday until sold out</p>
+                <a href="https://hurtadobbq.com/" target="_blank" rel="noopener" class="business-link">Visit Website →</a>
+            </div>
+            
+            <h2>4. Theatre Arlington — Live Performances in a Historic Venue</h2>
+            <p>For over 45 years, <a href="https://www.theatrearlington.org/" target="_blank" rel="noopener">Theatre Arlington</a> has been the cultural heartbeat of downtown. This intimate 199-seat venue produces professional-quality plays and musicals year-round. Their summer lineup typically includes family-friendly shows perfect for escaping the Texas heat. Check their calendar for upcoming performances and special events.</p>
+            
+            <div class="business-highlight">
+                <h4>🎭 Theatre Arlington</h4>
+                <p>305 W Main St, Arlington, TX<br>Season subscriptions and single tickets available</p>
+                <a href="https://www.theatrearlington.org/" target="_blank" rel="noopener" class="business-link">Visit Website →</a>
+            </div>
+            
+            <h2>5. Downtown Arlington Farmers Market — Local Flavors Every Saturday</h2>
+            <p>Every Saturday morning, the <a href="https://downtownarlington.org/visit/shop-and-play/things-to-do" target="_blank" rel="noopener">Downtown Arlington Farmers Market</a> transforms the city center into a bustling marketplace. Local farmers, artisans, and food vendors gather to sell everything from fresh produce to handmade crafts. It's the perfect way to support local businesses while stocking up on weekend essentials. The market runs year-round, rain or shine.</p>
+            
+            <div class="business-highlight">
+                <h4>🥬 Downtown Arlington Farmers Market</h4>
+                <p>101 W Abram St, Arlington, TX<br>Saturdays 8am-1pm • Year-round</p>
+                <a href="https://downtownarlington.org/visit/shop-and-play/things-to-do" target="_blank" rel="noopener" class="business-link">Learn More →</a>
+            </div>
+            
+            <h2>Plan Your Downtown Adventure</h2>
+            <p>Downtown Arlington is more walkable than ever, with most of these gems clustered within a few blocks of each other. Start with coffee at a local café, spend the afternoon gaming or catching a show, then cap off your evening with craft beer and barbecue. The First Thursdays event series (monthly block parties) adds even more energy to the area — check the <a href="https://downtownarlington.org/" target="_blank" rel="noopener">Downtown Arlington website</a> for upcoming dates.</p>
+            
+            <p><em>Have a favorite downtown spot we missed? Drop us a line — we're always looking for the next hidden gem.</em></p>
+            
+            <!-- Subscribe CTA -->
+            <div class="cta-box">
+                <h3>📧 Get More Arlington Guides</h3>
+                <p>Subscribe to Arlington Pulse for weekly local news, events, and business spotlights delivered to your inbox.</p>
+                <a href="/arlington/subscribe.html?utm_source=article&utm_medium=web&utm_campaign=downtown-gems" class="btn">Subscribe Now</a>
+            </div>
+            
+            <!-- Business Feature CTA -->
+            <div class="cta-box" style="background: linear-gradient(135deg, #2d5a3d 0%, #1e3d29 100%);">
+                <h3>🏢 Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach thousands of local customers who are eager to discover new spots.</p>
+                <a href="https://dfwasocialbuzz.com/business" class="btn" style="color: #2d5a3d;">Get Featured</a>
+            </div>
+        </div>
+    </article>
+    
+    <!-- Related Articles -->
+    <section class="related-section">
+        <div class="related-container">
+            <h3>📰 More Arlington Stories</h3>
+            <div class="related-grid">
+                <div class="related-card">
+                    <a href="/arlington/articles/arlington-coffee-shops-summer-2026.html">5 Arlington Coffee Shops Brewing Something Special</a>
+                </div>
+                <div class="related-card">
+                    <a href="/arlington/articles/july-4th-weekend-guide-2026.html">Your Ultimate Guide to July 4th Weekend</a>
+                </div>
+                <div class="related-card">
+                    <a href="/arlington/articles/arlington-local-gems-5-businesses-defining-2026.html">5 Local Gems Defining Arlington's Food Scene</a>
+                </div>
+                <div class="related-card">
+                    <a href="/arlington/articles/first-thursdays-downtown-arlington-july-2026.html">First Thursdays Returns to Downtown</a>
+                </div>
+                <div class="related-card">
+                    <a href="/arlington/articles/arlington-outdoor-summer-adventures-guide-2026.html">Arlington's Outdoor Summer Adventures</a>
+                </div>
+                <div class="related-card">
+                    <a href="/arlington/articles/">View All Articles →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <div class="tagline">Your local guide to Arlington, TX</div>
+                <div class="powered-by">Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/arlington/">Latest News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals?cities=arlington">Local Deals</a></li>
+                    <li><a href="/arlington/articles/">Archives</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Other Cities</h4>
+                <ul>
+                    <li><a href="/dallas/">Dallas Current</a></li>
+                    <li><a href="/fort-worth/">Fort Worth Eco</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/contact">Contact Us</a></li>
+                    <li><a href="/arlington/subscribe.html">Subscribe</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 DFWA Social Buzz. Arlington Pulse is part of the DFWA Social Buzz network.</p>
+        </div>
+    </footer>
+</body>
+</html>
