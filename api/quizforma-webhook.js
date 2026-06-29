@@ -276,7 +276,9 @@ export default async function handler(req, res) {
 
         let tagId = null;
         if (tagListResponse.ok) {
-          const tags = await tagListResponse.json();
+          const tagData = await tagListResponse.json();
+          // Handle both array response and object with tags property
+          const tags = Array.isArray(tagData) ? tagData : (tagData.tags || []);
           const existingTag = tags.find(t => t.name === tagName);
           if (existingTag) {
             tagId = existingTag._id;
