@@ -5,12 +5,6 @@
       "maxDuration": 30
     }
   },
-  "crons": [
-    {
-      "path": "/api/update-articles",
-      "schedule": "0 */6 * * *"
-    }
-  ],
   "rewrites": [
     {
       "source": "/api/quizforma-webhook",
