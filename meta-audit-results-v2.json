@@ -1,0 +1,488 @@
+[
+  {
+    "file": "5-arlington-businesses-summer-2026.html",
+    "ogUrl": "https://dfwasocialbuzz.com/arlington/articles/5-arlington-businesses-summer-2026.html",
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/5-arlington-businesses-summer-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "5-arlington-local-businesses-summer-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/5-arlington-local-businesses-summer-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "5-arlington-small-businesses-summer-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/5-arlington-small-businesses-summer-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "5-hidden-foodie-gems-arlington.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/5-hidden-foodie-gems-arlington.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "5-local-arlington-gems-summer-2026.html",
+    "ogUrl": "https://dfwasocialbuzz.com/arlington/articles/5-local-arlington-gems-summer-2026.html",
+    "jsonLdId": "https://dfwasocialbuzz.com/arlington/articles/5-local-arlington-gems-summer-2026.html",
+    "jsonLdUrl": "https://dfwasocialbuzz.com/logo.png",
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/5-local-arlington-gems-summer-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-barbecue-renaissance.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-barbecue-renaissance.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-best-local-shops.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-best-local-shops.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-best-patios-spring.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-best-patios-spring.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-best-restaurants-summer-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-best-restaurants-summer-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-brunch-scene-guide.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-brunch-scene-guide.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-coffee-culture-downtown-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-coffee-culture-downtown-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-coffee-renaissance-5-local-cafes.html",
+    "ogUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-coffee-renaissance-5-local-cafes.html",
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-coffee-renaissance-5-local-cafes.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-coffee-scene-guide.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-coffee-scene-guide.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-coffee-shops-summer-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-coffee-shops-summer-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-craft-beer-guide.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-craft-beer-guide.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-entertainment-district-summer-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-entertainment-district-summer-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-entertainment-district-summer-guide.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-entertainment-district-summer-guide.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-farmers-market-guide.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-farmers-market-guide.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-farmers-markets-guide-june-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-farmers-markets-guide-june-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-hidden-gems-local-shops.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-hidden-gems-local-shops.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-june-2026-summer-events-guide.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-june-2026-summer-events-guide.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-live-music-dining-weekend.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-live-music-dining-weekend.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-local-gems-5-businesses-defining-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-local-gems-5-businesses-defining-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-mid-june-buzz-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-mid-june-buzz-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-outdoor-summer-adventures-guide-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-outdoor-summer-adventures-guide-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-summer-dining-5-local-spots-june-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-summer-dining-5-local-spots-june-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-summer-dining-5-local-spots-june-22-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-summer-dining-5-local-spots-june-22-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-summer-dining-hidden-gems-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-summer-dining-hidden-gems-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-summer-dining-scene-june-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-summer-dining-scene-june-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-summer-dining-scene-locals-eating-2026-letterman.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-summer-dining-scene-locals-eating-2026-letterman.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-summer-dining-scene-locals-eating-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-summer-dining-scene-locals-eating-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-summer-newcomers-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-summer-newcomers-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-summer-outdoor-dining-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-summer-outdoor-dining-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-summer-patio-guide-june-8-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-summer-patio-guide-june-8-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-summer-patios-guide-june-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-summer-patios-guide-june-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-test-article.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-test-article.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-weekend-guide-june-6-7-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-weekend-guide-june-6-7-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "arlington-weekend-guide-may-16-17-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/arlington-weekend-guide-may-16-17-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "beat-the-heat-arlington-summer-happy-hours-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/beat-the-heat-arlington-summer-happy-hours-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "beat-the-heat-arlington-summer-patios-2026.html",
+    "ogUrl": "https://dfwasocialbuzz.com/arlington/articles/beat-the-heat-arlington-summer-patios-2026.html",
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/beat-the-heat-arlington-summer-patios-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "downtown-arlington-hidden-gems-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/downtown-arlington-hidden-gems-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "downtown-arlington-urban-union-expansion-2026.html",
+    "ogUrl": "https://dfwasocialbuzz.com/arlington/articles/downtown-arlington-urban-union-expansion-2026.html",
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/downtown-arlington-urban-union-expansion-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "first-thursdays-downtown-arlington-july-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/first-thursdays-downtown-arlington-july-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "july-4th-weekend-guide-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/july-4th-weekend-guide-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "memorial-day-weekend-arlington-2026.html",
+    "ogUrl": "https://dfwasocialbuzz.com/arlington/articles/memorial-day-weekend-arlington-2026.html",
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/memorial-day-weekend-arlington-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "sample-template.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/sample-template.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "this-week-arlington-june-14-20-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/this-week-arlington-june-14-20-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "this-week-arlington-june-18-24-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/this-week-arlington-june-18-24-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "this-week-in-arlington-june-7-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/this-week-in-arlington-june-7-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "this-weekend-arlington-june-13-14-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/this-weekend-arlington-june-13-14-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "this-weekend-arlington-june-20-21-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/this-weekend-arlington-june-20-21-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "this-weekend-arlington-june-6-7-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/this-weekend-arlington-june-6-7-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "this-weekend-arlington-may-30-june-1-2026.html",
+    "ogUrl": null,
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/this-weekend-arlington-may-30-june-1-2026.html",
+    "hasIssues": false,
+    "issues": []
+  },
+  {
+    "file": "where-to-eat-outside-arlington-summer-2026.html",
+    "ogUrl": "https://dfwasocialbuzz.com/arlington/articles/where-to-eat-outside-arlington-summer-2026.html",
+    "jsonLdId": null,
+    "jsonLdUrl": null,
+    "expectedUrl": "https://dfwasocialbuzz.com/arlington/articles/where-to-eat-outside-arlington-summer-2026.html",
+    "hasIssues": false,
+    "issues": []
+  }
+]

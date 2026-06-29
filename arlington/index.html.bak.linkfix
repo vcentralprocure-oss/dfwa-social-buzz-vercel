@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlington Pulse - Local News & Deals | DFWA</title>
+    
+    <!-- JSON-LD Structured Data - DFWA Social Buzz -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsMediaOrganization",
+      "@id": "https://dfwasocialbuzz.com/#organization",
+      "name": "DFWA Social Buzz",
+      "url": "https://dfwasocialbuzz.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dfwasocialbuzz.com/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Your source for local news, events, and community updates across the Dallas-Fort Worth-Arlington metroplex.",
+      "sameAs": [
+        "https://facebook.com/dfwasocialbuzz",
+        "https://twitter.com/dfwasocialbuzz",
+        "https://instagram.com/dfwasocialbuzz"
+      ],
+      "foundingDate": "2024",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dallas-Fort Worth",
+        "addressRegion": "TX",
+        "addressCountry": "US"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://dfwasocialbuzz.com/#website",
+      "name": "DFWA Social Buzz",
+      "url": "https://dfwasocialbuzz.com",
+      "publisher": {
+        "@id": "https://dfwasocialbuzz.com/#organization"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://dfwasocialbuzz.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://arlington.dfwasocialbuzz.com/#webpage",
+      "url": "https://arlington.dfwasocialbuzz.com",
+      "name": "Arlington Pulse - Local News & Events",
+      "description": "Local news, events, and community updates for Arlington, Texas. Stay informed about what's happening in your neighborhood.",
+      "isPartOf": {
+        "@id": "https://dfwasocialbuzz.com/#website"
+      },
+      "about": {
+        "@type": "City",
+        "name": "Arlington",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Texas"
+        }
+      },
+      "publisher": {
+        "@id": "https://dfwasocialbuzz.com/#organization"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://dfwasocialbuzz.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Arlington",
+          "item": "https://arlington.dfwasocialbuzz.com"
+        }
+      ]
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Site Title */
+        .site-title-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 0.75rem 2rem 0.75rem; text-align: center; border-bottom: 2px solid #FF6B35; }
+        .site-title-section h1 { color: #FF6B35; font-size: 2.5rem; font-weight: 700; margin-top: 0; margin-bottom: 0.5rem; }
+        .site-title-section .tagline { color: #888; font-size: 1rem; }
+        
+        /* Action Bar */
+        .action-bar { background: #0f1629; padding: 0.6rem 2rem; border-bottom: 1px solid #222; }
+        .action-buttons { max-width: 900px; margin: 0 auto; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+        .action-btn { padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: all 0.2s; cursor: pointer; border: none; }
+        .action-btn.subscribe { background: #FF6B35; color: white; }
+        .action-btn.deals { background: transparent; color: #FF6B35; border: 2px solid #FF6B35; }
+        .action-btn.business { background: #2d5a3d; color: white; }
+        .action-btn:hover { transform: translateY(-2px); }
+        
+        /* Container */
+        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+        .section-header { margin-bottom: 2rem; }
+        .section-header h2 { font-size: 1.8rem; color: #FF6B35; margin-bottom: 0.5rem; }
+        .section-header p { color: #888; }
+        
+        /* Archive Grid */
+        .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        .issue-card { background: #111122; border-radius: 8px; padding: 1.5rem; border: 1px solid #222; transition: border-color 0.2s, transform 0.2s; }
+        .issue-card:hover { border-color: #FF6B35; transform: translateY(-2px); }
+        .issue-card h4 { color: #FF6B35; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .issue-card .date { color: #666; font-size: 0.85rem; margin-bottom: 0.75rem; }
+        .issue-card p { color: #999; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem; }
+        .issue-card a { color: #FF6B35; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        
+        /* Business CTA */
+        .business-cta { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 3rem 2rem; text-align: center; margin-bottom: 3rem; }
+        .business-cta h2 { font-size: 2rem; margin-bottom: 1rem; }
+        .business-cta p { font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.95; }
+        .business-cta .btn-light { background: white; color: #FF6B35; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        
+        /* Quadrant Filter Bar */
+        .quadrant-filter-bar { display:flex; gap:0.5rem; justify-content:center; padding:0.75rem 1rem; background:#0a0a1a; position:sticky; top:0; z-index:100; flex-wrap:wrap; }
+        .qfilter-btn { padding:0.45rem 1.1rem; border-radius:999px; border:1.5px solid #333; background:transparent; color:#fff; font-size:0.78rem; font-weight:700; cursor:pointer; letter-spacing:0.05em; transition:all 0.15s ease; }
+        .qfilter-btn.active, .qfilter-btn:hover { border-color:#FF6B35; color:#FF6B35; }
+        .qfilter-btn.north.active { border-color:#3B82F6; color:#3B82F6; }
+        .qfilter-btn.south.active { border-color:#22C55E; color:#22C55E; }
+        .qfilter-btn.central.active{ border-color:#A855F7; color:#A855F7; }
+        .qfilter-btn.east.active { border-color:#F59E0B; color:#F59E0B; }
+        .quadrant-badge { display:inline-block; font-size:0.65rem; font-weight:700; letter-spacing:0.08em; padding:0.2rem 0.55rem; border-radius:999px; margin-bottom:0.5rem; text-transform:uppercase; }
+        .quadrant-badge.north { background:#3B82F6; color:#fff; }
+        .quadrant-badge.south { background:#22C55E; color:#fff; }
+        .quadrant-badge.central { background:#A855F7; color:#fff; }
+        .quadrant-badge.east { background:#F59E0B; color:#000; }
+        .quadrant-badge.all { background:#FF6B35; color:#fff; }
+        
+        /* Featured Grid Section - 1+1 Hero Layout */
+        .featured-grid-section { width:100%; max-width:1200px; margin:0 auto; padding:0 1.5rem 2.5rem; }
+        .featured-grid { display:grid; grid-template-columns:1fr 0.43fr; gap:1.25rem; align-items:stretch; }
+        .featured-hero-card { background:#111122; border:1px solid rgba(255,255,255,0.08); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; transition:transform 0.15s ease, box-shadow 0.15s ease; }
+        .featured-hero-card:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(0,0,0,0.4); }
+        .featured-hero-image { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; }
+        .featured-hero-image img { width:100%; height:100%; object-fit:cover; display:block; }
+        .featured-badge { position:absolute; top:0.75rem; left:0.75rem; background:#FF6B35; color:#fff; font-size:0.68rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:0.25rem 0.6rem; border-radius:999px; }
+        .featured-hero-content { padding:1.25rem 1.5rem 1.5rem; display:flex; flex-direction:column; flex:1; }
+        .featured-hero-content h2 { font-size:1.15rem; font-weight:700; color:#ffffff; line-height:1.35; margin:0 0 0.65rem; }
+        .featured-hero-content p { font-size:0.85rem; color:#94a3b8; line-height:1.55; margin:0 0 1rem; flex:1; }
+        .featured-read-link { font-size:0.82rem; font-weight:700; color:#FF6B35; text-decoration:none; }
+        .featured-read-link:hover { color:#ff8c5a; }
+        .sponsor-card { background:#111122; border:1px solid rgba(255,107,53,0.25); border-radius:12px; padding:1.5rem 1.25rem; display:flex; flex-direction:column; align-items:center; text-align:center; gap:0.6rem; }
+        .sponsor-eyebrow { font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#5a6d82; margin:0; }
+        .sponsor-logo-placeholder { width:100%; max-width:160px; height:64px; border:1.5px dashed rgba(255,255,255,0.15); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:700; letter-spacing:0.1em; color:#5a6d82; text-transform:uppercase; }
+        .sponsor-headline { font-size:0.95rem; font-weight:700; color:#ffffff; line-height:1.3; margin:0; }
+        .sponsor-body { font-size:0.78rem; color:#94a3b8; line-height:1.5; margin:0; flex:1; }
+        .sponsor-cta-btn{ display:inline-block; background:#FF6B35; color:#fff; font-size:0.8rem; font-weight:700; padding:0.6rem 1.2rem; border-radius:999px; text-decoration:none; transition:filter 0.15s ease, transform 0.15s ease; }
+        .sponsor-cta-btn:hover { filter:brightness(1.1); transform:translateY(-1px); }
+        .sponsor-fine { font-size:0.65rem; color:#5a6d82; margin:0; }
+        
+        /* Gas Price Section */
+        .gas-price-section { background: #0a0a14; padding: 1rem 2rem; border-bottom: 1px solid #222; }
+        .gas-price-container { max-width: 1200px; margin: 0 auto; }
+        .gas-price-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem; }
+        .gas-price-icon { font-size: 1.2rem; }
+        .gas-price-label { color: #FF6B35; font-weight: 600; font-size: 0.95rem; }
+        .gas-price-intro { color: #888; font-size: 0.85rem; margin-bottom: 0.75rem; }
+        .gas-price-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 0.5rem; }
+        .gas-price-item { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 0.75rem; text-align: center; }
+        .gas-grade { display: block; color: #888; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.25rem; }
+        .gas-price { display: block; color: #aaa; font-size: 1.1rem; font-weight: 600; }
+        .gas-price-note { color: #666; font-size: 0.75rem; margin-bottom: 0.5rem; }
+        .gas-price-cta { display: inline-block; color: #FF6B35; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+        .gas-price-cta:hover { text-decoration: underline; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .contact-btn { display: inline-block; background: #FF6B35; color: white; padding: 10px 24px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            .top-header-content { flex-direction: column; gap: 0.75rem; }
+            .action-buttons { flex-direction: column; align-items: center; }
+            .action-btn { width: 100%; max-width: 300px; text-align: center; }
+            .footer-content { grid-template-columns: 1fr; }
+            .archive-grid { grid-template-columns: 1fr; }
+            .featured-grid { grid-template-columns:1fr; }
+            .sponsor-card { flex-direction:row; text-align:left; align-items:flex-start; flex-wrap:wrap; }
+            .sponsor-logo-placeholder { max-width:80px; height:48px; }
+            .gas-price-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">AP</div>
+                <div class="logo-text">
+                    <div class="main">Arlington Pulse</div>
+                    <div class="sub">Local News & Deals</div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <div class="nav-links">
+                    <a href="#news">Latest News</a>
+                    <a href="#deals">Local Deals</a>
+                    <a href="/arlington/articles/">Archives</a>
+                </div>
+                <div class="city-nav">
+                    <a href="/arlington/" class="active">Arlington</a>
+                    <a href="/dallas/">Dallas</a>
+                    <a href="/fort-worth/">Fort Worth</a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    
+    <!-- Site Title -->
+    <section class="site-title-section">
+        <h1>Arlington Pulse</h1>
+        <p class="tagline">Your daily briefing on Arlington, TX — news, events, and local deals</p>
+    </section>
+    
+    <!-- Action Buttons Bar -->
+    <section class="action-bar">
+        <div class="action-buttons">
+            <a href="/arlington/subscribe.html" class="action-btn subscribe" data-cta="subscribe" data-placement="top-bar">📧 Subscribe</a>
+            <a href="https://dfwasocialbuzz.com/deals?cities=arlington" class="action-btn deals" data-cta="deals" data-placement="top-bar">💰 Local Deals</a>
+            <a href="/business/" class="action-btn business" data-cta="featured" data-placement="top-bar">🏢 Get Featured</a>
+        </div>
+    </section>
+
+    <!-- Quadrant Filter Bar - HIDDEN until articles are tagged with quadrant data
+    <div class="quadrant-filter-bar">
+        <button class="qfilter-btn active" data-filter="all">ALL ARLINGTON</button>
+        <button class="qfilter-btn north" data-filter="north">NORTH</button>
+        <button class="qfilter-btn south" data-filter="south">SOUTH</button>
+        <button class="qfilter-btn central" data-filter="central">CENTRAL</button>
+        <button class="qfilter-btn east" data-filter="east">EAST</button>
+    </div>
+    -->
+
+    <!-- FEATURED + SPONSOR 1+1 HERO GRID -->
+    <section class="featured-grid-section">
+        <div class="featured-grid">
+            <article class="featured-hero-card">
+                <div class="featured-hero-image">
+                    <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=800&h=460&fit=crop" alt="Cozy coffee shop interior" loading="eager">
+                    <span class="featured-badge">This Week's Lead</span>
+                </div>
+                <div class="featured-hero-content">
+                    <h2>5 Local Arlington Gems You Need to Visit This Summer</h2>
+                    <p>From craft breweries to cozy coffee spots, discover the best local businesses making Arlington's downtown scene thrive.</p>
+                    <a href="/arlington/articles/5-local-arlington-gems-summer-2026.html" class="featured-read-link">Read Full Guide →</a>
+                </div>
+            </article>
+            <aside class="sponsor-card">
+                <p class="sponsor-eyebrow">Presented by</p>
+                <div class="sponsor-logo-placeholder">YOUR LOGO</div>
+                <p class="sponsor-headline">Reach 2,500+ Arlington Readers Every Week</p>
+                <p class="sponsor-body">This spot is available. Local businesses that advertise here get seen before readers ever scroll.</p>
+                <a href="https://dfwasocialbuzz.com/business" class="sponsor-cta-btn">Get Featured →</a>
+                <p class="sponsor-fine">Starting at $300/month · Arlington Pulse</p>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Arlington Gas Watch -->
+    <section class="gas-price-section">
+        <div class="gas-price-container">
+            <div class="gas-price-header">
+                <span class="gas-price-icon">⛽</span>
+                <span class="gas-price-label">Arlington Gas Watch</span>
+            </div>
+            <p class="gas-price-intro">Local fuel snapshot for Arlington, TX</p>
+            <div class="gas-price-grid">
+                <div class="gas-price-item">
+                    <span class="gas-grade">Regular</span>
+                    <span class="gas-price">$2.69–$3.98</span>
+                </div>
+                <div class="gas-price-item">
+                    <span class="gas-grade">Midgrade</span>
+                    <span class="gas-price">$3.05–$4.44</span>
+                </div>
+                <div class="gas-price-item">
+                    <span class="gas-grade">Premium</span>
+                    <span class="gas-price">$3.35–$4.81</span>
+                </div>
+                <div class="gas-price-item">
+                    <span class="gas-grade">Diesel</span>
+                    <span class="gas-price">$2.75–$5.09</span>
+                </div>
+            </div>
+            <p class="gas-price-note">Snapshot as of June 26, 2026; based on sampled Arlington station listings. Prices vary by station.</p>
+            <a href="https://www.gasbuddy.com/home?search=Arlington%2C+TX" target="_blank" rel="noopener" class="gas-price-cta">Find Cheap Gas Near You →</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section id="news" class="latest-issues">
+            <div class="section-header">
+                <h2>Latest Issues</h2>
+                <p>Fresh updates on Arlington life</p>
+            </div>
+            
+            <div class="archive-grid">
+            <article class="issue-card featured">
+                <span class="quadrant-badge all">FEATURED</span>
+                <h4>5 Local Arlington Gems You Need to Visit This Summer</h4>
+                <div class="date">June 29, 2026</div>
+                <p>From craft breweries to cozy coffee spots, discover the best local businesses making Arlington's downtown scene thrive.</p>
+                <a href="/arlington/articles/5-local-arlington-gems-summer-2026.html">Read Issue →</a>
+            </article>
+            <div class="issue-card" data-quadrant="all">
+             <span class="quadrant-badge all">ALL</span>
+             <h4>2026 Soccer Tickets - Find Soccer schedules & events near you on Ticketmaster</h4>
+             <div class="date">2026-06-29</div>
+             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
+            QUADRANT: ALL
+            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
+            TOPIC: 2026 Soccer T...</p>
+             <a href="/arlington/articles/2026-soccer-tickets-find-soccer-schedule.html">Read Issue →</a>
+            </div>
+            <div class="issue-card" data-quadrant="all">
+             <span class="quadrant-badge all">ALL</span>
+             <h4>7 Brew Sets its Sights on Arlington</h4>
+             <div class="date">2026-06-29</div>
+             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
+            QUADRANT: ALL
+            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
+            TOPIC: 7 Brew Sets i...</p>
+             <a href="/arlington/articles/7-brew-sets-its-sights-on-arlington.html">Read Issue →</a>
+            </div>
+                <article class="issue-card featured">
+                    <span class="quadrant-badge all">FEATURED</span>
+                    <h4>5 Downtown Arlington Hidden Gems You Need to Discover This Summer</h4>
+                    <div class="date">June 28, 2026</div>
+                    <p>From craft breweries to vintage arcades and local eateries — discover the best-kept secrets in the heart of The American Dream City.</p>
+                    <a href="/arlington/articles/downtown-arlington-hidden-gems-2026.html">Read Issue →</a>
+                </article>
+            <div class="issue-card" data-quadrant="all">
+             <span class="quadrant-badge all">ALL</span>
+             <h4>NBC 5 Investigates how someone got into a World Cup match without a ticket</h4>
+             <div class="date">2026-06-26</div>
+             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
+            QUADRANT: ALL
+            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
+            TOPIC: NBC 5 Investi...</p>
+             <a href="/arlington/articles/nbc-5-investigates-how-someone-got-into-.html">Read Issue →</a>
+            </div>
+            <div class="issue-card" data-quadrant="all">
+             <span class="quadrant-badge all">ALL</span>
+             <h4>Ultimate Walkin Coolers Arlington, TX</h4>
+             <div class="date">2026-06-26</div>
+             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
+            QUADRANT: ALL
+            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
+            TOPIC: Ultimate Walk...</p>
+             <a href="/arlington/articles/ultimate-walkin-coolers-arlington-tx.html">Read Issue →</a>
+            </div>
+            <div class="issue-card" data-quadrant="all">
+             <span class="quadrant-badge all">ALL</span>
+             <h4>Restaurant Equipment Liquidation Arlington TX</h4>
+             <div class="date">2026-06-26</div>
+             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
+            QUADRANT: ALL
+            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
+            TOPIC: Restaurant Eq...</p>
+             <a href="/arlington/articles/restaurant-equipment-liquidation-arlingt.html">Read Issue →</a>
+            </div>
+            <div class="issue-card" data-quadrant="all">
+             <span class="quadrant-badge all">ALL</span>
+             <h4>CBS Texas - Breaking Local News, First Alert Weather & I-Team Investigations</h4>
+             <div class="date">2026-06-26</div>
+             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
+            QUADRANT: ALL
+            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
+            TOPIC: CBS Texas - B...</p>
+             <a href="/arlington/articles/cbs-texas-breaking-local-news-first-aler.html">Read Issue →</a>
+            </div>
+            <div class="issue-card" data-quadrant="all">
+             <span class="quadrant-badge all">ALL</span>
+             <h4>Swedish fans turned Arlington into a sea of yellow and blue before kickoff</h4>
+             <div class="date">2026-06-26</div>
+             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
+            QUADRANT: ALL
+            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
+            TOPIC: Swedish fans ...</p>
+             <a href="/arlington/articles/swedish-fans-turned-arlington-into-a-sea.html">Read Issue →</a>
+            </div>
+            <div class="issue-card" data-quadrant="all">
+             <span class="quadrant-badge all">ALL</span>
+             <h4>Texas Live! Events: Shows & Entertainment in Arlington</h4>
+             <div class="date">2026-06-26</div>
+             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
+            QUADRANT: ALL
+            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
+            TOPIC: Texas Live! E...</p>
+             <a href="/arlington/articles/texas-live-events-shows-entertainment-in.html">Read Issue →</a>
+            </div>
+                <article class="issue-card">
+                    <h4>Your Ultimate Guide to July 4th Weekend in Arlington</h4>
+                    <div class="date">June 26, 2026</div>
+                    <p>From Firecracker 5K to spectacular fireworks at Levitt Pavilion — everything you need to celebrate Independence Day in The American Dream City.</p>
+                    <a href="/arlington/articles/july-4th-weekend-guide-2026.html">Read Issue →</a>
+                </article>
+                
+                <article class="issue-card">
+                    <h4>First Thursdays Returns to Downtown Arlington</h4>
+                    <div class="date">June 25, 2026</div>
+                    <p>From free dance classes to a foam party bus, downtown Arlington is heating up this summer with family-friendly events every first Thursday.</p>
+                    <a href="/arlington/articles/first-thursdays-downtown-arlington-july-2026.html">Read Issue →</a>
+                </article>
+                
+                <article class="issue-card">
+                    <h4>Your Ultimate Guide to Arlington's Outdoor Summer Adventures</h4>
+                    <div class="date">June 24, 2026</div>
+                    <p>From River Legacy Parks to Levitt Pavilion concerts — discover the best outdoor spots in The American Dream City.</p>
+                    <a href="/arlington/articles/arlington-outdoor-summer-adventures-guide-2026.html">Read Issue →</a>
+                </article>
+                
+                <article class="issue-card">
+                    <h4>5 Arlington Local Gems Defining Our City's Food Scene</h4>
+                    <div class="date">June 23, 2026</div>
+                    <p>From award-winning BBQ at Hurtado to craft brewery vibes at Division Brewing — discover the local businesses making Arlington's culinary culture thrive.</p>
+                    <a href="/arlington/articles/arlington-local-gems-5-businesses-defining-2026.html">Read Issue →</a>
+                </article>
+            </div>
+            
+            <div class="view-all-link">
+                <a href="/arlington/articles/">View All Issues →</a>
+            </div>
+        </section>
+        
+        <!-- Business CTA -->
+        <section class="business-cta">
+            <h2>Own a Business in Arlington?</h2>
+            <p>Get featured in Arlington Pulse and reach thousands of local customers.</p>
+            <a href="/business/" class="btn-light" data-cta="featured" data-placement="business-cta">🏢 Get Featured</a>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <div class="tagline">Your local guide to Arlington, TX</div>
+                <div class="powered-by">Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></div>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#news">Latest News</a></li>
+                    <li><a href="#deals">Local Deals</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Other Cities</h4>
+                <ul>
+                    <li><a href="/dallas/">Dallas Current</a></li>
+                    <li><a href="/fort-worth/">Fort Worth Eco</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Get In Touch</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/contact">Contact Us</a></li>
+                    <li><a href="/arlington/subscribe.html" data-cta="subscribe" data-placement="footer">Subscribe</a></li>
+                </ul>
+                <a href="https://dfwasocialbuzz.com/contact" class="contact-btn">Contact Us</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 DFWA Social Buzz. Arlington Pulse is part of the DFWA Social Buzz network.</p>
+        </div>
+    </footer>
+    
+    <!-- DFWA Tracking System -->
+    <script>
+    /**
+     * DFWA Tracking System
+     * Tracks: modal open, form start, submit, success, fallback clicks
+     * UTM Parameters: source, medium, campaign, content (cta_type), term (placement)
+     */
+    (function() {
+        'use strict';
+        
+        // Configuration
+        const CONFIG = {
+            city: 'arlington',
+            quizformaBaseUrl: 'https://app.quizforma.com/q/9sZIVo5jd461ltL',
+            debug: true
+        };
+        
+        // UTM Builder
+        function buildQuizformaURL(ctaType, placement, extraParams = {}) {
+            const params = new URLSearchParams({
+                utm_source: 'dfwa',
+                utm_medium: 'modal',
+                utm_campaign: CONFIG.city + '_pulse',
+                utm_content: ctaType,
+                utm_term: placement,
+                ...extraParams
+            });
+            return CONFIG.quizformaBaseUrl + '?' + params.toString();
+        }
+        
+        // Event Tracking
+        function trackEvent(eventName, properties = {}) {
+            const eventData = {
+                event: eventName,
+                timestamp: new Date().toISOString(),
+                city: CONFIG.city,
+                ...properties
+            };
+            
+            // Log to console for debugging
+            if (CONFIG.debug) {
+                console.log('[DFWA Track]', eventName, eventData);
+            }
+            
+            // Send to Google Analytics if available
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, {
+                    event_category: 'dfwa_cta',
+                    event_label: properties.cta_type || 'unknown',
+                    city: CONFIG.city,
+                    placement: properties.placement || 'unknown',
+                    ...properties
+                });
+            }
+            
+            // Send to DFWA endpoint if configured
+            sendToDFWA(eventData);
+        }
+        
+        function sendToDFWA(data) {
+            // Send to DFWA tracking endpoint
+            fetch('/api/dfwa-track', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).catch(err => {
+                // Silent fail - don't break user experience
+                if (CONFIG.debug) console.error('DFWA track error:', err);
+            });
+        }
+        
+
+        // Initialize CTA Buttons
+        function initCTAButtons() {
+            // Subscribe buttons - now direct links to subscribe page
+            document.querySelectorAll('[data-cta="subscribe"]').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const placement = this.dataset.placement || 'unknown';
+                    trackEvent('dfwa_subscribe_click', {
+                        cta_type: 'subscribe',
+                        placement: placement,
+                        href: this.href
+                    });
+                    // Allow default navigation to subscribe page
+                });
+            });
+            
+            // Get Featured buttons - now direct links to business page
+            document.querySelectorAll('[data-cta="featured"]').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const placement = this.dataset.placement || 'unknown';
+                    trackEvent('dfwa_featured_click', {
+                        cta_type: 'featured',
+                        placement: placement,
+                        href: this.href || '/business/'
+                    });
+                    // Navigate to business page if no href
+                    if (!this.href || this.href === '#' || this.href.endsWith('#')) {
+                        e.preventDefault();
+                        window.location.href = '/business/';
+                    }
+                });
+            });
+            
+            // Deals links (external - just track click)
+            document.querySelectorAll('[data-cta="deals"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const placement = this.dataset.placement || 'unknown';
+                    trackEvent('dfwa_deals_click', {
+                        cta_type: 'deals',
+                        placement: placement,
+                        href: this.href
+                    });
+                });
+            });
+        }
+        
+
+        // Quadrant Filter Functionality
+        function initQuadrantFilter() {
+            document.querySelectorAll('.qfilter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.qfilter-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.dataset.filter;
+                    document.querySelectorAll('.issue-card').forEach(card => {
+                        const q = card.dataset.quadrant || 'all';
+                        // Show card if: filter is 'all', OR card's quadrant matches the filter
+                        const shouldShow = (filter === 'all') || (q === filter);
+                        card.style.display = shouldShow ? '' : 'none';
+                    });
+                });
+            });
+        }
+        
+        // Initialize everything
+        function init() {
+            initCTAButtons();
+            initQuadrantFilter();
+            console.log('[DFWA] Tracking system initialized for', CONFIG.city);
+        }
+
+        // Run on DOM ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+
+        // Expose for debugging
+        window.DFWA = { trackEvent, CONFIG };
+    })();
+    </script>
+</body>
+</html>

@@ -154,7 +154,7 @@ function extractMetadata(html, filePath) {
 
   // Generate URL from file path
   const fileName = path.basename(filePath);
-  metadata.url = `https://arlington.dfwasocialbuzz.com/articles/${fileName}`;
+  metadata.url = `https://dfwasocialbuzz.com/arlington/articles/${fileName}`;
 
   return metadata;
 }
