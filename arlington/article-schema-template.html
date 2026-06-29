@@ -1,0 +1,103 @@
+<!-- DFWA Social Buzz - Article Schema Template -->
+<!-- Copy this template into each article HTML file and customize the values -->
+
+<!-- NewsMediaOrganization Schema (Global) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "@id": "https://dfwasocialbuzz.com/#organization",
+  "name": "DFWA Social Buzz",
+  "url": "https://dfwasocialbuzz.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://dfwasocialbuzz.com/logo.png",
+    "width": 512,
+    "height": 512
+  },
+  "description": "Your source for local news, events, and community updates across the Dallas-Fort Worth-Arlington metroplex.",
+  "sameAs": [
+    "https://facebook.com/dfwasocialbuzz",
+    "https://twitter.com/dfwasocialbuzz",
+    "https://instagram.com/dfwasocialbuzz"
+  ],
+  "foundingDate": "2024"
+}
+</script>
+
+<!-- NewsArticle Schema (Customize per article) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "@id": "ARTICLE_URL#article",
+  "headline": "ARTICLE_HEADLINE",
+  "description": "ARTICLE_DESCRIPTION",
+  "url": "ARTICLE_URL",
+  "image": {
+    "@type": "ImageObject",
+    "url": "ARTICLE_IMAGE_URL",
+    "width": 1200,
+    "height": 630
+  },
+  "datePublished": "2024-01-15T10:00:00-06:00",
+  "dateModified": "2024-01-15T10:00:00-06:00",
+  "author": {
+    "@type": "Person",
+    "name": "AUTHOR_NAME"
+  },
+  "publisher": {
+    "@id": "https://dfwasocialbuzz.com/#organization"
+  },
+  "isPartOf": {
+    "@type": "WebPage",
+    "@id": "https://arlington.dfwasocialbuzz.com/#webpage"
+  },
+  "articleSection": "Arlington Pulse",
+  "inLanguage": "en-US",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "ARTICLE_URL"
+  }
+}
+</script>
+
+<!-- BreadcrumbList Schema (Customize per article) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://dfwasocialbuzz.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Arlington",
+      "item": "https://arlington.dfwasocialbuzz.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ARTICLE_SHORT_TITLE",
+      "item": "ARTICLE_URL"
+    }
+  ]
+}
+</script>
+
+<!--
+REPLACEMENT GUIDE:
+- ARTICLE_URL: Full URL of the article (e.g., https://arlington.dfwasocialbuzz.com/articles/article-slug.html)
+- ARTICLE_HEADLINE: The article title (max 110 characters)
+- ARTICLE_DESCRIPTION: Brief description/summary of the article
+- ARTICLE_IMAGE_URL: Full URL to the featured image (1200x630 recommended)
+- AUTHOR_NAME: Name of the article author
+- ARTICLE_SHORT_TITLE: Shortened title for breadcrumb (e.g., "Article Title" instead of full headline)
+- datePublished: ISO 8601 format with timezone (e.g., 2024-01-15T10:00:00-06:00)
+- dateModified: Same as datePublished unless article is updated later
+-->

@@ -179,6 +179,75 @@ For consistency, use these standardized identifiers:
 - No sensitive data logged
 - CORS configured for cross-origin requests
 
+## Option C: API Polling (No Native Webhooks)
+
+If QuizForma doesn't offer webhooks in your plan, you can use API polling as a fallback:
+
+### API Polling Approach
+
+**Status:** ⚠️ Partial - QuizForma API endpoints for responses are not fully functional
+
+**Discovery:**
+- ✅ `GET /quiz/get` - Lists quizzes (WORKS)
+- ❌ `GET /quiz/{id}/responses` - Returns 404
+- ❌ `GET /responses` - Returns 404
+- ❌ `GET /quiz/get/{id}` - Returns 404
+
+**Finding:** The QuizForma API only exposes quiz listing. Response/submission endpoints documented in the skill don't exist or have different URLs.
+
+**Recommendation:** 
+1. Check if QuizForma has a **Zapier** or **Make** integration (these often work even without native webhooks)
+2. Contact QuizForma support to ask about response API endpoints
+3. As a last resort, manually export quiz responses and POST them to the webhook endpoint
+
+### Manual Export Workaround
+
+If no automation is available, you can:
+1. Export quiz responses from QuizForma dashboard (CSV)
+2. Use a simple script to POST each row to the webhook:
+
+```bash
+# Example: POST a single quiz response
+curl -X POST https://dfwa-vercel.vercel.app/api/quizforma-webhook \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "user@example.com",
+    "firstName": "John",
+    "lastName": "Doe",
+    "quiz_id": "arlington-subscribe-v1",
+    "quiz_title": "Arlington Pulse Subscribe Quiz",
+    "answers": {
+      "preferred_city": "Arlington",
+      "audience_type": "Reader"
+    }
+  }'
+```
+
+---
+
+## API Discovery Log
+
+**Date:** 2026-06-29  
+**Tester:** OpenClaw  
+**API Key:** Valid (returns quiz list)  
+**Base URL:** `https://api.quizforma.com/api/ai`
+
+**Working Endpoints:**
+| Endpoint | Method | Status | Notes |
+|----------|--------|--------|-------|
+| `/quiz/get` | GET | ✅ 200 | Returns paginated quiz list |
+
+**Non-Working Endpoints:**
+| Endpoint | Method | Status | Notes |
+|----------|--------|--------|-------|
+| `/quiz/get/{id}` | GET | ❌ 404 | Quiz details |
+| `/quiz/{id}/responses` | GET | ❌ 404 | Quiz submissions |
+| `/responses` | GET | ❌ 404 | All responses |
+
+**Conclusion:** The QuizForma API appears to be partially implemented or requires different authentication/endpoint structure for responses.
+
+---
+
 ## Support
 
 For issues or questions:
@@ -186,3 +255,95 @@ For issues or questions:
 2. Verify Global Control API key permissions
 3. Test with `/api/quizforma-test` endpoint
 4. Review payload format matches expected structure
+5. Contact QuizForma support about response API access
+
+---
+
+# JSON-LD Schema Implementation (AI Booster Replacement)
+
+Since DFWA Social Buzz is not on WordPress, we've replicated the AI Booster plugin's schema generation functionality directly in the codebase.
+
+## Schema Types Implemented
+
+| Schema Type | Purpose | Location |
+|-------------|---------|----------|
+| `NewsMediaOrganization` | Identifies the publisher | All pages |
+| `WebSite` | Site structure + search | All pages |
+| `WebPage` | Page-level metadata | City homepages |
+| `NewsArticle` | Article structured data | Article pages |
+| `BreadcrumbList` | Navigation breadcrumbs | All pages |
+| `LocalBusiness` | Business listings | Business pages |
+
+## Files Created
+
+| File | Purpose |
+|------|---------|
+| `arlington/schema.html` | Static schema include for Arlington homepage |
+| `arlington/schema-generator.js` | JavaScript schema generation utilities |
+| `arlington/schema-config.json` | Site/city configuration |
+| `arlington/article-schema-template.html` | Template for article schemas |
+| `arlington/add-article-schema.js` | Node.js script to add schema to existing articles |
+
+## Usage
+
+### For New Articles
+
+Copy the template from `article-schema-template.html` and customize:
+- `ARTICLE_URL` - Full article URL
+- `ARTICLE_HEADLINE` - Article title
+- `ARTICLE_DESCRIPTION` - Brief summary
+- `ARTICLE_IMAGE_URL` - Featured image (1200x630)
+- `AUTHOR_NAME` - Author name
+- `datePublished` - ISO 8601 date
+
+### For Existing Articles
+
+Run the script to auto-add schema:
+```bash
+cd /root/.openclaw/workspace/dfwa-vercel/arlington
+node add-article-schema.js articles/my-article.html
+```
+
+With custom values:
+```bash
+node add-article-schema.js articles/my-article.html \
+  --headline="Custom Headline" \
+  --date="2024-06-15" \
+  --author="John Doe"
+```
+
+## Validation
+
+Test your schemas with Google's tools:
+- [Rich Results Test](https://search.google.com/test/rich-results)
+- [Schema Markup Validator](https://validator.schema.org/)
+
+## Schema Structure
+
+### NewsMediaOrganization
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "name": "DFWA Social Buzz",
+  "url": "https://dfwasocialbuzz.com",
+  "logo": {...},
+  "sameAs": [social profiles],
+  "foundingDate": "2024"
+}
+```
+
+### NewsArticle
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Article Title",
+  "description": "Article summary",
+  "url": "https://arlington.dfwasocialbuzz.com/articles/...",
+  "image": {...},
+  "datePublished": "2024-01-15T10:00:00-06:00",
+  "author": {"@type": "Person", "name": "Author"},
+  "publisher": {"@id": "https://dfwasocialbuzz.com/#organization"}
+}
+```

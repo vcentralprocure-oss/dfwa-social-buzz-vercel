@@ -1,0 +1,103 @@
+<!-- DFWA Social Buzz - JSON-LD Structured Data -->
+<!-- NewsMediaOrganization Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsMediaOrganization",
+  "@id": "https://dfwasocialbuzz.com/#organization",
+  "name": "DFWA Social Buzz",
+  "url": "https://dfwasocialbuzz.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://dfwasocialbuzz.com/logo.png",
+    "width": 512,
+    "height": 512
+  },
+  "description": "Your source for local news, events, and community updates across the Dallas-Fort Worth-Arlington metroplex.",
+  "sameAs": [
+    "https://facebook.com/dfwasocialbuzz",
+    "https://twitter.com/dfwasocialbuzz",
+    "https://instagram.com/dfwasocialbuzz"
+  ],
+  "publishingPrinciples": "https://dfwasocialbuzz.com/editorial-policy",
+  "masthead": "https://dfwasocialbuzz.com/about",
+  "foundingDate": "2024",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Dallas-Fort Worth",
+    "addressRegion": "TX",
+    "addressCountry": "US"
+  }
+}
+</script>
+
+<!-- WebSite Schema with SearchAction -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://dfwasocialbuzz.com/#website",
+  "name": "DFWA Social Buzz",
+  "url": "https://dfwasocialbuzz.com",
+  "description": "Your source for local news, events, and community updates across the Dallas-Fort Worth-Arlington metroplex.",
+  "publisher": {
+    "@id": "https://dfwasocialbuzz.com/#organization"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://dfwasocialbuzz.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- Arlington Pulse - WebPage Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://arlington.dfwasocialbuzz.com/#webpage",
+  "url": "https://arlington.dfwasocialbuzz.com",
+  "name": "Arlington Pulse - Local News & Events",
+  "description": "Local news, events, and community updates for Arlington, Texas. Stay informed about what's happening in your neighborhood.",
+  "isPartOf": {
+    "@id": "https://dfwasocialbuzz.com/#website"
+  },
+  "about": {
+    "@type": "City",
+    "name": "Arlington",
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Texas"
+    }
+  },
+  "publisher": {
+    "@id": "https://dfwasocialbuzz.com/#organization"
+  }
+}
+</script>
+
+<!-- BreadcrumbList Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://dfwasocialbuzz.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Arlington",
+      "item": "https://arlington.dfwasocialbuzz.com"
+    }
+  ]
+}
+</script>

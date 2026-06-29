@@ -1,0 +1,28 @@
+{
+  "site": {
+    "name": "DFWA Social Buzz",
+    "url": "https://dfwasocialbuzz.com",
+    "logo": "https://dfwasocialbuzz.com/logo.png",
+    "description": "Your source for local news, events, and community updates across the Dallas-Fort Worth-Arlington metroplex.",
+    "sameAs": [
+      "https://facebook.com/dfwasocialbuzz",
+      "https://twitter.com/dfwasocialbuzz",
+      "https://instagram.com/dfwasocialbuzz"
+    ]
+  },
+  "cities": {
+    "arlington": {
+      "name": "Arlington Pulse",
+      "url": "https://arlington.dfwasocialbuzz.com",
+      "description": "Local news and events for Arlington, Texas",
+      "areaServed": {
+        "@type": "City",
+        "name": "Arlington",
+        "containedInPlace": {
+          "@type": "State",
+          "name": "Texas"
+        }
+      }
+    }
+  }
+}
