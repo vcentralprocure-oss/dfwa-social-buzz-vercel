@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arlington Pulse - Local News & Deals | DFWA</title>
-    
+
     <!-- JSON-LD Structured Data - DFWA Social Buzz -->
     <script type="application/ld+json">
     {
@@ -34,7 +34,7 @@
       }
     }
     </script>
-    
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -55,7 +55,7 @@
       }
     }
     </script>
-    
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -80,7 +80,7 @@
       }
     }
     </script>
-    
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -104,7 +104,7 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
-        
+
         /* Header */
         .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
         .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
@@ -120,12 +120,12 @@
         .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
         .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
         .city-nav a.active { background: #FF6B35; color: white; }
-        
+
         /* Site Title */
         .site-title-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 0.75rem 2rem 0.75rem; text-align: center; border-bottom: 2px solid #FF6B35; }
         .site-title-section h1 { color: #FF6B35; font-size: 2.5rem; font-weight: 700; margin-top: 0; margin-bottom: 0.5rem; }
         .site-title-section .tagline { color: #888; font-size: 1rem; }
-        
+
         /* Action Bar */
         .action-bar { background: #0f1629; padding: 0.6rem 2rem; border-bottom: 1px solid #222; }
         .action-buttons { max-width: 900px; margin: 0 auto; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
@@ -134,13 +134,13 @@
         .action-btn.deals { background: transparent; color: #FF6B35; border: 2px solid #FF6B35; }
         .action-btn.business { background: #2d5a3d; color: white; }
         .action-btn:hover { transform: translateY(-2px); }
-        
+
         /* Container */
         .container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
         .section-header { margin-bottom: 2rem; }
         .section-header h2 { font-size: 1.8rem; color: #FF6B35; margin-bottom: 0.5rem; }
         .section-header p { color: #888; }
-        
+
         /* Archive Grid */
         .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
         .issue-card { background: #111122; border-radius: 8px; padding: 1.5rem; border: 1px solid #222; transition: border-color 0.2s, transform 0.2s; }
@@ -149,13 +149,13 @@
         .issue-card .date { color: #666; font-size: 0.85rem; margin-bottom: 0.75rem; }
         .issue-card p { color: #999; font-size: 0.95rem; line-height: 1.5; margin-bottom: 1rem; }
         .issue-card a { color: #FF6B35; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
-        
+
         /* Business CTA */
         .business-cta { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 3rem 2rem; text-align: center; margin-bottom: 3rem; }
         .business-cta h2 { font-size: 2rem; margin-bottom: 1rem; }
         .business-cta p { font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.95; }
         .business-cta .btn-light { background: white; color: #FF6B35; padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
-        
+
         /* Quadrant Filter Bar */
         .quadrant-filter-bar { display:flex; gap:0.5rem; justify-content:center; padding:0.75rem 1rem; background:#0a0a1a; position:sticky; top:0; z-index:100; flex-wrap:wrap; }
         .qfilter-btn { padding:0.45rem 1.1rem; border-radius:999px; border:1.5px solid #333; background:transparent; color:#fff; font-size:0.78rem; font-weight:700; cursor:pointer; letter-spacing:0.05em; transition:all 0.15s ease; }
@@ -170,7 +170,7 @@
         .quadrant-badge.central { background:#A855F7; color:#fff; }
         .quadrant-badge.east { background:#F59E0B; color:#000; }
         .quadrant-badge.all { background:#FF6B35; color:#fff; }
-        
+
         /* Featured Grid Section - 1+1 Hero Layout */
         .featured-grid-section { width:100%; max-width:1200px; margin:0 auto; padding:0 1.5rem 2.5rem; }
         .featured-grid { display:grid; grid-template-columns:1fr 0.43fr; gap:1.25rem; align-items:stretch; }
@@ -192,7 +192,7 @@
         .sponsor-cta-btn{ display:inline-block; background:#FF6B35; color:#fff; font-size:0.8rem; font-weight:700; padding:0.6rem 1.2rem; border-radius:999px; text-decoration:none; transition:filter 0.15s ease, transform 0.15s ease; }
         .sponsor-cta-btn:hover { filter:brightness(1.1); transform:translateY(-1px); }
         .sponsor-fine { font-size:0.65rem; color:#5a6d82; margin:0; }
-        
+
         /* Gas Price Section */
         .gas-price-section { background: #0a0a14; padding: 1rem 2rem; border-bottom: 1px solid #222; }
         .gas-price-container { max-width: 1200px; margin: 0 auto; }
@@ -207,7 +207,7 @@
         .gas-price-note { color: #666; font-size: 0.75rem; margin-bottom: 0.5rem; }
         .gas-price-cta { display: inline-block; color: #FF6B35; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
         .gas-price-cta:hover { text-decoration: underline; }
-        
+
         /* Footer */
         .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; }
         .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
@@ -220,7 +220,7 @@
         .footer-links a:hover { color: #FF6B35; }
         .contact-btn { display: inline-block; background: #FF6B35; color: white; padding: 10px 24px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
         .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
-        
+
         @media (max-width: 768px) {
             .top-header-content { flex-direction: column; gap: 0.75rem; }
             .action-buttons { flex-direction: column; align-items: center; }
@@ -232,7 +232,7 @@
             .sponsor-logo-placeholder { max-width:80px; height:48px; }
             .gas-price-grid { grid-template-columns: repeat(2, 1fr); }
         }
-        
+
     </style>
 </head>
 <body>
@@ -260,13 +260,13 @@
             </nav>
         </div>
     </div>
-    
+
     <!-- Site Title -->
     <section class="site-title-section">
         <h1>Arlington Pulse</h1>
-        <p class="tagline">Your daily briefing on Arlington, TX — news, events, and local deals</p>
+        <p class="tagline">Your daily briefing on Arlington, TX - news, events, and local deals</p>
     </section>
-    
+
     <!-- Action Buttons Bar -->
     <section class="action-bar">
         <div class="action-buttons">
@@ -296,7 +296,7 @@
                 </div>
                 <div class="featured-hero-content">
                     <h2>5 Arlington Restaurants You Need to Try This Summer</h2>
-                    <p>From award-winning Tex-Mex BBQ to craft breweries with perfect patio vibes — your guide to Arlington's best summer dining spots.</p>
+                    <p>From award-winning Tex-Mex BBQ to craft breweries with perfect patio vibes - your guide to Arlington's best summer dining spots.</p>
                     <a href="/arlington/articles/5-arlington-restaurants-summer-2026.html" class="featured-read-link">Read Full Guide →</a>
                 </div>
             </article>
@@ -322,19 +322,19 @@
             <div class="gas-price-grid">
                 <div class="gas-price-item">
                     <span class="gas-grade">Regular</span>
-                    <span class="gas-price">$2.69–$3.98</span>
+                    <span class="gas-price">$2.69-$3.98</span>
                 </div>
                 <div class="gas-price-item">
                     <span class="gas-grade">Midgrade</span>
-                    <span class="gas-price">$3.05–$4.44</span>
+                    <span class="gas-price">$3.05-$4.44</span>
                 </div>
                 <div class="gas-price-item">
                     <span class="gas-grade">Premium</span>
-                    <span class="gas-price">$3.35–$4.81</span>
+                    <span class="gas-price">$3.35-$4.81</span>
                 </div>
                 <div class="gas-price-item">
                     <span class="gas-grade">Diesel</span>
-                    <span class="gas-price">$2.75–$5.09</span>
+                    <span class="gas-price">$2.75-$5.09</span>
                 </div>
             </div>
             <p class="gas-price-note">Snapshot as of June 26, 2026; based on sampled Arlington station listings. Prices vary by station.</p>
@@ -349,76 +349,17 @@
                 <h2>Latest Issues</h2>
                 <p>Fresh updates on Arlington life</p>
             </div>
-            
+
             <div class="archive-grid">
             <article class="issue-card featured">
                 <span class="quadrant-badge all">FEATURED</span>
                 <h4>5 Arlington Restaurants You Need to Try This Summer</h4>
                 <div class="date">July 2, 2026</div>
-                <p>From award-winning Tex-Mex BBQ to craft breweries with perfect patio vibes — your guide to Arlington's best summer dining spots.</p>
+                <p>From award-winning Tex-Mex BBQ to craft breweries with perfect patio vibes - your guide to Arlington's best summer dining spots.</p>
                 <a href="/arlington/articles/5-arlington-restaurants-summer-2026.html">Read Issue →</a>
             </article>
-            
-            <div class="issue-card" data-quadrant="all">
-             <span class="quadrant-badge all">ALL</span>
-             <h4>Fort Worth residents weigh city’s proposed data center rules</h4>
-             <div class="date">2026-07-02</div>
-             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
-            QUADRANT: ALL
-            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
-            TOPIC: Fort Worth re...</p>
-             <a href="/arlington/articles/fort-worth-residents-weigh-citys-propose.html">Read Issue →</a>
-            </div>
-            <div class="issue-card" data-quadrant="all">
-             <span class="quadrant-badge all">ALL</span>
-             <h4>Here’s what to know heading into the ‘Dutton Ranch’ finale</h4>
-             <div class="date">2026-07-02</div>
-             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
-            QUADRANT: ALL
-            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
-            TOPIC: Here’s what t...</p>
-             <a href="/arlington/articles/heres-what-to-know-heading-into-the-dutt.html">Read Issue →</a>
-            </div>
-            <div class="issue-card" data-quadrant="all">
-             <span class="quadrant-badge all">ALL</span>
-             <h4>Norway beats Ivory Coast in World Cup knockout match at Dallas Stadium</h4>
-             <div class="date">2026-07-02</div>
-             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
-            QUADRANT: ALL
-            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
-            TOPIC: Norway beats ...</p>
-             <a href="/arlington/articles/norway-beats-ivory-coast-in-world-cup-kn.html">Read Issue →</a>
-            </div>
-            <div class="issue-card" data-quadrant="all">
-             <span class="quadrant-badge all">ALL</span>
-             <h4>World cup fans criticize MetLife and ask why Dallas lost final – NBC 5 Dallas-Fort Worth</h4>
-             <div class="date">2026-07-02</div>
-             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
-            QUADRANT: ALL
-            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
-            TOPIC: World cup fan...</p>
-             <a href="/arlington/articles/world-cup-fans-criticize-metlife-and-ask.html">Read Issue →</a>
-            </div>
-            <div class="issue-card" data-quadrant="all">
-             <span class="quadrant-badge all">ALL</span>
-             <h4>Japan knocked out of 2026 World Cup by Brazil in stoppage time – NBC 5 Dallas-Fort Worth</h4>
-             <div class="date">2026-07-02</div>
-             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
-            QUADRANT: ALL
-            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
-            TOPIC: Japan knocked...</p>
-             <a href="/arlington/articles/japan-knocked-out-of-2026-world-cup-by-b.html">Read Issue →</a>
-            </div>
-            <div class="issue-card" data-quadrant="all">
-             <span class="quadrant-badge all">ALL</span>
-             <h4>Arlington is having its FIFA World Cup moment but needs work</h4>
-             <div class="date">2026-07-02</div>
-             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
-            QUADRANT: ALL
-            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
-            TOPIC: Arlington is ...</p>
-             <a href="/arlington/articles/arlington-is-having-its-fifa-world-cup-m.html">Read Issue →</a>
-            </div>
+
+
             <article class="issue-card featured">
                 <span class="quadrant-badge all">FEATURED</span>
                 <h4>5 Arlington Coffee & Brew Spots Brewing Up Something Special This Summer</h4>
@@ -426,84 +367,17 @@
                 <p>From award-winning Yemeni coffee to craft brews, discover the local gems defining Arlington's vibrant drink scene.</p>
                 <a href="/arlington/articles/5-arlington-coffee-brew-spots-summer-2026.html">Read Issue →</a>
             </article>
-            
-            <div class="issue-card" data-quadrant="all">
-             <span class="quadrant-badge all">ALL</span>
-             <h4>Texas smokehouse ranked among 5 BBQ joints 'defining the future'</h4>
-             <div class="date">2026-07-01</div>
-             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
-            QUADRANT: ALL
-            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
-            TOPIC: Texas smokeho...</p>
-             <a href="/arlington/articles/texas-smokehouse-ranked-among-5-bbq-join.html">Read Issue →</a>
-            </div>
-            <div class="issue-card" data-quadrant="all">
-             <span class="quadrant-badge all">ALL</span>
-             <h4>Jump Into July With Arlington Parks’ Naturally Fun Events</h4>
-             <div class="date">2026-07-01</div>
-             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
-            QUADRANT: ALL
-            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
-            TOPIC: Jump Into Jul...</p>
-             <a href="/arlington/articles/jump-into-july-with-arlington-parks-natu.html">Read Issue →</a>
-            </div>
-            <div class="issue-card" data-quadrant="east">
-             <span class="quadrant-badge east">EAST</span>
-             <h4>An International Clothing Retailer Is Opening Its 7th Texas Store at Willowbrook Mall</h4>
-             <div class="date">2026-07-01</div>
-             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
-            QUADRANT: EAST
-            AUDIENCE VOICE: community-first, inclusive, bilingual-aware, note Spanish terms where n...</p>
-             <a href="/arlington/articles/an-international-clothing-retailer-is-op.html">Read Issue →</a>
-            </div>
-            <div class="issue-card" data-quadrant="all">
-             <span class="quadrant-badge all">ALL</span>
-             <h4>Texas Live! Events: Shows & Entertainment in Arlington</h4>
-             <div class="date">2026-07-01</div>
-             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
-            QUADRANT: ALL
-            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
-            TOPIC: Texas Live! E...</p>
-             <a href="/arlington/articles/texas-live-events-shows-entertainment-in.html">Read Issue →</a>
-            </div>
+
+
             <article class="issue-card featured">
                 <span class="quadrant-badge all">FEATURED</span>
                 <h4>Summer Food & Drink Guide: 5 Arlington Local Gems You Can't Miss</h4>
                 <div class="date">June 30, 2026</div>
-                <p>From award-winning BBQ at Hurtado to craft beers at Division Brewing—discover the local businesses defining Arlington's culinary scene.</p>
+                <p>From award-winning BBQ at Hurtado to craft beers at Division Brewing-discover the local businesses defining Arlington's culinary scene.</p>
                 <a href="/arlington/articles/summer-food-drink-guide-arlington-2026.html">Read Issue →</a>
             </article>
-            
-            <div class="issue-card" data-quadrant="all">
-             <span class="quadrant-badge all">ALL</span>
-             <h4>2026 Texas Festival Guide</h4>
-             <div class="date">2026-06-30</div>
-             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
-            QUADRANT: ALL
-            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
-            TOPIC: 2026 Texas Fe...</p>
-             <a href="/arlington/articles/2026-texas-festival-guide.html">Read Issue →</a>
-            </div>
-            <div class="issue-card" data-quadrant="all">
-             <span class="quadrant-badge all">ALL</span>
-             <h4>Fourth of July festivals and fireworks in North Texas – NBC 5 Dallas-Fort Worth</h4>
-             <div class="date">2026-06-30</div>
-             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
-            QUADRANT: ALL
-            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
-            TOPIC: Fourth of Jul...</p>
-             <a href="/arlington/articles/fourth-of-july-festivals-and-fireworks-i.html">Read Issue →</a>
-            </div>
-            <div class="issue-card" data-quadrant="all">
-             <span class="quadrant-badge all">ALL</span>
-             <h4>Texas Live! Events: Shows & Entertainment in Arlington</h4>
-             <div class="date">2026-06-30</div>
-             <p>PUBLICATION: Arlington Pulse — DFWA Social Buzz
-            QUADRANT: ALL
-            AUDIENCE VOICE: neutral city voice, broad Arlington resident appeal
-            TOPIC: Texas Live! E...</p>
-             <a href="/arlington/articles/texas-live-events-shows-entertainment-in.html">Read Issue →</a>
-            </div>
+
+
             <article class="issue-card featured">
                 <span class="quadrant-badge all">FEATURED</span>
                 <h4>5 Local Arlington Gems You Need to Visit This Summer</h4>
@@ -511,58 +385,58 @@
                 <p>From craft breweries to cozy coffee spots, discover the best local businesses making Arlington's downtown scene thrive.</p>
                 <a href="/arlington/articles/5-local-arlington-gems-summer-2026.html">Read Issue →</a>
             </article>
-            
+
                 <article class="issue-card featured">
                     <span class="quadrant-badge all">FEATURED</span>
                     <h4>5 Downtown Arlington Hidden Gems You Need to Discover This Summer</h4>
                     <div class="date">June 28, 2026</div>
-                    <p>From craft breweries to vintage arcades and local eateries — discover the best-kept secrets in the heart of The American Dream City.</p>
+                    <p>From craft breweries to vintage arcades and local eateries - discover the best-kept secrets in the heart of The American Dream City.</p>
                     <a href="/arlington/articles/downtown-arlington-hidden-gems-2026.html">Read Issue →</a>
                 </article>
-            
-            
-            
-            
-            
-            
-               
+
+
+
+
+
+
+
                 <article class="issue-card">
                     <h4>Your Ultimate Guide to July 4th Weekend in Arlington</h4>
                     <div class="date">June 26, 2026</div>
-                    <p>From Firecracker 5K to spectacular fireworks at Levitt Pavilion — everything you need to celebrate Independence Day in The American Dream City.</p>
+                    <p>From Firecracker 5K to spectacular fireworks at Levitt Pavilion - everything you need to celebrate Independence Day in The American Dream City.</p>
                     <a href="/arlington/articles/july-4th-weekend-guide-2026.html">Read Issue →</a>
                 </article>
-                
-               
+
+
                 <article class="issue-card">
                     <h4>First Thursdays Returns to Downtown Arlington</h4>
                     <div class="date">June 25, 2026</div>
                     <p>From free dance classes to a foam party bus, downtown Arlington is heating up this summer with family-friendly events every first Thursday.</p>
                     <a href="/arlington/articles/first-thursdays-downtown-arlington-july-2026.html">Read Issue →</a>
                 </article>
-                
-               
+
+
                 <article class="issue-card">
                     <h4>Your Ultimate Guide to Arlington's Outdoor Summer Adventures</h4>
                     <div class="date">June 24, 2026</div>
-                    <p>From River Legacy Parks to Levitt Pavilion concerts — discover the best outdoor spots in The American Dream City.</p>
+                    <p>From River Legacy Parks to Levitt Pavilion concerts - discover the best outdoor spots in The American Dream City.</p>
                     <a href="/arlington/articles/arlington-outdoor-summer-adventures-guide-2026.html">Read Issue →</a>
                 </article>
-                
-               
+
+
                 <article class="issue-card">
                     <h4>5 Arlington Local Gems Defining Our City's Food Scene</h4>
                     <div class="date">June 23, 2026</div>
-                    <p>From award-winning BBQ at Hurtado to craft brewery vibes at Division Brewing — discover the local businesses making Arlington's culinary culture thrive.</p>
+                    <p>From award-winning BBQ at Hurtado to craft brewery vibes at Division Brewing - discover the local businesses making Arlington's culinary culture thrive.</p>
                     <a href="/arlington/articles/arlington-local-gems-5-businesses-defining-2026.html">Read Issue →</a>
                 </article>
             </div>
-            
+
             <div class="view-all-link">
                 <a href="/arlington/articles/">View All Issues →</a>
             </div>
         </section>
-        
+
         <!-- Business CTA -->
         <section class="business-cta">
             <h2>Own a Business in Arlington?</h2>
@@ -570,7 +444,7 @@
             <a href="/business/" class="btn-light" data-cta="featured" data-placement="business-cta">🏢 Get Featured</a>
         </section>
     </div>
-    
+
     <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-content">
@@ -579,7 +453,7 @@
                 <div class="tagline">Your local guide to Arlington, TX</div>
                 <div class="powered-by">Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></div>
             </div>
-            
+
             <div class="footer-links">
                 <h4>Explore</h4>
                 <ul>
@@ -587,7 +461,7 @@
                     <li><a href="#deals">Local Deals</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-links">
                 <h4>Other Cities</h4>
                 <ul>
@@ -595,7 +469,7 @@
                     <li><a href="/fort-worth/">Fort Worth Eco</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-links">
                 <h4>Get In Touch</h4>
                 <ul>
@@ -605,12 +479,12 @@
                 <a href="https://dfwasocialbuzz.com/contact" class="contact-btn">Contact Us</a>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
             <p>&copy; 2026 DFWA Social Buzz. Arlington Pulse is part of the DFWA Social Buzz network.</p>
         </div>
     </footer>
-    
+
     <!-- DFWA Tracking System -->
     <script>
     /**
@@ -620,14 +494,14 @@
      */
     (function() {
         'use strict';
-        
+
         // Configuration
         const CONFIG = {
             city: 'arlington',
             quizformaBaseUrl: 'https://app.quizforma.com/q/9sZIVo5jd461ltL',
             debug: true
         };
-        
+
         // UTM Builder
         function buildQuizformaURL(ctaType, placement, extraParams = {}) {
             const params = new URLSearchParams({
@@ -640,7 +514,7 @@
             });
             return CONFIG.quizformaBaseUrl + '?' + params.toString();
         }
-        
+
         // Event Tracking
         function trackEvent(eventName, properties = {}) {
             const eventData = {
@@ -649,12 +523,12 @@
                 city: CONFIG.city,
                 ...properties
             };
-            
+
             // Log to console for debugging
             if (CONFIG.debug) {
                 console.log('[DFWA Track]', eventName, eventData);
             }
-            
+
             // Send to Google Analytics if available
             if (typeof gtag !== 'undefined') {
                 gtag('event', eventName, {
@@ -665,11 +539,11 @@
                     ...properties
                 });
             }
-            
+
             // Send to DFWA endpoint if configured
             sendToDFWA(eventData);
         }
-        
+
         function sendToDFWA(data) {
             // Send to DFWA tracking endpoint
             fetch('/api/dfwa-track', {
@@ -681,7 +555,7 @@
                 if (CONFIG.debug) console.error('DFWA track error:', err);
             });
         }
-        
+
 
         // Initialize CTA Buttons
         function initCTAButtons() {
@@ -697,7 +571,7 @@
                     // Allow default navigation to subscribe page
                 });
             });
-            
+
             // Get Featured buttons - now direct links to business page
             document.querySelectorAll('[data-cta="featured"]').forEach(btn => {
                 btn.addEventListener('click', function(e) {
@@ -714,7 +588,7 @@
                     }
                 });
             });
-            
+
             // Deals links (external - just track click)
             document.querySelectorAll('[data-cta="deals"]').forEach(link => {
                 link.addEventListener('click', function(e) {
@@ -727,7 +601,7 @@
                 });
             });
         }
-        
+
 
         // Quadrant Filter Functionality
         function initQuadrantFilter() {
@@ -745,7 +619,7 @@
                 });
             });
         }
-        
+
         // Initialize everything
         function init() {
             initCTAButtons();
