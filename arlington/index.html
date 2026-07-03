@@ -30,17 +30,27 @@
         .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
         .city-nav a.active { background: #FF6B35; color: white; }
         
-        /* PHASE 1: Sponsored Section */
-        .sponsored-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1.5rem 2rem; border-bottom: 2px solid #FF6B35; }
-        .sponsored-row { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; }
-        .sponsored-card { background: rgba(255,255,255,0.02); border: 1px solid #333; border-radius: 12px; overflow: hidden; }
-        .sponsored-card:first-child { border-color: #FF6B35; background: linear-gradient(135deg, rgba(255,107,53,0.08) 0%, rgba(255,107,53,0.02) 100%); }
-        .sponsored-card .card-image { width: 100%; height: 160px; background: linear-gradient(135deg, #1a1a2e 0%, #0f1629 100%); display: flex; align-items: center; justify-content: center; color: #555; font-size: 0.9rem; overflow: hidden; }
-        .sponsored-card .card-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .sponsored-card .card-content { padding: 1.25rem; }
-        .sponsored-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: white; line-height: 1.3; }
-        .sponsored-card p { color: #888; font-size: 0.9rem; line-height: 1.4; margin-bottom: 0.75rem; }
-        .sponsored-card .cta-link { color: #FF6B35; text-decoration: none; font-size: 0.85rem; font-weight: 600; }
+        /* Featured Grid Section */
+        .featured-grid-section { width:100%; max-width:1200px; margin:0 auto; padding:0 1.5rem 2.5rem; }
+        .featured-grid { display:grid; grid-template-columns:1fr 0.43fr; gap:1.25rem; align-items:stretch; }
+        .featured-hero-card { background:#111122; border:1px solid rgba(255,255,255,0.08); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; transition:transform 0.15s ease, box-shadow 0.15s ease; }
+        .featured-hero-card:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(0,0,0,0.4); }
+        .featured-hero-image { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; }
+        .featured-hero-image img { width:100%; height:100%; object-fit:cover; display:block; }
+        .featured-badge { position:absolute; top:0.75rem; left:0.75rem; background:#FF6B35; color:#fff; font-size:0.68rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:0.25rem 0.6rem; border-radius:999px; }
+        .featured-hero-content { padding:1.25rem 1.5rem 1.5rem; display:flex; flex-direction:column; flex:1; }
+        .featured-hero-content h2 { font-size:1.15rem; font-weight:700; color:#ffffff; line-height:1.35; margin:0 0 0.65rem; }
+        .featured-hero-content p { font-size:0.85rem; color:#94a3b8; line-height:1.55; margin:0 0 1rem; flex:1; }
+        .featured-read-link { font-size:0.82rem; font-weight:700; color:#FF6B35; text-decoration:none; }
+        .featured-read-link:hover { color:#ff8c5a; }
+        .sponsor-card { background:#111122; border:1px solid rgba(255,107,53,0.25); border-radius:12px; padding:1.5rem 1.25rem; display:flex; flex-direction:column; align-items:center; text-align:center; gap:0.6rem; }
+        .sponsor-eyebrow { font-size:0.65rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:#5a6d82; margin:0; }
+        .sponsor-logo-placeholder { width:100%; max-width:160px; height:64px; border:1.5px dashed rgba(255,255,255,0.15); border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:0.7rem; font-weight:700; letter-spacing:0.1em; color:#5a6d82; text-transform:uppercase; }
+        .sponsor-headline { font-size:0.95rem; font-weight:700; color:#ffffff; line-height:1.3; margin:0; }
+        .sponsor-body { font-size:0.78rem; color:#94a3b8; line-height:1.5; margin:0; flex:1; }
+        .sponsor-cta-btn{ display:inline-block; background:#FF6B35; color:#fff; font-size:0.8rem; font-weight:700; padding:0.6rem 1.2rem; border-radius:999px; text-decoration:none; transition:filter 0.15s ease, transform 0.15s ease; }
+        .sponsor-cta-btn:hover { filter:brightness(1.1); transform:translateY(-1px); }
+        .sponsor-fine { font-size:0.65rem; color:#5a6d82; margin:0; }
         
         /* PHASE 1: Centered Site Title */
         .site-title-section { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 2.5rem 2rem 1.5rem; text-align: center; border-bottom: 2px solid #FF6B35; }
@@ -231,50 +241,28 @@
         <p style="color: #4CAF50; font-size: 0.9rem; margin-top: 0.5rem;">Arlington coverage is live now.</p>
     </section>
 
-    <!-- PHASE 1: Sponsored Content Section (from approved draft) -->
-    <section class="sponsored-section">
-        <div class="sponsored-row">
-            <div class="sponsored-card">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1530089711124-9ca31fb9e863?w=600&h=400&fit=crop" alt="Arlington Texas downtown cityscape" loading="lazy">
+    <!-- Featured Grid Section -->
+    <section class="featured-grid-section">
+        <div class="featured-grid">
+            <article class="featured-hero-card">
+                <div class="featured-hero-image">
+                    <img src="https://images.unsplash.com/photo-1628630470339-a3b919b656c0?w=800&h=460&fit=crop" alt="Arlington Texas" loading="lazy">
+                    <span class="featured-badge">This Week's Lead</span>
                 </div>
-                <div class="card-content">
-                    <h4>Arlington's Summer Dining Scene: 5 Local Spots Defining Our Food Culture</h4>
-                    <p>From rooftop patios to award-winning BBQ, discover where Arlington locals are eating this summer. Featuring The Tipsy Oak, Hurtado Barbecue, Division Brewing, and more.</p>
-                    <a href="/arlington/articles/arlington-summer-dining-5-local-spots-june-2026.html" class="cta-link">Read Guide →</a>
+                <div class="featured-hero-content">
+                    <h2>Your Ultimate Guide to July 4th Weekend in Arlington</h2>
+                    <p>From Firecracker 5K to spectacular fireworks at Levitt Pavilion — everything you need to celebrate Independence Day in The American Dream City.</p>
+                    <a href="/arlington/articles/july-4th-weekend-guide-2026.html" class="featured-read-link">Read Full Guide →</a>
                 </div>
-            </div>
-            <div class="sponsored-card">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1628630470339-a3b919b656c0?w=600&h=400&fit=crop" alt="Arlington Texas downtown cityscape" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h4>This Weekend in Arlington: Live Music, World Cup Watch Parties & Summer Fun</h4>
-                    <p>Your guide to June 20-21, 2026 — from FIFA World Cup watch parties at Texas Live! to free concerts at Levitt Pavilion and the best local spots to check out this weekend.</p>
-                    <a href="/arlington/articles/this-weekend-arlington-june-20-21-2026.html" class="cta-link">Read Guide →</a>
-                </div>
-            </div>
-            <div class="sponsored-card">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&h=400&fit=crop" alt="Live music concert at Levitt Pavilion" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h4>This Week in Arlington: Free Concerts, New Coffee Spots & Summer Nights</h4>
-                    <p>Your guide to June 18-24, 2026 — from Levitt Pavilion's Juneteenth celebration to downtown's newest cafés and the best patios for hot summer evenings.</p>
-                    <a href="/arlington/articles/this-week-arlington-june-18-24-2026.html" class="cta-link">Read Guide →</a>
-                </div>
-            </div>
-            <div class="sponsored-card">
-                <div class="card-image">
-                    <img src="https://images.unsplash.com/photo-1772521340908-9f9a0bc775dc?w=600&h=400&fit=crop" alt="Outdoor patio dining scene" loading="lazy">
-                </div>
-                <div class="card-content">
-                    <h4>Arlington's Summer Dining Scene: Where Locals Are Eating Right Now</h4>
-                    <p>From rooftop patios to hidden BBQ gems, discover the local spots defining Arlington's food culture this summer. Featuring The Tipsy Oak, Hurtado Barbecue, Division Brewing, and more.</p>
-                    <a href="/arlington/articles/arlington-summer-dining-scene-locals-eating-2026.html" class="cta-link">Read Guide →</a>
-                </div>
-            </div>
-
+            </article>
+            <aside class="sponsor-card">
+                <p class="sponsor-eyebrow">Presented by</p>
+                <div class="sponsor-logo-placeholder">YOUR LOGO</div>
+                <p class="sponsor-headline">Reach 2,500+ Arlington Readers Every Week</p>
+                <p class="sponsor-body">This spot is available. Local businesses that advertise here get seen before readers ever scroll.</p>
+                <a href="https://dfwasocialbuzz.com/business" class="sponsor-cta-btn">Get Featured →</a>
+                <p class="sponsor-fine">Starting at $300/month · Arlington Pulse</p>
+            </aside>
         </div>
     </section>
     
