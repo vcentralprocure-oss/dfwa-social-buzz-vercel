@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Cup Afterglow: How Arlington's Local Businesses Are Riding the Wave | Arlington Pulse</title>
+    <meta name="description" content="From record hotel revenues to packed patios, the World Cup's economic impact is still rippling through The American Dream City. Discover which local businesses benefited.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article Styles */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .article-header { margin-bottom: 2rem; }
+        .quadrant-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.2rem 0.55rem; border-radius: 999px; margin-bottom: 1rem; text-transform: uppercase; background: #FF6B35; color: white; }
+        .article-header h1 { font-size: 2.5rem; color: white; margin-bottom: 1rem; line-height: 1.2; }
+        .article-subheadline { font-size: 1.25rem; color: #aaa; margin-bottom: 1.5rem; line-height: 1.5; }
+        .article-meta { display: flex; align-items: center; gap: 1rem; color: #666; font-size: 0.9rem; }
+        .article-meta .date { color: #FF6B35; }
+        
+        .featured-image { width: 100%; height: 450px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; }
+        .image-caption { text-align: center; color: #666; font-size: 0.85rem; margin-top: -1.5rem; margin-bottom: 2rem; }
+        
+        .article-content { font-size: 1.1rem; line-height: 1.8; color: #ddd; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { font-size: 1.5rem; color: #FF6B35; margin: 2.5rem 0 1rem; }
+        .article-content strong { color: white; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        
+        /* Business Cards */
+        .business-highlight { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+        .business-highlight h3 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .business-highlight p { margin-bottom: 0.5rem; color: #aaa; }
+        .business-highlight .website { color: #FF6B35; font-weight: 600; }
+        
+        /* CTA Section */
+        .cta-section { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; margin: 3rem 0; text-align: center; }
+        .cta-section h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-section p { margin-bottom: 1.5rem; opacity: 0.95; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .cta-btn { background: white; color: #FF6B35; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; }
+        .cta-btn:hover { background: #f0f0f0; }
+        
+        /* Related Articles */
+        .related-section { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #222; }
+        .related-section h3 { color: #FF6B35; margin-bottom: 1.5rem; font-size: 1.3rem; }
+        .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+        .related-card { background: #111122; border-radius: 8px; padding: 1.5rem; border: 1px solid #222; transition: border-color 0.2s; }
+        .related-card:hover { border-color: #FF6B35; }
+        .related-card h4 { color: white; margin-bottom: 0.5rem; font-size: 1rem; }
+        .related-card p { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .related-card a { color: #FF6B35; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; margin-top: 4rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.75rem; }
+            .article-subheadline { font-size: 1rem; }
+            .featured-image { height: 250px; }
+            .related-grid { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">Arlington Pulse</div>
+                    <div class="sub">Powered by DFWA Social Buzz</div>
+                </div>
+            </div>
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/arlington/">Home</a>
+                    <a href="/arlington/#news">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business">Business</a>
+                    <a href="/arlington/#subscribe-section">Subscribe</a>
+                </div>
+            </div>
+            <nav class="city-nav">
+                <a href="/arlington/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+
+    <article class="article-container">
+        <header class="article-header">
+            <span class="quadrant-badge">ALL</span>
+            <h1>World Cup Afterglow: How Arlington's Local Businesses Are Riding the Wave</h1>
+            <p class="article-subheadline">From record hotel revenues to packed patios, the tournament's economic impact is still rippling through The American Dream City</p>
+            <div class="article-meta">
+                <span class="date">July 15, 2026</span>
+                <span>Arlington Pulse Staff</span>
+            </div>
+        </header>
+
+        <img src="https://images.unsplash.com/photo-1595650248893-df56f2066e04?w=1200&h=675&fit=crop" alt="Texas summer patio dining" class="featured-image">
+        <p class="image-caption">Photo by Ryan Jacobson on Unsplash</p>
+
+        <div class="article-content">
+            <p>The final whistle has blown on Arlington's historic FIFA World Cup run, but the economic momentum is just getting started. With nine matches drawing hundreds of thousands of visitors to AT&T Stadium and the Entertainment District, local businesses are reporting a summer season unlike any other.</p>
+
+            <h2>Record-Breaking Numbers</h2>
+            <p>Mayor Jim Ross recently revealed that the World Cup generated roughly half as much revenue for Arlington in just one month as AT&T Stadium typically produces in an entire year. Hotel occupancy hit record highs throughout June, with visitors from across the globe filling rooms from the Entertainment District to Downtown.</p>
+            <p>But the real story is what happened after the matches ended. Local restaurants, coffee shops, and bars saw traffic surges that extended well beyond game days, as soccer fans explored everything Arlington has to offer.</p>
+
+            <h2>Where Locals and Visitors Ate</h2>
+            <p>Throughout the tournament, several Arlington establishments became go-to spots for both visiting fans and locals looking to join the excitement:</p>
+
+            <div class="business-highlight">
+                <h3><a href="https://www.thetipsyoak.com" target="_blank">The Tipsy Oak</a></h3>
+                <p>This Downtown Arlington gastropub became a pre-game headquarters for fans heading to AT&T Stadium. Their patio was packed with supporters wearing jerseys from Mexico, Brazil, Spain, and France, all bonding over craft cocktails and elevated pub fare.</p>
+                <p class="website">→ Visit <a href="https://www.thetipsyoak.com" target="_blank">thetipsyoak.com</a></p>
+            </div>
+
+            <div class="business-highlight">
+                <h3><a href="https://www.hurtadobbq.com" target="_blank">Hurtado Barbecue</a></h3>
+                <p>Lines stretched down the block as barbecue enthusiasts from around the world discovered why Texas brisket has legendary status. Their downtown location became a pilgrimage site for food-loving fans.</p>
+                <p class="website">→ Visit <a href="https://www.hurtadobbq.com" target="_blank">hurtadobbq.com</a></p>
+            </div>
+
+            <div class="business-highlight">
+                <h3><a href="https://divisionbrewing.com" target="_blank">Division Brewing</a></h3>
+                <p>This local brewery transformed into an international meeting ground, where supporters from opposing teams found common ground over locally crafted pints. The brewery's communal tables hosted conversations in multiple languages.</p>
+                <p class="website">→ Visit <a href="https://divisionbrewing.com" target="_blank">divisionbrewing.com</a></p>
+            </div>
+
+            <div class="business-highlight">
+                <h3><a href="https://www.4kahunas.com" target="_blank">4 Kahunas Tiki Lounge</a></h3>
+                <p>Offering a tropical escape from the Texas heat, this tiki lounge's signature cocktails provided the perfect cooldown after hours in the stadium sun.</p>
+                <p class="website">→ Visit <a href="https://www.4kahunas.com" target="_blank">4kahunas.com</a></p>
+            </div>
+
+            <div class="business-highlight">
+                <h3><a href="https://nehemiahcoffee.com" target="_blank">Nehemiah Coffee Co</a></h3>
+                <p>The morning headquarters for fans recovering from late matches, with expertly crafted lattes and breakfast offerings fueling another day of World Cup excitement.</p>
+                <p class="website">→ Visit <a href="https://nehemiahcoffee.com" target="_blank">nehemiahcoffee.com</a></p>
+            </div>
+
+            <h2>The Downtown Difference</h2>
+            <p>While the Entertainment District grabbed headlines with its massive crowds, Downtown Arlington experienced its own renaissance. The Urban Union District's walkable streets and local businesses proved that Arlington's appeal extends far beyond the stadium gates.</p>
+            <p>Local coffee shops like <a href="https://www.arlingtoncoffeeroasters.com" target="_blank">Arlington Coffee Roasters</a> and <a href="https://www.inclusioncoffee.com" target="_blank">Inclusion Coffee</a> reported meeting fans from countries they'd never served before, turning casual coffee runs into cultural exchanges.</p>
+
+            <h2>Looking Ahead</h2>
+            <p>With Arlington leaders already discussing bids for future international events—including the 2031 Women's World Cup—the infrastructure and global connections built during this tournament position the city for continued growth.</p>
+            <p>The World Cup proved that Arlington can host the world. Now it's up to local businesses to keep that momentum going, welcoming both returning visitors and new residents discovering why The American Dream City is becoming one of Texas's most dynamic destinations.</p>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h3>Stay Connected to Arlington</h3>
+            <p>Get the latest local news, business spotlights, and event updates delivered to your inbox.</p>
+            <div class="cta-buttons">
+                <a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=world-cup-afterglow" class="cta-btn">Subscribe Now</a>
+                <a href="https://arlington.dfwasocialbuzz.com/business" class="cta-btn">Feature Your Business</a>
+            </div>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="related-section">
+            <h3>More Arlington Stories</h3>
+            <div class="related-grid">
+                <div class="related-card">
+                    <h4>Arlington's Summer Dining Guide</h4>
+                    <p>5 local patio spots to beat the heat this summer.</p>
+                    <a href="/arlington/articles/arlington-summer-dining-guide-local-patio-spots-july-14-2026.html">Read More →</a>
+                </div>
+                <div class="related-card">
+                    <h4>Arlington's Coffee Renaissance</h4>
+                    <p>5 local cafés brewing community in The American Dream City.</p>
+                    <a href="/arlington/articles/arlington-coffee-renaissance-5-local-cafes-july-13-2026.html">Read More →</a>
+                </div>
+                <div class="related-card">
+                    <h4>Your Mid-July Guide to Arlington</h4>
+                    <p>Free concerts, local eats, and community vibes.</p>
+                    <a href="/arlington/articles/mid-july-guide-arlington-2026.html">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <p class="tagline">Your local guide to Arlington, TX</p>
+                <p class="powered-by">Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/arlington/">Home</a></li>
+                    <li><a href="/arlington/#news">News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a></li>
+                    <li><a href="/arlington/articles/">Archive</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Business</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/business">Get Featured</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/advertise">Advertise</a></li>
+                    <li><a href="mailto:editor@dfwasocialbuzz.com">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=footer">Subscribe</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arlington Pulse by DFWA Social Buzz. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
