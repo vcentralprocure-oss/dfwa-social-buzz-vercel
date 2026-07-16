@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Weekend Guide to Arlington: Free Concerts, New Eats & Summer Vibes | Arlington Pulse</title>
+    <meta name="description" content="From Levitt Pavilion's summer concert series to exciting new restaurant openings, discover the best of Arlington this July.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+
+        /* Article Styles */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .article-header { margin-bottom: 2rem; }
+        .quadrant-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.2rem 0.55rem; border-radius: 999px; margin-bottom: 1rem; text-transform: uppercase; background: #FF6B35; color: #fff; }
+        .article-header h1 { font-size: 2.5rem; color: #fff; margin-bottom: 1rem; line-height: 1.2; }
+        .article-meta { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .article-meta .date { color: #FF6B35; }
+        .hero-image { width: 100%; height: 400px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; }
+        .image-caption { text-align: center; color: #666; font-size: 0.8rem; margin-top: -1.5rem; margin-bottom: 2rem; }
+        
+        .article-content { font-size: 1.1rem; line-height: 1.8; color: #ddd; }
+        .article-content h2 { font-size: 1.5rem; color: #FF6B35; margin: 2rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content strong { color: #fff; }
+        .article-content hr { border: none; border-top: 1px solid #333; margin: 2rem 0; }
+        
+        /* Business Listings */
+        .business-listing { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+        .business-listing h3 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .business-listing p { margin-bottom: 0.5rem; color: #aaa; }
+        .business-listing a { color: #FF6B35; font-weight: 600; }
+
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+        .cta-box h3 { color: white; margin-bottom: 0.5rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1rem; }
+        .cta-box a { display: inline-block; background: white; color: #FF6B35; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; }
+        .cta-box a:hover { background: #f0f0f0; }
+
+        /* Internal Links */
+        .related-articles { background: #111122; border: 1px solid #222; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .related-articles h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .related-articles ul { list-style: none; }
+        .related-articles li { margin-bottom: 0.75rem; }
+        .related-articles a { color: #ddd; text-decoration: none; }
+        .related-articles a:hover { color: #FF6B35; }
+        .related-articles a::before { content: "→ "; color: #FF6B35; }
+
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; margin-top: 3rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .article-container { padding: 1rem; }
+            .article-header h1 { font-size: 1.8rem; }
+            .hero-image { height: 250px; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">Arlington Pulse</div>
+                    <div class="sub">Powered by DFWA Social Buzz</div>
+                </div>
+            </div>
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/arlington/">Home</a>
+                    <a href="/arlington/#news">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business">Business</a>
+                    <a href="/arlington/#subscribe-section">Subscribe</a>
+                </div>
+            </div>
+            <nav class="city-nav">
+                <a href="/arlington/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <span class="quadrant-badge">ALL</span>
+            <h1>Your Weekend Guide to Arlington: Free Concerts, New Eats & Summer Vibes</h1>
+            <div class="article-meta">
+                <span class="date">July 16, 2026</span> | Arlington Pulse Staff
+            </div>
+        </header>
+
+        <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5MDIyMDR8MHwxfHNlYXJjaHwyfHxzdW1tZXIlMjBvdXRkb29yJTIwY29uY2VydCUyMG11c2ljJTIwZmVzdGl2YWx8ZW58MHx8fHwxNzg0MjEwNDY0fDA&ixlib=rb-4.1.0&q=80&w=1200" alt="Summer outdoor concert" class="hero-image">
+        <p class="image-caption">Photo by Yvette de Wit on Unsplash</p>
+
+        <div class="article-content">
+            <p>Summer in The American Dream City is in full swing, and there's no shortage of ways to make the most of your weekend. From free outdoor concerts to exciting new restaurant openings, here's your curated guide to the best of Arlington this July.</p>
+
+            <h2>Free Music Under the Stars at Levitt Pavilion</h2>
+            <p>The <a href="https://levittpavilionarlington.org/" target="_blank" rel="noopener">Levitt Pavilion</a> continues its beloved summer concert series, bringing free live music to downtown Arlington every weekend. Located at 100 W. Abram Street, this outdoor venue has become the heartbeat of our city's cultural scene.</p>
+            <p>With over 50 free concerts annually, the Levitt showcases everything from Texas country and Latin rhythms to indie rock and blues. Pack a blanket, grab some friends, and enjoy an evening of music under the Texas stars. The pavilion also hosts Family Movie Nights throughout the summer—perfect for creating memories with the kids.</p>
+
+            <h2>New Flavors Hit Downtown Arlington</h2>
+            <p>Arlington's culinary scene keeps getting better. This summer has welcomed some exciting newcomers that locals are already raving about.</p>
+
+            <div class="business-listing">
+                <h3><a href="https://www.coquicafe.com/" target="_blank" rel="noopener">Coquí Café</a></h3>
+                <p>Brings a taste of Puerto Rico to South Collins Street. This vibrant spot serves up authentic island flavors alongside a mission to share food and culture with the Arlington community. From traditional pastries to bold coffee, it's quickly becoming a favorite morning stop.</p>
+            </div>
+
+            <div class="business-listing">
+                <h3><a href="https://www.rocketbelly.com/" target="_blank" rel="noopener">Rocketbelly</a></h3>
+                <p>Satisfying Arlington's boba cravings with creative tea drinks and sweet treats. Located in the heart of downtown, this trendy spot is perfect for cooling off during those scorching Texas afternoons.</p>
+            </div>
+
+            <div class="business-listing">
+                <h3><a href="https://www.bluemintthai.com/" target="_blank" rel="noopener">Blue Mint Thai</a></h3>
+                <p>Fresh, locally-owned Thai cuisine that rivals anything in the metroplex. Their pad thai and green curry are already generating buzz among food enthusiasts.</p>
+            </div>
+
+            <h2>Established Favorites Worth Revisiting</h2>
+            <p>While new spots are exciting, Arlington's established gems continue to deliver exceptional experiences.</p>
+
+            <div class="business-listing">
+                <h3><a href="https://www.thetipsyoak.com/" target="_blank" rel="noopener">The Tipsy Oak</a></h3>
+                <p>Remains the go-to for craft cocktails and elevated pub fare. Their rooftop patio offers one of the best outdoor dining experiences in the city—perfect for summer evenings.</p>
+            </div>
+
+            <div class="business-listing">
+                <h3><a href="https://www.hurtadobbq.com/" target="_blank" rel="noopener">Hurtado Barbecue</a></h3>
+                <p>Continues to draw crowds from across DFW with their award-winning brisket and unique Tex-Mex BBQ fusion. If you haven't tried their famous brisket tacos, you're missing out on a true Arlington original.</p>
+            </div>
+
+            <h2>Plan Your Perfect Arlington Weekend</h2>
+            <p>Start your Saturday with coffee at Coquí Café, spend the afternoon exploring downtown's shops, then head to Levitt Pavilion for an evening of free music. On Sunday, grab brunch at The Tipsy Oak followed by a relaxing boba from Rocketbelly.</p>
+            <p>That's the beauty of Arlington—world-class entertainment, diverse dining, and genuine community spirit, all within reach.</p>
+
+            <hr>
+
+            <!-- Subscribe CTA -->
+            <div class="cta-box">
+                <h3>Love Local Arlington News?</h3>
+                <p>Get weekly guides, events, and local business spotlights delivered to your inbox.</p>
+                <a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=july-weekend-guide">Subscribe Now</a>
+            </div>
+
+            <!-- Business Feature CTA -->
+            <div class="cta-box" style="background: linear-gradient(135deg, #2d5a3d 0%, #1e3d2a 100%);">
+                <h3>Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach thousands of local readers every week.</p>
+                <a href="https://arlington.dfwasocialbuzz.com/business?utm_source=article&utm_medium=web&utm_campaign=july-weekend-guide" style="color: #2d5a3d;">Get Featured</a>
+            </div>
+
+            <!-- Related Articles -->
+            <div class="related-articles">
+                <h3>More Arlington Stories</h3>
+                <ul>
+                    <li><a href="/arlington/articles/arlington-summer-dining-guide-local-patio-spots-july-14-2026.html">Arlington's Summer Dining Guide: 5 Local Patio Spots to Beat the Heat</a></li>
+                    <li><a href="/arlington/articles/arlington-coffee-renaissance-5-local-cafes-july-13-2026.html">Arlington's Coffee Renaissance: 5 Local Cafés Brewing Community</a></li>
+                    <li><a href="/arlington/articles/mid-july-guide-arlington-2026.html">Your Mid-July Guide to Arlington: Free Concerts, Local Eats & Community Vibes</a></li>
+                    <li><a href="/arlington/articles/world-cup-afterglow-arlington-business-boom-july-2026.html">World Cup Afterglow: How Arlington's Local Businesses Are Riding the Wave</a></li>
+                    <li><a href="/arlington/articles/5-arlington-restaurants-summer-dining-july-2026.html">5 Arlington Restaurants Perfect for Summer Dining</a></li>
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <p class="tagline">Your local guide to Arlington, TX</p>
+                <p style="color: #666; font-size: 0.8rem; margin-top: 1rem;">Powered by DFWA Social Buzz</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/arlington/">Home</a></li>
+                    <li><a href="/arlington/#news">Latest News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals?cities=arlington">Local Deals</a></li>
+                    <li><a href="/arlington/#subscribe-section">Subscribe</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Cities</h4>
+                <ul>
+                    <li><a href="/arlington/">Arlington</a></li>
+                    <li><a href="/dallas/">Dallas</a></li>
+                    <li><a href="/fort-worth/">Fort Worth</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Business</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/business">Get Featured</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/advertise">Advertise</a></li>
+                    <li><a href="mailto:editor@dfwasocialbuzz.com">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arlington Pulse by DFWA Social Buzz. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
