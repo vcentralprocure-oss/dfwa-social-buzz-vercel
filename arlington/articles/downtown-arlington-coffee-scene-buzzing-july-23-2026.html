@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downtown Arlington's Coffee Scene Is Buzzing This Summer | Arlington Pulse</title>
+    <meta name="description" content="From Salter Bros. Coffee Roasters to Hurtado Barbecue, discover the local businesses defining Division Street's vibrant community this summer in Arlington, TX.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: #e0e0e0; line-height: 1.7; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+
+        /* Article Header */
+        .article-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 3rem 2rem 2rem; text-align: center; border-bottom: 2px solid #FF6B35; }
+        .article-header h1 { color: #FF6B35; font-size: 2.2rem; font-weight: 700; margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .article-header .meta { color: #888; font-size: 0.9rem; }
+        .article-header .meta span { margin: 0 0.5rem; }
+
+        /* Featured Image */
+        .featured-image { width: 100%; max-height: 500px; overflow: hidden; }
+        .featured-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Article Content */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .article-content h2 { color: #FF6B35; font-size: 1.5rem; margin: 2.5rem 0 1rem; }
+        .article-content p { margin-bottom: 1.5rem; color: #ccc; font-size: 1.05rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content strong { color: #fff; }
+        .article-content hr { border: none; border-top: 1px solid #333; margin: 2rem 0; }
+
+        /* Business Cards */
+        .business-card { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+        .business-card h3 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .business-card p { margin-bottom: 0.75rem; font-size: 0.95rem; }
+        .business-card .cta { display: inline-block; background: #FF6B35; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .business-card .cta:hover { background: #e55a2b; text-decoration: none; }
+
+        /* Internal Links Section */
+        .internal-links { background: #0f1629; border: 1px solid #222; border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+        .internal-links h3 { color: #FF6B35; margin-bottom: 1rem; font-size: 1.1rem; }
+        .internal-links ul { list-style: none; }
+        .internal-links li { margin-bottom: 0.5rem; }
+        .internal-links a { color: #aaa; text-decoration: none; }
+        .internal-links a:hover { color: #FF6B35; }
+
+        /* Subscribe CTA */
+        .subscribe-cta { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; text-align: center; margin: 3rem 0; }
+        .subscribe-cta h3 { color: white; font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .subscribe-cta p { color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; }
+        .subscribe-cta .btn { background: white; color: #FF6B35; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block; }
+        .subscribe-cta .btn:hover { background: #f0f0f0; }
+
+        /* Business Feature CTA */
+        .business-feature-cta { background: #111122; border: 2px solid #FF6B35; border-radius: 12px; padding: 2rem; text-align: center; margin: 2rem 0; }
+        .business-feature-cta h3 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .business-feature-cta p { color: #888; margin-bottom: 1rem; }
+        .business-feature-cta .btn { background: transparent; color: #FF6B35; border: 2px solid #FF6B35; padding: 10px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block; }
+        .business-feature-cta .btn:hover { background: #FF6B35; color: white; }
+
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 2rem; border-top: 2px solid #FF6B35; text-align: center; }
+        .main-footer p { color: #666; font-size: 0.85rem; }
+        .main-footer a { color: #FF6B35; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .top-header-content { flex-direction: column; gap: 0.75rem; }
+            .article-header h1 { font-size: 1.6rem; }
+            .article-container { padding: 2rem 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">Arlington Pulse</div>
+                    <div class="sub">Powered by DFWA Social Buzz</div>
+                </div>
+            </div>
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/arlington/">Home</a>
+                    <a href="/arlington/#news">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business">Business</a>
+                </div>
+            </div>
+            <nav class="city-nav">
+                <a href="/arlington/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <h1>Downtown Arlington's Coffee Scene Is Buzzing This Summer</h1>
+        <div class="meta">
+            <span>July 23, 2026</span>
+            <span>•</span>
+            <span>Arlington Pulse</span>
+            <span>•</span>
+            <span>5 min read</span>
+        </div>
+    </header>
+
+    <!-- Featured Image -->
+    <div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=1200&h=675&fit=crop" alt="Coffee shop atmosphere in downtown Arlington">
+    </div>
+
+    <!-- Article Content -->
+    <article class="article-container">
+        <div class="article-content">
+            <p>There's something special happening on Division Street.</p>
+
+            <p>While the rest of Arlington sweats through another scorching July, downtown's local business corridor has become the coolest place to be—literally and figuratively. From freshly roasted coffee to community-driven events, here's what's brewing in the heart of The American Dream City.</p>
+
+            <h2>Salter Bros. Coffee Roasters: Where the Magic Happens</h2>
+
+            <p>Walk into <a href="https://salterbroscoffee.com" target="_blank" rel="noopener"><strong>Salter Bros. Coffee Roasters</strong></a> at 400 E Division Street and you'll immediately smell the difference. This family-owned operation doesn't just serve coffee—they roast their own beans right on site, creating a coffeehouse experience that's become a staple for UTA students, remote workers, and caffeine enthusiasts across Tarrant County.</p>
+
+            <p>Their cold brew has developed something of a cult following, and for good reason. But what really sets Salter Bros. apart is their commitment to collaboration. Their coffee-beer collaboration with <a href="https://legaldraftbeer.com" target="_blank" rel="noopener"><strong>Legal Draft Beer Co.</strong></a> (just steps away) has become a local favorite, while their beans are now an option at UnionWorx and Sugar Bee Sweets Bakery.</p>
+
+            <h2>The Tipsy Oak: More Than Just a Bar</h2>
+
+            <p>Just down the street, <a href="https://thetipsyoak.com" target="_blank" rel="noopener"><strong>The Tipsy Oak</strong></a> continues to redefine what a neighborhood gathering place can be. With its sprawling patio and craft cocktail program, it's become the unofficial after-hours office for Arlington's creative class. Their rotating seasonal menu keeps regulars coming back, while the relaxed atmosphere makes it equally suitable for casual meetups or productive work sessions.</p>
+
+            <h2>Hurtado Barbecue: Texas Tradition, Arlington Style</h2>
+
+            <p>No conversation about downtown Arlington's food scene is complete without mentioning <a href="https://hurtadobbq.com" target="_blank" rel="noopener"><strong>Hurtado Barbecue</strong></a>. Located conveniently near the Salter Bros. and Legal Draft corridor, this award-winning smokehouse has put Arlington on the Texas BBQ map. Their brisket has earned accolades from critics and locals alike, while their partnership with Salter Bros. shows the collaborative spirit that defines this neighborhood.</p>
+
+            <h2>Inclusion Coffee: Where Community Meets Creativity</h2>
+
+            <p>Over at <a href="https://inclusioncoffee.com" target="_blank" rel="noopener"><strong>Inclusion Coffee</strong></a>, the focus isn't just on great coffee—it's on building community. Their recent "Live Corndog Portraits" event for First Thursdays exemplifies the playful, inclusive approach that's made them a downtown favorite. With Disney-themed secret menus and regular community events, they've created a space where everyone feels welcome.</p>
+
+            <h2>Newcomers to Watch: Blue Mint Thai & Rocketbelly</h2>
+
+            <p>The downtown revitalization shows no signs of slowing. <a href="https://www.rocketbelly.com" target="_blank" rel="noopener"><strong>Rocketbelly</strong></a>, Texas' first self-serve boba bar, has been drawing crowds with its innovative approach to bubble tea, while <strong>Blue Mint Thai</strong> is bringing authentic Thai flavors to the Urban Union development. These new additions join an already impressive lineup that includes <a href="https://divisionbrewing.com" target="_blank" rel="noopener"><strong>Division Brewing</strong></a> and <a href="https://marquezbakery.com" target="_blank" rel="noopener"><strong>Marquez Bakery</strong></a>.</p>
+
+            <h2>Why This Matters</h2>
+
+            <p>What we're witnessing in downtown Arlington isn't just business growth—it's community building. These aren't chain establishments; they're locally owned, community-focused operations that reinvest in our city. When you grab coffee at Salter Bros. or barbecue at Hurtado, you're supporting Arlington families, not distant shareholders.</p>
+
+            <p>The summer heat may be intense, but downtown Arlington's local business scene is proving that community-driven commerce can thrive even in the dog days of July.</p>
+
+            <hr>
+
+            <!-- Internal Links Section -->
+            <div class="internal-links">
+                <h3>More Arlington Stories</h3>
+                <ul>
+                    <li><a href="/arlington/articles/arlington-summer-nights-5-local-spots-july-22-2026.html">→ Arlington Summer Nights: 5 Local Spots to Eat, Drink & Connect</a></li>
+                    <li><a href="/arlington/articles/arlington-coffee-renaissance-5-local-cafes-july-13-2026.html">→ Arlington's Coffee Renaissance: 5 Local Cafés Brewing Community</a></li>
+                    <li><a href="/arlington/articles/downtown-arlington-summer-business-boom-july-18-2026.html">→ Downtown Arlington's Summer Business Boom</a></li>
+                    <li><a href="/arlington/articles/arlington-hidden-gems-5-local-businesses-july-19-2026.html">→ Arlington's Hidden Gems: 5 Local Businesses Worth Discovering</a></li>
+                    <li><a href="/arlington/articles/arlington-summer-business-spotlight-july-21-2026.html">→ Arlington's Summer Business Spotlight</a></li>
+                </ul>
+            </div>
+
+            <!-- Subscribe CTA -->
+            <div class="subscribe-cta">
+                <h3>Get Arlington's Best Local Stories</h3>
+                <p>Subscribe to Arlington Pulse and get weekly guides to the best local businesses, events, and hidden gems.</p>
+                <a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=downtown-coffee-scene-july-23" class="btn">Subscribe Now</a>
+            </div>
+
+            <!-- Business Feature CTA -->
+            <div class="business-feature-cta">
+                <h3>Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach thousands of local readers every week.</p>
+                <a href="https://dfwasocialbuzz.com/business" class="btn">Get Featured</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>© 2026 Arlington Pulse • Powered by <a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></p>
+    </footer>
+</body>
+</html>
