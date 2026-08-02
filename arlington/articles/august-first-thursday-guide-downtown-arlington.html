@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your August First Thursday Guide: Downtown Arlington's Monthly Block Party | Arlington Pulse</title>
+    <meta name="description" content="First Thursday returns to downtown Arlington on August 7th with live music, 3D chalk art, and extended hours at local restaurants and shops.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: #e0e0e0; line-height: 1.7; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article Styles */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .article-header { margin-bottom: 2rem; }
+        .article-category { color: #FF6B35; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .article-title { font-size: 2.5rem; color: #fff; line-height: 1.2; margin-bottom: 1rem; }
+        .article-subtitle { font-size: 1.2rem; color: #888; line-height: 1.5; margin-bottom: 1.5rem; }
+        .article-meta { display: flex; align-items: center; gap: 1rem; color: #666; font-size: 0.9rem; }
+        .article-meta .date { color: #888; }
+        .article-meta .author { color: #FF6B35; }
+        
+        /* Featured Image */
+        .featured-image { width: 100%; height: 450px; object-fit: cover; border-radius: 12px; margin-bottom: 2rem; }
+        .image-caption { text-align: center; color: #666; font-size: 0.85rem; margin-top: -1.5rem; margin-bottom: 2rem; }
+        
+        /* Article Content */
+        .article-content { font-size: 1.1rem; line-height: 1.8; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { font-size: 1.6rem; color: #FF6B35; margin: 2.5rem 0 1rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content strong { color: #fff; }
+        .article-content hr { border: none; border-top: 1px solid #333; margin: 2rem 0; }
+        
+        /* Business Cards */
+        .business-card { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+        .business-card h3 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .business-card p { margin-bottom: 0.75rem; color: #aaa; }
+        .business-card .cta { display: inline-block; background: #FF6B35; color: white; padding: 8px 16px; border-radius: 4px; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+        .business-card .cta:hover { background: #e55a2b; text-decoration: none; }
+        
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; text-align: center; margin: 2.5rem 0; }
+        .cta-box h3 { color: white; font-size: 1.5rem; margin-bottom: 0.75rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1.25rem; }
+        .cta-box .btn { display: inline-block; background: white; color: #FF6B35; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+        .cta-box .btn:hover { background: #f0f0f0; }
+        
+        /* Internal Links */
+        .related-articles { background: #111122; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+        .related-articles h3 { color: #FF6B35; margin-bottom: 1rem; font-size: 1.1rem; }
+        .related-articles ul { list-style: none; }
+        .related-articles li { margin-bottom: 0.75rem; padding-left: 1rem; border-left: 2px solid #FF6B35; }
+        .related-articles a { color: #aaa; text-decoration: none; }
+        .related-articles a:hover { color: #FF6B35; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; margin-top: 4rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            .article-title { font-size: 1.8rem; }
+            .article-container { padding: 1rem; }
+            .featured-image { height: 250px; }
+            .footer-content { grid-template-columns: 1fr; }
+            .top-header-content { flex-direction: column; gap: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">Arlington Pulse</div>
+                    <div class="sub">Powered by DFWA Social Buzz</div>
+                </div>
+            </div>
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/arlington/">Home</a>
+                    <a href="/arlington/#news">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business">Business</a>
+                </div>
+            </div>
+            <nav class="city-nav">
+                <a href="/arlington/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-category">Local Events</div>
+            <h1 class="article-title">Your August First Thursday Guide: Downtown Arlington's Monthly Block Party Returns</h1>
+            <p class="article-subtitle">Live music, 3D chalk art, and extended hours at your favorite downtown spots—here's everything happening August 7th</p>
+            <div class="article-meta">
+                <span class="date">August 1, 2026</span>
+                <span class="author">Arlington Pulse Staff</span>
+            </div>
+        </header>
+
+        <img src="https://images.unsplash.com/photo-1764090550152-23b8dbf2908f?w=1200&h=675&fit=crop" alt="Colorful outdoor dining area" class="featured-image">
+        <p class="image-caption">Downtown Arlington comes alive during First Thursday events with outdoor dining and community gatherings. (Photo: Unsplash)</p>
+
+        <div class="article-content">
+            <p>August is here, and that means one thing for Arlington locals: <strong>First Thursday</strong> is back. On August 7th, downtown Arlington transforms into a vibrant block party from 4 to 8 p.m., bringing together live music, interactive art, and the kind of community energy that makes The American Dream City special.</p>
+
+            <p>This month's highlight? A massive <strong>3D chalk mural</strong> at Rotary Dream Park by renowned local artist Jan Riggins. Designed to celebrate the spirit of community coming together, this interactive floor-art piece is exactly the kind of experience that defines First Thursdays—unexpected, engaging, and totally Instagram-worthy.</p>
+
+            <h2>Where to Eat During First Thursday</h2>
+
+            <p>All that walking and exploring works up an appetite. Fortunately, downtown's best spots are extending their hours and rolling out specials for the evening.</p>
+
+            <p><a href="https://www.thetipsyoak.com/" target="_blank" rel="noopener"><strong>The Tipsy Oak</strong></a> on Abram Street is always a First Thursday favorite. This gastropub-icehouse hybrid serves up chef-driven pub fare alongside craft beer and cocktails. Their patio fills up fast on event nights, so arrive early to grab a spot.</p>
+
+            <div class="business-card">
+                <h3>The Tipsy Oak</h3>
+                <p>301 E Abram St, Arlington, TX 76010</p>
+                <p>Gastropub featuring craft cocktails, local beers, and live music in the heart of downtown.</p>
+                <a href="https://www.thetipsyoak.com/" target="_blank" rel="noopener" class="cta">Visit Website →</a>
+            </div>
+
+            <p>For something more casual, <a href="https://hurtadobbq.com/" target="_blank" rel="noopener"><strong>Hurtado Barbecue</strong></a> on Front Street delivers Texas-sized flavor. Their Texas Twinkies have achieved near-mythical status among locals, and the brisket rivals anything you'll find in Austin. The outdoor seating is perfect for people-watching during the event.</p>
+
+            <div class="business-card">
+                <h3>Hurtado Barbecue</h3>
+                <p>205 E Front St, Arlington, TX 76010</p>
+                <p>Award-winning Texas barbecue featuring brisket, ribs, and their famous Texas Twinkies.</p>
+                <a href="https://hurtadobbq.com/" target="_blank" rel="noopener" class="cta">Visit Website →</a>
+            </div>
+
+            <p>Craving something sweet? <a href="https://www.rocketbelly.com/" target="_blank" rel="noopener"><strong>Rocketbelly</strong></a>, Texas' first self-serve boba bar, offers refreshing drinks to beat the August heat. Customize your bubble tea exactly how you want it—because after exploring downtown, you deserve something exactly to your taste.</p>
+
+            <div class="business-card">
+                <h3>Rocketbelly</h3>
+                <p>200 E Abram St, Arlington, TX 76010</p>
+                <p>Texas' first self-serve boba bar with customizable bubble tea and refreshing drinks.</p>
+                <a href="https://www.rocketbelly.com/" target="_blank" rel="noopener" class="cta">Visit Website →</a>
+            </div>
+
+            <h2>Live Music & Entertainment</h2>
+
+            <p>First Thursdays wouldn't be complete without live music. Multiple stages pop up throughout downtown, featuring local artists across genres. Bring a blanket or chair and settle in at one of the performance areas, or let the music guide your stroll between businesses.</p>
+
+            <p>Don't miss the <a href="https://www.levittpavilionarlington.org/" target="_blank" rel="noopener"><strong>Levitt Pavilion</strong></a>, which often coordinates its programming with First Thursday events. This outdoor music venue has become the heartbeat of downtown's cultural scene, hosting 50+ free concerts annually.</p>
+
+            <div class="business-card">
+                <h3>Levitt Pavilion</h3>
+                <p>100 W Abram St, Arlington, TX 76010</p>
+                <p>Outdoor music venue presenting 50+ free concerts annually in downtown Arlington.</p>
+                <a href="https://www.levittpavilionarlington.org/" target="_blank" rel="noopener" class="cta">Visit Website →</a>
+            </div>
+
+            <h2>More Local Favorites to Explore</h2>
+
+            <p>While you're downtown, make sure to stop by <a href="https://www.divisionstdiner.com/" target="_blank" rel="noopener"><strong>Division Street Diner</strong></a> for their legendary breakfast-for-dinner options, or grab fresh tortillas at <a href="https://www.marquezbakery.com/" target="_blank" rel="noopener"><strong>Marquez Bakery</strong></a>, a family-run institution that's been serving Arlington for decades.</p>
+
+            <div class="business-card">
+                <h3>Division Street Diner</h3>
+                <p>1800 W Division St, Arlington, TX 76012</p>
+                <p>Classic American breakfast and lunch spot known for generous portions and friendly service.</p>
+                <a href="https://www.divisionstdiner.com/" target="_blank" rel="noopener" class="cta">Visit Website →</a>
+            </div>
+
+            <div class="business-card">
+                <h3>Marquez Bakery</h3>
+                <p>1730 E Division St, Arlington, TX 76011</p>
+                <p>Family-run bakery serving fresh tortillas, Mexican pastries, and authentic breakfast tacos.</p>
+                <a href="https://www.marquezbakery.com/" target="_blank" rel="noopener" class="cta">Visit Website →</a>
+            </div>
+
+            <h2>Supporting Local Beyond the Event</h2>
+
+            <p>First Thursday isn't just a party—it's a reminder of why supporting local businesses matters. Every dollar spent at a downtown spot stays in Arlington, supporting jobs and keeping our community unique.</p>
+
+            <p>Mark your calendar for August 7th, grab your friends and family, and experience downtown Arlington at its best. With live music, interactive art, and some of the best food in North Texas, First Thursday is the perfect way to kick off your August weekend.</p>
+
+            <hr>
+
+            <div class="cta-box">
+                <h3>Want More Arlington Guides?</h3>
+                <p>Get local news, business spotlights, and event updates delivered straight to your inbox every week.</p>
+                <a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=august-first-thursday" class="btn">Subscribe Now</a>
+            </div>
+
+            <div class="related-articles">
+                <h3>More Arlington Stories</h3>
+                <ul>
+                    <li><a href="/arlington/articles/5-arlington-spots-august-2026.html">5 Arlington Spots You Need to Visit This August</a></li>
+                    <li><a href="/arlington/articles/arlington-august-preview-local-business-spotlight-july-30-2026.html">Your August Preview: 5 Arlington Businesses to Watch</a></li>
+                    <li><a href="/arlington/articles/arlington-summer-local-favorites-july-29-2026.html">5 Arlington Local Favorites You Need to Try This Summer</a></li>
+                    <li><a href="/arlington/articles/5-arlington-hidden-gems-locals-july-28-2026.html">5 Arlington Hidden Gems Locals Don't Want You to Know About</a></li>
+                    <li><a href="/arlington/articles/downtown-arlington-coffee-scene-buzzing-july-23-2026.html">Downtown Arlington's Coffee Scene Is Buzzing This Summer</a></li>
+                </ul>
+            </div>
+
+            <div class="cta-box" style="background: linear-gradient(135deg, #2d5a3d 0%, #1e3d29 100%);">
+                <h3>Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach thousands of local readers every week.</p>
+                <a href="https://arlington.dfwasocialbuzz.com/business" class="btn" style="color: #2d5a3d;">Get Featured →</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <p class="tagline">Your local guide to Arlington, TX</p>
+                <p style="color: #666; font-size: 0.8rem; margin-top: 1rem;">Powered by <a href="https://dfwasocialbuzz.com" style="color: #FF6B35;">DFWA Social Buzz</a></p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/arlington/">Home</a></li>
+                    <li><a href="/arlington/#news">Latest News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals?cities=arlington">Local Deals</a></li>
+                    <li><a href="/arlington/articles/">Archive</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Business</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/business">Advertise</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/business">Get Featured</a></li>
+                    <li><a href="mailto:editor@dfwasocialbuzz.com">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Network</h4>
+                <ul>
+                    <li><a href="/dallas/">Dallas Current</a></li>
+                    <li><a href="/fort-worth/">Fort Worth Echo</a></li>
+                    <li><a href="https://dfwasocialbuzz.com">DFWA Social Buzz</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arlington Pulse. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
