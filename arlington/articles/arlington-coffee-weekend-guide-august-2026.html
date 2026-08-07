@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Arlington Coffee & Weekend Guide: 5 Local Spots to Explore | Arlington Pulse</title>
+    <meta name="description" content="From specialty coffee roasters to scenic parks and award-winning BBQ, discover the local gems making Arlington's weekend scene shine.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+        
+        /* Article Header */
+        .article-header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 3rem 2rem 2rem; text-align: center; border-bottom: 2px solid #FF6B35; }
+        .article-header h1 { color: #FF6B35; font-size: 2.2rem; font-weight: 700; margin-bottom: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .article-header .subheadline { color: #888; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+        .article-header .date { color: #666; font-size: 0.9rem; margin-top: 1rem; }
+        
+        /* Featured Image */
+        .featured-image { width: 100%; max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; }
+        .featured-image img { width: 100%; height: auto; border-radius: 12px; }
+        
+        /* Article Content */
+        .article-content { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .article-content p { color: #ccc; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content strong { color: #fff; }
+        
+        /* Business Listings */
+        .business-listing { background: #111122; border: 1px solid rgba(255,107,53,0.2); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+        .business-listing h3 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .business-listing p { color: #aaa; font-size: 1rem; margin-bottom: 0.5rem; }
+        .business-listing a { color: #FF6B35; font-weight: 600; }
+        
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; text-align: center; margin: 2rem 0; }
+        .cta-box h3 { color: white; margin-bottom: 0.5rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1rem; }
+        .cta-box a { display: inline-block; background: white; color: #FF6B35; padding: 12px 28px; border-radius: 6px; text-decoration: none; font-weight: 600; }
+        
+        /* Internal Links */
+        .related-articles { background: #111122; border-radius: 12px; padding: 2rem; margin: 2rem 0; }
+        .related-articles h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .related-articles ul { list-style: none; }
+        .related-articles li { margin-bottom: 0.75rem; }
+        .related-articles a { color: #ccc; text-decoration: none; }
+        .related-articles a:hover { color: #FF6B35; }
+        
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; margin-top: 3rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) {
+            .article-header h1 { font-size: 1.6rem; }
+            .article-content { padding: 1.5rem; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">Arlington Pulse</div>
+                    <div class="sub">Powered by DFWA Social Buzz</div>
+                </div>
+            </div>
+            <nav class="city-nav">
+                <a href="/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <h1>Your Arlington Coffee & Weekend Guide: 5 Local Spots to Explore</h1>
+        <p class="subheadline">From specialty coffee roasters to scenic parks and award-winning BBQ, discover the local gems making Arlington's weekend scene shine.</p>
+        <p class="date">August 7, 2026</p>
+    </header>
+
+    <!-- Featured Image -->
+    <div class="featured-image">
+        <img src="https://images.unsplash.com/photo-1628630470727-b726b8a15a9d?w=1200&h=675&fit=crop" alt="Arlington Texas downtown cityscape">
+    </div>
+
+    <!-- Article Content -->
+    <article class="article-content">
+        <p>Arlington's coffee culture is having a moment, and locals couldn't be more excited. From specialty roasters to cozy neighborhood cafés, The American Dream City is brewing up something special for caffeine enthusiasts.</p>
+
+        <div class="business-listing">
+            <h3><a href="https://www.nehemiahcoffee.com" target="_blank" rel="noopener">Nehemiah Coffee Co</a></h3>
+            <p>Located in the heart of downtown Arlington, this roaster sources ethically traded beans and crafts each cup with precision. Their pour-over bar is a must-try for serious coffee lovers, and the welcoming atmosphere makes it an ideal spot for remote work or casual meetups.</p>
+        </div>
+
+        <div class="business-listing">
+            <h3><a href="https://www.inclusioncoffee.com" target="_blank" rel="noopener">Inclusion Coffee</a></h3>
+            <p>Just a short drive away, Inclusion Coffee lives up to its name by creating a space where everyone feels welcome. Their seasonal menu rotates regularly, featuring creative lattes that showcase local flavors. The community tables and friendly baristas have made this spot a favorite among UTA students and young professionals.</p>
+        </div>
+
+        <div class="business-listing">
+            <h3><a href="https://www.arlingtoncoffeeroasters.com" target="_blank" rel="noopener">Arlington Coffee Roasters</a></h3>
+            <p>For those seeking a true Texas coffee experience, Arlington Coffee Roasters delivers with small-batch roasting that highlights the unique characteristics of each bean origin. Their tasting notes are educational without being pretentious, making specialty coffee accessible to newcomers and connoisseurs alike.</p>
+        </div>
+
+        <div class="business-listing">
+            <h3><a href="https://www.riverlegacy.org" target="_blank" rel="noopener">River Legacy Parks</a></h3>
+            <p>Beyond coffee, Arlington's weekend scene offers plenty to explore. River Legacy Parks provides over 1,300 acres of natural beauty perfect for hiking, biking, or simply unwinding after your morning brew. The trails wind through dense forest along the Trinity River, offering a peaceful escape from city life.</p>
+        </div>
+
+        <div class="business-listing">
+            <h3><a href="https://www.hurtadobbq.com" target="_blank" rel="noopener">Hurtado Barbecue</a></h3>
+            <p>When hunger strikes, head to Hurtado Barbecue on Division Street. This local favorite has earned a reputation for perfectly smoked brisket and house-made sausages. The no-frills approach lets the quality of the meat speak for itself, and the line out the door proves Arlington locals know where to find the best BBQ in town.</p>
+        </div>
+
+        <p>Whether you're a coffee aficionado or simply looking for a new weekend routine, Arlington's local businesses are ready to welcome you. Support local, drink good coffee, and discover why The American Dream City is becoming a destination for those who appreciate authentic community spots.</p>
+
+        <!-- Subscribe CTA -->
+        <div class="cta-box">
+            <h3>Get More Arlington Guides</h3>
+            <p>Subscribe to Arlington Pulse for weekly local news, events, and business spotlights delivered to your inbox.</p>
+            <a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=coffee-weekend-guide">Subscribe Now →</a>
+        </div>
+
+        <!-- Business Feature CTA -->
+        <div class="cta-box" style="background: linear-gradient(135deg, #2d5a3d 0%, #1e3d2a 100%);">
+            <h3>Own a Business in Arlington?</h3>
+            <p>Get featured in Arlington Pulse and reach thousands of local readers every week.</p>
+            <a href="https://arlington.dfwasocialbuzz.com/business" style="color: #2d5a3d;">Get Featured →</a>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="related-articles">
+            <h3>More Arlington Stories</h3>
+            <ul>
+                <li><a href="/arlington/articles/arlington-weekend-guide-5-local-spots-august-2026.html">→ Your Arlington Weekend Guide: 5 Local Spots to Explore This August</a></li>
+                <li><a href="/arlington/articles/arlington-coffee-renaissance-5-local-cafes-august-2026.html">→ Arlington's Coffee Renaissance: 5 Local Cafés Brewing Community</a></li>
+                <li><a href="/arlington/articles/arlington-family-fun-5-local-spots-august-2026.html">→ Arlington Family Fun: 5 Local Spots Making Memories This August</a></li>
+                <li><a href="/arlington/articles/5-arlington-spots-august-2026.html">→ 5 Arlington Spots You Need to Visit This August</a></li>
+                <li><a href="/arlington/articles/arlington-hidden-gems-5-local-businesses-july-19-2026.html">→ Arlington's Hidden Gems: 5 Local Businesses Worth Discovering</a></li>
+            </ul>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <p class="tagline">Your local guide to Arlington, TX. Powered by DFWA Social Buzz.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/arlington/">Home</a></li>
+                    <li><a href="/arlington/articles/">All Articles</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals?cities=arlington">Local Deals</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=coffee-weekend-guide">Subscribe</a></li>
+                    <li><a href="https://arlington.dfwasocialbuzz.com/business">Get Featured</a></li>
+                    <li><a href="mailto:editor@dfwasocialbuzz.com">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Arlington Pulse by DFWA Social Buzz. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
