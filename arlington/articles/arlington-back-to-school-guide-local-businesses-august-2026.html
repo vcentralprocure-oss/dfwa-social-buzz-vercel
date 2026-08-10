@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Arlington Back-to-School Guide: 5 Local Businesses Ready to Help | Arlington Pulse</title>
+    <meta name="description" content="From school supply savings to family-friendly dining, discover Arlington businesses that make back-to-school season smoother and more affordable.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: #e0e0e0; line-height: 1.7; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+
+        /* Article Styles */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 2rem; }
+        .article-header { margin-bottom: 2rem; }
+        .article-category { color: #FF6B35; font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .article-title { font-size: 2.5rem; color: #fff; line-height: 1.2; margin-bottom: 1rem; }
+        .article-meta { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .article-hero-image { width: 100%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; margin-bottom: 2rem; }
+        .article-hero-image img { width: 100%; height: 100%; object-fit: cover; }
+        .article-image-caption { color: #666; font-size: 0.8rem; text-align: center; margin-top: 0.5rem; font-style: italic; }
+
+        /* Article Content */
+        .article-content { font-size: 1.1rem; line-height: 1.8; }
+        .article-content p { margin-bottom: 1.5rem; color: #d0d0d0; }
+        .article-content h2 { font-size: 1.6rem; color: #FF6B35; margin: 2.5rem 0 1rem; }
+        .article-content h3 { font-size: 1.3rem; color: #fff; margin: 2rem 0 1rem; }
+        .article-content a { color: #FF6B35; text-decoration: underline; }
+        .article-content a:hover { color: #ff8c5a; }
+        .article-content strong { color: #fff; }
+        .article-content ul, .article-content ol { margin: 1rem 0 1.5rem 2rem; }
+        .article-content li { margin-bottom: 0.5rem; color: #d0d0d0; }
+
+        /* Business Cards */
+        .business-card { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+        .business-card h3 { color: #FF6B35; margin: 0 0 0.5rem; }
+        .business-card p { margin: 0.5rem 0; color: #aaa; }
+        .business-card .website { color: #FF6B35; font-weight: 600; }
+
+        /* CTA Boxes */
+        .cta-box { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; margin: 2rem 0; text-align: center; }
+        .cta-box h3 { color: #fff; font-size: 1.5rem; margin-bottom: 1rem; }
+        .cta-box p { color: rgba(255,255,255,0.9); margin-bottom: 1.5rem; }
+        .cta-box .btn { background: #fff; color: #FF6B35; padding: 12px 28px; text-decoration: none; border-radius: 6px; font-weight: 600; display: inline-block; }
+        .cta-box .btn:hover { background: #f0f0f0; }
+
+        /* Internal Links Section */
+        .internal-links { background: #111122; border-radius: 12px; padding: 2rem; margin: 3rem 0; }
+        .internal-links h3 { color: #FF6B35; margin-bottom: 1rem; }
+        .internal-links ul { list-style: none; margin: 0; padding: 0; }
+        .internal-links li { margin-bottom: 0.75rem; }
+        .internal-links a { color: #aaa; text-decoration: none; }
+        .internal-links a:hover { color: #FF6B35; }
+
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; margin-top: 4rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .top-header-content { flex-direction: column; gap: 0.75rem; }
+            .article-title { font-size: 1.8rem; }
+            .article-container { padding: 1rem; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">Arlington Pulse</div>
+                    <div class="sub">Powered by DFWA Social Buzz</div>
+                </div>
+            </div>
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/arlington/">Home</a>
+                    <a href="/arlington/#news">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business">Business</a>
+                </div>
+            </div>
+            <nav class="city-nav">
+                <a href="/arlington/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <div class="article-category">Local Guide</div>
+            <h1 class="article-title">Your Arlington Back-to-School Guide: 5 Local Businesses Ready to Help</h1>
+            <div class="article-meta">August 10, 2026 · Arlington Pulse Staff</div>
+        </header>
+
+        <div class="article-hero-image">
+            <img src="https://images.unsplash.com/photo-1545345540-ea5d968030af?w=1200&h=675&fit=crop" alt="Texas local business community">
+        </div>
+        <p class="article-image-caption">Photo by Unsplash</p>
+
+        <div class="article-content">
+            <p>As summer winds down and the first day of school approaches, Arlington families are shifting gears from vacation mode to preparation mode. With Arlington ISD classes starting August 12th, now is the perfect time to discover the local businesses that make back-to-school season smoother, more affordable, and even a little fun.</p>
+
+            <p>From school supply savings to family-friendly dining spots perfect for those busy weeknights, these five Arlington businesses have your back as you gear up for the new academic year.</p>
+
+            <h2>Target: Your One-Stop School Supply Destination</h2>
+
+            <p>When it comes to crossing everything off that school supply list, <a href="https://www.target.com/school" target="_blank" rel="noopener">Target</a> remains Arlington's go-to destination. With locations across the city including the popular Arlington Highlands store, Target offers competitive prices on everything from backpacks and lunch boxes to calculators and art supplies.</p>
+
+            <p>Their annual back-to-school sales can save families significant money, and the REDcard offers an additional 5% off every purchase. Plus, with same-day delivery and order pickup options, busy parents can shop on their schedule.</p>
+
+            <h2>Walmart: Budget-Friendly Basics for Every Student</h2>
+
+            <p>For families watching their budgets, <a href="https://www.walmart.com/cp/back-to-school/1071204" target="_blank" rel="noopener">Walmart</a> delivers unbeatable value on back-to-school essentials. Their Arlington locations, including the Supercenter on East Lamar Boulevard, stock everything from uniforms and shoes to electronics and dorm room necessities.</p>
+
+            <p>Walmart's price match guarantee ensures you're getting the best deal, and their app makes it easy to check inventory before you head out. Don't miss their rollback prices on bulk items like notebooks, pens, and folders.</p>
+
+            <h2>The Tipsy Oak: Family Dining Made Easy</h2>
+
+            <p>Once school starts, weeknight dinners become a logistical challenge. <a href="https://www.thetipsyoak.com/" target="_blank" rel="noopener">The Tipsy Oak</a> on Abram Street solves this problem with their family-friendly atmosphere and menu that pleases both kids and parents.</p>
+
+            <p>Their outdoor patio is perfect for those warm August evenings, and their weekly specials make dining out affordable even during the expensive back-to-school season. From craft burgers to fresh salads, there's something for every palate in your family.</p>
+
+            <h2>Half Price Books: Fuel Young Minds for Less</h2>
+
+            <p>Reading is fundamental to academic success, and <a href="https://www.hpb.com/" target="_blank" rel="noopener">Half Price Books</a> on South Cooper Street makes building a home library affordable. Their vast selection of new and used books covers every reading level and interest.</p>
+
+            <p>During back-to-school season, they often run special promotions on educational materials, reference books, and children's literature. It's the perfect place to find supplemental reading materials or reward your young scholar with a new book.</p>
+
+            <h2>Marquez Bakery: Fuel Up with Authentic Breakfast</h2>
+
+            <p>Before those early morning school drop-offs, stop by <a href="https://www.marquezbakery.com/" target="_blank" rel="noopener">Marquez Bakery</a> on Pioneer Parkway for authentic Mexican breakfast items that will fuel your family's day. Their fresh tortillas, breakfast tacos, and pan dulce are local favorites.</p>
+
+            <p>Grab a dozen tortillas for the week or treat the kids to fresh pastries before that first day of school. This family-owned institution has been serving Arlington for generations and understands the importance of starting the day right.</p>
+
+            <h2>Make This School Year Your Best Yet</h2>
+
+            <p>Back-to-school season doesn't have to be stressful. By supporting these Arlington businesses, you're not just checking items off your to-do list—you're investing in our local community while setting your family up for academic success.</p>
+
+            <p>From all of us at Arlington Pulse, here's to a fantastic school year ahead!</p>
+
+            <!-- Subscribe CTA -->
+            <div class="cta-box">
+                <h3>Get More Arlington Guides</h3>
+                <p>Subscribe to Arlington Pulse for weekly local news, business spotlights, and exclusive deals delivered straight to your inbox.</p>
+                <a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=back_to_school" class="btn">Subscribe Now</a>
+            </div>
+
+            <!-- Business Feature CTA -->
+            <div class="cta-box" style="background: linear-gradient(135deg, #2d5a3d 0%, #1e3d29 100%);">
+                <h3>Own a Business in Arlington?</h3>
+                <p>Get featured in Arlington Pulse and reach thousands of local readers every week. Join the businesses shaping our community's story.</p>
+                <a href="https://arlington.dfwasocialbuzz.com/business" class="btn" style="color: #2d5a3d;">Get Featured</a>
+            </div>
+
+            <!-- Internal Links -->
+            <div class="internal-links">
+                <h3>More Arlington Stories</h3>
+                <ul>
+                    <li><a href="/arlington/articles/arlington-restaurants-american-dream-city-august-2026.html">→ 5 Arlington Restaurants That Prove The American Dream City Knows Good Food</a></li>
+                    <li><a href="/arlington/articles/arlington-back-to-school-local-business-guide-august-2026.html">→ Back to School in Arlington: Your Guide to Local Shops & Services</a></li>
+                    <li><a href="/arlington/articles/arlington-coffee-weekend-guide-august-2026.html">→ Your Arlington Coffee & Weekend Guide: 5 Local Spots to Explore</a></li>
+                    <li><a href="/arlington/articles/arlington-weekend-guide-5-local-spots-august-2026.html">→ Your Arlington Weekend Guide: 5 Local Spots to Explore This August</a></li>
+                    <li><a href="/arlington/articles/arlington-family-fun-5-local-spots-august-2026.html">→ Arlington Family Fun: 5 Local Spots Making Memories This August</a></li>
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <p class="tagline">Your daily guide to Arlington news, events, and local deals.</p>
+                <p style="color: #666; font-size: 0.85rem; margin-top: 1rem;">Powered by <a href="https://dfwasocialbuzz.com" style="color: #FF6B35;">DFWA Social Buzz</a></p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/arlington/">Home</a></li>
+                    <li><a href="/arlington/#news">News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Business</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/business">Advertise</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/business">Get Featured</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=back_to_school">Subscribe</a></li>
+                    <li><a href="mailto:editor@dfwasocialbuzz.com">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arlington Pulse. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
