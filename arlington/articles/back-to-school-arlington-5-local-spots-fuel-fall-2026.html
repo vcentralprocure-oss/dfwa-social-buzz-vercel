@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Back-to-School in Arlington: 5 Local Spots to Fuel Your Fall | Arlington Pulse</title>
+    <meta name="description" content="From coffee shops to family dining, discover Arlington businesses ready to help you tackle the new school year with energy and flavor.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0a0a14; color: white; line-height: 1.6; }
+        
+        /* Header */
+        .top-header { background: #0a0a0a; padding: 0.75rem 2rem; border-bottom: 1px solid #222; }
+        .top-header-content { max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-section { display: flex; align-items: center; gap: 0.75rem; }
+        .logo-section .logo-img { width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .logo-section .logo-text { color: white; }
+        .logo-section .logo-text .main { font-weight: 700; font-size: 1rem; color: #FF6B35; }
+        .logo-section .logo-text .sub { font-size: 0.7rem; color: #888; }
+        .main-nav { display: flex; align-items: center; gap: 2rem; }
+        .main-nav .nav-links { display: flex; gap: 1.5rem; }
+        .main-nav .nav-links a { color: #aaa; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+        .main-nav .nav-links a:hover { color: #FF6B35; }
+        .city-nav { display: flex; gap: 0.5rem; }
+        .city-nav a { color: #aaa; text-decoration: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; transition: all 0.2s; }
+        .city-nav a:hover { background: rgba(255,107,53,0.1); color: #FF6B35; }
+        .city-nav a.active { background: #FF6B35; color: white; }
+
+        /* Article Styles */
+        .article-container { max-width: 800px; margin: 0 auto; padding: 3rem 2rem; }
+        .article-header { margin-bottom: 2rem; }
+        .quadrant-badge { display: inline-block; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.08em; padding: 0.2rem 0.55rem; border-radius: 999px; margin-bottom: 1rem; text-transform: uppercase; background: #FF6B35; color: #fff; }
+        .article-header h1 { font-size: 2.5rem; color: #fff; margin-bottom: 1rem; line-height: 1.2; }
+        .article-meta { color: #888; font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .article-meta .author { color: #FF6B35; }
+        .featured-image { width: 100%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; margin-bottom: 2rem; }
+        .featured-image img { width: 100%; height: 100%; object-fit: cover; }
+        .image-caption { color: #666; font-size: 0.8rem; text-align: center; margin-top: 0.5rem; font-style: italic; }
+
+        /* Article Content */
+        .article-content { font-size: 1.1rem; line-height: 1.8; color: #ddd; }
+        .article-content p { margin-bottom: 1.5rem; }
+        .article-content h2 { font-size: 1.5rem; color: #FF6B35; margin: 2.5rem 0 1rem; }
+        .article-content a { color: #FF6B35; text-decoration: none; }
+        .article-content a:hover { text-decoration: underline; }
+        .article-content strong { color: #fff; }
+
+        /* Business Listings */
+        .business-listing { background: #111122; border: 1px solid #222; border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+        .business-listing h3 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .business-listing p { margin-bottom: 1rem; color: #bbb; }
+        .business-link { display: inline-block; background: #FF6B35; color: white; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
+        .business-link:hover { background: #e55a2b; text-decoration: none; }
+
+        /* Internal Links Section */
+        .internal-links { background: #111122; border-radius: 12px; padding: 2rem; margin: 3rem 0; }
+        .internal-links h3 { color: #FF6B35; margin-bottom: 1rem; font-size: 1.2rem; }
+        .internal-links ul { list-style: none; }
+        .internal-links li { margin-bottom: 0.75rem; }
+        .internal-links a { color: #aaa; text-decoration: none; }
+        .internal-links a:hover { color: #FF6B35; }
+
+        /* CTA Sections */
+        .cta-section { background: linear-gradient(135deg, #FF6B35 0%, #e55a2b 100%); border-radius: 12px; padding: 2rem; text-align: center; margin: 3rem 0; }
+        .cta-section h3 { color: white; margin-bottom: 0.5rem; font-size: 1.3rem; }
+        .cta-section p { color: rgba(255,255,255,0.9); margin-bottom: 1rem; }
+        .cta-section .btn-light { background: white; color: #FF6B35; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block; }
+
+        /* Newsletter Subscribe */
+        .newsletter-section { background: #111122; border-radius: 12px; padding: 2rem; text-align: center; margin: 3rem 0; border: 1px solid #222; }
+        .newsletter-section h3 { color: #FF6B35; margin-bottom: 0.5rem; }
+        .newsletter-section p { color: #888; margin-bottom: 1rem; }
+        .newsletter-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .newsletter-form input { padding: 12px; border: 1px solid #333; border-radius: 6px; background: #0f1629; color: white; min-width: 250px; }
+        .newsletter-form button { background: #FF6B35; color: white; padding: 12px 24px; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+
+        /* Footer */
+        .main-footer { background: #0a0a0a; padding: 3rem 2rem 1.5rem; border-top: 2px solid #FF6B35; margin-top: 4rem; }
+        .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem; }
+        .footer-brand .logo-text { color: #FF6B35; font-weight: 700; font-size: 1.3rem; margin-bottom: 0.5rem; }
+        .footer-brand .tagline { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        .footer-links h4 { color: #FF6B35; font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.5rem; }
+        .footer-links a { color: #888; text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+        .footer-links a:hover { color: #FF6B35; }
+        .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 2rem; border-top: 1px solid #222; color: #666; font-size: 0.8rem; }
+
+        @media (max-width: 768px) {
+            .top-header-content { flex-direction: column; gap: 0.75rem; }
+            .article-header h1 { font-size: 1.8rem; }
+            .article-container { padding: 2rem 1rem; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="top-header">
+        <div class="top-header-content">
+            <div class="logo-section">
+                <div class="logo-img">D</div>
+                <div class="logo-text">
+                    <div class="main">Arlington Pulse</div>
+                    <div class="sub">Powered by DFWA Social Buzz</div>
+                </div>
+            </div>
+            <div class="main-nav">
+                <div class="nav-links">
+                    <a href="/arlington/">Home</a>
+                    <a href="/arlington/#news">News</a>
+                    <a href="https://dfwasocialbuzz.com/deals?cities=arlington">Deals</a>
+                    <a href="https://dfwasocialbuzz.com/business">Business</a>
+                </div>
+            </div>
+            <nav class="city-nav">
+                <a href="/arlington/" class="active">Arlington</a>
+                <a href="/dallas/">Dallas</a>
+                <a href="/fort-worth/">Fort Worth</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Article -->
+    <article class="article-container">
+        <header class="article-header">
+            <span class="quadrant-badge">ALL</span>
+            <h1>Back-to-School in Arlington: 5 Local Spots to Fuel Your Fall</h1>
+            <div class="article-meta">
+                <span class="date">August 17, 2026</span> • <span class="author">Arlington Pulse</span>
+            </div>
+        </header>
+
+        <div class="featured-image">
+            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=1200&h=675&fit=crop" alt="Coffee shop workspace with laptop and coffee">
+        </div>
+        <p class="image-caption">Photo by Unsplash</p>
+
+        <div class="article-content">
+            <p>The backpacks are packed. The schedules are set. And somewhere between drop-off lines and after-school activities, Arlington parents and students alike need fuel to power through the busy days ahead.</p>
+
+            <p>Luckily, The American Dream City has no shortage of local businesses ready to help you tackle the new school year with energy, flavor, and that unmistakable Arlington hospitality. Whether you need a morning caffeine fix, a quick lunch between classes, or a family dinner spot that satisfies everyone at the table, these five local gems have you covered.</p>
+
+            <h2>Salter Bros. Coffee Roasters</h2>
+            <p>When Urban Union welcomed <strong>Salter Bros. Coffee Roasters</strong>, downtown Arlington finally got the specialty coffee destination it deserved. This isn't just another coffee shop—it's a full roastery, distribution center, and tasting room where every cup tells a story.</p>
+            
+            <p>The brothers behind the bar take their beans seriously, roasting small batches that highlight the unique characteristics of each origin. For busy parents navigating the morning rush, their grab-and-go options mean you can get your caffeine fix without sacrificing quality. Students pulling all-nighters will appreciate the spacious seating and reliable WiFi.</p>
+            
+            <p><a href="https://salterbroscoffee.com/" target="_blank" rel="noopener">Visit Salter Bros. Coffee Roasters →</a></p>
+
+            <h2>Mama Cuca's</h2>
+            <p>New to the downtown scene but already making waves, <strong>Mama Cuca's</strong> brings bold, authentic Latin flavors to the Sutton Frost Cary Building on Front Street. This is the kind of place where house-made salsas and hearty dishes remind you that "fast casual" doesn't have to mean "boring."</p>
+            
+            <p>The outdoor covered patio overlooking Rotary Dream Park is perfect for those lingering summer evenings when homework is done and the family needs a break from the kitchen. Their menu strikes that sweet spot between adventurous and approachable—familiar enough for picky eaters, exciting enough for food lovers.</p>
+            
+            <p><a href="https://mamacucas.com/" target="_blank" rel="noopener">Visit Mama Cuca's →</a></p>
+
+            <h2>Taste Community Restaurant</h2>
+            <p>Sometimes the best lessons happen outside the classroom. <strong>Taste Community Restaurant</strong> operates on a "pay what you can" model that's teaching Arlington about dignity, community, and the power of a good meal shared together. Their second downtown location on Cooper Street means even more neighbors can access chef-prepared meals made with care.</p>
+            
+            <p>This is more than a restaurant—it's a movement. Whether you're paying it forward or paying what you can, every meal here supports a vision of Arlington where everyone has a seat at the table. Bring the kids and show them what community really looks like.</p>
+            
+            <p><a href="https://tasteproject.org/" target="_blank" rel="noopener">Visit Taste Community Restaurant →</a></p>
+
+            <h2>817 Barbershop</h2>
+            <p>Back-to-school season means back-to-school photos, and nobody wants to show up on picture day looking like they just rolled out of bed. <strong>817 Barbershop</strong> has become a downtown institution for good reason—these skilled barbers understand that a great cut isn't just about looking good, it's about feeling confident walking into that first day.</p>
+            
+            <p>The atmosphere is pure Arlington: welcoming, unpretentious, and genuinely focused on the community they serve. From classic cuts to modern styles, they keep Arlington looking sharp year-round. Book ahead during back-to-school rush—this place fills up fast.</p>
+            
+            <p><a href="https://817barbershop.com/" target="_blank" rel="noopener">Visit 817 Barbershop →</a></p>
+
+            <h2>Cafe Americana</h2>
+            <p>When the first week of school stress has you needing more than just coffee, <strong>Cafe Americana</strong> answers with tapas, craft cocktails, and an atmosphere that transports you far from the chaos of carpool lines. This groundbreaking concept combines flavors from around the world with distinct Texan flair, creating something truly unique in the DFW dining scene.</p>
+            
+            <p>It's the perfect spot for parents celebrating surviving the first week, or for treating the family to something special when the weekend finally arrives. The global-inspired small plates mean everyone can try something new, and the craft cocktail menu gives the grown-ups something to look forward to after bedtime.</p>
+            
+            <p><a href="https://cafeamericanatx.com/" target="_blank" rel="noopener">Visit Cafe Americana →</a></p>
+
+            <h2>Why Local Matters This School Year</h2>
+            
+            <p>These five businesses represent something bigger than great coffee, delicious food, or sharp haircuts. They're proof that Arlington is building a community where local entrepreneurs take risks, create jobs, and give The American Dream City a character all its own.</p>
+
+            <p>So this school year, skip the chains. Support the neighbors who are investing in our city's future. Because when you spend local, you're not just buying a product—you're voting for the kind of community you want to live in.</p>
+
+            <p>Here's to a successful school year, Arlington. May your coffee be strong, your meals be delicious, and your community be thriving.</p>
+        </div>
+
+        <!-- Internal Links -->
+        <div class="internal-links">
+            <h3>More Arlington Guides</h3>
+            <ul>
+                <li><a href="/arlington/articles/downtown-arlington-new-wave-5-local-businesses-august-2026.html">Downtown Arlington's New Wave: 5 Must-Visit Local Businesses This August</a></li>
+                <li><a href="/arlington/articles/arlington-weekend-guide-5-local-businesses-august-15-2026.html">Your Arlington Weekend Guide: 5 Local Businesses to Explore August 15-16</a></li>
+                <li><a href="/arlington/articles/arlington-hidden-gems-5-local-businesses-august-14-2026.html">Arlington's Hidden Gems: 5 Local Businesses Worth Discovering</a></li>
+                <li><a href="/arlington/articles/arlington-back-to-school-week-local-guide-august-2026.html">Arlington's Back-to-School Week: 5 Local Spots to Start Your Year Right</a></li>
+                <li><a href="/arlington/articles/arlington-coffee-renaissance-5-local-cafes-august-2026.html">Arlington's Coffee Renaissance: 5 Local Cafés Brewing Community</a></li>
+            </ul>
+        </div>
+
+        <!-- Subscribe CTA -->
+        <div class="newsletter-section">
+            <h3>Get More Arlington Guides</h3>
+            <p>Subscribe to receive local news, business spotlights, and weekend guides delivered to your inbox.</p>
+            <form class="newsletter-form" action="https://dfwasocialbuzz.com/subscribe" method="POST">
+                <input type="email" name="email" placeholder="Your email address" required>
+                <input type="hidden" name="utm_source" value="article">
+                <input type="hidden" name="utm_medium" value="web">
+                <input type="hidden" name="utm_campaign" value="back-to-school-guide">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- Business Feature CTA -->
+        <div class="cta-section">
+            <h3>Own a Business in Arlington?</h3>
+            <p>Get featured in Arlington Pulse and reach thousands of local readers.</p>
+            <a href="https://arlington.dfwasocialbuzz.com/business?utm_source=article&utm_medium=web&utm_campaign=back-to-school-guide" class="btn-light">Get Featured →</a>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo-text">Arlington Pulse</div>
+                <p class="tagline">Your local guide to Arlington, TX</p>
+                <p class="tagline">Powered by DFWA Social Buzz</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="/arlington/">Home</a></li>
+                    <li><a href="/arlington/#news">Latest News</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/deals?cities=arlington">Local Deals</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Business</h4>
+                <ul>
+                    <li><a href="https://dfwasocialbuzz.com/business">Advertise</a></li>
+                    <li><a href="https://dfwasocialbuzz.com/business">Get Featured</a></li>
+                    <li><a href="mailto:editor@dfwasocialbuzz.com">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="https://arlington.dfwasocialbuzz.com?utm_source=article&utm_medium=web&utm_campaign=back-to-school-guide">Subscribe</a></li>
+                    <li><a href="/dallas/">Dallas</a></li>
+                    <li><a href="/fort-worth/">Fort Worth</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Arlington Pulse by DFWA Social Buzz. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
