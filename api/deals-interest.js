@@ -42,6 +42,7 @@ export default async function handler(req, res) {
     let contactId = null;
     let existingTags = [];
     let isNewContact = false;
+    let gcData;
 
     // Step 1: Check if contact already exists
     if (GC_API_KEY) {
@@ -139,8 +140,8 @@ export default async function handler(req, res) {
           isNewContact = true;
         }
 
-        const gcData = await gcResponse.json();
-        
+        gcData = await gcResponse.json();
+
         // Check for GC error in response body (GC returns HTTP 200 with error body)
         if (gcData.type === 'error' || gcData.error || !gcResponse.ok) {
           const errorMessage = gcData.error?.message || gcData.message || 'Unknown GC error';
