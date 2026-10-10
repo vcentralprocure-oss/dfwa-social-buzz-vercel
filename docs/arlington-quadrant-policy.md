@@ -1,9 +1,9 @@
 # Arlington Pulse Quadrant Classification Policy (practical editorial geography)
 
-**Version:** 0.4.1 (PROPOSED)
-**Status:** PROPOSED, NOT APPROVED. This revision is pending the owner's review of the diff. Items marked **PROVISIONAL** are individual venue classifications that remain uncertain.
+**Version:** 0.4.2 (APPROVED)
+**Status:** APPROVED. Approved by the site owner on October 10, 2026, and merged into `main` via PR #13 on the same date. Items marked **PROVISIONAL** are individual venue classifications that remain uncertain.
 **Applies to:** Arlington Pulse Letterman article integrations (hub card `data-quadrant` value and badge).
-**Effect:** This policy governs new quadrant classifications only after it is approved and merged into `main`. Until then, it is a proposal and does not change any existing classification. See §11.
+**Effect:** This policy governs new quadrant classifications only after it is approved and merged into `main`. It does not change any existing classification. Approved and merged on October 10, 2026 (PR #13). See §11.
 **Does not apply to:** Dallas or Fort Worth hubs; subscriber quadrant selections in `api/subscribe.js`.
 
 ---
@@ -188,6 +188,7 @@ A building-level coordinate is **not** required for a venue that is clearly on o
 - **0.3 (proposed):** Owner's rules, reference-line convention, River Legacy provisional, Entertainment District venue handling, hub analysis.
 - **0.3.1 (proposed):** Removed the future WEST value suggestion. Five values only.
 - **0.3.2 (proposed):** Separated City descriptions from editorial rules, added precision and substantive-coverage definitions, stated EAST precedence.
+- **0.4.2 (approved):** The owner approved the policy, and PR #13 merged it into `main` on October 10, 2026. Status changed from PROPOSED to APPROVED. Effective-date and approval wording updated in the header, §11 item 1, and §12 item 9. No value, rule, test case, or historical-label provision changed.
 - **0.4.1 (proposed):** Adds the effective-date statement (header and §11), a historical-label and going-forward section (§11), and renumbers open items to §12. The Texas Live! note states the label is historical, unchanged, and not a precedent. No classification rule changed.
 - **0.4 (proposed):** Practical editorial geography. Uses major highways and streets as approximate references. Removes the City-adoption, centerline and building-level blockers. The 100 m buffer becomes a review guideline. Clear-side venues need no building-level coordinate. Entertainment District and River Legacy venues are provisional where uncertain.
 
@@ -195,7 +196,7 @@ A building-level coordinate is **not** required for a venue that is clearly on o
 
 ## 11. Historical labels and going-forward use
 
-1. **Effective date.** This policy governs new quadrant classifications only after it is approved and merged into `main`. Until then, it is a proposal.
+1. **Effective date.** This policy governs new quadrant classifications only after it is approved and merged into `main`. The owner approved the policy and it was merged via PR #13 on October 10, 2026.
 2. **Historical labels may remain.** Labels created before the Claude Code workflow was established may remain unchanged.
 3. **No retroactive relabeling.** Existing articles and hub cards are not relabeled solely to conform to this policy.
 4. **New classifications.** Once the policy takes effect, it applies to all new article and hub-card classifications. Apply the policy before assigning the quadrant.
@@ -216,4 +217,4 @@ These are decisions and provisional items, not blockers on the policy's use.
 6. **PROVISIONAL:** Entertainment District venues, EAST or CENTRAL (T11). Confirm each venue's position relative to Collins Street.
 7. **Historical label, no action:** the Texas Live! NORTH label is unchanged and is not a precedent (§11, item 6).
 8. **Hub six-card cap (§9):** a separate implementation change requiring approval.
-9. **Approve** the historical-label and going-forward rules in §11, and approve merging the policy into `main` once it is approved.
+9. **Completed October 10, 2026:** the owner approved the historical-label and going-forward rules in §11 and authorized the merge into `main` (PR #13).
