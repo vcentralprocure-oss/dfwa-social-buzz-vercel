@@ -1,57 +1,69 @@
 # Arlington Pulse Geographic Quadrant Classification Policy
 
-**Version:** 0.2 (PROPOSED)
-**Status:** PROPOSED, NOT APPROVED. The editorial rules in §3 are proposed by the site owner for documentation and have not been approved for use. Nothing here is an official boundary until the site owner approves it in writing.
+**Version:** 0.3 (PROPOSED)
+**Status:** PROPOSED, NOT APPROVED. The editorial rules in §3 are the site owner's proposed rules, recorded for documentation. They are not approved for use. Items marked **PROVISIONAL** or **UNRESOLVED** must be settled before approval. Nothing in this document is an official boundary.
 **Applies to:** Arlington Pulse article integrations (Letterman → website hub card and article page).
-**Does not apply to:** Dallas or Fort Worth hubs; subscriber quadrant selections in `api/subscribe.js` (those are subscriber choices, not article classifications, and are not changed by this policy).
+**Does not apply to:** Dallas or Fort Worth hubs; subscriber quadrant selections in `api/subscribe.js` (subscriber choices, not article classifications).
 
 ---
 
 ## 1. Purpose and scope
 
-Each Arlington Pulse article carries one quadrant value. That value sets the hub card's `data-quadrant` attribute and badge, and it drives the hub's quadrant filter. This policy makes geographic classification consistent across future Letterman integrations, so two people or two Claude sessions classifying the same article reach the same answer.
+Each Arlington Pulse article carries one quadrant value. That value sets the hub card's `data-quadrant` attribute and badge, and the hub's quadrant filter reads it. This policy makes geographic classification consistent across future Letterman integrations, so two people or two Claude sessions classifying the same article reach the same answer.
 
-The policy covers the editorial rules, how they relate to the City of Arlington's published planning descriptions, how to resolve overlaps, gaps, and boundary-road cases, the ALL fallback and manual review, the evidence to record, test cases, and the revision process.
+The policy covers the editorial rules, the City of Arlington's published planning-area descriptions (kept separate), the reference-line convention, overlap and gap handling, the ALL fallback and manual review, evidence to record, test cases, the hub behavior question, and the revision process.
 
-It does not reclassify existing live cards. Applying it to existing cards is a separate change requiring its own approval.
+It does not change existing cards, articles, application code, or Vercel configuration. Each of those is a separate change requiring its own approval.
 
 ---
 
-## 2. Sources and how they are used
+## 2. Sources
 
-This policy uses two kinds of rules. Keep them separate.
+Two kinds of rules are used. They are kept separate and must not be merged.
 
-**A. City of Arlington published planning descriptions (reference only).**
+### 2A. City of Arlington planning-area descriptions (reference only, PROVISIONAL)
+
 - Source: City of Arlington, *Comprehensive Plan: 99 Square Miles* (adopted 2015), planning-area descriptions at printed pages approximately 147–156.
   - Document: https://www.arlingtontx.gov/files/assets/city/v/3/planning-and-development-services/documents/long-range-planning/comprehensive-plan-99-square-miles.pdf
   - City Comprehensive Plan page: https://arlingtontx.gov/CompPlan
-- The City's descriptions are:
-  - **North Arlington (north of I-30)**
-  - **East Arlington (east of Collins Street between I-30 and I-20)**
-  - **Central Arlington (between Fielder Road, Collins Street, I-30 and I-20)**
-  - **West Arlington (west of Fielder Road between I-30 and I-20)**
-  - **South Arlington (south of I-20)**
-- **Currency caveat.** The 2015 plan is the version reviewed for this draft. The City's FY26 budget lists an update, "Innovate Arlington," with adoption expected in October 2026. Re-check the current plan and its maps before approval.
+- The descriptions are:
+  - North Arlington (north of I-30)
+  - East Arlington (east of Collins Street between I-30 and I-20)
+  - Central Arlington (between Fielder Road, Collins Street, I-30 and I-20)
+  - West Arlington (west of Fielder Road between I-30 and I-20)
+  - South Arlington (south of I-20)
 
-**B. Arlington Pulse editorial classification rules (proposed, not City-published).** These are the site owner's rules, defined in §3. They use the City's wording for the Central and East areas as a working reference.
+**Status of the October 2026 update: UNRESOLVED.** The City's *Innovate Arlington* update was not verified as adopted. As of 2026-10-10, the findings were:
+- The City released the draft plan in August 2026 for public review: https://www.arlingtontx.gov/News-Articles/2026/August/Innovate-Arlington-Draft-Comprehensive-Plan-Available-for-Review
+- A Fort Worth Report article dated 2026-08-26 says the plan was still seeking feedback ahead of initial adoption in November: https://fortworthreport.org/2026/08/26/arlingtons-20-year-plan-still-seeking-community-feedback-ahead-of-initial-adoption-in-november/
+- The City's steering committee schedule lists meetings on 2026-09-17, 2026-11-05 and 2026-12-03, and earlier City material points to adoption at the end of 2026.
+- No City Council adoption record was found. The City's own Council minutes and the final adopted text were **not** checked.
 
-**C. Verification tools (approximate, not authoritative).** OpenStreetMap road geometry and geocoding were used to check test cases. They are not a source for boundaries. Any location result must be confirmed at building level before it is relied on (see §7).
+**Limitation recorded:** The adoption status was verified only by web search. Until the City's official adopted text is checked, the 2015 descriptions are provisional. Before approval, the owner must confirm (a) whether the update has been adopted and (b) whether it changes any planning-area description or map.
+
+### 2B. Arlington Pulse editorial classification rules (PROPOSED)
+
+These are the site owner's rules, defined in §3. Central and East use the City's wording as a working reference. They are editorial rules, not City-published boundaries.
+
+### 2C. Verification tools (approximate, not authoritative)
+
+OpenStreetMap road geometry (Overpass) and geocoding (Nominatim) were used to check test cases. They are not a source for boundaries. Any location result must be confirmed at building level before it is relied on (§6, §7).
 
 ---
 
-## 3. Definitions (proposed editorial rules)
+## 3. Definitions (owner's proposed editorial rules, PROPOSED)
 
-| Value (`data-quadrant`) | Badge | Proposed rule | Relation to City description |
+| Value (`data-quadrant`) | Badge | Rule | Relation to City description (2A) |
 |---|---|---|---|
-| `north` | NORTH | Location is north of Interstate 30 (I-30). | Matches City "North Arlington (north of I-30)". |
-| `south` | SOUTH | Location is south of Interstate 20 (I-20). | Matches City "South Arlington (south of I-20)". |
-| `central` | CENTRAL | Location is between I-30 and I-20, west of Collins Street and east of Fielder Road. | Working definition based on City "Central Arlington (between Fielder Road, Collins Street, I-30 and I-20)". Not expanded to the whole I-30 to I-20 band. |
-| `east` | EAST | Location is between I-30 and I-20, east of Collins Street. | Based on City "East Arlington (east of Collins Street between I-30 and I-20)". Treated as its own classification within the band. |
-| `all` | ALL | Citywide, multi-location, general Arlington, unresolved, or unverifiable. | Editorial fallback. See §5. |
-
-**Not a quadrant: West.** The City's "West Arlington" (west of Fielder Road between I-30 and I-20) has no Arlington Pulse value. Under this policy, locations there are classified `all` and flagged for review. They are not assigned to CENTRAL. Adding a `west` value requires owner approval and a separate change to the hub filter and badge CSS.
+| `north` | NORTH | North of Interstate 30 (I-30). | Same as City "North Arlington (north of I-30)". |
+| `south` | SOUTH | South of Interstate 20 (I-20). | Same as City "South Arlington (south of I-20)". |
+| `central` | CENTRAL | Within the area bounded by Fielder Road, Collins Street, I-30 and I-20. | Same as City "Central Arlington". |
+| `east` | EAST | East of Collins Street, between I-30 and I-20. | Same as City "East Arlington". |
+| `all` | ALL | General Arlington content, multi-quadrant content, or locations that cannot confidently be assigned. | Editorial fallback (§5). |
 
 Values are lowercase in `data-quadrant`. Badge text is the uppercase form of the same value.
+
+**Not a quadrant: West.** The City's West Arlington (west of Fielder Road between I-30 and I-20) has no Arlington Pulse value. Locations there, and any other location outside the defined areas, are classified `all` and flagged for review. They are **never** classified CENTRAL to fill a gap. No WEST code is added to the website or application code by this policy.
 
 ---
 
@@ -59,38 +71,29 @@ Values are lowercase in `data-quadrant`. Badge text is the uppercase form of the
 
 ### 4.1 Precedence between EAST and CENTRAL
 
-Inside the I-30 to I-20 band, EAST is defined as east of Collins Street and CENTRAL as west of Collins Street and east of Fielder Road. These areas do not overlap, so EAST takes precedence in the sense that a location east of Collins is EAST and never CENTRAL. The band must not be treated as CENTRAL by default.
+Within the I-30 to I-20 band, EAST is east of Collins Street and CENTRAL is inside the Fielder-to-Collins area. These do not overlap. Where a location falls in the band east of Collins, it is EAST, and never CENTRAL. The band is not treated as CENTRAL by default.
 
 ### 4.2 NORTH and SOUTH
 
-NORTH and SOUTH are defined by I-30 and I-20 alone, across all longitudes. A location north of I-30 is NORTH whether it is east or west of Collins or Fielder. A location south of I-20 is SOUTH likewise. These rules are proposed as written by the owner. The City's descriptions cover these areas the same way.
+NORTH is north of I-30 across all longitudes. SOUTH is south of I-20 across all longitudes. A location north of I-30 is NORTH whether it is east or west of Collins or Fielder, and likewise for SOUTH.
 
-### 4.3 Boundary roads and interstates
+### 4.3 Reference-line and road-boundary convention (PROVISIONAL)
 
-A location directly on a boundary road or interstate is **REVIEW**, not automatically assigned, unless the owner has approved a convention for it. Boundary roads are:
-- I-30
-- I-20
-- Collins Street
-- Fielder Road
+- **Reference line:** the **highway centerline** of I-30 and of I-20. This is provisional until the policy is approved.
+- **Review distance:** flag a location for editorial review if it is **within 100 metres** of a relevant boundary. Relevant boundaries are the I-30 and I-20 centerlines, and, for the CENTRAL and EAST split, Collins Street and Fielder Road.
+- **Address on a boundary road:** flag for review if the address is **on Collins Street or Fielder Road**, regardless of distance.
+- A flagged location is classified `all` until the owner approves it. It is not auto-assigned to a quadrant.
 
-"Directly on" means the address fronts the road, or its coordinate falls within the road right-of-way. The owner must approve a tie-break convention before any such location is auto-classified. Until then, classify it `all` and flag it for editorial review.
-
-**Placeholder:** [PLACEHOLDER: owner-approved distance margin from any boundary line, below which a location is treated as boundary-road]
+**UNRESOLVED:** the 100-metre margin, the centerline convention, and the treatment of addresses on Collins or Fielder are proposed, not approved. The owner must confirm them.
 
 ### 4.4 Gaps and uncovered areas
 
-Under the rules in §3, the following are not covered by a quadrant and must not be silently assigned to CENTRAL, EAST, NORTH, or SOUTH:
+Not covered by a quadrant. Must not be silently assigned to CENTRAL, EAST, NORTH, or SOUTH:
 
-1. **West Arlington** (west of Fielder Road between I-30 and I-20). No value exists. Classify `all`, flag for review.
+1. **West Arlington** (west of Fielder Road, between I-30 and I-20). Classify `all`, flag for review. Locations west of Fielder that are north of I-30 or south of I-20 are NORTH or SOUTH under §4.2, not gaps.
 2. **Locations outside City limits** or outside Arlington. Classify `all`, flag for review.
 3. **Locations near the ends of I-30 or I-20**, where the interstate leaves the city and "north of" or "south of" cannot be determined from the highway alone. Classify `all`, flag for review.
 4. **Locations whose coordinate cannot be confirmed** to be on one side of the reference line. Classify `all`, flag for review.
-
-Locations east of Collins Street but north of I-30 or south of I-20 are not gaps. They fall under NORTH or SOUTH by §4.2. They are noted here so the owner can confirm that is intended.
-
-### 4.5 Reference-line convention
-
-"North of I-30" and "south of I-20" must be measured from a defined line. The interstate curves across the city, so the owner must approve one convention, for example the highway centerline or the nearest frontage-road edge. Until approved, classify only when the location is clearly away from the interstate, and otherwise treat it as boundary-road (§4.3).
 
 ---
 
@@ -100,34 +103,36 @@ Use `all` when classification is uncertain. Never invent a location, and never f
 
 | Situation | Classification |
 |---|---|
-| Citywide, general Arlington, or city-level coverage | `all` |
+| General Arlington content, or citywide coverage | `all` |
 | Several locations in different quadrants with no single primary location | `all` |
 | One headline subject, with only incidental mentions of other locations | Quadrant of the headline subject |
 | No address, or the address cannot be verified | `all` |
 | Address outside Arlington | `all`, flag for review |
 | Location in a gap (§4.4) | `all`, flag for review |
-| Boundary-road or reference-line case (§4.3, §4.5) without an approved convention | `all`, flag for review |
+| Within 100 m of a relevant boundary, or address on Collins or Fielder (§4.3) | `all`, flag for review |
 | Confidence is medium or low for any reason | `all` |
 
-**Manual review process.** A flagged item is recorded with its evidence (§6) and marked for owner review. The owner decides whether a quadrant applies. The decision is recorded in the evidence record before the hub card is changed. A reviewer may not assign a quadrant to a gap or boundary-road case without this decision.
+**Manual review.** A flagged item is recorded with its evidence (§6) and marked for owner review. The owner decides whether a quadrant applies, and the decision is recorded before any hub card changes. A reviewer may not assign a quadrant to a gap or boundary case without that decision.
 
 ---
 
-## 6. Evidence Claude must record when proposing a quadrant
+## 6. Evidence to record when proposing a quadrant
 
 Each proposal must include a record with these fields. The record lives in the change description or PR, not in public HTML.
 
 - Article identifier (Letterman article ID and proposed slug)
 - Address or addresses used, and where each appears in the source (for example, "content block 1, paragraph 2")
-- Location method (street address, venue name, or other) and the tool used to locate it
-- Coordinate used, if any, with its precision (building, street, or area), and the method
-- Relation to the reference lines: side of I-30 or I-20, and side of Collins Street or Fielder Road
-- Distance from the nearest boundary line, in metres, where computed
-- Boundary-road flag (yes or no)
-- City of Arlington reference used (§2A) and page
+- Location method (street address, venue name, or other) and the tool used
+- **Coordinate precision:** building, street, or area. A street-level result is not building-level and must be recorded as a limitation.
+- Coordinate and its source
+- Side of I-30 and I-20, measured from the centerline
+- Side of Collins Street and Fielder Road
+- Distance from the nearest relevant boundary, in metres
+- Boundary flag: within 100 m, or on Collins or Fielder (yes or no)
+- City reference used (§2A), with page and the adoption-status note
 - Proposed value and confidence (`high`, `medium`, or `low`)
 - Reason, in one or two sentences
-- Ambiguities and open questions
+- **Unverified items and limitations**
 - Owner decision and date, once given
 
 A `medium` or `low` result is classified `all` unless the owner overrides it in writing.
@@ -136,58 +141,74 @@ A `medium` or `low` result is classified `all` unless the owner overrides it in 
 
 ## 7. Test cases
 
-Outcomes marked **hypothesis** must be confirmed against the approved map and convention before use. Coordinates below are approximate and come from the verification tools in §2C.
+Coordinates are approximate and come from the tools in §2C. Outcomes marked **provisional** or **unresolved** must be confirmed before use.
 
-| # | Case | Evidence | Proposed outcome | Status |
+| # | Case | Evidence | Outcome | Status |
 |---|---|---|---|---|
-| T1 | **NORTH.** River Legacy Park (park as a whole) | Park centroid approx. 32.8057 N, −97.0629 W (Nominatim). I-30 in the sampled corridor (approx. −97.26 to −97.05 W, from OpenStreetMap) lies between 32.7585 and 32.7608 N, so the centroid is roughly 5 km north of it. | `north` | Supported for the park as a whole. Verify the venue address, not the park name (see T2). |
-| T2 | **NORTH, boundary-proximate.** River Legacy festival venue, 701 NW Green Oaks Blvd | Street-level geocode for NW Green Oaks Blvd, approx. 32.7626 N, −97.1487 W. That is about 200 m north of the nearest sampled I-30 point (32.7608 N) and about 290 m north of the I-30 centerline at that longitude (approx. 32.7600 N). | **REVIEW** until building-level coordinates are confirmed and the margin in §4.3 is set. Then `north` if confirmed. | **Hypothesis.** Not verified at building level. |
-| T3 | **SOUTH.** A business south of I-20 | Business address south of I-20 | `south` | Expected. Confirm with the approved reference line. |
-| T4 | **CENTRAL.** Business between I-30 and I-20, west of Collins and east of Fielder | Business address in that area | `central` | Expected. Confirm with the approved map. |
-| T5 | **EAST.** Business between I-30 and I-20, east of Collins | Business address in that area | `east` | Expected. Confirm with the approved map. |
+| T1 | **NORTH.** River Legacy Park, as a park | OpenStreetMap park features span approx. 32.78–32.81 N, −97.13 to −97.05 W. The sampled I-30 corridor (approx. −97.26 to −97.05 W) lies between 32.7585 and 32.7608 N. The park is therefore at least about 2 km north of I-30. | `north` for the park as a park | Supported. The park is not a venue. The festival location is tested separately in T2. |
+| T2 | **NORTH, provisional.** River Legacy festival venue, 701 NW Green Oaks Blvd | Two Nominatim street-level results for NW Green Oaks Blvd: approx. 32.7626 N, −97.1487 W and approx. 32.7701 N, −97.1470 W. Both are north of the sampled I-30 corridor (32.7585 to 32.7608 N). The first is about 200 m north of the nearest sampled I-30 point, and the second about 1.0 km north. The OpenStreetMap road segment's bounding box (32.7606 to 32.7645 N) straddles the I-30 latitude band, so the road itself does not clearly lie north of I-30 at that longitude. **No building-level coordinate for the Nature Center or the festival site was found.** An OpenStreetMap name search returned park features but no Nature Center building. | **NORTH, PROVISIONAL.** Not confirmed. | **UNRESOLVED: building-level verification is unavailable.** Required: a building-level coordinate from the organizer or the City's GIS parcel data, and confirmation that it is at least 100 m north of the I-30 centerline. |
+| T3 | **SOUTH.** A business south of I-20 | Business address south of I-20 | `south` | Expected. Confirm against the approved reference line. |
+| T4 | **CENTRAL.** Business inside the Fielder–Collins area between I-30 and I-20 | Business address in that area | `central` | Expected. Confirm against the approved map. |
+| T5 | **EAST.** Business between I-30 and I-20, east of Collins | Business address in that area | `east` | Expected. Confirm against the approved map. |
 | T6 | **ALL.** Multi-venue roundup across several quadrants | Article names venues in more than one quadrant, with no single subject | `all` | Per §5 |
-| T7 | **ALL.** Citywide news or general Arlington event | No single address | `all` | Per §5 |
-| T8 | **Boundary road.** Address fronting Collins Street or Fielder Road, or within I-30 or I-20 right-of-way | Address on or beside a boundary road | `all`, **REVIEW** | Per §4.3 until the owner approves a tie-break convention |
-| T9 | **Uncovered area.** Business on West Arlington (west of Fielder, between I-30 and I-20) | Business address in that area | `all`, **REVIEW** | Per §4.4. Do not assign CENTRAL. |
-| T10 | **Uncovered area.** Venue near the end of I-30 or I-20 where the highway leaves the city | Location where the reference line is unclear | `all`, **REVIEW** | Per §4.4 |
-| T11 | **Entertainment District (existing hub labels).** AT&T Stadium approx. 32.7479 N, −97.0928 W; Globe Life Field approx. 32.7476 N, −97.0841 W | Both sit at about 32.748 N, roughly 1.2 to 1.3 km south of the sampled I-30 corridor (32.7585 to 32.7608 N). The City's East description places the Entertainment District in the northern part of East Arlington. | **Not NORTH** under §3. Probably `east`, but Collins Street's position at that longitude is unverified. Owner decision needed. | **Conflict.** Existing hub NORTH cards on these topics do not match the rule. No card changed in this policy. |
+| T7 | **ALL.** General Arlington or citywide event | No single address | `all` | Per §5 |
+| T8 | **Boundary road.** Address on Collins Street or Fielder Road, or a location within 100 m of the I-30 or I-20 centerline | Address or distance measured | `all`, flag for review | Per §4.3 (provisional) |
+| T9 | **Uncovered area.** Business west of Fielder between I-30 and I-20 | Business address in that area | `all`, flag for review | Per §4.4. Not CENTRAL. No WEST code. |
+| T10 | **Uncovered area.** Venue near an end of I-30 or I-20, where the highway leaves the city | Location where the reference line is unclear | `all`, flag for review | Per §4.4 |
+| T11 | **Entertainment District, venue by venue** (not one quadrant for the whole district) | AT&T Stadium, approx. 32.7479 N, −97.0928 W. Globe Life Field, approx. 32.7476 N, −97.0841 W. Both are about 1.2–1.3 km south of the sampled I-30 corridor, so neither is NORTH under §3. Their EAST or CENTRAL status depends on where Collins Street runs at that latitude, which **could not be retrieved** from the tools used. Texas Live!, Six Flags Over Texas and Hurricane Harbor were **not measured**. | **PENDING LOCATION CHECK** for every venue. Not assignable yet. | **UNRESOLVED.** The existing hub cards labeled NORTH on these topics conflict with §3. That conflict is a **separate follow-up** requiring location checks and owner approval. No card is changed by this policy. |
 
 ---
 
-## 8. Keeping the hub-card badge and `data-quadrant` consistent
+## 8. Keeping the badge and `data-quadrant` consistent
 
 - The `data-quadrant` value and the badge class must match exactly. Example: `data-quadrant="north"` pairs with `<span class="quadrant-badge north">NORTH</span>`.
-- Allowed values are only `north`, `south`, `central`, `east`, and `all`. No other value may be used.
+- Allowed values are only `north`, `south`, `central`, `east` and `all`.
 - The badge text must equal the uppercase form of the `data-quadrant` value.
-- The hub's badge CSS already defines all five values. A new value requires a separate approved change to this policy, the badge CSS, and the filter buttons.
+- The hub's badge CSS already defines all five values. Adding a value would need a separate approved change to this policy, the badge CSS, and the filter buttons.
 - Changing a card's quadrant changes both attributes in the same edit.
-- The article page does not carry a quadrant value. The hub card is the only place it is written, so the evidence record in §6 is the source of truth for that card.
+- The article page does not carry a quadrant. The hub card is the only place it is written, so the evidence record (§6) is the source of truth.
 - Before a hub card is merged, confirm its value matches the evidence record.
 
 ---
 
-## 9. Revising this policy
+## 9. Hub behavior for ALL cards (separate proposed change, NOT implemented)
 
-1. Any change to a definition, boundary, convention, or rule requires written approval from the site owner.
-2. Each revision increments the version number, records the date, and adds a changelog entry.
-3. A boundary change applies to future classifications only. Existing cards are not reclassified automatically. Reclassifying existing cards is a separate change with its own evidence records and approval.
-4. When the City adopts a new Comprehensive Plan, re-check §2A and §3 against the adopted descriptions and maps before the next revision is approved.
-5. Every revision is made on a feature branch and reviewed under the repository's governance process (`CLAUDE.md`, `TRANSITION_CONTROL_LOG.md`).
+**Intended editorial behavior:** general Arlington and genuinely multi-quadrant stories labeled `all` should appear under every quadrant filter.
+
+**Current state, from the hub code on `main`:**
+- The filter script shows a card when its value equals the active filter, or when the card's value is `all`. So `all` cards are already eligible under every filter.
+- A CSS rule, `.archive-grid .issue-card:nth-child(n+7) { display: none; }`, hides every card after the sixth. It applies regardless of filter. As a result, `all` cards beyond the first six cannot appear under any filter.
+
+**Conclusion:** the filter logic already matches the intended behavior. The gap is the six-card cap, not the filter. Any change is a **separate proposed implementation change** requiring owner approval. It is not made in this policy task and is not approved.
+
+---
+
+## 10. Revising this policy
+
+1. Any change to a definition, boundary, convention or rule requires written approval from the site owner.
+2. Each revision increments the version, records the date, and adds a changelog entry.
+3. A boundary change applies to future classifications only. Existing cards are not reclassified automatically. Reclassifying existing cards is a separate change with its own evidence and approval.
+4. When the City adopts a new Comprehensive Plan, re-check §2A and §3 against the adopted text and maps before the next approval.
+5. Every revision is made on a feature branch and reviewed under the repository's governance (`CLAUDE.md`, `TRANSITION_CONTROL_LOG.md`).
 
 ### Changelog
 
 - **0.1 (draft):** Initial draft with boundary placeholders.
-- **0.2 (proposed):** Adds City of Arlington planning-area sources, the West gap, boundary-road and reference-line rules, the manual review process, and test cases including River Legacy and the Entertainment District conflict. Not approved.
+- **0.2 (proposed):** Added City planning-area sources, the West gap, boundary and reference-line rules, manual review, and test cases.
+- **0.3 (proposed):** Adds owner's rules, a provisional centerline and 100 m review convention, the status of the October 2026 update (unresolved), River Legacy provisional with the building-level limitation recorded, venue-by-venue Entertainment District handling, and the ALL hub-behavior analysis (separate change). Not approved.
 
 ---
 
-## 10. Open decisions for the site owner
+## 11. Unresolved issues
 
-1. Approve the City's 2015 *99 Square Miles* plan as the reference, or use the newer Innovate Arlington plan once adopted?
-2. Approve the editorial rules in §3 as written (north of I-30, south of I-20, central and east as described)?
-3. Adopt a reference-line convention for I-30 and I-20 (centerline or frontage-road edge)?
-4. Set the boundary-road margin (§4.3 placeholder), and the tie-break convention for addresses on Collins Street or Fielder Road?
-5. Add a WEST value for the City's West Arlington area, or keep it as `all`?
-6. Should the Entertainment District, including AT&T Stadium, Globe Life Field, and Texas Live!, be EAST, CENTRAL, or NORTH under the rules? The current hub labels NORTH conflict with the rule.
-7. Should River Legacy Park's festival venue be confirmed at building level before it is labeled NORTH?
-8. Should the hub filter keep showing `all` cards under every quadrant filter? That is hub code, so it would be a separate approved change.
+Each item must be settled before approval.
+
+1. **Innovate Arlington update:** verify adoption, and whether any planning-area description changes. Adoption was not verified (§2A).
+2. **Reference plan:** confirm the 2015 descriptions as provisional, or replace them with the adopted update.
+3. **Reference-line convention:** confirm the I-30 and I-20 centerline convention (§4.3).
+4. **Review margin:** confirm the 100 m margin (§4.3).
+5. **Address on Collins or Fielder:** confirm review regardless of distance (§4.3).
+6. **River Legacy festival venue:** building-level coordinate required. Provisional NORTH (T2).
+7. **Entertainment District venues:** location checks for each venue, including Collins Street's position at that latitude (T11). Separate follow-up: existing hub NORTH labels conflict with §3, and changing them needs approval.
+8. **Hub six-card cap (§9):** separate proposed implementation change requiring approval.
+9. **WEST:** no code added. Decide later whether a WEST value is needed.
