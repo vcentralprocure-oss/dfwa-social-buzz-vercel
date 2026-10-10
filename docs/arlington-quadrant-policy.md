@@ -1,8 +1,9 @@
 # Arlington Pulse Quadrant Classification Policy (practical editorial geography)
 
-**Version:** 0.4 (PROPOSED)
+**Version:** 0.4.1 (PROPOSED)
 **Status:** PROPOSED, NOT APPROVED. This revision is pending the owner's review of the diff. Items marked **PROVISIONAL** are individual venue classifications that remain uncertain.
 **Applies to:** Arlington Pulse Letterman article integrations (hub card `data-quadrant` value and badge).
+**Effect:** This policy governs new quadrant classifications only after it is approved and merged into `main`. Until then, it is a proposal and does not change any existing classification. See §11.
 **Does not apply to:** Dallas or Fort Worth hubs; subscriber quadrant selections in `api/subscribe.js`.
 
 ---
@@ -187,11 +188,23 @@ A building-level coordinate is **not** required for a venue that is clearly on o
 - **0.3 (proposed):** Owner's rules, reference-line convention, River Legacy provisional, Entertainment District venue handling, hub analysis.
 - **0.3.1 (proposed):** Removed the future WEST value suggestion. Five values only.
 - **0.3.2 (proposed):** Separated City descriptions from editorial rules, added precision and substantive-coverage definitions, stated EAST precedence.
+- **0.4.1 (proposed):** Adds the effective-date statement (header and §11), a historical-label and going-forward section (§11), and renumbers open items to §12. The Texas Live! note states the label is historical, unchanged, and not a precedent. No classification rule changed.
 - **0.4 (proposed):** Practical editorial geography. Uses major highways and streets as approximate references. Removes the City-adoption, centerline and building-level blockers. The 100 m buffer becomes a review guideline. Clear-side venues need no building-level coordinate. Entertainment District and River Legacy venues are provisional where uncertain.
 
 ---
 
-## 11. Open items for the owner
+## 11. Historical labels and going-forward use
+
+1. **Effective date.** This policy governs new quadrant classifications only after it is approved and merged into `main`. Until then, it is a proposal.
+2. **Historical labels may remain.** Labels created before the Claude Code workflow was established may remain unchanged.
+3. **No retroactive relabeling.** Existing articles and hub cards are not relabeled solely to conform to this policy.
+4. **New classifications.** Once the policy takes effect, it applies to all new article and hub-card classifications. Apply the policy before assigning the quadrant.
+5. **Deliberate later edits.** If an existing card or article is deliberately edited later, apply the policy to its classification when appropriate. Do not make unrelated content or code changes as part of that edit.
+6. **Texas Live! NORTH label.** The existing NORTH label on "Texas Live! Adds New Rooftop Bar for Rangers Season" is a **historical label**. It remains unchanged and is **not a precedent** for any future classification. Its venue is near AT&T Stadium; the Texas Live! venue itself was not separately measured (§7, T11). A future change to that card requires separate approval.
+
+---
+
+## 12. Open items for the owner
 
 These are decisions and provisional items, not blockers on the policy's use.
 
@@ -201,5 +214,6 @@ These are decisions and provisional items, not blockers on the policy's use.
 4. **Confirm** the definition of substantive coverage (§5).
 5. **PROVISIONAL:** River Legacy festival venue, NORTH (T2). Confirm on a map before publishing.
 6. **PROVISIONAL:** Entertainment District venues, EAST or CENTRAL (T11). Confirm each venue's position relative to Collins Street.
-7. **Existing hub card, separate follow-up:** on `main`, the only NORTH-labeled card is "Texas Live! Adds New Rooftop Bar for Rangers Season." Its venue is near AT&T Stadium, which is south of I-30, so the label likely conflicts with §4.2. No card is changed by this policy. Any change needs separate approval.
+7. **Historical label, no action:** the Texas Live! NORTH label is unchanged and is not a precedent (§11, item 6).
 8. **Hub six-card cap (§9):** a separate implementation change requiring approval.
+9. **Approve** the historical-label and going-forward rules in §11, and approve merging the policy into `main` once it is approved.
