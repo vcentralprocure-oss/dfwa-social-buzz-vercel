@@ -1,0 +1,43 @@
+{
+  "_comment": "SYNTHETIC TEST FIXTURE. Invented text that mirrors the STRUCTURE of a real unpublished Letterman draft (DRAFT state, no approval, 151-char description, no link URLs, a street address in the body) without containing any real draft copy. Imported only into temporary directories by tests.",
+  "letterman": {
+    "id": "000000000000000000000001",
+    "publication_id": "000000000000000000000002",
+    "state": "DRAFT",
+    "url_path": "a-lantern-festival-is-coming-to-sample-plaza-on-halloween",
+    "public_url": "https://dfwasocialbuzz.com/a/a-lantern-festival-is-coming-to-sample-plaza-on-halloween",
+    "no_index": false,
+    "title": "A Lantern Festival Is Coming to Sample Plaza on Halloween",
+    "description": "A neighborhood lantern festival is coming to Sample Plaza on October 31, with food trucks, local artists, live music and a free evening concert at 7pm.",
+    "summary_description": "A neighborhood lantern festival comes to Sample Plaza on October 31, with food trucks, makers and an evening concert.",
+    "keywords": [
+      "sample festival",
+      "sample keyword"
+    ],
+    "published_at": null,
+    "preview_image_url": "https://example.invalid/images/sample.jpg",
+    "blocks": [
+      {
+        "type": "HEADLINE_COMBO",
+        "index": 0,
+        "title": "A Lantern Festival Is Coming to Sample Plaza on Halloween",
+        "subTitle": "A made-up festival used only to test the importer.",
+        "html": null,
+        "links": []
+      },
+      {
+        "type": "TEXT",
+        "index": 1,
+        "title": "Text ",
+        "subTitle": null,
+        "html": "<p>SAMPLE TEXT. Neighbors looking for something different to do this Halloween can add a made-up festival to their calendars.</p><p>&nbsp;</p><p>Gates open at noon and close at 6 p.m., and entry is free to attend.</p><p>&nbsp;</p><p><strong>There is more after dark</strong></p><p>&nbsp;</p><p>After the invented festival ends, an equally invented evening concert begins at 7 p.m.</p><p>&nbsp;</p><p><strong>Event details</strong></p><p>&nbsp;</p><p>What: Sample lantern festival and an evening concert.</p><p>&nbsp;</p><p>Date: October 31, 2026.</p><p>&nbsp;</p><p>Where: Sample Plaza, 123 Example St., Downtown Arlington.</p><p>&nbsp;</p><p>Admission: Free.</p><p>&nbsp;</p><p>To learn more, visit the official sample page for this invented event.</p><p>&nbsp;</p><p>Everything here is invented for testing and may differ from any real event.</p>",
+        "links": []
+      }
+    ]
+  },
+  "approval": {},
+  "image": {
+    "file": "arlington/images/articles/a-lantern-festival-is-coming-to-sample-plaza-on-halloween.jpg",
+    "source_url": "https://example.invalid/images/sample.jpg"
+  }
+}

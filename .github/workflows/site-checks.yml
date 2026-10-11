@@ -29,3 +29,6 @@ jobs:
 
       - name: Vercel config is valid JSON and keeps existing redirects
         run: python -m unittest tests.test_vercel_config -v
+
+      - name: Draft protection and link gate for imported Letterman pages
+        run: python scripts/import_letterman_article.py --verify-all
