@@ -1,0 +1,2 @@
+# Keep this file LF-only: a CRLF line ending would leave a stray CR on every pattern.
+.vercelignore text eol=lf

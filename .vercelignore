@@ -1,0 +1,24 @@
+# Internal files that must NEVER be part of a deployment (and therefore never public).
+# See docs/deployment-exposure.md. Patterns follow .gitignore syntax; '!' re-includes.
+#
+# Scope is deliberately narrow: only paths introduced for the publishing pipeline.
+# Existing public files (api/, data/, arlington/, templates/article-template.html,
+# docs/arlington-quadrant-policy.md, ...) are NOT listed and keep their current URLs.
+
+# CI workflows
+/.github/
+
+# Tooling and tests (includes test fixtures)
+/scripts/
+/tests/
+
+# Letterman snapshots, approval records, and any future import data.
+# Every file under content/ is excluded, so a new snapshot can never become public.
+/content/
+
+# Page template used only by the importer
+/templates/arlington-article-page.html
+
+# Internal documentation, except the already-public quadrant policy
+/docs/*
+!/docs/arlington-quadrant-policy.md
