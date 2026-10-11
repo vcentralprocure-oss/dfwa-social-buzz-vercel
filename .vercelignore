@@ -5,6 +5,10 @@
 # Existing public files (api/, data/, arlington/, templates/article-template.html,
 # docs/arlington-quadrant-policy.md, ...) are NOT listed and keep their current URLs.
 
+# The exclusion rules themselves
+/.vercelignore
+/.gitattributes
+
 # CI workflows
 /.github/
 

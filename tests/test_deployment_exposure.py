@@ -32,7 +32,7 @@ MUST_STAY_PUBLIC_FILES = {
     "CLAUDE.md", "TRANSITION_CONTROL_LOG.md", ".gitignore",
 }
 INTERNAL_PREFIXES = (".github/", "scripts/", "tests/", "content/")
-INTERNAL_FILES = {"templates/arlington-article-page.html"}
+INTERNAL_FILES = {"templates/arlington-article-page.html", ".vercelignore", ".gitattributes"}
 
 
 class MatcherTests(unittest.TestCase):
@@ -113,6 +113,12 @@ class RealRulesTests(unittest.TestCase):
         self.assertNotIn(b"\r", (REPO / ".vercelignore").read_bytes())
         attrs = (REPO / ".gitattributes").read_text(encoding="utf-8")
         self.assertRegex(attrs, r"(?m)^\.vercelignore\s+text\s+eol=lf\s*$")
+        import subprocess
+        blob = subprocess.run(["git", "cat-file", "-p", ":.vercelignore"], cwd=REPO, capture_output=True)
+        self.assertEqual(blob.returncode, 0, "the file must be tracked")
+        self.assertNotIn(b"\r", blob.stdout, "the committed blob must be LF-only")
+        attr = subprocess.run(["git", "check-attr", "eol", ".vercelignore"], cwd=REPO, capture_output=True, text=True)
+        self.assertIn("eol: lf", attr.stdout)
 
     def test_api_and_data_are_never_excluded(self):
         for p in ("api/subscribe.js", "api/update-articles.js", "data/articles-metadata.json"):
@@ -282,6 +288,15 @@ class ProbeLogicTests(unittest.TestCase):
         result = ex.check_deployment(self.BASE, REPO, tracked=TRACKED, rules=no_rules,
                                      fetcher=lambda u: self.healthy(u.replace(self.BASE, "")))
         self.assertTrue(any("canary" in x for x in result["problems"]))
+
+
+class TlsContextTests(unittest.TestCase):
+    def test_verification_stays_on_and_only_the_strict_flag_is_relaxed(self):
+        import ssl
+        ctx = ex.ssl_context()
+        self.assertEqual(ctx.verify_mode, ssl.CERT_REQUIRED)
+        self.assertTrue(ctx.check_hostname)
+        self.assertFalse(ctx.verify_flags & ssl.VERIFY_X509_STRICT)
 
 
 class WorkflowTests(unittest.TestCase):

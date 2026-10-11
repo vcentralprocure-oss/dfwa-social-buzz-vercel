@@ -18,6 +18,7 @@ internal file individually, and it fails if the network is unreachable (status 0
 
 import argparse
 import re
+import ssl
 import subprocess
 import sys
 import urllib.error
@@ -115,8 +116,17 @@ class _NoRedirect(urllib.request.HTTPRedirectHandler):
         return None
 
 
+def ssl_context():
+    """Verified TLS context. Only the strict X.509 flag is relaxed: newer OpenSSL builds reject some
+    otherwise valid CA chains ("Basic Constraints ... not marked critical") that curl and browsers accept.
+    Certificate and hostname verification stay ON."""
+    ctx = ssl.create_default_context()
+    ctx.verify_flags &= ~ssl.VERIFY_X509_STRICT
+    return ctx
+
+
 def fetch_status(url, timeout=20):
-    opener = urllib.request.build_opener(_NoRedirect)
+    opener = urllib.request.build_opener(_NoRedirect, urllib.request.HTTPSHandler(context=ssl_context()))
     req = urllib.request.Request(url, headers={"User-Agent": "DFWASocialBuzz-exposure-check/1.0"})
     try:
         with opener.open(req, timeout=timeout) as resp:

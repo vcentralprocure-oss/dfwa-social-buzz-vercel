@@ -12,6 +12,7 @@ For the publishing pipeline this matters because Letterman snapshots, approval r
 
 | Excluded | Why |
 |---|---|
+| `/.vercelignore`, `/.gitattributes` | The exclusion rules themselves; no reason to publish them |
 | `/.github/` | CI workflows |
 | `/scripts/`, `/tests/` | Tooling, tests, and fixtures |
 | `/content/` | Letterman snapshots and approval records. The **whole directory** is excluded, so a snapshot added in the future can never become public |
