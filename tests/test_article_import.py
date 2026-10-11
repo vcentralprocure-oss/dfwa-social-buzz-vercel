@@ -336,8 +336,21 @@ class VerifyAllTests(SiteCase):
         codes = {e["code"] for _, e in imp.verify_all(self.root)}
         self.assertIn("draft-not-approved", codes)
 
-    def test_draft_snapshot_without_a_page_is_fine(self):
+    def test_a_committed_snapshot_of_a_draft_is_rejected_even_without_a_page(self):
+        """The repo is public on GitHub, so a draft snapshot must never be committed."""
         self.write_snap(copy.deepcopy(FIXTURE))
+        codes = {e["code"] for _, e in imp.verify_all(self.root)}
+        self.assertIn("draft-snapshot-committed", codes)
+
+    def test_a_draft_snapshot_with_an_approval_override_is_still_rejected_when_committed(self):
+        snap = approved()
+        snap["letterman"]["state"] = "DRAFT"
+        snap["approval"]["allow_draft_state"] = True
+        self.write_snap(snap)
+        self.assertIn("draft-snapshot-committed", {e["code"] for _, e in imp.verify_all(self.root)})
+
+    def test_a_published_snapshot_without_a_page_is_fine(self):
+        self.write_snap(approved())
         self.assertEqual(imp.verify_all(self.root), [])
 
     def test_text_drift_is_detected(self):

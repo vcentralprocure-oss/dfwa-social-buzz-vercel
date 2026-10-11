@@ -48,11 +48,11 @@ Run the tests and `validate_site.py`, push the branch, inspect the Vercel previe
 
 An import is refused unless **all** of these hold:
 
-- Letterman state is `PUBLISHED`. A complete approval record does **not** override a draft. The only override is an explicit `approval.allow_draft_state: true`, which is reported and should be rare.
+- Letterman state is `PUBLISHED`. A complete approval record does **not** override a draft. `approval.allow_draft_state: true` exists only for local dry runs; **never commit** a snapshot for an unpublished article, because this repository is public on GitHub (see `docs/deployment-exposure.md`).
 - The approval record has `approved_by`, `approved_at`, `site_publish_date`, `image_alt`, and `quadrant`.
 - The slug is valid and no page with that slug exists. An existing page is never overwritten.
 
-CI re-checks this for every committed snapshot that has a page, so a page cannot exist for a draft or unapproved article.
+CI re-checks every committed snapshot: a snapshot whose state is not `PUBLISHED` fails with `draft-snapshot-committed`, and a snapshot that has a page must also pass the approval, tag, link and text checks.
 
 ## What the importer validates
 

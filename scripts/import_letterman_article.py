@@ -73,6 +73,13 @@ def verify_all(root):
         if al.slug_of(snap) != slug:
             problems.append((slug, al._i("snapshot-name-mismatch", f"Snapshot file name '{slug}' does not match its slug '{al.slug_of(snap)}'.", "")))
             continue
+        # This repository is PUBLIC on GitHub: a committed snapshot of an article that is not yet
+        # PUBLISHED in Letterman would publish its text there, whatever Vercel excludes.
+        if (snap.get("letterman") or {}).get("state") != "PUBLISHED":
+            problems.append((slug, al._i(
+                "draft-snapshot-committed",
+                "This repository is public on GitHub. Do not commit a snapshot of an article whose Letterman "
+                "state is not PUBLISHED: its text would become publicly readable. Keep it uncommitted until it is published.", "")))
         page = root / al.PAGE_DIR / f"{slug}.html"
         if not page.exists():
             continue
@@ -113,7 +120,7 @@ def main(argv=None):
             for slug, e in problems:
                 print(f"  - {slug}: [{e['code']}] {e['message']}")
             return 1
-        print("verify-all: every snapshot with a page passes draft protection, tag, link and text checks")
+        print("verify-all: every committed snapshot is PUBLISHED, and every snapshot with a page passes the approval, tag, link and text checks")
         return 0
     if not args.snapshot:
         ap.error("a snapshot path is required (or use --verify-all)")

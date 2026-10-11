@@ -23,6 +23,16 @@ It is deliberately narrow. It does **not** touch `api/` (functions), `data/` (re
 
 Defense in depth: the test fixture is synthetic text, not a real draft, so a future exclusion failure cannot publish unpublished copy.
 
+## Limits of this protection (read this)
+
+`.vercelignore` protects the **finished deployment**. It does not make unpublished content safe on its own.
+
+1. **Build window.** While a Vercel deployment is queued or building, its hostname serves the **unfiltered repository**. Observed on a preview: internal files and the canary returned 200 until the deployment reached READY (about 30 to 50 seconds), then 404. The preview URL appears in public GitHub deployment events during that time. Closing this window needs Vercel Deployment Protection on previews, which is a project setting and is **not** changed here.
+2. **The GitHub repository is public.** Anything committed is readable at `raw.githubusercontent.com` with no login, whatever Vercel excludes. So unpublished text and approval records must **never be committed**. CI enforces this for snapshots: `python scripts/import_letterman_article.py --verify-all` fails with `draft-snapshot-committed` for any `content/letterman/*.json` whose Letterman state is not `PUBLISHED`.
+3. **History is permanent.** A commit pushed to GitHub stays reachable by its SHA even after the branch moves on. Removing text that was already pushed needs a history rewrite plus a request to GitHub, and neither is guaranteed to remove copies that were already fetched.
+
+Defense in depth: the test fixture is synthetic text, so none of the above can leak real draft copy from tests.
+
 ## How it is verified
 
 1. **Offline tests (`tests/test_deployment_exposure.py`, run in CI):**
