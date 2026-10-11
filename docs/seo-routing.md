@@ -21,10 +21,15 @@ The Vercel project `dfwa-social-buzz-vercel` has `www.dfwasocialbuzz.com` attach
 
 ## `/a/<slug>` links from Letterman
 
-- Letterman article links are `https://dfwasocialbuzz.com/a/<urlPath>`.
-- Proposed behavior: **permanent redirect (308)** from `/a/<slug>` to the canonical article route, so search equity stays on one URL.
-- Phase 1 tests this on the **preview deployment only**, using a relative destination (`/arlington/articles/:slug.html`). That commit is separate so it can be dropped or replaced at merge.
-- Before any production use, the destination must be the absolute canonical URL (`https://www.dfwasocialbuzz.com/arlington/articles/:slug.html`), and only after the public domains are verified.
+- Letterman article links are `https://dfwasocialbuzz.com/a/<urlPath>` (or `/a/<id>` when no slug is set).
+- **There is no `/a/` redirect in `vercel.json`.** A blanket `/a/:slug` redirect was tested on a preview and removed, because:
+  - none of Letterman's 23 Arlington articles had a matching `/arlington/articles/<slug>.html`, so every `/a/<slug>` ended in a 404;
+  - a permanent redirect is cached by browsers and CDNs, so a wrong mapping persists;
+  - `m.letterman.ai/a/<slug>` redirects to `dfwasocialbuzz.com/a/<slug>`, so a fallback to Letterman's shared domain would loop;
+  - a catch-all cannot be validated against a list of real pages.
+- **Future behavior:** add an explicit redirect only for a verified pair: the Letterman article is published and not noindex, and its page already exists in the repo. The destination must be the absolute canonical URL (`https://www.dfwasocialbuzz.com/arlington/articles/<slug>.html`). Use a temporary (307) redirect while verifying, then permanent.
+- `tests/test_vercel_config.py` enforces this: it fails on any catch-all `/a/` pattern, on any redirect that would catch an unknown `/a/` slug, and on any explicit `/a/` redirect whose destination page does not exist or is not on the canonical host.
+- Only after the public domains are verified to serve the Vercel site should any `/a/` redirect be considered for production.
 
 ## Sitemap and robots
 
