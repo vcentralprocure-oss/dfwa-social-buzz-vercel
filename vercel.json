@@ -75,11 +75,6 @@
       "source": "/terms",
       "destination": "/terms-and-conditions/",
       "permanent": true
-    },
-    {
-      "source": "/a/:slug",
-      "destination": "/arlington/articles/:slug.html",
-      "permanent": true
     }
   ],
   "headers": [
