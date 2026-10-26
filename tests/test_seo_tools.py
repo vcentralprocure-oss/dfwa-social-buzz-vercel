@@ -19,7 +19,7 @@ import seo_lib  # noqa: E402
 import validate_site  # noqa: E402
 
 CFG = {
-    "canonical_host": "https://www.dfwasocialbuzz.com",
+    "canonical_host": "https://dfwasocialbuzz.com",
     "include_globs": [
         "index.html",
         "arlington/index.html",
@@ -57,15 +57,16 @@ class PathAndUrlTests(unittest.TestCase):
         self.assertEqual(seo_lib.page_path("arlington/index.html"), "/arlington/")
         self.assertEqual(seo_lib.page_path("arlington/articles/a.html"), "/arlington/articles/a.html")
 
-    def test_canonical_uses_www_host(self):
+    def test_canonical_uses_apex_host(self):
         cfg = seo_lib.load_config()
-        self.assertEqual(cfg["canonical_host"], "https://www.dfwasocialbuzz.com")
-        self.assertTrue(seo_lib.canonical_url(cfg, "arlington/articles/a.html").startswith("https://www.dfwasocialbuzz.com/"))
+        self.assertEqual(cfg["canonical_host"], "https://dfwasocialbuzz.com")
+        self.assertTrue(seo_lib.canonical_url(cfg, "arlington/articles/a.html").startswith("https://dfwasocialbuzz.com/"))
 
-    def test_real_config_has_no_apex_or_subdomain_canonical(self):
+    def test_real_config_has_no_www_or_subdomain_canonical(self):
         cfg = seo_lib.load_config()
         self.assertNotIn("arlington.dfwasocialbuzz.com", cfg["canonical_host"])
-        self.assertNotEqual(cfg["canonical_host"], "https://dfwasocialbuzz.com")
+        self.assertNotEqual(cfg["canonical_host"], "https://www.dfwasocialbuzz.com")
+        self.assertEqual(cfg["canonical_host"], "https://dfwasocialbuzz.com")
 
 
 class DiscoveryTests(SiteFixture):
@@ -103,7 +104,7 @@ class SitemapAndRobotsTests(SiteFixture):
     def test_robots_has_one_sitemap_line_and_no_disallow(self):
         text = seo_lib.build_robots(CFG)
         self.assertEqual(text.count("Sitemap:"), 1)
-        self.assertIn("Sitemap: https://www.dfwasocialbuzz.com/sitemap.xml", text)
+        self.assertIn("Sitemap: https://dfwasocialbuzz.com/sitemap.xml", text)
         self.assertNotIn("Disallow", text)
 
 
@@ -125,7 +126,7 @@ class OpenGraphTagTests(unittest.TestCase):
 
     def test_canonical_and_og_url_match(self):
         tags = seo_lib.render_seo_tags(CFG, self.meta)
-        expected = "https://www.dfwasocialbuzz.com/arlington/articles/new.html"
+        expected = "https://dfwasocialbuzz.com/arlington/articles/new.html"
         self.assertIn(f'<link rel="canonical" href="{expected}">', tags)
         self.assertIn(f'property="og:url" content="{expected}"', tags)
 
@@ -136,7 +137,7 @@ class OpenGraphTagTests(unittest.TestCase):
 
     def test_image_is_absolute_on_canonical_host(self):
         tags = seo_lib.render_seo_tags(CFG, self.meta)
-        self.assertIn('property="og:image" content="https://www.dfwasocialbuzz.com/arlington/images/articles/new.jpg"', tags)
+        self.assertIn('property="og:image" content="https://dfwasocialbuzz.com/arlington/images/articles/new.jpg"', tags)
 
     def test_optional_fields_omitted_when_absent(self):
         meta = {"rel": "arlington/articles/new.html", "title": "t", "description": "d"}
@@ -206,14 +207,14 @@ class ValidatorTests(SiteFixture):
         self.assertIn("image-bad-format", types)
 
     def test_detects_duplicate_canonical_tags_on_one_page(self):
-        tag = '<link rel="canonical" href="https://www.dfwasocialbuzz.com/arlington/articles/good.html">'
+        tag = '<link rel="canonical" href="https://dfwasocialbuzz.com/arlington/articles/good.html">'
         write(self.root, "arlington/articles/good.html", PAGE_OK.replace("</head>", tag + tag + "</head>"))
         self.make_sitemap()
         types = {e["type"] for e in self.run_validate()["errors"]}
         self.assertIn("duplicate-canonical-tag", types)
 
     def test_detects_duplicate_canonical_url_across_pages(self):
-        tag = '<link rel="canonical" href="https://www.dfwasocialbuzz.com/arlington/articles/good.html">'
+        tag = '<link rel="canonical" href="https://dfwasocialbuzz.com/arlington/articles/good.html">'
         write(self.root, "arlington/articles/good.html", PAGE_OK.replace("</head>", tag + "</head>"))
         write(self.root, "arlington/articles/copy.html", PAGE_OK.replace("</head>", tag + "</head>"))
         self.make_sitemap()

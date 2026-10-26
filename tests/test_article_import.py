@@ -185,7 +185,7 @@ class ValidationTests(SiteCase):
     def test_forbidden_links_in_body_are_blocking(self):
         for href, code in (("https://arlington.dfwasocialbuzz.com/x", "forbidden-host"),
                            ("https://m.letterman.ai/a/x", "letterman-article-url"),
-                           ("https://dfwasocialbuzz.com/arlington/", "apex-self-link"),
+                           ("https://www.dfwasocialbuzz.com/arlington/", "www-self-link"),
                            ("/arlington/articles/missing.html", "broken-internal-link"),
                            ("javascript:alert(1)", "unsafe-scheme")):
             snap = approved()
@@ -257,21 +257,23 @@ class ImportSuccessTests(SiteCase):
         self.assertIn('width="1200" height="630"', self.text)
         self.assertIn("alt=\"Lanterns at a sample festival (test alt text)\"", self.text)
         self.assertTrue((self.root / IMG_REL).is_file())
-        self.assertIn(f'property="og:image" content="https://www.dfwasocialbuzz.com/{IMG_REL}"', self.text)
+        self.assertIn(f'property="og:image" content="https://dfwasocialbuzz.com/{IMG_REL}"', self.text)
 
     def test_exactly_one_canonical_and_og_set_on_canonical_host(self):
         self.assertEqual(seo_lib.count_tags(self.text), {"canonical": 1, "og_title": 1})
-        url = f"https://www.dfwasocialbuzz.com/arlington/articles/{SLUG}.html"
+        url = f"https://dfwasocialbuzz.com/arlington/articles/{SLUG}.html"
         self.assertIn(f'<link rel="canonical" href="{url}">', self.text)
         self.assertIn(f'property="og:url" content="{url}"', self.text)
         for prop in ("og:type", "og:site_name", "og:description", "article:published_time"):
             self.assertEqual(self.text.count(f'property="{prop}"'), 1, prop)
         self.assertFalse(seo_lib.has_noindex(self.text))
 
-    def test_no_forbidden_hosts_or_apex_links_on_page(self):
+    def test_no_forbidden_hosts_or_www_links_on_page(self):
         self.assertNotIn("arlington.dfwasocialbuzz.com", self.text)
-        self.assertNotIn("https://dfwasocialbuzz.com", self.text)
+        self.assertNotIn("www.dfwasocialbuzz.com", self.text)
         self.assertNotIn("m.letterman.ai", self.text)
+        own = [ln for ln in self.text.splitlines() if "https://dfwasocialbuzz.com" in ln]
+        self.assertTrue(all('rel="canonical"' in ln or 'property="og:' in ln or 'property="article:' in ln for ln in own), own)
 
     def test_page_uses_crlf_like_existing_articles(self):
         raw = (self.root / al.PAGE_DIR / f"{SLUG}.html").read_bytes()
@@ -301,7 +303,7 @@ class ImportSuccessTests(SiteCase):
 
     def test_sitemap_includes_new_page_and_robots_is_unchanged(self):
         sitemap = (self.root / "sitemap.xml").read_text(encoding="utf-8")
-        self.assertIn(f"<loc>https://www.dfwasocialbuzz.com/arlington/articles/{SLUG}.html</loc>", sitemap)
+        self.assertIn(f"<loc>https://dfwasocialbuzz.com/arlington/articles/{SLUG}.html</loc>", sitemap)
         self.assertEqual((self.root / "robots.txt").read_text(encoding="utf-8"), seo_lib.build_robots(CFG))
 
     def test_second_import_is_refused_and_changes_nothing(self):

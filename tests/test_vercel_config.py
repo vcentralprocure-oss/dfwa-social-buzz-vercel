@@ -32,7 +32,7 @@ EXISTING_REWRITE_SOURCES = {
 }
 
 
-CANONICAL_HOST = "https://www.dfwasocialbuzz.com"
+CANONICAL_HOST = "https://dfwasocialbuzz.com"
 
 
 def source_to_regex(source):

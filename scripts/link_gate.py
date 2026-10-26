@@ -2,7 +2,7 @@
 
 Blocking errors: broken internal links, malformed or unsafe URLs, links to hosts or
 paths that must never be published (the arlington. subdomain, Letterman article URLs,
-apex absolute self-links), and target=_blank links without rel="noopener".
+www absolute self-links), and target=_blank links without rel="noopener".
 Warnings: plain http, tracking parameters, duplicate external links, generic link text.
 Live reachability is OPTIONAL (check_reachable) and never blocks.
 """
@@ -22,7 +22,7 @@ FORBIDDEN_HOSTS = {"arlington.dfwasocialbuzz.com"}
 LETTERMAN_HOSTS = {"m.letterman.ai"}
 UNSAFE_SCHEMES = {"javascript", "data", "vbscript", "file", "ftp"}
 SELF_HOSTS = {"dfwasocialbuzz.com", "www.dfwasocialbuzz.com"}
-CANONICAL_SELF_HOST = "www.dfwasocialbuzz.com"
+CANONICAL_SELF_HOST = "dfwasocialbuzz.com"
 TRACKING_PREFIXES = ("utm_",)
 TRACKING_KEYS = {"fbclid", "gclid", "mc_cid", "mc_eid"}
 GENERIC_TEXT = {"click here", "here", "link", "this link", "read more", "more"}
@@ -91,7 +91,7 @@ def check_links(html_text, page_rel, root, scope="body"):
                 continue
             if host in FORBIDDEN_HOSTS:
                 errors.append(_issue("forbidden-host",
-                                     "Never link to the arlington. subdomain. Use a relative link or the www host.", href))
+                                     "Never link to the arlington. subdomain. Use a relative link or the apex host.", href))
                 continue
             if host in LETTERMAN_HOSTS or (host in SELF_HOSTS and parts.path.startswith("/a/")):
                 errors.append(_issue("letterman-article-url",
@@ -99,8 +99,8 @@ def check_links(html_text, page_rel, root, scope="body"):
                 continue
             if host in SELF_HOSTS:
                 if host != CANONICAL_SELF_HOST:
-                    errors.append(_issue("apex-self-link",
-                                         "Use https://www.dfwasocialbuzz.com or a relative link, not the apex host.", href))
+                    errors.append(_issue("www-self-link",
+                                         "Use https://dfwasocialbuzz.com or a relative link, not the www host.", href))
                     continue
                 # absolute link to our own canonical host: check the local target
                 target = validate_site.resolve_local(root, page_rel, parts.path or "/")

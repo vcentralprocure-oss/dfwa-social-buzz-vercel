@@ -65,14 +65,14 @@ class LinkGateTests(unittest.TestCase):
             errors, _ = self.gate(f'<a href="{href}">x</a>')
             self.assertIn("letterman-article-url", codes(errors), href)
 
-    def test_apex_absolute_self_link_blocks_www_is_allowed(self):
-        errors, _ = self.gate('<a href="https://dfwasocialbuzz.com/arlington/">x</a>')
-        self.assertIn("apex-self-link", codes(errors))
+    def test_www_absolute_self_link_blocks_apex_is_allowed(self):
         errors, _ = self.gate('<a href="https://www.dfwasocialbuzz.com/arlington/">x</a>')
+        self.assertIn("www-self-link", codes(errors))
+        errors, _ = self.gate('<a href="https://dfwasocialbuzz.com/arlington/">x</a>')
         self.assertEqual(errors, [])
 
-    def test_www_absolute_link_to_missing_page_blocks(self):
-        errors, _ = self.gate('<a href="https://www.dfwasocialbuzz.com/arlington/articles/missing.html">x</a>')
+    def test_apex_absolute_link_to_missing_page_blocks(self):
+        errors, _ = self.gate('<a href="https://dfwasocialbuzz.com/arlington/articles/missing.html">x</a>')
         self.assertIn("broken-internal-link", codes(errors))
 
     def test_malformed_urls_block(self):
@@ -127,7 +127,7 @@ class BacklinkAuditTests(unittest.TestCase):
             (root / "arlington" / "articles").mkdir(parents=True)
             (root / "arlington" / "articles" / "a.html").write_text(
                 '<a href="https://biz.example/x">1</a><a href="https://biz.example/y">2</a>'
-                '<a href="https://www.dfwasocialbuzz.com/arlington/">own</a><a href="/arlington/">rel</a>', encoding="utf-8")
+                '<a href="https://dfwasocialbuzz.com/arlington/">own</a><a href="/arlington/">rel</a>', encoding="utf-8")
             (root / "arlington" / "articles" / "b.html").write_text('<a href="https://other.example/">3</a>', encoding="utf-8")
             inv = audit_backlinks.inventory(root, cfg)
             self.assertEqual(set(inv), {"biz.example", "other.example"})

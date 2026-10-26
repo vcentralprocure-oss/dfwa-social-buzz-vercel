@@ -1,6 +1,6 @@
 {
-  "canonical_host": "https://www.dfwasocialbuzz.com",
-  "_comment": "Production canonicalization is BLOCKED until the public domains are verified to serve the Vercel site. See docs/seo-routing.md.",
+  "canonical_host": "https://dfwasocialbuzz.com",
+  "_comment": "Canonical host is the apex, matching the og:url and JSON-LD values already on main. Never a publication subdomain. See docs/seo-routing.md.",
   "include_globs": [
     "index.html",
     "arlington/index.html",

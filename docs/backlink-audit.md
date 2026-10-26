@@ -19,7 +19,7 @@ python scripts/audit_backlinks.py --check    # also test reachability (network)
 |---|---|---|
 | Runs | On every import and in CI | On demand |
 | Scope | The new article's body | All eligible pages |
-| Blocks a release | **Yes**: broken internal links, malformed or unsafe URLs, forbidden hosts, apex self-links, `target="_blank"` without `rel` | **Never** |
+| Blocks a release | **Yes**: broken internal links, malformed or unsafe URLs, forbidden hosts, `www` self-links, `target="_blank"` without `rel` | **Never** |
 | Warns | `http` links, tracking parameters, duplicates, generic link text | Unreachable external links |
 | Network | No | Only with `--check` |
 

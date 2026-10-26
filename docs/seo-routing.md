@@ -1,23 +1,17 @@
 # SEO routing, canonical host, and indexing
 
-Status: **phase 1 (feature branch only).** Production canonicalization and indexing are **blocked** until the public domains are verified to serve the Vercel site. Do not treat the generated sitemap as production-ready before then.
+Status: **phase 1 (feature branch only).** This tooling does not change production. Merging, deploying, DNS, and hosting settings each need separate approval.
 
 ## Canonical host
 
-- Intended canonical host: `https://www.dfwasocialbuzz.com` (set in `scripts/seo_config.json`).
-- The apex `https://dfwasocialbuzz.com` must redirect to `www` (single hop). Not yet verified.
-- Nothing publishes on `arlington.dfwasocialbuzz.com`. Existing repo links to that subdomain (87 files) are a separate content cleanup, not changed here.
+- Canonical host: `https://dfwasocialbuzz.com` (the apex), set in `scripts/seo_config.json`.
+- This matches the pages already on `main`: 10 `og:url` values and 16 structured-data URLs use the apex, and none use `www`. Article URLs end in `.html`.
+- Publication subdomains such as `arlington.dfwasocialbuzz.com` are never used. Existing repo links to that subdomain (87 files) are a separate content cleanup, not changed here.
+- Redirecting `www` to the apex is a hosting setting, not a repository change, and is outside this tooling.
 
-## Current verified state (as of this branch)
+## Hosting observations
 
-| Host | Observed | Expected |
-|---|---|---|
-| `www.dfwasocialbuzz.com/` | 200, legacy Apache page | Vercel site |
-| `www.dfwasocialbuzz.com/arlington/` | 404 | 200 |
-| `dfwasocialbuzz.com/` | 200, legacy Apache page | 308 to `www` |
-| `dfwa-social-buzz-vercel.vercel.app/arlington/` | 200 (Vercel) | 200 |
-
-The Vercel project `dfwa-social-buzz-vercel` has `www.dfwasocialbuzz.com` attached. The project `dfwa-vercel` has the apex attached. Cloudflare DNS currently sends both public hosts to the legacy server. Fixing that is outside the repo.
+An earlier version of this document listed observed responses for the public hostnames. Those observations were taken from a machine with a local hosts-file override and were not valid for the public, so they have been removed. Check the live hosts directly before relying on any hosting claim.
 
 ## `/a/<slug>` links from Letterman
 
@@ -27,9 +21,9 @@ The Vercel project `dfwa-social-buzz-vercel` has `www.dfwasocialbuzz.com` attach
   - a permanent redirect is cached by browsers and CDNs, so a wrong mapping persists;
   - `m.letterman.ai/a/<slug>` redirects to `dfwasocialbuzz.com/a/<slug>`, so a fallback to Letterman's shared domain would loop;
   - a catch-all cannot be validated against a list of real pages.
-- **Future behavior:** add an explicit redirect only for a verified pair: the Letterman article is published and not noindex, and its page already exists in the repo. The destination must be the absolute canonical URL (`https://www.dfwasocialbuzz.com/arlington/articles/<slug>.html`). Use a temporary (307) redirect while verifying, then permanent.
+- **Future behavior:** add an explicit redirect only for a verified pair: the Letterman article is published and not noindex, and its page already exists in the repo. The destination must be the absolute canonical URL (`https://dfwasocialbuzz.com/arlington/articles/<slug>.html`). Use a temporary (307) redirect while verifying, then permanent.
 - `tests/test_vercel_config.py` enforces this: it fails on any catch-all `/a/` pattern, on any redirect that would catch an unknown `/a/` slug, and on any explicit `/a/` redirect whose destination page does not exist or is not on the canonical host.
-- Only after the public domains are verified to serve the Vercel site should any `/a/` redirect be considered for production.
+- Any `/a/` redirect needs its own approval and is not part of this tooling.
 
 ## Sitemap and robots
 

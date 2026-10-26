@@ -60,7 +60,7 @@ CI re-checks every committed snapshot: a snapshot whose state is not `PUBLISHED`
 |---|---|---|
 | Body | tags other than `p`, `strong`, `em`, `u`, `a`; attributes; text outside paragraphs; empty body | text tells readers to visit an "official page" but no link URLs were supplied |
 | Text | page text must equal the approved text (empty spacer paragraphs are dropped) | headline block title differs from article title |
-| Links | broken internal links; malformed or unsafe URLs; `arlington.dfwasocialbuzz.com`; Letterman `/a/` or `m.letterman.ai` URLs; apex (`dfwasocialbuzz.com`) absolute links | `http` links; tracking parameters; duplicate or generic links |
+| Links | broken internal links; malformed or unsafe URLs; `arlington.dfwasocialbuzz.com`; Letterman `/a/` or `m.letterman.ai` URLs; `www.dfwasocialbuzz.com` absolute links | `http` links; tracking parameters; duplicate or generic links |
 | Image | missing, empty, over 2 MB, wrong format, extension mismatch, wrong path | narrower than 1200 px; unknown dimensions |
 | Metadata | missing description; excerpt over 150 characters (never truncated) | meta description over 160 characters |
 | Hub | duplicate card; missing or repeated `archive-grid` anchor | |
@@ -69,8 +69,8 @@ External links in the body get `target="_blank" rel="noopener noreferrer"` autom
 
 ## Page, metadata, and hub rules
 
-- **Page:** same header, CSS, and footer as the live Arlington articles. No related-articles block. Subscribe and business links are relative, never the `arlington.` subdomain or the apex.
-- **Metadata (new pages only):** one canonical tag and one Open Graph set, on `https://www.dfwasocialbuzz.com`. Existing pages are never modified. Letterman keywords are not rendered, and no JSON-LD is added in this phase.
+- **Page:** same header, CSS, and footer as the live Arlington articles. No related-articles block. Subscribe and business links are relative, never the `arlington.` subdomain or the `www` host.
+- **Metadata (new pages only):** one canonical tag and one Open Graph set, on `https://dfwasocialbuzz.com`. Existing pages are never modified. Letterman keywords are not rendered, and no JSON-LD is added in this phase.
 - **`noIndex` articles:** the page gets `noindex, nofollow` and no canonical or Open Graph tags, is excluded from the sitemap, and gets no hub card.
 - **Hub card:** exactly one card at the top of the grid, using `summary_description` (or `description`). The hub file's line endings are preserved. The hub shows only the first six cards, so each new card pushes the oldest visible card out of view. The cap itself is unchanged.
 
