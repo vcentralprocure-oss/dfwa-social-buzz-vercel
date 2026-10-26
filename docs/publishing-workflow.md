@@ -16,6 +16,38 @@ This describes the tooling on the feature branch `claude/publishing-pipeline-seo
 
 The pipeline never contacts Letterman from CI and can never change a Letterman article's status. A Claude session reads the approved article through the Letterman connector and writes a committed **snapshot**.
 
+### 0. Build the snapshot from the connector's raw output (`scripts/build_snapshot.py`)
+
+The Letterman connector exists only inside a Claude session, so no script contacts Letterman. In the session, save the two raw
+responses exactly as returned, then run the builder. Nobody assembles the snapshot by hand.
+
+```
+get_article(articleId)          -> article.json
+list_content_blocks(articleId)  -> blocks.json
+python scripts/build_snapshot.py --article article.json --blocks blocks.json --approval approval.json     --image-file arlington/images/articles/<slug>.jpg --reread-article article2.json --reread-blocks blocks2.json
+```
+
+**It fails closed.** Only an article whose own `state` is exactly `PUBLISHED` (with a readable `publishedAt`) in Arlington Pulse is
+eligible. Block-level `state` is never read (it says `DRAFT` even on published articles). A missing, unknown, lower-case,
+padded or non-text state is refused, as are a missing or non-boolean `noIndex`, an ambiguous `isActive`, any active block type
+other than `HEADLINE_COMBO` and `TEXT` (so content is never silently dropped), duplicate block indexes, a missing body, title,
+description or slug, an `allow_draft_state` key, and malformed input. Nothing is written on a refusal.
+
+**Mapping rules:**
+- Title: `summary.title`, else the headline block title, else the article title, with a trailing `| Arlington Pulse` removed (the page template adds it).
+- Meta description: `summary.description`, else the article `description` (reported as `description-fallback`).
+- Subtitle: the headline block's `subTitle`, else its `promptOutput` when that is plain text.
+- Card excerpt: `card_excerpt` from the owner's approval record, else the meta description. It is never truncated; over 150 characters is reported and the importer refuses.
+- Body: the active `TEXT` blocks in index order. Image: the repo copy named by `--image-file`.
+
+**Re-read guard.** `--reread-article` and `--reread-blocks` take a second, independent connector read. The build is refused if the two
+disagree (field names only are reported, never text) or if the second read shows the article is no longer published.
+
+Legacy articles whose body uses headings (`<h2>`) build, but the importer refuses them until the body is revised; the editor
+rules allow only `p`, `strong`, `em`, `u` and `a`.
+
+The snapshot contains the article text. Do not commit or push it, or the generated page, without the owner's explicit approval.
+
 ### 1. Snapshot (`content/letterman/<slug>.json`)
 
 ```
