@@ -238,12 +238,16 @@ def validate_snapshot(snap, root, *, check_duplicate=True, check_files=True):
     elif not SLUG_RE.fullmatch(slug) or len(slug) > SLUG_MAX:
         errors.append(_i("invalid-slug", f"Slug '{slug}' must be lowercase letters, digits and single hyphens, up to {SLUG_MAX} characters.", slug))
 
-    # draft protection
+    # draft protection: only a Letterman state of exactly "PUBLISHED" can be imported. There is no override.
     state = lm.get("state")
-    if state != "PUBLISHED" and not ap.get("allow_draft_state"):
+    if state != "PUBLISHED":
         errors.append(_i("draft-not-approved",
                          f"Letterman article state is {state!r}, not PUBLISHED. Refusing to create a site page. "
-                         "Publish it in Letterman, or record an explicit approval.allow_draft_state decision.", str(state)))
+                         "Publish it in Letterman first; no approval record or flag can override this.", str(state)))
+    if any("allow_draft_state" in section for section in (snap, lm, ap)):
+        errors.append(_i("unsupported-override",
+                         "allow_draft_state is not supported and is never honored. Remove it from the snapshot.",
+                         "allow_draft_state"))
     for key in ("approved_by", "approved_at", "site_publish_date", "image_alt", "quadrant"):
         if not ap.get(key):
             errors.append(_i("missing-approval", f"approval.{key} is required. The article is not approved for the site.", key))

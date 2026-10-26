@@ -22,7 +22,7 @@ The pipeline never contacts Letterman from CI and can never change a Letterman a
 letterman: id, state, url_path, title, description, summary_description, no_index,
            blocks[] (type, index, subTitle, html)
 approval:  approved_by, approved_at, site_publish_date (YYYY-MM-DD), image_alt,
-           quadrant, quadrant_evidence, manual_review, [allow_draft_state]
+           quadrant, quadrant_evidence, manual_review
 image:     file (arlington/images/articles/<slug>.<jpg|png|webp>), source_url
 ```
 
@@ -48,7 +48,7 @@ Run the tests and `validate_site.py`, push the branch, inspect the Vercel previe
 
 An import is refused unless **all** of these hold:
 
-- Letterman state is `PUBLISHED`. A complete approval record does **not** override a draft. `approval.allow_draft_state: true` exists only for local dry runs; **never commit** a snapshot for an unpublished article, because this repository is public on GitHub (see `docs/deployment-exposure.md`).
+- Letterman state is exactly `PUBLISHED`. Nothing overrides this: not a complete approval record, and not any `allow_draft_state` field (a snapshot containing that key anywhere is refused with `unsupported-override`). **Never commit** a snapshot for an unpublished article, because this repository is public on GitHub (see `docs/deployment-exposure.md`).
 - The approval record has `approved_by`, `approved_at`, `site_publish_date`, `image_alt`, and `quadrant`.
 - The slug is valid and no page with that slug exists. An existing page is never overwritten.
 

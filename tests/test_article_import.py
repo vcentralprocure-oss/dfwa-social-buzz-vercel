@@ -110,12 +110,62 @@ class DraftProtectionTests(SiteCase):
         snap["letterman"]["state"] = "PUBLISHED"
         self.assertIn("missing-approval", self.refused_codes(snap))
 
-    def test_explicit_draft_override_is_the_only_way_through(self):
+    def assert_nothing_written(self, label=""):
+        self.assertFalse((self.root / al.PAGE_DIR / f"{SLUG}.html").exists(), label)
+        self.assertEqual(self.hub_now(), self.hub_bytes, label)
+        self.assertFalse((self.root / "sitemap.xml").exists(), label)
+
+    def test_draft_override_is_not_honored(self):
+        """approval.allow_draft_state used to admit a DRAFT into a real page, hub card and sitemap."""
         snap = approved()
         snap["letterman"]["state"] = "DRAFT"
         snap["approval"]["allow_draft_state"] = True
-        errors, _ = al.validate_snapshot(snap, self.root)
-        self.assertNotIn("draft-not-approved", {e["code"] for e in errors})
+        codes = self.refused_codes(snap)
+        self.assertIn("draft-not-approved", codes)
+        self.assertIn("unsupported-override", codes)
+        self.assert_nothing_written()
+
+    def test_override_key_is_rejected_wherever_it_appears(self):
+        for place in ("approval", "letterman", "top"):
+            snap = approved()
+            snap["letterman"]["state"] = "DRAFT"
+            target = snap if place == "top" else snap[place]
+            target["allow_draft_state"] = True
+            codes = self.refused_codes(snap)
+            self.assertIn("draft-not-approved", codes, place)
+            self.assertIn("unsupported-override", codes, place)
+            self.assert_nothing_written(place)
+
+    def test_only_the_exact_published_state_is_importable(self):
+        for state in (None, "", "DRAFT", "draft", "Draft", "UNPUBLISHED", "ARCHIVED", "SCHEDULED",
+                      "published", "PUBLISHED ", " PUBLISHED", True, 1, ["PUBLISHED"]):
+            snap = approved()
+            snap["letterman"]["state"] = state
+            codes = self.refused_codes(snap)
+            self.assertTrue(codes & {"draft-not-approved", "missing-field"}, repr(state))
+            self.assert_nothing_written(repr(state))
+
+    def test_override_key_on_a_published_snapshot_is_also_refused(self):
+        snap = approved()
+        snap["approval"]["allow_draft_state"] = False
+        self.assertIn("unsupported-override", self.refused_codes(snap))
+        self.assert_nothing_written()
+
+    def test_cli_refuses_a_draft_with_override_for_real_runs_and_dry_runs(self):
+        import io
+        from contextlib import redirect_stdout
+        snap = approved()
+        snap["letterman"]["state"] = "DRAFT"
+        snap["approval"]["allow_draft_state"] = True
+        path = self.write_snap(snap)
+        for extra in ([], ["--dry-run"]):
+            buf = io.StringIO()
+            with redirect_stdout(buf):
+                rc = imp.main([str(path), "--root", str(self.root), *extra])
+            self.assertEqual(rc, 1, extra)
+            self.assertIn("IMPORT REFUSED. Nothing was written.", buf.getvalue())
+            self.assertIn("[draft-not-approved]", buf.getvalue())
+            self.assert_nothing_written(repr(extra))
 
     def test_importer_does_not_touch_the_snapshot_status(self):
         snap = approved()
