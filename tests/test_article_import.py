@@ -342,10 +342,24 @@ class ImportSuccessTests(SiteCase):
         self.assertIn(f'<a href="/arlington/articles/{SLUG}.html">Read Issue', card)
         self.assertIn(al.excerpt_of(FIXTURE), card)
 
+    @staticmethod
+    def _endings(raw):
+        crlf = raw.count(b"\r\n")
+        return crlf, raw.count(b"\n") - crlf
+
     def test_hub_line_endings_preserved(self):
-        raw = self.hub_now()
-        self.assertEqual(raw.count(b"\n"), raw.count(b"\r\n"))
-        self.assertEqual(self.hub_bytes.count(b"\n"), self.hub_bytes.count(b"\r\n"))
+        # The hub keeps whichever convention it had (LF in the repository, CRLF in a Windows checkout); never mixed.
+        crlf, lf = self._endings(self.hub_bytes)
+        self.assertEqual(min(crlf, lf), 0, "the committed hub should use one line-ending convention")
+        new_crlf, new_lf = self._endings(self.hub_now())
+        self.assertEqual((new_crlf == 0, new_lf == 0), (crlf == 0, lf == 0))
+        # Both conventions are preserved by the insertion itself, whatever the checkout produced.
+        as_lf = self.hub_bytes.replace(b"\r\n", b"\n")
+        for label, original in (("LF", as_lf), ("CRLF", as_lf.replace(b"\n", b"\r\n"))):
+            out = al.insert_hub_card(original.decode("utf-8"), approved()).encode("utf-8")
+            o_crlf, o_lf = self._endings(out)
+            self.assertEqual(o_lf if label == "CRLF" else o_crlf, 0, label)
+            self.assertGreater(o_crlf if label == "CRLF" else o_lf, 0, label)
 
     def test_hub_card_target_exists_and_links_resolve(self):
         errors, _ = link_gate.check_links('<a href="/arlington/articles/%s.html">x</a>' % SLUG, "arlington/index.html", self.root)
