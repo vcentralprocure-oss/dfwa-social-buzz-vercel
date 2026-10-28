@@ -88,7 +88,7 @@ def check_eligibility(article, publication_id=ARLINGTON_PULSE_ID):
     return errors
 
 
-def _active_blocks(doc):
+def _active_blocks(doc, article_id=None):
     if not isinstance(doc, dict) or not isinstance(doc.get("contentBlocks"), list):
         return [], [_e("malformed-blocks", "list_content_blocks output must be an object with a contentBlocks list.")]
     errors, active, seen = [], [], set()
@@ -96,6 +96,11 @@ def _active_blocks(doc):
         if not isinstance(b, dict):
             errors.append(_e("malformed-block", f"Block #{i} is not an object."))
             continue
+        owner = b.get("newsletterId")
+        if not (isinstance(owner, str) and owner):
+            errors.append(_e("block-article-unverified", f"Block #{i} has no newsletterId; cannot confirm it belongs to this article."))
+        elif article_id is not None and owner != article_id:
+            errors.append(_e("block-article-mismatch", f"Block #{i} belongs to a different article than the article response; the two files do not match."))
         if not isinstance(b.get("isActive"), bool):
             errors.append(_e("ambiguous-block-active", f"Block #{i} has no boolean isActive; cannot tell if it is live."))
             continue
@@ -122,7 +127,7 @@ def build_snapshot(article, blocks_doc, approval=None, image=None, publication_i
     if not isinstance(article, dict):
         raise BuildRefused(errors)
     warnings = []
-    active, block_errors = _active_blocks(blocks_doc)
+    active, block_errors = _active_blocks(blocks_doc, article.get("id"))
     errors += block_errors
 
     if not (isinstance(article.get("id"), str) and ID_RE.fullmatch(article["id"])):

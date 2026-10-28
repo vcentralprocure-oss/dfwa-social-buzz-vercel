@@ -47,7 +47,7 @@ def raw_article(**over):
 
 
 def block(btype, index, **over):
-    b = {"id": "6a0000000000000000000100", "type": btype, "index": index, "title": "Text ", "subTitle": None,
+    b = {"id": "6a0000000000000000000100", "newsletterId": ARTICLE_ID, "type": btype, "index": index, "title": "Text ", "subTitle": None,
          "imageUrl": None, "promptOutput": None, "state": "DRAFT", "isActive": True, "links": []}
     b.update(over)
     return b
@@ -228,6 +228,30 @@ class MappingTests(unittest.TestCase):
 
 
 class MalformedAndIncompleteTests(unittest.TestCase):
+    def test_blocks_from_another_article_are_refused(self):
+        other = "6a00000000000000000000ff"
+        both = [block("HEADLINE_COMBO", 0, title="T", newsletterId=other), block("TEXT", 1, promptOutput=BODY, newsletterId=other)]
+        self.assertIn("block-article-mismatch", refused(raw_article(), raw_blocks(both)))
+        one = [block("HEADLINE_COMBO", 0, title="T"), block("TEXT", 1, promptOutput=BODY, newsletterId=other)]
+        self.assertIn("block-article-mismatch", refused(raw_article(), raw_blocks(one)))
+
+    def test_inactive_block_from_another_article_is_still_refused(self):
+        stray = block("TEXT", 2, promptOutput=BODY, isActive=False, newsletterId="6a00000000000000000000ff")
+        ok = [block("HEADLINE_COMBO", 0, title="T"), block("TEXT", 1, promptOutput=BODY), stray]
+        self.assertIn("block-article-mismatch", refused(raw_article(), raw_blocks(ok)))
+
+    def test_blocks_without_an_owner_are_refused(self):
+        for value in (None, "", 5, ["x"]):
+            b = block("TEXT", 1, promptOutput=BODY, newsletterId=value)
+            self.assertIn("block-article-unverified", refused(raw_article(), raw_blocks([block("HEADLINE_COMBO", 0, title="T"), b])), repr(value))
+        b = block("TEXT", 1, promptOutput=BODY)
+        del b["newsletterId"]
+        self.assertIn("block-article-unverified", refused(raw_article(), raw_blocks([b])))
+
+    def test_matching_blocks_are_accepted(self):
+        snap, _ = bs.build_snapshot(raw_article(), raw_blocks())
+        self.assertEqual(snap["letterman"]["id"], ARTICLE_ID)
+
     def test_malformed_block_documents(self):
         for bad in (None, [], {}, {"contentBlocks": None}, {"contentBlocks": "x"}, {"contentBlocks": {"a": 1}}, "blocks", 5):
             self.assertIn("malformed-blocks", refused(raw_article(), bad), repr(bad))

@@ -40,6 +40,8 @@ description or slug, an `allow_draft_state` key, and malformed input. Nothing is
 - Card excerpt: `card_excerpt` from the owner's approval record, else the meta description. It is never truncated; over 150 characters is reported and the importer refuses.
 - Body: the active `TEXT` blocks in index order. Image: the repo copy named by `--image-file`.
 
+**Identity check.** Every block (active or not) must carry a `newsletterId` equal to the article's `id`; a missing or different owner refuses the build (`block-article-unverified`, `block-article-mismatch`), so article and block files from different articles cannot be combined.
+
 **Re-read guard.** `--reread-article` and `--reread-blocks` take a second, independent connector read. The build is refused if the two
 disagree (field names only are reported, never text) or if the second read shows the article is no longer published.
 
