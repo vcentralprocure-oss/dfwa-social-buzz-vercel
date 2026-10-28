@@ -1,0 +1,26 @@
+{
+  "canonical_host": "https://dfwasocialbuzz.com",
+  "_comment": "Canonical host is the apex, matching the og:url and JSON-LD values already on main. Never a publication subdomain. See docs/seo-routing.md.",
+  "include_globs": [
+    "index.html",
+    "arlington/index.html",
+    "arlington/articles/*.html",
+    "contact/index.html",
+    "deals/index.html",
+    "business/index.html",
+    "privacy-policy/index.html",
+    "terms-and-conditions/index.html"
+  ],
+  "exclude_globs": [
+    "**/*.bak*",
+    "**/*test*",
+    "**/sample-template.html",
+    "**/*-template.html",
+    "templates/**",
+    "backups/**",
+    "lib/**",
+    "api/**",
+    "public/**",
+    "node_modules/**"
+  ]
+}

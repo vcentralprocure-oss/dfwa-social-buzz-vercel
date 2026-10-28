@@ -1,0 +1,7 @@
+EXPOSURE CANARY: if you can read this file over HTTP from a deployed site, internal files are leaking.
+
+Everything under content/ is excluded from deployments by /.vercelignore. Letterman snapshots
+and approval records are stored here. scripts/check_deployment_exposure.py requests this
+file on a deployed preview and fails if it is reachable.
+
+This file is not a snapshot (it is not *.json), so the importer ignores it. Do not delete it.

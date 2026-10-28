@@ -1,0 +1,34 @@
+name: site-checks
+
+# Runs on pull requests. Does not deploy anything and does not change production.
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Unit tests (SEO tools)
+        run: python -m unittest discover -s tests -v
+
+      - name: Generated sitemap.xml and robots.txt are current
+        run: python scripts/generate_seo.py --check
+
+      - name: Site validation (blocks on NEW errors only; see scripts/validator_baseline.json)
+        run: python scripts/validate_site.py
+
+      - name: Vercel config is valid JSON and keeps existing redirects
+        run: python -m unittest tests.test_vercel_config -v
+
+      - name: Draft protection and link gate for imported Letterman pages
+        run: python scripts/import_letterman_article.py --verify-all

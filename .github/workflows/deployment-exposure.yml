@@ -1,0 +1,27 @@
+name: deployment-exposure
+
+# Probes each Vercel PREVIEW deployment and fails if any internal file is publicly reachable.
+# Read-only: it only issues HTTP GET requests. It does not deploy or change anything.
+on:
+  deployment_status:
+
+permissions:
+  contents: read
+
+jobs:
+  exposure:
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      contains(github.event.deployment.environment, 'Preview')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Internal files are not reachable on the preview deployment
+        run: python scripts/check_deployment_exposure.py "${{ github.event.deployment_status.target_url }}"
